@@ -22,7 +22,7 @@ namespace ensueno
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ApplicationConfiguration.Initialize();
-            Application.Run(new Agregar_Usuario());
+            Application.Run(new Form_login());
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 806, DateTimeKind.Local).AddTicks(3289));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 392, DateTimeKind.Local).AddTicks(7681));
 
                     b.Property<string>("Email")
                         .HasMaxLength(50)
@@ -94,7 +94,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 805, DateTimeKind.Local).AddTicks(5665));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 391, DateTimeKind.Local).AddTicks(9873));
 
                     b.Property<string>("Email")
                         .HasMaxLength(100)
@@ -173,7 +173,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 809, DateTimeKind.Local).AddTicks(5243));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 396, DateTimeKind.Local).AddTicks(74));
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
@@ -225,7 +225,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 808, DateTimeKind.Local).AddTicks(1090));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 394, DateTimeKind.Local).AddTicks(6116));
 
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary");
@@ -269,7 +269,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 812, DateTimeKind.Local).AddTicks(3526));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(8934));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -351,7 +351,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 807, DateTimeKind.Local).AddTicks(1217));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 393, DateTimeKind.Local).AddTicks(5702));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -401,7 +401,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 26, 17, 2, 19, 812, DateTimeKind.Local).AddTicks(2502));
+                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(7852));
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
@@ -411,9 +411,8 @@ namespace Persistencia.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<string>("Password")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                    b.Property<byte[]>("Password")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(20)

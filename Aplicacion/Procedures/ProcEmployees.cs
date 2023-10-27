@@ -28,6 +28,19 @@ namespace Aplicacion.Procedures
             }
             catch { return null; }
         }
+        public Employees GetEmployeeByUserName(Users obj) {
+            try
+            {
+                using (var db = new EnsuenoContext())
+                {
+                    var empId = db.Users.Where(a => a.UserName==obj.UserName).Select(a => a).FirstOrDefault();
+                    if (empId != null) return db.Employees.Find(empId.EmployeeId);
+                    else return null;
+                }
+            }
+            catch { return null; }
+
+        }
 
     }
 }

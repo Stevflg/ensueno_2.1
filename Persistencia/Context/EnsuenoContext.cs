@@ -122,10 +122,8 @@ namespace Persistencia.Context
                 .HasForeignKey(u => u.EmployeeId).HasConstraintName("Fk_EmployeeId_Users");
                 entity.Property(u => u.UserName).HasMaxLength(20);
                 entity.HasIndex(u => u.UserName).IsUnique();
-                entity.Property(u => u.Password).HasMaxLength(500);
                 entity.Property(u => u.IsActive).HasDefaultValue(true);
                 entity.Property(u => u.Date_Time).HasDefaultValue(DateTime.Now);
-
             });
             modelBuilder.Entity<Sessions>(entity => {
                 entity.HasKey(se => se.SesionId).HasName("Pk_SessionId_Sessions");

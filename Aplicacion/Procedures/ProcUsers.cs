@@ -12,7 +12,17 @@ namespace Aplicacion.Procedures
     public class ProcUsers
     {
 
-        public string Encrypt(string pass)
+        public byte[] Encrypt(string pass)
+        {
+            SHA256 sHA256 = SHA256.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sHA256.ComputeHash(encoding.GetBytes(pass));
+            //for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return stream;
+        }
+        public string EncryptUser(string pass)
         {
             SHA256 sHA256 = SHA256.Create();
             ASCIIEncoding encoding = new ASCIIEncoding();
@@ -22,7 +32,6 @@ namespace Aplicacion.Procedures
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
         }
-
         public bool UserLogin(Users obj)
         {
             using (var _context = new EnsuenoContext())
@@ -33,10 +42,10 @@ namespace Aplicacion.Procedures
                             select u).FirstOrDefault();
                 if (user != null)
                 {
-                    if (Encrypt(user.UserName) == Encrypt(obj.UserName))
-                        return true;
+                    if (EncryptUser(user.UserName)==EncryptUser(obj.UserName)) return true;
+                    else return false;
                 }
-                return false;
+                else return false;
             }
         }
 

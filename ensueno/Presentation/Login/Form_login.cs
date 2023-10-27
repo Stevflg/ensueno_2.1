@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Aplicacion.Procedures;
+using Dominio.Database;
 using ensueno.Presentation.Main;
-using ensueno.Sql.Stored_procedures;
-using ensueno.Sql;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ensueno.Presentation.Login
 {
@@ -18,9 +12,9 @@ namespace ensueno.Presentation.Login
         private Form_database fd;
         private Form_welcome fw;
         private Form_login_error fle;
+        private ProcUsers pUser;
+        private Users user;
         private Form_main fm;
-        private Builder builder;
-        private DataRow data_row;
         public Form_login()
         {
             InitializeComponent();
@@ -67,16 +61,32 @@ namespace ensueno.Presentation.Login
         {
             Login();
         }
-        public static string employee_id, employee_name,employee_last_name;
+        public static string employee_id, employee_name, employee_last_name;
 
-       
+
         private void Login()
         {
             try
             {
+                pUser=new ProcUsers();
+                user = new Users
+                {
+                    UserName = TextBox_user.Text,
+                    Password = pUser.Encrypt(TextBox_password.Text)
+                };
+                if (pUser.UserLogin(user))
+                {
+                    Clear_textboxes();
+                    Show_form_welcome(user.UserName);
                     Show_form_main();
+                }
+                else
+                {
+                    fle=new Form_login_error() ;
+                    fle.ShowDialog();
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("El usuario está deshabilitado.");
                 MessageBox.Show(ex.Message);
@@ -87,10 +97,9 @@ namespace ensueno.Presentation.Login
             TextBox_user.Clear();
             TextBox_password.Clear();
         }
-        private void Show_form_welcome(string employee_name, string employee_last_name)
+        private void Show_form_welcome(string name)
         {
-            fw = new Form_welcome();
-            fw.Welcome(employee_name, employee_last_name);
+            fw = new Form_welcome(name);
             fw.ShowDialog();
         }
 
