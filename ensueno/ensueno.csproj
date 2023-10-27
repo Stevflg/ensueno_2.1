@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Update="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8.1\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Report\DataSet_ensueno.cs">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\Report_clients.rdlc" />
+    <EmbeddedResource Include="Report\Report_employees.rdlc" />
+    <EmbeddedResource Include="Report\Report_invoice.rdlc" />
+    <EmbeddedResource Include="Report\Report_products.rdlc" />
+    <None Update="Report\DataSet_ensueno.xsc">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </None>
+    <None Update="Report\DataSet_ensueno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ensueno.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Report\DataSet_ensueno.xss">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="Resources\Login\error.png" />
+    <Content Include="Resources\Login\smile.png" />
+    <Content Include="Resources\Main\bills.png" />
+    <Content Include="Resources\Main\clean.png" />
+    <Content Include="Resources\Main\clients.png" />
+    <Content Include="Resources\Main\employees.png" />
+    <Content Include="Resources\Login\database.png" />
+    <Content Include="Resources\Login\day_and_night.png" />
+    <Content Include="Resources\Login\password.png" />
+    <Content Include="Resources\Login\user.png" />
+    <Content Include="Resources\Logo\logo.ico" />
+    <Content Include="Resources\Logo\logo_without_letters.png" />
+    <Content Include="Resources\Logo\logo_with_letters.png" />
+    <Content Include="Resources\Main\left_arrow.png" />
+    <Content Include="Resources\Main\products.png" />
+    <Content Include="Resources\Main\right_arrow.png" />
+    <Content Include="Sql\Querys\ensueno_clients.sql" />
+    <Content Include="Sql\Querys\ensueno_employees.sql" />
+    <Content Include="Sql\Querys\ensueno_invoices.sql" />
+    <Content Include="Sql\Querys\ensueno_invoice_detail.sql" />
+    <Content Include="Sql\Querys\ensueno_products.sql" />
+    <Content Include="Sql\Querys\invoice_report.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.5" />
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="160.1000.6" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplicacion\Aplicacion.csproj" />
+    <ProjectReference Include="..\Dominio\Dominio.csproj" />
+  </ItemGroup>
+</Project>
