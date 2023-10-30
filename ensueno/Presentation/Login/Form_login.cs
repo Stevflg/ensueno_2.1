@@ -22,6 +22,39 @@ namespace ensueno.Presentation.Login
             Switch_dark_mode.Checked = Properties.Settings.Default.dark_mode;
             TextBox_user.Select();
         }
+        #region Show Pass
+        private void MostrarPass()
+        {
+            ButtonShowPass.Visible = false;
+            TextBox_password.PasswordChar = '\0';
+        }
+        private void OcultarPass()
+        {
+            TextBox_password.PasswordChar = '*';
+        }
+
+        private void TextBox_password_TextChanged(object sender, EventArgs e)
+        {
+
+            if (TextBox_password.Text == string.Empty)
+            {
+                ButtonShowPass.Visible = false;
+            }
+            else
+            {
+                ButtonShowPass.Visible = true;
+            }
+            OcultarPass();
+        }
+
+        private void ButtonShowPass_Click(object sender, EventArgs e)
+        {
+            MostrarPass();
+            TextBox_password.Focus();
+        }
+
+
+        #endregion
         private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -68,7 +101,7 @@ namespace ensueno.Presentation.Login
         {
             try
             {
-                pUser=new ProcUsers();
+                pUser = new ProcUsers();
                 user = new Users
                 {
                     UserName = TextBox_user.Text,
@@ -77,12 +110,14 @@ namespace ensueno.Presentation.Login
                 if (pUser.UserLogin(user))
                 {
                     Clear_textboxes();
+                    this.Hide();
                     Show_form_welcome(user.UserName);
                     Show_form_main();
+                    this.Close();
                 }
                 else
                 {
-                    fle=new Form_login_error() ;
+                    fle = new Form_login_error();
                     fle.ShowDialog();
                 }
             }

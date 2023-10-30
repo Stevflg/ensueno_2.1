@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,5 +23,6 @@ namespace Dominio.Database
         public ICollection<Invoices> InvoiceCollectionsEmpl { get; set; }= new List<Invoices>();
         public ICollection<Customers>? CustomersNavigation { get; set; }=new List<Customers>();
         public ICollection<Suppliers>? SuppliersNavigation { get; set; }=new List<Suppliers>();
+        public ICollection<Rol> RolCollections { get; set; } = new List<Rol>();
     }
 }

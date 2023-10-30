@@ -12,8 +12,8 @@ using Persistencia.Context;
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(EnsuenoContext))]
-    [Migration("20231027141325_initial")]
-    partial class initial
+    [Migration("20231028220133_AddTables")]
+    partial class AddTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 392, DateTimeKind.Local).AddTicks(7681));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 653, DateTimeKind.Local).AddTicks(5320));
 
                     b.Property<string>("Email")
                         .HasMaxLength(50)
@@ -97,7 +97,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 391, DateTimeKind.Local).AddTicks(9873));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 652, DateTimeKind.Local).AddTicks(2318));
 
                     b.Property<string>("Email")
                         .HasMaxLength(100)
@@ -176,7 +176,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 396, DateTimeKind.Local).AddTicks(74));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 658, DateTimeKind.Local).AddTicks(2233));
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
@@ -196,6 +196,42 @@ namespace Persistencia.Migrations
                     b.HasIndex("EmployeeId");
 
                     b.ToTable("Invoices");
+                });
+
+            modelBuilder.Entity("Dominio.Database.Permissions", b =>
+                {
+                    b.Property<int?>("PermissionsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("PermissionsId"));
+
+                    b.Property<string>("PermissionsName")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("PermissionsId")
+                        .HasName("Pk_PermissionsId_Permissions");
+
+                    b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("Dominio.Database.PermissionsRol", b =>
+                {
+                    b.Property<int>("PermissionsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RolId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PermissionsId", "RolId")
+                        .HasName("PK_PermissionsRol_PermissionsRol");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("PermissionsId", "RolId"));
+
+                    b.HasIndex("RolId");
+
+                    b.ToTable("PermissionsRols");
                 });
 
             modelBuilder.Entity("Dominio.Database.Product_Category", b =>
@@ -228,7 +264,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 394, DateTimeKind.Local).AddTicks(6116));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 656, DateTimeKind.Local).AddTicks(2483));
 
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary");
@@ -261,6 +297,29 @@ namespace Persistencia.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Dominio.Database.Rol", b =>
+                {
+                    b.Property<int>("RolId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RolId"));
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RolName")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("RolId")
+                        .HasName("Pk_RolId_Rol");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Rols");
+                });
+
             modelBuilder.Entity("Dominio.Database.Sessions", b =>
                 {
                     b.Property<int>("SesionId")
@@ -272,7 +331,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(8934));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 662, DateTimeKind.Local).AddTicks(7394));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -354,7 +413,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 393, DateTimeKind.Local).AddTicks(5702));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 654, DateTimeKind.Local).AddTicks(8205));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -404,7 +463,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("Date_Time")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(7852));
+                        .HasDefaultValue(new DateTime(2023, 10, 28, 16, 1, 33, 662, DateTimeKind.Local).AddTicks(5933));
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
@@ -487,6 +546,27 @@ namespace Persistencia.Migrations
                     b.Navigation("EmployeesNavigation");
                 });
 
+            modelBuilder.Entity("Dominio.Database.PermissionsRol", b =>
+                {
+                    b.HasOne("Dominio.Database.Permissions", "PermissionsNavigation")
+                        .WithMany("PermissionsRolCollections")
+                        .HasForeignKey("PermissionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("Fk_PermissionsId_PermissionsId");
+
+                    b.HasOne("Dominio.Database.Rol", "RolNavigation")
+                        .WithMany("PermissionsCollections")
+                        .HasForeignKey("RolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("Fk_RolId_PermissionsId");
+
+                    b.Navigation("PermissionsNavigation");
+
+                    b.Navigation("RolNavigation");
+                });
+
             modelBuilder.Entity("Dominio.Database.Products", b =>
                 {
                     b.HasOne("Dominio.Database.Product_Category", "Product_CategoryNavigation")
@@ -501,6 +581,18 @@ namespace Persistencia.Migrations
                         .HasForeignKey("SuppliersSupplierId");
 
                     b.Navigation("Product_CategoryNavigation");
+                });
+
+            modelBuilder.Entity("Dominio.Database.Rol", b =>
+                {
+                    b.HasOne("Dominio.Database.Employees", "EmployeeNavigation")
+                        .WithMany("RolCollections")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("Fk_EmployeeId_Rol");
+
+                    b.Navigation("EmployeeNavigation");
                 });
 
             modelBuilder.Entity("Dominio.Database.Sessions", b =>
@@ -580,6 +672,8 @@ namespace Persistencia.Migrations
 
                     b.Navigation("InvoiceCollectionsEmpl");
 
+                    b.Navigation("RolCollections");
+
                     b.Navigation("SuppliersNavigation");
 
                     b.Navigation("UserCollections");
@@ -588,6 +682,11 @@ namespace Persistencia.Migrations
             modelBuilder.Entity("Dominio.Database.Invoices", b =>
                 {
                     b.Navigation("InvoicesDetailsCollections");
+                });
+
+            modelBuilder.Entity("Dominio.Database.Permissions", b =>
+                {
+                    b.Navigation("PermissionsRolCollections");
                 });
 
             modelBuilder.Entity("Dominio.Database.Product_Category", b =>
@@ -600,6 +699,11 @@ namespace Persistencia.Migrations
                     b.Navigation("InvoiceDetailCollections");
 
                     b.Navigation("StockMovementsCollections");
+                });
+
+            modelBuilder.Entity("Dominio.Database.Rol", b =>
+                {
+                    b.Navigation("PermissionsCollections");
                 });
 
             modelBuilder.Entity("Dominio.Database.StockMovementType", b =>

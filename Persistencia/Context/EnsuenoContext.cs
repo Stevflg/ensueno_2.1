@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -124,6 +125,9 @@ namespace Persistencia.Context
                 entity.HasIndex(u => u.UserName).IsUnique();
                 entity.Property(u => u.IsActive).HasDefaultValue(true);
                 entity.Property(u => u.Date_Time).HasDefaultValue(DateTime.Now);
+                entity.HasOne(u => u.EmployeesNavigation).WithMany(e => e.UserCollections)
+                .HasForeignKey(u => u.UpdateBy).HasConstraintName("Fk_UpdatedBy_Users");
+                entity.Property(u => u.Update_date_time).HasDefaultValue(DateTime.Now);
             });
             modelBuilder.Entity<Sessions>(entity => {
                 entity.HasKey(se => se.SesionId).HasName("Pk_SessionId_Sessions");
@@ -131,6 +135,23 @@ namespace Persistencia.Context
                 entity.Property(se => se.Date_Time).HasDefaultValue(DateTime.Now);
                 entity.HasOne(se => se.UsersNavigation).WithMany(u => u.SessionsCollection)
                 .HasForeignKey(se => se.UserId).HasConstraintName("Fk_UserId_Sessions");
+            });
+            modelBuilder.Entity<Rol>(entity => {
+                entity.HasKey(r => r.RolId).HasName("Pk_RolId_Rol");
+                entity.Property(r => r.RolName).HasMaxLength(20);
+                entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
+                .HasForeignKey(r => r.EmployeeId).HasConstraintName("Fk_EmployeeId_Rol");
+            });
+            modelBuilder.Entity<Permissions>(entity => {
+                entity.HasKey(p => p.PermissionsId).HasName("Pk_PermissionsId_Permissions");
+                entity.Property(p => p.PermissionsName).HasMaxLength(20);
+            });
+            modelBuilder.Entity<PermissionsRol>(entity => {
+                entity.HasKey(pr => new {pr.PermissionsId,pr.RolId }).IsClustered(true).HasName("PK_PermissionsRol_PermissionsRol");
+                entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.PermissionsCollections)
+                .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_PermissionsId").OnDelete(DeleteBehavior.Cascade);
+                entity.HasOne(pr => pr.PermissionsNavigation).WithMany(p => p.PermissionsRolCollections)
+                .HasForeignKey(pr => pr.PermissionsId).HasConstraintName("Fk_PermissionsId_PermissionsId").OnDelete(DeleteBehavior.Cascade);
             });
             base.OnModelCreating(modelBuilder);
         }
@@ -145,6 +166,9 @@ namespace Persistencia.Context
         public virtual DbSet<Sessions> Sessions { get; set; }
         public virtual DbSet<StockMovementType> StockMovementTypes { get; set; }
         public virtual DbSet<StockMovement> StockMovement { get; set; }
+        public virtual DbSet<Rol> Rols { get; set; }
+        public virtual DbSet<Permissions> Permissions { get; set; }
+        public virtual DbSet<PermissionsRol> PermissionsRols { get; set; }
     }
   
 }

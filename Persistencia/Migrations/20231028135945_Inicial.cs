@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistencia.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +25,7 @@ namespace Persistencia.Migrations
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 391, DateTimeKind.Local).AddTicks(9873))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 584, DateTimeKind.Local).AddTicks(9141))
                 },
                 constraints: table =>
                 {
@@ -72,7 +72,7 @@ namespace Persistencia.Migrations
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 392, DateTimeKind.Local).AddTicks(7681))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 585, DateTimeKind.Local).AddTicks(9603))
                 },
                 constraints: table =>
                 {
@@ -98,7 +98,7 @@ namespace Persistencia.Migrations
                     SupplierEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 393, DateTimeKind.Local).AddTicks(5702))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 586, DateTimeKind.Local).AddTicks(9966))
                 },
                 constraints: table =>
                 {
@@ -121,7 +121,7 @@ namespace Persistencia.Migrations
                     UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Password = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(7852))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 594, DateTimeKind.Local).AddTicks(7536))
                 },
                 constraints: table =>
                 {
@@ -143,7 +143,7 @@ namespace Persistencia.Migrations
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 396, DateTimeKind.Local).AddTicks(74))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 590, DateTimeKind.Local).AddTicks(2353))
                 },
                 constraints: table =>
                 {
@@ -172,7 +172,7 @@ namespace Persistencia.Migrations
                     Unit_Price = table.Column<decimal>(type: "decimal(18,0)", nullable: false),
                     Image = table.Column<byte[]>(type: "varbinary", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 394, DateTimeKind.Local).AddTicks(6116)),
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 588, DateTimeKind.Local).AddTicks(3488)),
                     SuppliersSupplierId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -199,7 +199,7 @@ namespace Persistencia.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 27, 8, 13, 25, 398, DateTimeKind.Local).AddTicks(8934))
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 594, DateTimeKind.Local).AddTicks(9394))
                 },
                 constraints: table =>
                 {

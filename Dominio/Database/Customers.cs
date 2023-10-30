@@ -20,5 +20,10 @@ namespace Dominio.Database
         public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Invoices> InvoicesCollections { get; set; } = new List<Invoices>();
+        /// <summary>
+        /// ////
+        /// </summary>
+        public int UpdateBy { get; set; }
+        public DateTime Update_date_time { get; set; }
     }
 }

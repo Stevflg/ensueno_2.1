@@ -1,4 +1,5 @@
 ﻿using Dominio.Database;
+using Microsoft.EntityFrameworkCore;
 using Persistencia.Context;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,42 @@ namespace Aplicacion.Procedures
             }
             catch { return null; }
 
+        }
+
+        public string AddEmployee(Employees obj) { 
+            using(var db = new EnsuenoContext())
+            {
+                db.Employees.Add(obj);
+                var query = db.SaveChanges();
+                if (query > 0)
+                {
+                    return "Guardado Correctamente";
+                }
+                return "No se pudo guardar";
+            }
+        }
+        public string EditEmployee(Employees obj)
+        {
+            using( var db = new EnsuenoContext())
+            {
+                var employee = db.Employees.Find(obj.EmployeeId);
+                if (employee != null)
+                {
+                    employee.EmployeeName = obj.EmployeeName;
+                    employee.EmployeeLastName = obj.EmployeeLastName;
+                    employee.EmployeeIdentification = obj.EmployeeIdentification;
+                    employee.EmployeePhone = obj.EmployeePhone;
+                    employee.EmployeeAddress = obj.EmployeeAddress;
+                    employee.Email = obj.Email;
+                    db.Entry(employee).State = EntityState.Modified;
+                    var query = db.SaveChanges();
+                    if(query > 0)
+                    {
+                        return "Guardado Correctamente";
+                    }
+                }
+                return "No se pudo Guardar";
+            }
         }
 
     }
