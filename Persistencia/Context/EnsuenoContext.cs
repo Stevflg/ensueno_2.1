@@ -79,6 +79,7 @@ namespace Persistencia.Context
                 entity.Property(p => p.Date_Time).HasDefaultValue(DateTime.Now);
                 entity.HasOne(p => p.Product_CategoryNavigation).WithMany(pc => pc.ProductNavigation)
                 .HasForeignKey(p => p.ProductCategoryId).HasConstraintName("Fk_ProductCategoryId_Product");
+                entity.HasOne(p => p.)
             });
             modelBuilder.Entity<Product_Category>(entity => {
                 entity.HasKey(pc => pc.CategoryId).HasName("Pk_CategoryId_ProductCategory");
