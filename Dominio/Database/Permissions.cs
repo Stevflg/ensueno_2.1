@@ -11,5 +11,7 @@ namespace Dominio.Database
         public int? PermissionsId { get; set; }
         public string? PermissionsName { get; set; }
         public ICollection<PermissionsRol> PermissionsRolCollections { get; set; } = new List<PermissionsRol>();
+        public  int EmployeId { get; set; }
+        public Employees EmployeeNavigation { get; set; }
     }
 }

@@ -11,5 +11,7 @@ namespace Dominio.Database
         public int CategoryId { get; set; }
         public string CategoryDesc { get; set; }
         public ICollection<Products> ProductNavigation {get; set; } = new List<Products>();
+        public bool IsActive { get; set; }
+        public DateTime Date_Time { get; set; }
     }
 }

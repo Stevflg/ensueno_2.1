@@ -19,7 +19,7 @@ namespace Dominio.Database
         public ICollection<Invoice_Detail> InvoiceDetailCollections  { get; set; }=new List<Invoice_Detail>();
         public ICollection<StockMovement> StockMovementsCollections { get; set; }= new List<StockMovement>();
         public Product_Category? Product_CategoryNavigation { get; set; }
-      
+        public int EmployeeId { get; set; }
         public int UpdateBy { get; set; }
         public Employees? EmployeesNavigation { get; set; }
         public DateTime Update_date_time { get; set; }

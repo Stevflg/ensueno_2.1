@@ -16,10 +16,8 @@ namespace Dominio.Database
         public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Sessions> SessionsCollection { get; set; }= new List<Sessions>();
-        /// <summary>
-        /// 
-        /// </summary>
-
+        public int  RolId { get; set; }
+        public Rol? RolNavigation { get; set; }
         public int UpdateBy { get; set; }
         public DateTime Update_date_time { get; set; }
     }

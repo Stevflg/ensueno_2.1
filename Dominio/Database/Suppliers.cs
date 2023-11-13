@@ -17,7 +17,6 @@ namespace Dominio.Database
         public bool IsActive {  get; set; }
         public int CreatedBy { get; set; }
         public Employees? Employee { get; set; }
-        public ICollection<Products> Products { get; set; }=new List<Products>();
         public ICollection<StockMovement> StockMovementsCollections { get; set; } = new List<StockMovement>();
         public DateTime Date_Time { get; set; }
     }

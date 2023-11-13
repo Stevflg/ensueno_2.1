@@ -13,9 +13,8 @@ namespace Dominio.Database
         public int EmployeeId { get; set; }
         public  bool? IsActive { get; set; }
         public DateTime Date_Time { get; set; }
-        public int UpdateBy { get; set; }
-        public DateTime Update_date_time { get; set; }
         public Employees? EmployeeNavigation { get; set; }
         public ICollection<PermissionsRol> PermissionsCollections { get; set; } = new List<PermissionsRol>();
+        public ICollection<Users> UserCollections { get; set; } = new List<Users>();
     }
 }

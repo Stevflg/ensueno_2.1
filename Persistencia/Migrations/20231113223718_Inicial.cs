@@ -25,7 +25,7 @@ namespace Persistencia.Migrations
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 584, DateTimeKind.Local).AddTicks(9141))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
@@ -38,7 +38,9 @@ namespace Persistencia.Migrations
                 {
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryDesc = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    CategoryDesc = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,14 +74,58 @@ namespace Persistencia.Migrations
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 585, DateTimeKind.Local).AddTicks(9603))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    Update_date_time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("Pk_CustomerId_Customers", x => x.CustomerId);
                     table.ForeignKey(
-                        name: "Fk_CreatedBy_Customers",
-                        column: x => x.CreatedBy,
+                        name: "Fk_UpdatedBy_Customers",
+                        column: x => x.UpdateBy,
+                        principalTable: "Employees",
+                        principalColumn: "EmployeeId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Permissions",
+                columns: table => new
+                {
+                    PermissionsId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PermissionsName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    EmployeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("Pk_PermissionsId_Permissions", x => x.PermissionsId);
+                    table.ForeignKey(
+                        name: "Pk_EmployeId_Permissions",
+                        column: x => x.EmployeId,
+                        principalTable: "Employees",
+                        principalColumn: "EmployeeId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rols",
+                columns: table => new
+                {
+                    RolId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RolName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: true, defaultValue: true),
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("Pk_RolId_Rol", x => x.RolId);
+                    table.ForeignKey(
+                        name: "Fk_EmployeeId_Rol",
+                        column: x => x.EmployeeId,
                         principalTable: "Employees",
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
@@ -98,7 +144,7 @@ namespace Persistencia.Migrations
                     SupplierEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 586, DateTimeKind.Local).AddTicks(9966))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
@@ -112,23 +158,33 @@ namespace Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Products",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    ProdutId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Password = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductCategoryId = table.Column<int>(type: "int", nullable: false),
+                    Unit_Price = table.Column<decimal>(type: "decimal(18,0)", nullable: false),
+                    Image = table.Column<byte[]>(type: "varbinary", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 594, DateTimeKind.Local).AddTicks(7536))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    Update_date_time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("Pk_UserId_User", x => x.UserId);
+                    table.PrimaryKey("Pk_ProductId_Products", x => x.ProdutId);
                     table.ForeignKey(
-                        name: "Fk_EmployeeId_Users",
-                        column: x => x.EmployeeId,
+                        name: "Fk_ProductCategoryId_Product",
+                        column: x => x.ProductCategoryId,
+                        principalTable: "Product_Category",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "Fk_UpdatedBy_Products",
+                        column: x => x.UpdateBy,
                         principalTable: "Employees",
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
@@ -143,7 +199,7 @@ namespace Persistencia.Migrations
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 590, DateTimeKind.Local).AddTicks(2353))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
@@ -162,54 +218,91 @@ namespace Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "PermissionsRols",
                 columns: table => new
                 {
-                    ProdutId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ProductCategoryId = table.Column<int>(type: "int", nullable: false),
-                    Unit_Price = table.Column<decimal>(type: "decimal(18,0)", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary", nullable: true),
+                    PermissionsRolId = table.Column<int>(type: "int", nullable: false),
+                    RolId = table.Column<int>(type: "int", nullable: false),
+                    PermissionsId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 588, DateTimeKind.Local).AddTicks(3488)),
-                    SuppliersSupplierId = table.Column<int>(type: "int", nullable: true)
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("Pk_ProductId_Products", x => x.ProdutId);
+                    table.PrimaryKey("PK_PermissionsRol_PermissionsRol", x => new { x.PermissionsRolId, x.PermissionsId, x.RolId });
                     table.ForeignKey(
-                        name: "FK_Products_Suppliers_SuppliersSupplierId",
-                        column: x => x.SuppliersSupplierId,
-                        principalTable: "Suppliers",
-                        principalColumn: "SupplierId");
+                        name: "Fk_PermissionsId_PermissionsRolId",
+                        column: x => x.PermissionsId,
+                        principalTable: "Permissions",
+                        principalColumn: "PermissionsId");
                     table.ForeignKey(
-                        name: "Fk_ProductCategoryId_Product",
-                        column: x => x.ProductCategoryId,
-                        principalTable: "Product_Category",
-                        principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "Fk_RolId_PermissionsRolId",
+                        column: x => x.RolId,
+                        principalTable: "Rols",
+                        principalColumn: "RolId");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sessions",
+                name: "Users",
                 columns: table => new
                 {
-                    SesionId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Password = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    Date_Time = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 10, 28, 7, 59, 45, 594, DateTimeKind.Local).AddTicks(9394))
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    RolId = table.Column<int>(type: "int", nullable: false),
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    Update_date_time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("Pk_SessionId_Sessions", x => x.SesionId);
+                    table.PrimaryKey("Pk_UserId_User", x => x.UserId);
                     table.ForeignKey(
-                        name: "Fk_UserId_Sessions",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
+                        name: "Fk_UpdatedBy_Users",
+                        column: x => x.UpdateBy,
+                        principalTable: "Employees",
+                        principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "Pk_RolId_Users",
+                        column: x => x.RolId,
+                        principalTable: "Rols",
+                        principalColumn: "RolId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StockMovement",
+                columns: table => new
+                {
+                    MovementId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    TypeStockMovement = table.Column<int>(type: "int", nullable: false),
+                    Units = table.Column<int>(type: "int", nullable: false),
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("Pk_SupplierId_ProductId_StockMovements", x => x.MovementId);
+                    table.ForeignKey(
+                        name: "Fk_MovementId_StockMovement",
+                        column: x => x.TypeStockMovement,
+                        principalTable: "StockMovementTypes",
+                        principalColumn: "MovementId");
+                    table.ForeignKey(
+                        name: "Fk_ProductId_StockMovements",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProdutId");
+                    table.ForeignKey(
+                        name: "Pk_SupplierId_StockMovements",
+                        column: x => x.SupplierId,
+                        principalTable: "Suppliers",
+                        principalColumn: "SupplierId");
                 });
 
             migrationBuilder.CreateTable(
@@ -240,40 +333,24 @@ namespace Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StockMovement",
+                name: "Sessions",
                 columns: table => new
                 {
-                    MovementId = table.Column<int>(type: "int", nullable: false)
+                    SesionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    TypeStockMovement = table.Column<int>(type: "int", nullable: false),
-                    Units = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Date_Time = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("Pk_SupplierId_ProductId_StockMovements", x => x.MovementId);
+                    table.PrimaryKey("Pk_SessionId_Sessions", x => x.SesionId);
                     table.ForeignKey(
-                        name: "Fk_MovementId_StockMovement",
-                        column: x => x.TypeStockMovement,
-                        principalTable: "StockMovementTypes",
-                        principalColumn: "MovementId");
-                    table.ForeignKey(
-                        name: "Fk_ProductId_StockMovements",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "ProdutId");
-                    table.ForeignKey(
-                        name: "Pk_SupplierId_StockMovements",
-                        column: x => x.SupplierId,
-                        principalTable: "Suppliers",
-                        principalColumn: "SupplierId");
+                        name: "Fk_UserId_Sessions",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customers_CreatedBy",
-                table: "Customers",
-                column: "CreatedBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CustomerIdentification",
@@ -281,6 +358,11 @@ namespace Persistencia.Migrations
                 column: "CustomerIdentification",
                 unique: true,
                 filter: "[CustomerIdentification] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_UpdateBy",
+                table: "Customers",
+                column: "UpdateBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_EmployeeIdentification",
@@ -305,14 +387,41 @@ namespace Persistencia.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Permissions_EmployeId",
+                table: "Permissions",
+                column: "EmployeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PermissionsRols_PermissionsId",
+                table: "PermissionsRols",
+                column: "PermissionsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PermissionsRols_RolId",
+                table: "PermissionsRols",
+                column: "RolId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductCategoryId",
                 table: "Products",
                 column: "ProductCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_SuppliersSupplierId",
+                name: "IX_Products_ProductName",
                 table: "Products",
-                column: "SuppliersSupplierId");
+                column: "ProductName",
+                unique: true,
+                filter: "[ProductName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_UpdateBy",
+                table: "Products",
+                column: "UpdateBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rols_EmployeeId",
+                table: "Rols",
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Sessions_UserId",
@@ -347,9 +456,14 @@ namespace Persistencia.Migrations
                 filter: "[SupplierRUC] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_EmployeeId",
+                name: "IX_Users_RolId",
                 table: "Users",
-                column: "EmployeeId");
+                column: "RolId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_UpdateBy",
+                table: "Users",
+                column: "UpdateBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_UserName",
@@ -366,6 +480,9 @@ namespace Persistencia.Migrations
                 name: "Invoices_Detail");
 
             migrationBuilder.DropTable(
+                name: "PermissionsRols");
+
+            migrationBuilder.DropTable(
                 name: "Sessions");
 
             migrationBuilder.DropTable(
@@ -373,6 +490,9 @@ namespace Persistencia.Migrations
 
             migrationBuilder.DropTable(
                 name: "Invoices");
+
+            migrationBuilder.DropTable(
+                name: "Permissions");
 
             migrationBuilder.DropTable(
                 name: "Users");
@@ -384,10 +504,13 @@ namespace Persistencia.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
+                name: "Suppliers");
+
+            migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Suppliers");
+                name: "Rols");
 
             migrationBuilder.DropTable(
                 name: "Product_Category");

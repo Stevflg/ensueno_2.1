@@ -10,8 +10,7 @@ namespace Dominio.Database
     {
         public int SesionId { get; set; }
         public int UserId { get; set; }
-        public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
-        public virtual Users? UsersNavigation { get; set; }
+        public Users? UsersNavigation { get; set; }
     }
 }
