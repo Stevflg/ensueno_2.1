@@ -99,12 +99,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    TextBox_id.Text = DataGridView_clients.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    TextBox_id_card.Text = DataGridView_clients.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    TextBox_name.Text = DataGridView_clients.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    TextBox_last_name.Text = DataGridView_clients.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    TextBox_phone.Text = DataGridView_clients.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    TextBox_address.Text = DataGridView_clients.Rows[e.RowIndex].Cells[5].Value.ToString();                    
+                   
                 }
             }
             catch (Exception ex)

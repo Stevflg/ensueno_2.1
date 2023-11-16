@@ -35,6 +35,7 @@ namespace Persistencia.Context
                 entity.Property(e => e.EmployeeName).HasMaxLength(50);
                 entity.Property(e => e.EmployeeLastName).HasMaxLength(50);
                 entity.Property(e => e.EmployeeIdentification).HasMaxLength(14);
+                entity.Property(e => e.Image).HasColumnType("varbinary");
                 entity.HasIndex(e => e.EmployeeIdentification).IsUnique();
                 entity.Property(e => e.EmployeePhone).HasMaxLength(8);
                 entity.Property(e => e.EmployeeAddress).HasMaxLength(100);
@@ -172,7 +173,18 @@ namespace Persistencia.Context
                 entity.HasKey(p => p.PermissionsId).HasName("Pk_PermissionsId_Permissions");
                 entity.Property(p => p.PermissionsName).HasMaxLength(20);
                 entity.HasOne(p => p.EmployeeNavigation).WithMany(e => e.PermissionsCollections)
-                .HasForeignKey(p => p.EmployeId).HasConstraintName("Pk_EmployeId_Permissions");
+                .HasForeignKey(p => p.UpdatedBy).HasConstraintName("Pk_EmployeId_Permissions");
+            });
+            modelBuilder.Entity<Procedures>(entity => {
+                entity.HasKey(p => p.ProcedureId).HasName("Pk_ProcedureId_Procedures");
+                entity.Property(p => p.ProcedureName).HasMaxLength(10);
+            });
+            modelBuilder.Entity<ProcedureRols>(entity => {
+                entity.HasKey(pr => pr.ProcedureId).HasName("Pk_ProcedureId_ProcedureRols");
+                entity.HasOne(pr => pr.ProcedureNavigation).WithMany(p => p.ProceduresRolsCollections)
+                .HasForeignKey(pr => pr.ProcedureId).HasConstraintName("fk_procedureId_ProcedureRols");
+                entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.ProceduresRolsCollections)
+                .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_procedureRols");
             });
             modelBuilder.Entity<PermissionsRol>(entity => {
                 entity.HasKey(pr => new{ pr.PermissionsRolId,pr.PermissionsId,pr.RolId }).HasName("PK_PermissionsRol_PermissionsRol");
@@ -200,5 +212,8 @@ namespace Persistencia.Context
         public virtual DbSet<Rol> Rols { get; set; }
         public virtual DbSet<Permissions> Permissions { get; set; }
         public virtual DbSet<PermissionsRol> PermissionsRols { get; set; }
+        public virtual DbSet<Procedures> Procedures { get; set; }
+        public virtual DbSet<ProcedureRols> ProcedureRols { get; set; }
+
     }
 }

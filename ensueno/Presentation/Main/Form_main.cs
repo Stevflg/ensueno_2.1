@@ -49,7 +49,7 @@ namespace ensueno.Presentation.Main
         {
             Button_show.Visible = false;            
             Slide_panel.Visible = false;
-            Slide_panel.Width = 175;
+            Slide_panel.Width = 200;
             Transition_slide_panel_show.ShowSync(Slide_panel);
             Button_hide.Visible = true;
         }

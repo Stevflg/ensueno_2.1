@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Procedures
+namespace Aplicacion.ProceduresDB
 {
     public class ProcUsers
     {
@@ -60,7 +60,7 @@ namespace Aplicacion.Procedures
                     return "Guardado Correctamente";
                 }
             }
-            catch (Exception ex) { return ex.Message; }
+            catch (Exception ex) { return ex.InnerException.Message; }
         }
     }
 }

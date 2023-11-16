@@ -43,9 +43,7 @@ namespace ensueno.Presentation.Main
             {
                 this.Close();
             }
-            catch(Exception)
-            {
-            }
+            catch(Exception) { }
         }
     }
 }

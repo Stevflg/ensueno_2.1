@@ -118,10 +118,7 @@ namespace ensueno.Presentation.Main
             {
                 TextBox_client_id.Text = ComboBox1.SelectedValue.ToString();
             }
-            catch (Exception)
-            {
-
-            }
+            catch  { }
         }
 
         private void Button_update_Click(object sender, EventArgs e)

@@ -16,15 +16,16 @@ namespace Dominio.Database
         public string? EmployeePhone { get; set; }
         public string? EmployeeAddress { get; set; }
         public string? Email { get; set; }
-        public int CreatedBy { get; set; }
+        public byte[]? Image { get; set; }
+        public int? CreatedBy { get; set; }
         public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Users> UserCollections { get; set; }=new List<Users>();
         public ICollection<Invoices> InvoiceCollectionsEmpl { get; set; }= new List<Invoices>();
-        public ICollection<Customers>? CustomersNavigation { get; set; }=new List<Customers>();
-        public ICollection<Suppliers>? SuppliersNavigation { get; set; }=new List<Suppliers>();
-        public ICollection<Permissions>? PermissionsCollections { get; set; } = new List<Permissions>();
-        public ICollection<Products>? ProductsCollections { get; set; }=new List<Products>();
+        public ICollection<Customers> CustomersNavigation { get; set; }=new List<Customers>();
+        public ICollection<Suppliers> SuppliersNavigation { get; set; }=new List<Suppliers>();
+        public ICollection<Permissions> PermissionsCollections { get; set; } = new List<Permissions>();
+        public ICollection<Products> ProductsCollections { get; set; }=new List<Products>();
         public ICollection<Rol> RolCollections { get; set; } = new List<Rol>();
     }
 }

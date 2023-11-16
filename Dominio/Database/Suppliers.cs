@@ -15,7 +15,7 @@ namespace Dominio.Database
         public string? SupplierPhone { get; set;}
         public string? SupplierEmail { get; set;}
         public bool IsActive {  get; set; }
-        public int CreatedBy { get; set; }
+        public int? CreatedBy { get; set; }
         public Employees? Employee { get; set; }
         public ICollection<StockMovement> StockMovementsCollections { get; set; } = new List<StockMovement>();
         public DateTime Date_Time { get; set; }
