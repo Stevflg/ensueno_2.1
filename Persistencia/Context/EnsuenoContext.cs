@@ -26,6 +26,10 @@ namespace Persistencia.Context
             {
                 optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["Ensueno"].ConnectionString,d => d.MigrationsAssembly("Persistencia"));
             }
+            else
+            {
+                //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings[])
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

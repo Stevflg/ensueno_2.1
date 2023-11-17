@@ -68,6 +68,7 @@ namespace Aplicacion.Initial
             using(var db =new EnsuenoContext())
             {
                List<Permissions> lp = new();
+
                 lp.Add(new Permissions {PermissionsName = "Form Main"});
                 db.AddRange(lp);
                 db.SaveChanges();

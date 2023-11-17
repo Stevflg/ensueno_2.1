@@ -31,7 +31,7 @@ namespace ensueno.Presentation.Main
             InitializeComponent();
             Apply_dark_mode();
             this.Select();
-            Client_autocomplete();
+           // Client_autocomplete();
          }
         
         private void Apply_dark_mode()

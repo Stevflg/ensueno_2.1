@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ensueno.Sql
 {
-    internal class Connection
+    public class Connection
     {        
         public bool Connect()
         {
@@ -47,7 +47,7 @@ namespace ensueno.Sql
             }
         }
 
-        public SqlConnection Get_connection()
+        public static SqlConnection Get_connection()
         {
             return Properties.Settings.Default.connection;
         }
