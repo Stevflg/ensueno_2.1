@@ -1,6 +1,6 @@
 <div align="center">
 
-# Perfumería Ensueño (.NET Framework 4.8.1)
+# Perfumería Ensueño (.NET Framework 6.0)
 
 Recursos del proyecto: [Enlace](https://bit.ly/44aRtPH)
 
