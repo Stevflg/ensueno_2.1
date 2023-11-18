@@ -184,14 +184,14 @@ namespace Persistencia.Context
                 entity.Property(p => p.ProcedureName).HasMaxLength(10);
             });
             modelBuilder.Entity<ProcedureRols>(entity => {
-                entity.HasKey(pr => pr.ProcedureId).HasName("Pk_ProcedureId_ProcedureRols");
+                entity.HasKey(pr => pr.ProceduresRolsId).HasName("Pk_ProcedureId_ProcedureRols");
                 entity.HasOne(pr => pr.ProcedureNavigation).WithMany(p => p.ProceduresRolsCollections)
                 .HasForeignKey(pr => pr.ProcedureId).HasConstraintName("fk_procedureId_ProcedureRols");
                 entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.ProceduresRolsCollections)
                 .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_procedureRols");
             });
             modelBuilder.Entity<PermissionsRol>(entity => {
-                entity.HasKey(pr => new{ pr.PermissionsRolId,pr.PermissionsId,pr.RolId }).HasName("PK_PermissionsRol_PermissionsRol");
+                entity.HasKey(pr => pr.PermissionsRolId).HasName("PK_PermissionsRol_PermissionsRol");
                 entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.PermissionsCollections)
                 .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(pr => pr.PermissionsNavigation).WithMany(p => p.PermissionsRolCollections)
