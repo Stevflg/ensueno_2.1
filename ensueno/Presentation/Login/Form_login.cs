@@ -112,7 +112,7 @@ namespace ensueno.Presentation.Login
                     Clear_textboxes();
                     this.Hide();
                     Show_form_welcome(user.UserName);
-                    Show_form_main();
+                    Show_form_main(user.UserName);
                     this.Close();
                 }
                 else
@@ -144,9 +144,9 @@ namespace ensueno.Presentation.Login
             System.Diagnostics.Process.Start("https://linktr.ee/perfumeria.ensueno");
         }
 
-        private void Show_form_main()
+        private void Show_form_main(string username)
         {
-            fm = new Form_main();
+            fm = new Form_main(username);
             fm.ShowDialog();
         }
 

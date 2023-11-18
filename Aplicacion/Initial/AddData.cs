@@ -80,9 +80,9 @@ namespace Aplicacion.Initial
             {
                 Employees employees = new Employees { 
                     EmployeeName= "Admin",
-                    EmployeeLastName=" ",
-                    EmployeeIdentification= " ",
-                    EmployeePhone= " ",
+                    EmployeeLastName="Database",
+                    EmployeeIdentification= "00000",
+                    EmployeePhone= "88888888",
                     EmployeeAddress= "Administrator",
                     Email = " ",
                     CreatedBy = 0

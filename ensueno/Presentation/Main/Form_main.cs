@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aplicacion.ProceduresDB;
+using Dominio.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +14,16 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_main : Form
     {
-        public Form_main()
+        private readonly ProcUsers procUsers = new ProcUsers();
+        private string username = "";
+        public Form_main(string username)
         {
             InitializeComponent();
             Apply_dark_mode();
-            Admin();
+            Admin(username);
             this.Select();
         }
+        
         private void Apply_dark_mode()
         {
             if (Properties.Settings.Default.dark_mode)
@@ -30,24 +35,15 @@ namespace ensueno.Presentation.Main
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
         }
-        private void Admin()
-        {            
-            if (Properties.Settings.Default.admin)
-            {
-                
-                Label_user_role.Text = $"Rol de usuario: Administrador ({Properties.Settings.Default.active_user})";
-            }
-            else
-            {
-                Separator_slide_panel.Visible = false;
-                Button_employees.Visible = false;
-                Label_user_role.Text = $"Rol de usuario: Empleado ({Properties.Settings.Default.active_user})";
-            }
+        private void Admin(string username)
+        {
+            Users u = new Users {UserName= username};
+            Label_user_role.Text = procUsers.UserName(u);
         }
 
         private void Button_show_Click(object sender, EventArgs e)
         {
-            Button_show.Visible = false;            
+            Button_show.Visible = false;
             Slide_panel.Visible = false;
             Slide_panel.Width = 211;
             Transition_slide_panel_show.ShowSync(Slide_panel);
@@ -56,7 +52,7 @@ namespace ensueno.Presentation.Main
 
         private void Button_hide_Click(object sender, EventArgs e)
         {
-            Button_hide.Visible = false;            
+            Button_hide.Visible = false;
             Slide_panel.Visible = false;
             Slide_panel.Width = 50;
             Transition_slide_panel_hide.ShowSync(Slide_panel);
@@ -71,7 +67,7 @@ namespace ensueno.Presentation.Main
             }
             Form fp = form_panel as Form;
             fp.TopLevel = false;
-            fp.Dock = DockStyle.Fill;            
+            fp.Dock = DockStyle.Fill;
             Container_panel.Controls.Add(fp);
             Container_panel.Tag = fp;
             fp.Show();
@@ -97,5 +93,6 @@ namespace ensueno.Presentation.Main
             Label_form_selected.Text = "Facturas";
             Open_form_panel(new Form_invoice());
         }
+
     }
 }
