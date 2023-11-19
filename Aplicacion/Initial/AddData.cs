@@ -67,9 +67,9 @@ namespace Aplicacion.Initial
         {
             using(var db =new EnsuenoContext())
             {
-               List<Permissions> lp = new();
+               List<Formularios> lp = new();
 
-                lp.Add(new Permissions {PermissionsName = "Form Main"});
+                lp.Add(new Formularios {Name = "Form Main"});
                 db.AddRange(lp);
                 db.SaveChanges();
             }
@@ -80,7 +80,7 @@ namespace Aplicacion.Initial
             {
                 Employees employees = new Employees { 
                     EmployeeName= "Admin",
-                    EmployeeLastName="Database",
+                    EmployeeLastName="System",
                     EmployeeIdentification= "00000",
                     EmployeePhone= "88888888",
                     EmployeeAddress= "Administrator",
@@ -119,12 +119,12 @@ namespace Aplicacion.Initial
         {
             using(var db =new EnsuenoContext())
             {
-                var per = (from p in db.Permissions
-                           select new Permissions {PermissionsId = p.PermissionsId}).ToList();
-                List<PermissionsRol> PR= new List<PermissionsRol>();
+                var per = (from p in db.Forms
+                           select new Formularios {FormId = p.FormId}).ToList();
+                List<FormRol> PR= new List<FormRol>();
                 foreach(var p in per)
                 {
-                    PR.Add(new PermissionsRol {RolId=1,PermissionsId=p.PermissionsId});
+                    PR.Add(new FormRol {RolId=1,PermissionsId=p.FormId});
                 }
                 db.AddRange(PR);
                 db.SaveChanges();

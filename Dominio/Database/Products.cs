@@ -21,7 +21,7 @@ namespace Dominio.Database
         public Product_Category? Product_CategoryNavigation { get; set; }
         public int? EmployeeId { get; set; }
         public int? UpdateBy { get; set; }
-        public Employees EmployeesNavigation { get; set; }
+        public Employees? EmployeesNavigation { get; set; }
         public DateTime? Update_date_time { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace Dominio.Database
         public string? UserName { get; set; }
         public byte[]? Password { get; set; }
         public bool IsActive { get; set; }
+        public int CreatedBy { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Sessions> SessionsCollection { get; set; } = new List<Sessions>();
         public int  RolId { get; set; }

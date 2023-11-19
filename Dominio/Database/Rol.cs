@@ -11,12 +11,15 @@ namespace Dominio.Database
         public int RolId { get; set; }
         public string? RolName { get; set; }
         public int? EmployeeId { get; set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
         public Employees? EmployeeNavigation { get; set; }
-        public ICollection<PermissionsRol> PermissionsCollections { get; set; } = new List<PermissionsRol>();
+        public ICollection<FormRol> FormRolCollections { get; set; } = new List<FormRol>();
         public ICollection<Users> UserCollections { get; set; } = new List<Users>();
         public ICollection<ProcedureRols> ProceduresRolsCollections { get; set; } = new List<ProcedureRols>();
+        public int CreatedBy { get; set; }
+        public int? UpdatedBy { get; set;}
+        public DateTime? Date_Updated { get; set; }
 
     }
 }

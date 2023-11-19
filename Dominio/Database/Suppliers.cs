@@ -19,5 +19,7 @@ namespace Dominio.Database
         public Employees? Employee { get; set; }
         public ICollection<StockMovement> StockMovementsCollections { get; set; } = new List<StockMovement>();
         public DateTime Date_Time { get; set; }
+        public int? UpdateBy { get; set; }
+        public DateTime? Date_Updated { get; set; }
     }
 }

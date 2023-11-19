@@ -103,7 +103,14 @@ namespace Persistencia.Context
             });
             modelBuilder.Entity<Product_Category>(entity => {
                 entity.HasKey(pc => pc.CategoryId).HasName("Pk_CategoryId_ProductCategory");
-                entity.Property( pc => pc.CategoryDesc).HasMaxLength(50);
+                entity.Property( pc => pc.CategoryName).HasMaxLength(50);
+                entity.Property(pc => pc.IsActive).HasDefaultValue(true);
+                entity.Property(pc => pc.Date_Time).HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+                entity.HasOne(pc => pc.EmployeeNavigation).WithMany(e => e.Product_CategoriesCollections)
+                .HasForeignKey(pc => pc.CreatedBy).HasConstraintName("Fk_CreaatedBy_ProductCategory");
+                entity.HasOne(pc => pc.EmployeeNavigation).WithMany(e => e.Product_CategoriesCollections)
+                .HasForeignKey(pc => pc.UpdatedBy).HasConstraintName("Fk_UpdateBy_ProductCategory");
             });
             modelBuilder.Entity<Invoices>(entity =>
             {
@@ -152,8 +159,6 @@ namespace Persistencia.Context
                 .HasColumnType("datetime");
                 entity.HasOne(u => u.EmployeesNavigation).WithMany(e => e.UserCollections)
                 .HasForeignKey(u => u.UpdateBy).HasConstraintName("Fk_UpdatedBy_Users");
-                entity.Property(u => u.Update_date_time).HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
                 entity.HasOne(u => u.RolNavigation).WithMany(r => r.UserCollections)
                 .HasForeignKey(u => u.RolId).HasConstraintName("Pk_RolId_Users").OnDelete(DeleteBehavior.NoAction);
             });
@@ -169,14 +174,18 @@ namespace Persistencia.Context
                 entity.Property(r => r.RolName).HasMaxLength(20);
                 entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
                 .HasForeignKey(r => r.EmployeeId).HasConstraintName("Fk_EmployeeId_Rol");
+                entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
+                .HasForeignKey(r =>  r.CreatedBy).HasConstraintName("Fk_CreatedBy_Rol");
+                entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
+                .HasForeignKey(r => r.UpdatedBy).HasConstraintName("Fk_UpdateBy_Rol");
                 entity.Property(r => r.IsActive).HasDefaultValue(true);
                 entity.Property(r => r.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             });
-            modelBuilder.Entity<Permissions>(entity => {
-                entity.HasKey(p => p.PermissionsId).HasName("Pk_PermissionsId_Permissions");
-                entity.Property(p => p.PermissionsName).HasMaxLength(20);
-                entity.HasOne(p => p.EmployeeNavigation).WithMany(e => e.PermissionsCollections)
+            modelBuilder.Entity<Formularios>(entity => {
+                entity.HasKey(p => p.FormId).HasName("Pk_PermissionsId_Permissions");
+                entity.Property(p => p.Name).HasMaxLength(20);
+                entity.HasOne(p => p.EmployeeNavigation).WithMany(e => e.FormsCollections)
                 .HasForeignKey(p => p.UpdatedBy).HasConstraintName("Pk_EmployeId_Permissions");
             });
             modelBuilder.Entity<Procedures>(entity => {
@@ -189,16 +198,23 @@ namespace Persistencia.Context
                 .HasForeignKey(pr => pr.ProcedureId).HasConstraintName("fk_procedureId_ProcedureRols");
                 entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.ProceduresRolsCollections)
                 .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_procedureRols");
+                entity.Property(pr => pr.IsActive).HasDefaultValue(true);
+                entity.Property(pr => pr.Date_Time).HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             });
-            modelBuilder.Entity<PermissionsRol>(entity => {
-                entity.HasKey(pr => pr.PermissionsRolId).HasName("PK_PermissionsRol_PermissionsRol");
-                entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.PermissionsCollections)
+            modelBuilder.Entity<FormRol>(entity => {
+                entity.HasKey(pr => pr.RolId).HasName("PK_PermissionsRol_PermissionsRol");
+                entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.FormRolCollections)
                 .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(pr => pr.PermissionsNavigation).WithMany(p => p.PermissionsRolCollections)
+                entity.HasOne(pr => pr.FormsNavigation).WithMany(p => p.FormRolCollections)
                 .HasForeignKey(pr => pr.PermissionsId).HasConstraintName("Fk_PermissionsId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
                 entity.Property(pr => pr.IsActive).HasDefaultValue(true);
                 entity.Property(pr => pr.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+                entity.HasOne(pr => pr.EmployeeNavigation).WithMany(e => e.FormRolCollectios)
+                .HasForeignKey(pr =>  pr.CreatedBy ).HasConstraintName("FkCreatedBy_FormRol");
+                entity.HasOne(pr => pr.EmployeeNavigation).WithMany(e => e.FormRolCollectios)
+                .HasForeignKey(pr => pr.UpdatedBy).HasConstraintName("Fk_UpdateBy_FormRol");
             });
             base.OnModelCreating(modelBuilder);
         }
@@ -214,8 +230,8 @@ namespace Persistencia.Context
         public virtual DbSet<StockMovementType> StockMovementTypes { get; set; }
         public virtual DbSet<StockMovement> StockMovement { get; set; }
         public virtual DbSet<Rol> Rols { get; set; }
-        public virtual DbSet<Permissions> Permissions { get; set; }
-        public virtual DbSet<PermissionsRol> PermissionsRols { get; set; }
+        public virtual DbSet<Formularios> Forms { get; set; }
+        public virtual DbSet<FormRol> FormRols { get; set; }
         public virtual DbSet<Procedures> Procedures { get; set; }
         public virtual DbSet<ProcedureRols> ProcedureRols { get; set; }
 

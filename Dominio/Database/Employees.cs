@@ -20,12 +20,17 @@ namespace Dominio.Database
         public int? CreatedBy { get; set; }
         public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
+        public int? UpdatedBy { get; set; }
+        public DateTime? Date_Updated { get; set; }
         public ICollection<Users> UserCollections { get; set; }=new List<Users>();
         public ICollection<Invoices> InvoiceCollectionsEmpl { get; set; }= new List<Invoices>();
         public ICollection<Customers> CustomersNavigation { get; set; }=new List<Customers>();
         public ICollection<Suppliers> SuppliersNavigation { get; set; }=new List<Suppliers>();
-        public ICollection<Permissions> PermissionsCollections { get; set; } = new List<Permissions>();
+        public ICollection<Formularios> FormsCollections { get; set; } = new List<Formularios>();
         public ICollection<Products> ProductsCollections { get; set; }=new List<Products>();
         public ICollection<Rol> RolCollections { get; set; } = new List<Rol>();
+        public ICollection<Product_Category> Product_CategoriesCollections { get; set; } = new List<Product_Category>();
+        public ICollection<FormRol> FormRolCollectios { get; set; } = new List<FormRol>();
+        public  ICollection<ProcedureRols> ProcedureRolCollections { get; set; } = new List<ProcedureRols>();
     }
 }
