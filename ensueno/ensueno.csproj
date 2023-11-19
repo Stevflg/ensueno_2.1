@@ -52,12 +52,6 @@
     <Content Include="Resources\Main\left_arrow.png" />
     <Content Include="Resources\Main\products.png" />
     <Content Include="Resources\Main\right_arrow.png" />
-    <Content Include="Sql\Querys\ensueno_clients.sql" />
-    <Content Include="Sql\Querys\ensueno_employees.sql" />
-    <Content Include="Sql\Querys\ensueno_invoices.sql" />
-    <Content Include="Sql\Querys\ensueno_invoice_detail.sql" />
-    <Content Include="Sql\Querys\ensueno_products.sql" />
-    <Content Include="Sql\Querys\invoice_report.sql" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />

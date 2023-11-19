@@ -23,7 +23,7 @@ namespace ensueno.Presentation.Main
             Admin(username);
             this.Select();
         }
-        
+
         private void Apply_dark_mode()
         {
             if (Properties.Settings.Default.dark_mode)
@@ -37,7 +37,7 @@ namespace ensueno.Presentation.Main
         }
         private void Admin(string username)
         {
-            Users u = new Users {UserName= username};
+            Users u = new Users { UserName = username };
             Label_user_role.Text = procUsers.UserName(u);
         }
 
