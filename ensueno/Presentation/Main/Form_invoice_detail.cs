@@ -1,6 +1,5 @@
 ﻿using ensueno.Presentation.Login;
 using ensueno.Presentation.Validations;
-using ensueno.Sql.Stored_procedures;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -165,7 +164,7 @@ namespace ensueno.Presentation.Main
             TextBox_Sub_Total.Clear();
             TextBox_IVA.Clear();
             TextBox_total.Clear();
-            TextBox_invoice_id.Text = Convert.ToString(Program.Values.invoice_id);
+            //TextBox_invoice_id.Text = Convert.ToString(Program.Values.invoice_id);
         }
         private void DataGridView_invoice_detail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -248,7 +247,7 @@ namespace ensueno.Presentation.Main
 
         private void Button_return_Click(object sender, EventArgs e)
         {
-            Read_invoice_detail(Program.Values.invoice_id);
+          //  Read_invoice_detail(Program.Values.invoice_id);
             Button_agregar_producto.Visible = true;
             Button_report.Visible = true;
             Button_update.Visible = true;
@@ -288,7 +287,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
             }
             catch (Exception ex)
             {

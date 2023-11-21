@@ -39,7 +39,7 @@ namespace Persistencia.Context
                 entity.Property(e => e.EmployeeName).HasMaxLength(50);
                 entity.Property(e => e.EmployeeLastName).HasMaxLength(50);
                 entity.Property(e => e.EmployeeIdentification).HasMaxLength(14);
-                entity.Property(e => e.Image).HasColumnType("varbinary");
+                entity.Property(e => e.Image).HasColumnType("varbinary(max)");
                 entity.HasIndex(e => e.EmployeeIdentification).IsUnique();
                 entity.Property(e => e.EmployeePhone).HasMaxLength(8);
                 entity.Property(e => e.EmployeeAddress).HasMaxLength(100);

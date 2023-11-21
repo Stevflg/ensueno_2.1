@@ -60,19 +60,19 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                var ListEmployees = pEmployees.GetEmployeeList();
-                ComboBoxEmployees.DataSource = ListEmployees;
-                ComboBoxEmployees.ValueMember = "EmployeeId";
-                ComboBoxEmployees.DisplayMember = "EmployeeName";
+            //    var ListEmployees = pEmployees.GetEmployeeList();
+            //    ComboBoxEmployees.DataSource = ListEmployees;
+            //    ComboBoxEmployees.ValueMember = "EmployeeId";
+            //    ComboBoxEmployees.DisplayMember = "EmployeeName";
 
-                AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
-                for (int i = 0; i < ListEmployees.Count; i++)
-                {
-                    lst.Add(ListEmployees[i].EmployeeName);
-                }
-                ComboBoxEmployees.AutoCompleteCustomSource = lst;
-                ComboBoxEmployees.AutoCompleteMode = AutoCompleteMode.Suggest;
-                ComboBoxEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //    AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
+            //    for (int i = 0; i < ListEmployees.Count; i++)
+            //    {
+            //        lst.Add(ListEmployees[i].EmployeeName);
+            //    }
+            //    ComboBoxEmployees.AutoCompleteCustomSource = lst;
+            //    ComboBoxEmployees.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //    ComboBoxEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
             catch { }
         }

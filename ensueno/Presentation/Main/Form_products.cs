@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using ensueno.Sql.Stored_procedures;
 using System.Data.SqlClient;
 using Guna.UI2.WinForms;
 using ensueno.Presentation.Validations;
@@ -24,23 +23,11 @@ namespace ensueno.Presentation.Main
         private Form_products_history fh;
         readonly Values val=new Values();
         private bool validate_image_location;
-        public Form_products()
+        public Form_products(Color color)
         {
             InitializeComponent();
-            Apply_dark_mode();
+            this.BackColor = color;
         }
-        private void Apply_dark_mode()
-        {
-            if (Properties.Settings.Default.dark_mode)
-            {
-                this.BackColor = Color.FromArgb(31, 31, 31);
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(238, 238, 238);
-            }
-        }
-
         private void Button_add_image_Click(object sender, EventArgs e)
         {
             OpenFileDialog file_dialog = new OpenFileDialog

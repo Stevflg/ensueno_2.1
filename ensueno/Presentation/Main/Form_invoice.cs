@@ -1,6 +1,5 @@
 ﻿using ensueno.Presentation.Login;
 using ensueno.Presentation.Validations;
-using ensueno.Sql.Stored_procedures;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,13 +22,12 @@ namespace ensueno.Presentation.Main
     {
         private Form_invoice_history fh;
         private DataTable dt = new DataTable();
-        private DataRow dr;
         readonly Values val = new Values();   
 
-        public Form_invoice()
+        public Form_invoice(Color color)
         {
             InitializeComponent();
-            Apply_dark_mode();
+            this.BackColor = color;
             this.Select();
            // Client_autocomplete();
          }
@@ -50,7 +48,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                    Program.Values.invoice_id =0;
+                    //Program.Values.invoice_id =0;
                     fh = new Form_invoice_history();
                     fh.ShowDialog();
                     Read();
@@ -65,7 +63,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
             }
             catch(Exception ex)
             {
@@ -171,7 +169,7 @@ namespace ensueno.Presentation.Main
                     TextBox_invoice_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[0].Value.ToString();
                     TextBox_client_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[3].Value.ToString();
                     ComboBox1.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    Program.Values.employee_name= DataGridView_invoices.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    //Program.Values.employee_name= DataGridView_invoices.Rows[e.RowIndex].Cells[2].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -244,8 +242,8 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
-                    Program.Values.client_name = ComboBox1.Text;
+                    //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                    //Program.Values.client_name = ComboBox1.Text;
                     Form_invoice_detail fid = new Form_invoice_detail();
                     fid.ShowDialog();
                     Read();

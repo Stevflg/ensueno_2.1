@@ -1,4 +1,5 @@
 ﻿using Dominio.Database;
+using Dominio.DTO;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Context;
 using System;
@@ -12,24 +13,63 @@ namespace Aplicacion.ProceduresDB
 {
     public class ProcEmployees
     {
-        public List<Employees> GetEmployeeList()
+        public async Task<List<EmployeeDTO>> GetEmployeeList()
         {
             try
             {
                 using(var db =new EnsuenoContext())
                 {
-                    var listempl = (from e in db.Employees
+                    var listempl = await(from e in db.Employees
                                     where e.IsActive == true
-                                    select new Employees {
-                                    EmployeeId = e.EmployeeId,
-                                    EmployeeName = e.EmployeeName+" "+e.EmployeeLastName,
-                                    }).ToList();
+                                    select new EmployeeDTO {
+                                    Id=e.EmployeeId,
+                                    Nombres=e.EmployeeName,
+                                    Apellidos=e.EmployeeLastName,
+                                    Cedula=e.EmployeeIdentification,
+                                    Telefono=e.EmployeePhone,
+                                    Direccion=e.EmployeeAddress,
+                                    Correo=e.Email,
+                                    Creado = e.Date_Time
+                                    }).ToListAsync();
                     return listempl;
                 }
             }
             catch { return null; }
         }
-        public Employees GetEmployeeByUserName(Users obj) {
+
+        public List<EmployeeDTO> SearchEmployee(Employees obj)
+        {
+            try
+            {
+                using (var db = new EnsuenoContext())
+                {
+                    var listempl = (from e in db.Employees
+                                          where e.IsActive == true && 
+                                          
+                                          e.EmployeeName.Contains(obj.EmployeeName)||
+                                          e.EmployeeLastName.Contains(obj.EmployeeLastName)||
+                                          e.EmployeeIdentification.Contains(obj.EmployeeIdentification) ||
+                                          e.EmployeePhone.Contains(obj.EmployeePhone) ||
+                                          e.EmployeeAddress.Contains(obj.EmployeeAddress) ||
+                                          e.Email.Contains(obj.Email)
+                                          select new EmployeeDTO
+                                          {
+                                              Id = e.EmployeeId,
+                                              Nombres = e.EmployeeName,
+                                              Apellidos = e.EmployeeLastName,
+                                              Cedula = e.EmployeeIdentification,
+                                              Telefono = e.EmployeePhone,
+                                              Direccion = e.EmployeeAddress,
+                                              Correo = e.Email,
+                                              Creado = e.Date_Time
+                                          }).ToList();
+                    return listempl;
+                }
+            }
+            catch { return null; }
+        }
+
+        public Employees GetEmployee(Users obj) {
             try
             {
                 using (var db = new EnsuenoContext())
@@ -43,11 +83,11 @@ namespace Aplicacion.ProceduresDB
 
         }
 
-        public string AddEmployee(Employees obj) { 
+        public async Task<string> AddEmployee(Employees obj) { 
             using(var db = new EnsuenoContext())
             {
                 db.Employees.Add(obj);
-                var query = db.SaveChanges();
+                var query =await db.SaveChangesAsync();
                 if (query > 0)
                 {
                     return "Guardado Correctamente";

@@ -1,5 +1,4 @@
-﻿using ensueno.Sql.Stored_procedures;
-using Guna.UI2.WinForms;
+﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,21 +17,10 @@ namespace ensueno.Presentation.Main
     {
         readonly Values val=new Values();
         private Form_clients_history fh;
-        public Form_clients()
+        public Form_clients(Color color)
         {
             InitializeComponent();
-            Apply_dark_mode();
-        }
-        private void Apply_dark_mode()
-        {
-            if (Properties.Settings.Default.dark_mode)
-            {
-                this.BackColor = Color.FromArgb(31, 31, 31);
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(238, 238, 238);
-            }
+            this.BackColor = color;
         }
 
         private void Form_clients_Load(object sender, EventArgs e)

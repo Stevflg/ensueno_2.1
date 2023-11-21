@@ -1,6 +1,6 @@
 ﻿namespace ensueno.Presentation.Main
 {
-    partial class FormInventories
+    partial class Form_Inventories
     {
         /// <summary>
         /// Required designer variable.

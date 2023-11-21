@@ -3,78 +3,151 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion.ProceduresDB;
+using Dominio.Database;
 using ensueno.Presentation.Validations;
-using ensueno.Sql.Stored_procedures;
 using Guna.UI2.WinForms;
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
+        private readonly ProcEmployees procEmpl = new ProcEmployees();
+        private Employees employe;
         readonly Values val = new Values();
-        private Form_employees_history fh;
-        public Form_employees()
+        public Form_employees(Color color)
         {
             InitializeComponent();
-            Apply_dark_mode();
+            this.BackColor = color;
         }
-        private void Apply_dark_mode()
+        #region Validaciones
+        private void ValidacionesText()
         {
-            if (Properties.Settings.Default.dark_mode)
+            val.empty_text(TextBox_id);
+            val.empty_text(TextBox_last_name);
+            val.empty_text(TextBox_last_name);
+            val.empty_text(TextBox_id_card);
+            val.empty_text(TextBox_phone);
+            val.empty_text(TextBox_address);
+            val.empty_text(TextBoxEmail);
+        }
+
+        private void ClearTextBoxes()
+        {
+            TextBox_id.Clear();
+            TextBox_id_card.Clear();
+            TextBox_name.Clear();
+            TextBox_last_name.Clear();
+            TextBox_phone.Clear();
+            TextBox_address.Clear();
+            TextBoxEmail.Clear();
+        }
+        #endregion
+
+        #region Procedimientos
+        private async void Read()
+        {
+            var result = await procEmpl.GetEmployeeList();
+            this.Invoke(new Action(() =>
             {
-                this.BackColor = Color.FromArgb(31, 31, 31);
+                DataGridView_employees.DataSource = result;
+            }));
+        }
+
+        private void SearchEmployee()
+        {
+            try
+            {
+                employe = new Employees
+                {
+                    //EmployeeId = int.Parse(TextBox_SearchEmployee.Text),
+                    EmployeeName = TextBox_SearchEmployee.Text,
+                    EmployeeLastName = TextBox_SearchEmployee.Text,
+                    EmployeeIdentification = TextBox_SearchEmployee.Text,
+                    EmployeePhone = TextBox_SearchEmployee.Text,
+                    EmployeeAddress = TextBox_SearchEmployee.Text,
+                    Email = TextBox_SearchEmployee.Text
+                };
+                //var result = await procEmpl.SearchEmployee(TextBox_SearchEmployee.Text);
+                //this.Invoke(new Action(() =>
+                //{
+                //    DataGridView_employees.DataSource = result;
+                //    DataGridView_employees.Show();
+                //}));
+                DataGridView_employees.DataSource = procEmpl.SearchEmployee(employe);
+            }
+            catch { }
+        }
+
+        private async void AddEmployee()
+        {
+            employe = new Employees
+            {
+                EmployeeName = TextBox_name.Text,
+                EmployeeLastName = TextBox_last_name.Text,
+                EmployeeIdentification = TextBox_id_card.Text,
+                EmployeePhone = TextBox_phone.Text,
+                EmployeeAddress = TextBox_address.Text,
+                Email = TextBoxEmail.Text,
+                Image = image
+            };
+
+            if (string.IsNullOrWhiteSpace(TextBox_last_name.Text) || string.IsNullOrWhiteSpace(TextBox_last_name.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_id_card.Text) || string.IsNullOrWhiteSpace(TextBox_phone.Text) || string.IsNullOrWhiteSpace(TextBox_address.Text)
+                || string.IsNullOrWhiteSpace(TextBoxEmail.Text))
+            {
+                ValidacionesText();
             }
             else
             {
-                this.BackColor = Color.FromArgb(238, 238, 238);
+                if (MessageBox.Show("¿Desea Agregar Este Registro?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var result = await procEmpl.AddEmployee(employe);
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearTextBoxes();
+                        Read();
+                    }));
+                }
             }
+
         }
-        private void Read()
+
+
+
+
+        #endregion
+
+        #region Events
+        private async void Button_create_Click(object sender, EventArgs e)
         {
-        }        
-        private void Button_create_Click(object sender, EventArgs e)
+               AddEmployee();
+        }
+        private void TextBox_SearchEmployee_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            SearchEmployee();
         }
         private void Button_update_Click(object sender, EventArgs e)
         {
-            try
-            {
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
         private void Button_delete_Click(object sender, EventArgs e)
         {
-            try
-            {
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }        
+
+        }
         private void DataGridView_employees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString() == string.Empty)
                 {
-                    Clear_textboxes();
+                    //Clear_textboxes();
                     MessageBox.Show("Elija una fila válida.");
                 }
                 else
@@ -85,66 +158,36 @@ namespace ensueno.Presentation.Main
                     TextBox_last_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[3].Value.ToString();
                     TextBox_phone.Text = DataGridView_employees.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBox_address.Text = DataGridView_employees.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    TextBox_user.Text = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    CheckBox_admin.Checked = bool.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[7].Value.ToString());                    
+                 
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }        
-        private void TextBox_search_name_TextChanged(object sender, EventArgs e)
-        {
         }
-        private void TextBox_search_last_name_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void Button_history_Click(object sender, EventArgs e)
-        {
-            fh = new Form_employees_history();
-            fh.ShowDialog();
-            Read();
-        }
-        private void Clear_textboxes()
-        {
-            TextBox_id.Text = "";
-            TextBox_id_card.Clear();
-            TextBox_name.Clear();
-            TextBox_last_name.Clear();
-            TextBox_phone.Clear();
-            TextBox_address.Clear();
-            TextBox_user.Clear();
-            TextBox_password.Clear();
-            CheckBox_admin.Checked = false;
-        }
+
         private void Button_clear_Click(object sender, EventArgs e)
         {
-            Clear_textboxes();
+            ClearTextBoxes();
         }
-        private void Form_employees_Load(object sender, EventArgs e)
+        private async void Form_employees_Load(object sender, EventArgs e)
         {
-            Read();
-            TextBox_id.Enabled = false;
-            Button_update.Enabled = false;
-            Button_delete.Enabled = false;
-            TextBox_read_by_name.Select();
+            await Task.Run(() => { Read(); });
         }
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
             {
                 Button_create.Enabled = false;
-                Button_update.Enabled = true;                
+                Button_update.Enabled = true;
                 Button_delete.Enabled = true;
-                TextBox_user.Enabled = false;
             }
             else
             {
                 Button_create.Enabled = true;
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
-                TextBox_user.Enabled = true;
             }
         }
 
@@ -159,12 +202,12 @@ namespace ensueno.Presentation.Main
         }
         private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.Char_only(TextBox_name,e);
+            val.Char_only(TextBox_name, e);
         }
 
         private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.Char_only(TextBox_last_name,e);
+            val.Char_only(TextBox_last_name, e);
         }
 
         private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
@@ -177,29 +220,48 @@ namespace ensueno.Presentation.Main
             val.empty_text(TextBox_address);
         }
 
-        private void TextBox_user_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.empty_text(TextBox_user);
-        }
-
-        private void TextBox_password_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.empty_text(TextBox_password);
-        }
-
-        private void TextBox_read_by_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.Search_by_letters(TextBox_read_by_name, e);
-        }
-
-        private void TextBox_read_by_last_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.Search_by_letters(TextBox_read_by_last_name, e);
-        }
-
         private void Button_report_Click(object sender, EventArgs e)
         {
 
         }
+        #endregion
+
+        #region Agregar Imagen
+        private string image_location;
+        private byte[] image;
+        private MemoryStream memory_stream;
+        private bool validate_image_location;
+        private void ButtonSubirImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file_dialog = new OpenFileDialog
+            {
+                Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*"
+            };
+            if (file_dialog.ShowDialog() == DialogResult.OK)
+            {
+                image_location = file_dialog.FileName.ToString();
+                PictureBox_product.ImageLocation = image_location;
+                Convert_image();
+            }
+        }
+
+        private void Convert_image()
+        {
+            if (PictureBox_product.ImageLocation == null)
+            {
+                validate_image_location = false;
+            }
+            else
+            {
+                FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
+                BinaryReader bynary_reader = new BinaryReader(file_stream);
+                image = bynary_reader.ReadBytes((int)file_stream.Length);
+                validate_image_location = true;
+            }
+        }
+
+        #endregion
+
+        
     }
 }

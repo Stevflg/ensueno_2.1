@@ -23,17 +23,12 @@ namespace ensueno.Presentation.Main
             Admin(username);
             this.Select();
         }
-
+        private Color color;
         private void Apply_dark_mode()
         {
-            if (Properties.Settings.Default.dark_mode)
-            {
-                this.BackColor = Color.FromArgb(31, 31, 31);
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(238, 238, 238);
-            }
+            var color = Properties.Settings.Default.dark_mode==true? Color.FromArgb(31, 31, 31):Color.FromArgb(238, 238, 238);
+            this.BackColor = color;
+            this.color=color;
         }
         private void Admin(string username)
         {
@@ -59,45 +54,44 @@ namespace ensueno.Presentation.Main
             Button_show.Visible = true;
         }
 
-        private void Open_form_panel(object form_panel)
+        private async void Open_form_panel(object form_panel)
         {
-            if (Container_panel.Controls.Count > 0)
-            {
-                Container_panel.Controls.RemoveAt(0);
-            }
-            Form fp = form_panel as Form;
-            fp.TopLevel = false;
-            fp.Dock = DockStyle.Fill;
-            Container_panel.Controls.Add(fp);
-            Container_panel.Tag = fp;
-            fp.Show();
+                Form fp = form_panel as Form;
+                if (Container_panel.Controls.Count > 0)
+                {
+                        Container_panel.Controls.RemoveAt(0);
+                }
+                fp.TopLevel = false;
+                fp.Dock = DockStyle.Fill;
+                Container_panel.Controls.Add(fp);
+                Container_panel.Tag = fp;
+                fp.Show();
         }
 
         private void Button_employees_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Empleados";
-            Open_form_panel(new Form_employees());
+            Open_form_panel(new Form_employees(color));
         }
         private void Button_clients_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Clientes";
-            Open_form_panel(new Form_clients());
+             Open_form_panel(new Form_clients(color)); 
         }
         private void Button_products_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Productos";
-            Open_form_panel(new Form_products());
+            Open_form_panel(new Form_products(color));
         }
         private void Button_bills_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Facturas";
-            Open_form_panel(new Form_invoice());
+            Open_form_panel(new Form_invoice(color));
         }
-
         private void ButtonInventories_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Inventarios";
-            Open_form_panel(new FormInventories());
+            Open_form_panel(new Form_Inventories(color));
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ensueno.Presentation.Login
         private void NameEmployee()
         {
             user = new Users { UserName = usernm };
-            var employee = proc.GetEmployeeByUserName(user);
+            var employee = proc.GetEmployee(user);
 
             this.Label_employee_name.Text = $"{employee.EmployeeName} {employee.EmployeeLastName}";
         }
