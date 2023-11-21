@@ -75,6 +75,7 @@ namespace ensueno.Presentation.Main
 
         private void Form_invoice_Load(object sender, EventArgs e)
         {
+            TextBox_search_by_id.Select();
             Read();
             //TextBox_invoice_id.Enabled = false;
             //TextBox_client_id.Enabled = false;

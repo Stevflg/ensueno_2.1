@@ -66,10 +66,10 @@
             Button_ok.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             Button_ok.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
             Button_ok.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            Button_ok.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_ok.ForeColor = System.Drawing.Color.White;
             Button_ok.IndicateFocus = true;
-            Button_ok.Location = new System.Drawing.Point(113, 148);
+            Button_ok.Location = new System.Drawing.Point(112, 148);
             Button_ok.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_ok.Name = "Button_ok";
             Button_ok.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -81,12 +81,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            label1.Location = new System.Drawing.Point(139, 61);
+            label1.Location = new System.Drawing.Point(148, 61);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(100, 21);
+            label1.Size = new System.Drawing.Size(105, 24);
             label1.TabIndex = 4;
             label1.Text = "Bienvenido";
             // 
@@ -94,12 +94,12 @@
             // 
             Label_employee_name.AutoEllipsis = true;
             Label_employee_name.AutoSize = true;
-            Label_employee_name.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Label_employee_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Label_employee_name.ForeColor = System.Drawing.SystemColors.GrayText;
-            Label_employee_name.Location = new System.Drawing.Point(99, 107);
+            Label_employee_name.Location = new System.Drawing.Point(134, 107);
             Label_employee_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Label_employee_name.Name = "Label_employee_name";
-            Label_employee_name.Size = new System.Drawing.Size(175, 21);
+            Label_employee_name.Size = new System.Drawing.Size(179, 24);
             Label_employee_name.TabIndex = 5;
             Label_employee_name.Text = "Nombre del Usuario";
             Label_employee_name.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

@@ -104,7 +104,7 @@
             Switch_dark_mode.Name = "Switch_dark_mode";
             Switch_dark_mode.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Switch_dark_mode.Size = new System.Drawing.Size(41, 23);
-            Switch_dark_mode.TabIndex = 3;
+            Switch_dark_mode.TabIndex = 7;
             Switch_dark_mode.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(125, 137, 149);
             Switch_dark_mode.UncheckedState.FillColor = System.Drawing.Color.FromArgb(125, 137, 149);
             Switch_dark_mode.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -130,7 +130,7 @@
             Button_dark_mode.ShadowDecoration.CustomizableEdges = customizableEdges12;
             Button_dark_mode.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_dark_mode.Size = new System.Drawing.Size(58, 58);
-            Button_dark_mode.TabIndex = 4;
+            Button_dark_mode.TabIndex = 6;
             Button_dark_mode.Click += Button_dark_mode_Click;
             // 
             // guna2ControlBox2
@@ -146,7 +146,7 @@
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2ControlBox2.Size = new System.Drawing.Size(52, 33);
-            guna2ControlBox2.TabIndex = 6;
+            guna2ControlBox2.TabIndex = 8;
             // 
             // guna2ControlBox1
             // 
@@ -160,7 +160,7 @@
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2ControlBox1.Size = new System.Drawing.Size(52, 33);
-            guna2ControlBox1.TabIndex = 7;
+            guna2ControlBox1.TabIndex = 9;
             // 
             // Button_login
             // 
@@ -173,7 +173,7 @@
             Button_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
             Button_login.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
             Button_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            Button_login.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_login.ForeColor = System.Drawing.Color.White;
             Button_login.IndicateFocus = true;
             Button_login.Location = new System.Drawing.Point(359, 219);
@@ -226,7 +226,7 @@
             TextBox_user.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_user.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_user.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_user.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBox_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_user.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_user.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_user.IconLeft = Properties.Resources.user;
@@ -258,13 +258,13 @@
             // Label_about
             // 
             Label_about.AutoSize = true;
-            Label_about.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Label_about.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Label_about.LinkColor = System.Drawing.Color.FromArgb(94, 148, 255);
             Label_about.Location = new System.Drawing.Point(436, 277);
             Label_about.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Label_about.Name = "Label_about";
-            Label_about.Size = new System.Drawing.Size(102, 21);
-            Label_about.TabIndex = 9;
+            Label_about.Size = new System.Drawing.Size(119, 24);
+            Label_about.TabIndex = 3;
             Label_about.TabStop = true;
             Label_about.Text = "ACERCA DE";
             Label_about.VisitedLinkColor = System.Drawing.Color.FromArgb(255, 77, 165);
@@ -283,7 +283,7 @@
             TextBox_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_password.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_password.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_password.IconLeft = Properties.Resources.password;
@@ -296,7 +296,7 @@
             TextBox_password.SelectedText = "";
             TextBox_password.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBox_password.Size = new System.Drawing.Size(268, 52);
-            TextBox_password.TabIndex = 10;
+            TextBox_password.TabIndex = 1;
             TextBox_password.TextChanged += TextBox_password_TextChanged;
             // 
             // ButtonShowPass
@@ -314,7 +314,7 @@
             ButtonShowPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             ButtonShowPass.FillColor = System.Drawing.Color.White;
             ButtonShowPass.FillColor2 = System.Drawing.Color.White;
-            ButtonShowPass.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonShowPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ButtonShowPass.ForeColor = System.Drawing.Color.White;
             ButtonShowPass.Image = (System.Drawing.Image)resources.GetObject("ButtonShowPass.Image");
             ButtonShowPass.IndicateFocus = true;
@@ -324,7 +324,7 @@
             ButtonShowPass.PressedColor = System.Drawing.Color.Transparent;
             ButtonShowPass.ShadowDecoration.CustomizableEdges = customizableEdges2;
             ButtonShowPass.Size = new System.Drawing.Size(23, 21);
-            ButtonShowPass.TabIndex = 16;
+            ButtonShowPass.TabIndex = 4;
             ButtonShowPass.Click += ButtonShowPass_Click;
             // 
             // Form_login

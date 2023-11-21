@@ -45,7 +45,7 @@ namespace ensueno.Presentation.Main
         {
             Button_show.Visible = false;
             Slide_panel.Visible = false;
-            Slide_panel.Width = 211;
+            Slide_panel.Width = 200;
             Transition_slide_panel_show.ShowSync(Slide_panel);
             Button_hide.Visible = true;
         }
@@ -94,5 +94,10 @@ namespace ensueno.Presentation.Main
             Open_form_panel(new Form_invoice());
         }
 
+        private void ButtonInventories_Click(object sender, EventArgs e)
+        {
+            Label_form_selected.Text = "Inventarios";
+            Open_form_panel(new FormInventories());
+        }
     }
 }

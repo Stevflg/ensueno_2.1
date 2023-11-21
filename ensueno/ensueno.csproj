@@ -10,11 +10,19 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Resources\Main\inventories.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Update="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8.1\System.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Update="Report\DataSet_ensueno.cs">
       <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
     </Compile>
@@ -22,6 +30,10 @@
     <EmbeddedResource Include="Report\Report_employees.rdlc" />
     <EmbeddedResource Include="Report\Report_invoice.rdlc" />
     <EmbeddedResource Include="Report\Report_products.rdlc" />
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Report\DataSet_ensueno.xsc">
       <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
     </None>
@@ -37,7 +49,6 @@
   <ItemGroup>
     <Content Include="logo.ico" />
     <Content Include="Resources\Login\error.png" />
-    <Content Include="Resources\Login\smile.png" />
     <Content Include="Resources\Main\bills.png" />
     <Content Include="Resources\Main\clean.png" />
     <Content Include="Resources\Main\clients.png" />
@@ -49,6 +60,7 @@
     <Content Include="Resources\Logo\logo.ico" />
     <Content Include="Resources\Logo\logo_without_letters.png" />
     <Content Include="Resources\Logo\logo_with_letters.png" />
+    <Content Include="Resources\Main\inventories.png" />
     <Content Include="Resources\Main\left_arrow.png" />
     <Content Include="Resources\Main\products.png" />
     <Content Include="Resources\Main\right_arrow.png" />
