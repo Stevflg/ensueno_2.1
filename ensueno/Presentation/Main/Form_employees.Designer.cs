@@ -61,8 +61,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_employees));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_employees));
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             DataGridView_employees = new Guna.UI2.WinForms.Guna2DataGridView();
             TextBox_id = new Guna.UI2.WinForms.Guna2TextBox();
@@ -80,8 +80,10 @@
             TextBoxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             PictureBox_product = new Guna.UI2.WinForms.Guna2PictureBox();
             ButtonSubirImagen = new Guna.UI2.WinForms.Guna2GradientButton();
+            pictureBoxDark = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -519,11 +521,11 @@
             PictureBox_product.BorderRadius = 11;
             PictureBox_product.CustomizableEdges = customizableEdges3;
             PictureBox_product.ImageRotate = 0F;
-            PictureBox_product.Location = new System.Drawing.Point(791, 46);
+            PictureBox_product.Location = new System.Drawing.Point(803, 46);
             PictureBox_product.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             PictureBox_product.Name = "PictureBox_product";
             PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            PictureBox_product.Size = new System.Drawing.Size(144, 128);
+            PictureBox_product.Size = new System.Drawing.Size(125, 128);
             PictureBox_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             PictureBox_product.TabIndex = 29;
             PictureBox_product.TabStop = false;
@@ -552,11 +554,24 @@
             ButtonSubirImagen.Text = "Subir Imagen";
             ButtonSubirImagen.Click += ButtonSubirImagen_Click;
             // 
+            // pictureBoxDark
+            // 
+            pictureBoxDark.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxDark.Image = (System.Drawing.Image)resources.GetObject("pictureBoxDark.Image");
+            pictureBoxDark.Location = new System.Drawing.Point(39, 255);
+            pictureBoxDark.Name = "pictureBoxDark";
+            pictureBoxDark.Size = new System.Drawing.Size(911, 292);
+            pictureBoxDark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxDark.TabIndex = 30;
+            pictureBoxDark.TabStop = false;
+            pictureBoxDark.Visible = false;
+            // 
             // Form_employees
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(pictureBoxDark);
             Controls.Add(ButtonSubirImagen);
             Controls.Add(PictureBox_product);
             Controls.Add(TextBoxEmail);
@@ -580,6 +595,7 @@
             Load += Form_employees_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).EndInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).EndInit();
             ResumeLayout(false);
         }
 
@@ -602,5 +618,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBoxEmail;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSubirImagen;
         private Guna.UI2.WinForms.Guna2PictureBox PictureBox_product;
+        private System.Windows.Forms.PictureBox pictureBoxDark;
     }
 }

@@ -25,6 +25,14 @@ namespace ensueno.Presentation.Main
             InitializeComponent();
             this.BackColor = color;
         }
+        private async void Form_employees_Load(object sender, EventArgs e)
+        {
+            this.Invoke(new Action(() =>
+            {
+                pictureBoxDark.Visible = true;
+            }));
+            await Task.Run(() => { Read(); });
+        }
         #region Validaciones
         private void ValidacionesText()
         {
@@ -56,10 +64,11 @@ namespace ensueno.Presentation.Main
             this.Invoke(new Action(() =>
             {
                 DataGridView_employees.DataSource = result;
+                pictureBoxDark.Visible = false;
             }));
         }
 
-        private void SearchEmployee()
+        private async void SearchEmployee()
         {
             try
             {
@@ -73,13 +82,16 @@ namespace ensueno.Presentation.Main
                     EmployeeAddress = TextBox_SearchEmployee.Text,
                     Email = TextBox_SearchEmployee.Text
                 };
-                //var result = await procEmpl.SearchEmployee(TextBox_SearchEmployee.Text);
-                //this.Invoke(new Action(() =>
-                //{
-                //    DataGridView_employees.DataSource = result;
-                //    DataGridView_employees.Show();
-                //}));
-                DataGridView_employees.DataSource = procEmpl.SearchEmployee(employe);
+                this.Invoke(new Action(() =>
+                {
+                    pictureBoxDark.Visible = true;
+                }));
+                var result = await procEmpl.SearchEmployee(employe);
+                this.Invoke(new Action(() =>
+                {
+                    DataGridView_employees.DataSource = result;
+                    pictureBoxDark.Visible = false;
+                }));
             }
             catch { }
         }
@@ -133,9 +145,26 @@ namespace ensueno.Presentation.Main
         {
             SearchEmployee();
         }
+        private Form_employee_edit epedit;
+        private int employeeId;
         private void Button_update_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Form frm =Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Form_employee_edit);
+                if (frm != null)
+                {
+                    frm.BringToFront();
+                }
+                else
+                {
+                    epedit = new Form_employee_edit(employeeId);
+                    epedit.ShowDialog();
+                    pictureBoxDark.Visible = true;
+                    Read();
+                }
+            }
+            catch { }
         }
         private void Button_delete_Click(object sender, EventArgs e)
         {
@@ -147,34 +176,30 @@ namespace ensueno.Presentation.Main
             {
                 if (DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString() == string.Empty)
                 {
-                    //Clear_textboxes();
+                    ClearTextBoxes();
                     MessageBox.Show("Elija una fila válida.");
                 }
                 else
                 {
                     TextBox_id.Text = DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    TextBox_id_card.Text = DataGridView_employees.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    TextBox_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    TextBox_last_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    employeeId= int.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    TextBox_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    TextBox_last_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    TextBox_id_card.Text = DataGridView_employees.Rows[e.RowIndex].Cells[3].Value.ToString();
                     TextBox_phone.Text = DataGridView_employees.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBox_address.Text = DataGridView_employees.Rows[e.RowIndex].Cells[5].Value.ToString();
-                 
+                    TextBoxEmail.Text = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
                 }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            {   }
         }
 
         private void Button_clear_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
         }
-        private async void Form_employees_Load(object sender, EventArgs e)
-        {
-            await Task.Run(() => { Read(); });
-        }
+       
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)

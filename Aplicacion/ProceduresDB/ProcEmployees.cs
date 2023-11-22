@@ -13,12 +13,17 @@ namespace Aplicacion.ProceduresDB
 {
     public class ProcEmployees
     {
+        private readonly EnsuenoContext db;
+        public ProcEmployees()
+        {
+            db= new EnsuenoContext();
+        }
+
+
         public async Task<List<EmployeeDTO>> GetEmployeeList()
         {
             try
             {
-                using(var db =new EnsuenoContext())
-                {
                     var listempl = await(from e in db.Employees
                                     where e.IsActive == true
                                     select new EmployeeDTO {
@@ -32,18 +37,15 @@ namespace Aplicacion.ProceduresDB
                                     Creado = e.Date_Time
                                     }).ToListAsync();
                     return listempl;
-                }
             }
             catch { return null; }
         }
 
-        public List<EmployeeDTO> SearchEmployee(Employees obj)
+        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj)
         {
             try
             {
-                using (var db = new EnsuenoContext())
-                {
-                    var listempl = (from e in db.Employees
+                    var listempl =await (from e in db.Employees
                                           where e.IsActive == true && 
                                           
                                           e.EmployeeName.Contains(obj.EmployeeName)||
@@ -62,9 +64,9 @@ namespace Aplicacion.ProceduresDB
                                               Direccion = e.EmployeeAddress,
                                               Correo = e.Email,
                                               Creado = e.Date_Time
-                                          }).ToList();
+                                          }).ToListAsync();
                     return listempl;
-                }
+          
             }
             catch { return null; }
         }
@@ -72,20 +74,16 @@ namespace Aplicacion.ProceduresDB
         public Employees GetEmployee(Users obj) {
             try
             {
-                using (var db = new EnsuenoContext())
-                {
                     var empId = db.Users.Where(a => a.UserName==obj.UserName).Select(a => a).FirstOrDefault();
                     if (empId != null) return db.Employees.Find(empId.EmployeeId);
                     else return null;
-                }
             }
             catch { return null; }
 
         }
 
         public async Task<string> AddEmployee(Employees obj) { 
-            using(var db = new EnsuenoContext())
-            {
+ 
                 db.Employees.Add(obj);
                 var query =await db.SaveChangesAsync();
                 if (query > 0)
@@ -93,6 +91,21 @@ namespace Aplicacion.ProceduresDB
                     return "Guardado Correctamente";
                 }
                 return "No se pudo guardar";
+        }
+
+        //Metodo para llenar el formulario de edicion de empleados
+        public async Task<Employees> GetEmployeebyFormEdit(Employees obj)
+        {
+            try
+            {
+                var employe = await (from e in db.Employees
+                                     where e.IsActive == true && e.EmployeeId == obj.EmployeeId
+                                     select e).FirstOrDefaultAsync();
+                return employe;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
         public string EditEmployee(Employees obj)
