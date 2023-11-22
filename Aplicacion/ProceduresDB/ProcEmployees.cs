@@ -46,14 +46,14 @@ namespace Aplicacion.ProceduresDB
             try
             {
                 var listempl = await (from e in db.Employees
-                                      where e.IsActive == true &&
+                                      where (
                                           e.EmployeeId.ToString().Contains(obj.EmployeeName)||
                                           e.EmployeeName.Contains(obj.EmployeeName)||
                                           e.EmployeeLastName.Contains(obj.EmployeeLastName)||
                                           e.EmployeeIdentification.Contains(obj.EmployeeIdentification) ||
                                           e.EmployeePhone.Contains(obj.EmployeePhone) ||
                                           e.EmployeeAddress.Contains(obj.EmployeeAddress) ||
-                                          e.Email.Contains(obj.Email)
+                                          e.Email.Contains(obj.Email)) & e.IsActive ==true
                                           select new EmployeeDTO
                                           {
                                               Id = e.EmployeeId,
