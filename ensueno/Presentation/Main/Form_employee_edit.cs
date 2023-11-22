@@ -1,5 +1,7 @@
 ﻿using Aplicacion.ProceduresDB;
 using Dominio.Database;
+using Dominio.DTO;
+using ensueno.Presentation.Validations;
 using ensueno.Properties;
 using System;
 using System.Collections.Generic;
@@ -16,12 +18,14 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_employee_edit : Form
     {
-        public Form_employee_edit(int employeeid)
+        private Username UserSesion;
+        public Form_employee_edit(int employeeid,Username userSesions)
         {
             InitializeComponent();
             this.EmployeeId = employeeid;
+            this.UserSesion = userSesions;
         }
-
+        
         #region Carga de los datos
         private int EmployeeId;
         private async void LoadDataEmployee(int employeeId)
@@ -30,16 +34,15 @@ namespace ensueno.Presentation.Main
             {
                 pictureBoxLoadData.Visible = true;
             }));
-           
             ProcEmployees procEmployees = new ProcEmployees();
             Employees employee = new Employees { EmployeeId = employeeId };
             var result = await procEmployees.GetEmployeebyFormEdit(employee);
             this.Invoke((Action)(() =>
             {
-                TextBox_id.Text = result.EmployeeId.ToString();
+                TextBox_id.Text = result.EmployeeId.ToString() ;
                 TextBox_name.Text = result.EmployeeName;
                 TextBox_last_name.Text = result.EmployeeLastName;
-                TextBox_id_card.Text = result.EmployeeIdentification;
+                TextBox_id_card.Text = result.EmployeeIdentification ;
                 TextBox_phone.Text = result.EmployeePhone;
                 TextBox_address.Text = result.EmployeeAddress;
                 TextBoxEmail.Text = result.Email;
@@ -50,10 +53,20 @@ namespace ensueno.Presentation.Main
         }
         #endregion
 
+        readonly Values val = new Values();
+        private void ValidacionesText()
+        {
+            val.empty_text(TextBox_id);
+            val.empty_text(TextBox_last_name);
+            val.empty_text(TextBox_last_name);
+            val.empty_text(TextBox_id_card);
+            val.empty_text(TextBox_phone);
+            val.empty_text(TextBox_address);
+            val.empty_text(TextBoxEmail);
+        }
         //Metodo para guardar cambios
         private async void saveChanges()
-        {
-
+        { 
             ProcEmployees procEmployees = new ProcEmployees();
             Employees employee = new Employees { EmployeeId = EmployeeId ,
                 EmployeeName = TextBox_name.Text,
@@ -62,14 +75,29 @@ namespace ensueno.Presentation.Main
                 EmployeePhone = TextBox_phone.Text,
                 EmployeeAddress = TextBox_address.Text,
                 Email = TextBoxEmail.Text,
-                Image = image
+                Image = image,
+                UpdatedBy = UserSesion.EmployeeId,
+                Date_Updated = DateTime.Now,
             };
-            var result = await procEmployees.EditEmployee(employee);
-            this.Invoke(new Action(() =>
+            if (string.IsNullOrWhiteSpace(TextBox_last_name.Text) || string.IsNullOrWhiteSpace(TextBox_last_name.Text) ||
+               string.IsNullOrWhiteSpace(TextBox_id_card.Text) || string.IsNullOrWhiteSpace(TextBox_phone.Text) || string.IsNullOrWhiteSpace(TextBox_address.Text)
+               || string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
-                MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }));
+                ValidacionesText();
+            }
+            else
+            {
+                if (MessageBox.Show("¿Desea Guardar Cambios?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var result = await procEmployees.EditEmployee(employee);
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }));
+                }
+            }
+         
         }
 
         #region Eventos

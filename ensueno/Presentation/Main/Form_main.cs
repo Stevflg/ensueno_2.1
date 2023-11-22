@@ -1,14 +1,19 @@
 ﻿using Aplicacion.ProceduresDB;
 using Dominio.Database;
+using Dominio.DTO;
+using ensueno.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace ensueno.Presentation.Main
 {
@@ -23,6 +28,7 @@ namespace ensueno.Presentation.Main
             Admin(username);
             this.Select();
         }
+        private Username userSesion;
         private Color color;
         private void Apply_dark_mode()
         {
@@ -30,10 +36,25 @@ namespace ensueno.Presentation.Main
             this.BackColor = color;
             this.color=color;
         }
-        private void Admin(string username)
+        private async void Admin(string username)
         {
-            Users u = new Users { UserName = username };
-            Label_user_role.Text = procUsers.UserName(u);
+            Users users = new Users {UserName = username};
+            userSesion = await procUsers.UserName(users);
+            Label_user_role.Text = userSesion.UserName+ " : " +userSesion.RolName;
+            Read_image(userSesion.Image);
+        }
+        private MemoryStream memory_stream;
+        private void Read_image(byte[] image)
+        {
+            if (image != null)
+            {
+                memory_stream = new MemoryStream(image);
+                pictureBoxUser.Image = Image.FromStream(memory_stream);
+            }
+            else
+            {
+                pictureBoxUser.Image = Resources.error;
+            }
         }
 
         private void Button_show_Click(object sender, EventArgs e)
@@ -71,7 +92,7 @@ namespace ensueno.Presentation.Main
         private void Button_employees_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Empleados";
-            Open_form_panel(new Form_employees(color));
+            Open_form_panel(new Form_employees(color,userSesion));
         }
         private void Button_clients_Click(object sender, EventArgs e)
         {

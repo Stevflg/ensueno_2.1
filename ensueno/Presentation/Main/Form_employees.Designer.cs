@@ -81,6 +81,13 @@
             PictureBox_product = new Guna.UI2.WinForms.Guna2PictureBox();
             ButtonSubirImagen = new Guna.UI2.WinForms.Guna2GradientButton();
             pictureBoxDark = new System.Windows.Forms.PictureBox();
+            Label_Id = new System.Windows.Forms.Label();
+            label_Id_Card = new System.Windows.Forms.Label();
+            label_Email = new System.Windows.Forms.Label();
+            label_Name = new System.Windows.Forms.Label();
+            label_phone = new System.Windows.Forms.Label();
+            label_Last_Name = new System.Windows.Forms.Label();
+            label_Address = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
@@ -176,11 +183,12 @@
             TextBox_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
             TextBox_id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_id.Enabled = false;
             TextBox_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_id.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_id.Location = new System.Drawing.Point(75, 74);
+            TextBox_id.Location = new System.Drawing.Point(75, 32);
             TextBox_id.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_id.Name = "TextBox_id";
             TextBox_id.PasswordChar = '\0';
@@ -209,7 +217,7 @@
             TextBox_id_card.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_id_card.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id_card.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_id_card.Location = new System.Drawing.Point(299, 74);
+            TextBox_id_card.Location = new System.Drawing.Point(299, 32);
             TextBox_id_card.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_id_card.MaxLength = 14;
             TextBox_id_card.Name = "TextBox_id_card";
@@ -238,7 +246,7 @@
             TextBox_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_name.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_name.Location = new System.Drawing.Point(75, 109);
+            TextBox_name.Location = new System.Drawing.Point(75, 90);
             TextBox_name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_name.MaxLength = 50;
             TextBox_name.Name = "TextBox_name";
@@ -296,7 +304,7 @@
             TextBox_phone.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_phone.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_phone.Location = new System.Drawing.Point(299, 109);
+            TextBox_phone.Location = new System.Drawing.Point(299, 90);
             TextBox_phone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_phone.MaxLength = 8;
             TextBox_phone.Name = "TextBox_phone";
@@ -504,7 +512,7 @@
             TextBoxEmail.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBoxEmail.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBoxEmail.Location = new System.Drawing.Point(523, 74);
+            TextBoxEmail.Location = new System.Drawing.Point(523, 32);
             TextBoxEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBoxEmail.MaxLength = 100;
             TextBoxEmail.Name = "TextBoxEmail";
@@ -521,11 +529,11 @@
             PictureBox_product.BorderRadius = 11;
             PictureBox_product.CustomizableEdges = customizableEdges3;
             PictureBox_product.ImageRotate = 0F;
-            PictureBox_product.Location = new System.Drawing.Point(803, 46);
+            PictureBox_product.Location = new System.Drawing.Point(792, 32);
             PictureBox_product.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             PictureBox_product.Name = "PictureBox_product";
             PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            PictureBox_product.Size = new System.Drawing.Size(125, 128);
+            PictureBox_product.Size = new System.Drawing.Size(136, 143);
             PictureBox_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             PictureBox_product.TabIndex = 29;
             PictureBox_product.TabStop = false;
@@ -545,7 +553,7 @@
             ButtonSubirImagen.ForeColor = System.Drawing.Color.White;
             ButtonSubirImagen.Image = (System.Drawing.Image)resources.GetObject("ButtonSubirImagen.Image");
             ButtonSubirImagen.IndicateFocus = true;
-            ButtonSubirImagen.Location = new System.Drawing.Point(803, 181);
+            ButtonSubirImagen.Location = new System.Drawing.Point(797, 181);
             ButtonSubirImagen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSubirImagen.Name = "ButtonSubirImagen";
             ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -566,11 +574,102 @@
             pictureBoxDark.TabStop = false;
             pictureBoxDark.Visible = false;
             // 
+            // Label_Id
+            // 
+            Label_Id.AutoSize = true;
+            Label_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            Label_Id.ForeColor = System.Drawing.SystemColors.GrayText;
+            Label_Id.Location = new System.Drawing.Point(75, 11);
+            Label_Id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label_Id.Name = "Label_Id";
+            Label_Id.Size = new System.Drawing.Size(85, 18);
+            Label_Id.TabIndex = 31;
+            Label_Id.Text = "Id Usuario";
+            // 
+            // label_Id_Card
+            // 
+            label_Id_Card.AutoSize = true;
+            label_Id_Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Id_Card.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Id_Card.Location = new System.Drawing.Point(299, 9);
+            label_Id_Card.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Id_Card.Name = "label_Id_Card";
+            label_Id_Card.Size = new System.Drawing.Size(84, 18);
+            label_Id_Card.TabIndex = 32;
+            label_Id_Card.Text = "N° Cedula";
+            // 
+            // label_Email
+            // 
+            label_Email.AutoSize = true;
+            label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Email.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Email.Location = new System.Drawing.Point(523, 11);
+            label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Email.Name = "label_Email";
+            label_Email.Size = new System.Drawing.Size(152, 18);
+            label_Email.TabIndex = 33;
+            label_Email.Text = "Correo Electronico";
+            // 
+            // label_Name
+            // 
+            label_Name.AutoSize = true;
+            label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Name.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Name.Location = new System.Drawing.Point(75, 69);
+            label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Name.Name = "label_Name";
+            label_Name.Size = new System.Drawing.Size(77, 18);
+            label_Name.TabIndex = 34;
+            label_Name.Text = "Nombres";
+            // 
+            // label_phone
+            // 
+            label_phone.AutoSize = true;
+            label_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_phone.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_phone.Location = new System.Drawing.Point(299, 69);
+            label_phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_phone.Name = "label_phone";
+            label_phone.Size = new System.Drawing.Size(74, 18);
+            label_phone.TabIndex = 35;
+            label_phone.Text = "Telefono";
+            // 
+            // label_Last_Name
+            // 
+            label_Last_Name.AutoSize = true;
+            label_Last_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Last_Name.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Last_Name.Location = new System.Drawing.Point(75, 123);
+            label_Last_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Last_Name.Name = "label_Last_Name";
+            label_Last_Name.Size = new System.Drawing.Size(76, 18);
+            label_Last_Name.TabIndex = 36;
+            label_Last_Name.Text = "Apellidos";
+            // 
+            // label_Address
+            // 
+            label_Address.AutoSize = true;
+            label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Address.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Address.Location = new System.Drawing.Point(299, 123);
+            label_Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Address.Name = "label_Address";
+            label_Address.Size = new System.Drawing.Size(80, 18);
+            label_Address.TabIndex = 37;
+            label_Address.Text = "Direccion";
+            // 
             // Form_employees
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(label_Address);
+            Controls.Add(label_Last_Name);
+            Controls.Add(label_phone);
+            Controls.Add(label_Name);
+            Controls.Add(label_Email);
+            Controls.Add(label_Id_Card);
+            Controls.Add(Label_Id);
             Controls.Add(pictureBoxDark);
             Controls.Add(ButtonSubirImagen);
             Controls.Add(PictureBox_product);
@@ -597,6 +696,7 @@
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -619,5 +719,12 @@
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSubirImagen;
         private Guna.UI2.WinForms.Guna2PictureBox PictureBox_product;
         private System.Windows.Forms.PictureBox pictureBoxDark;
+        private System.Windows.Forms.Label label_Address;
+        private System.Windows.Forms.Label label_Last_Name;
+        private System.Windows.Forms.Label label_phone;
+        private System.Windows.Forms.Label label_Name;
+        private System.Windows.Forms.Label label_Email;
+        private System.Windows.Forms.Label label_Id_Card;
+        private System.Windows.Forms.Label Label_Id;
     }
 }

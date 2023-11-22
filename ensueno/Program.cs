@@ -29,7 +29,7 @@ namespace ensueno
             context.Database.EnsureCreated();
             AddData adt = new AddData();
             if(adt.validarDb()) MessageBox.Show(adt.CargarDatos(), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Run(new Form_main("Steven"));
+            Application.Run(new Form_login());
         }
     }
 }

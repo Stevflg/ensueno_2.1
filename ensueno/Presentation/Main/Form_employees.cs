@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion.ProceduresDB;
 using Dominio.Database;
+using Dominio.DTO;
 using ensueno.Presentation.Validations;
 using Guna.UI2.WinForms;
 
@@ -17,14 +18,17 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
+        private Username userSesions;
         private readonly ProcEmployees procEmpl = new ProcEmployees();
         private Employees employe;
         readonly Values val = new Values();
-        public Form_employees(Color color)
+        public Form_employees(Color color,Username user)
         {
             InitializeComponent();
             this.BackColor = color;
+            this.userSesions = user;
         }
+
         private async void Form_employees_Load(object sender, EventArgs e)
         {
             this.Invoke(new Action(() =>
@@ -100,6 +104,7 @@ namespace ensueno.Presentation.Main
         {
             employe = new Employees
             {
+                CreatedBy = userSesions.EmployeeId,
                 EmployeeName = TextBox_name.Text,
                 EmployeeLastName = TextBox_last_name.Text,
                 EmployeeIdentification = TextBox_id_card.Text,
@@ -128,12 +133,21 @@ namespace ensueno.Presentation.Main
                     }));
                 }
             }
-
         }
-
-
-
-
+        private async void DeleteEmployee()
+        {
+            employe = new Employees
+            {EmployeeId = employeeId,
+             UpdatedBy = userSesions.EmployeeId,
+             Date_Updated = DateTime.Now
+            };
+            var result = await procEmpl.DeleteEmployee(employe);
+            this.Invoke(new Action(() => {
+                MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearTextBoxes();
+                Read();
+            }));
+        }
         #endregion
 
         #region Events
@@ -158,7 +172,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    epedit = new Form_employee_edit(employeeId);
+                    epedit = new Form_employee_edit(employeeId,userSesions);
                     epedit.ShowDialog();
                     pictureBoxDark.Visible = true;
                     Read();
@@ -166,9 +180,9 @@ namespace ensueno.Presentation.Main
             }
             catch { }
         }
-        private void Button_delete_Click(object sender, EventArgs e)
+        private async void Button_delete_Click(object sender, EventArgs e)
         {
-
+            await Task.Run(() => { DeleteEmployee(); });
         }
         private void DataGridView_employees_CellClick(object sender, DataGridViewCellEventArgs e)
         {

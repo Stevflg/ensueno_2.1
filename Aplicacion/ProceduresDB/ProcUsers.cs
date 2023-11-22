@@ -1,5 +1,6 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
+using Microsoft.EntityFrameworkCore;
 using Persistencia.Context;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ namespace Aplicacion.ProceduresDB
 {
     public class ProcUsers
     {
+        private readonly EnsuenoContext _context;
+        public ProcUsers() {
+            _context = new EnsuenoContext();
+        }
 
         public byte[] Encrypt(string pass)
         {
@@ -63,31 +68,34 @@ namespace Aplicacion.ProceduresDB
             }
             catch (Exception ex) { return ex.InnerException.Message; }
         }
-        public string UserName(Users obj)
+
+        public async Task<Username> UserName(Users obj)
         {
             try
             {
                 using (var _context = new EnsuenoContext())
                 {
-                    var username = (from u in _context.Users
+                    var username =await (from u in _context.Users
                                     join b in _context.Rols on u.RolId equals b.RolId
                                     join e in _context.Employees on u.EmployeeId equals e.EmployeeId
                                     where u.UserName == obj.UserName
                                     select new Username
                                     {
                                         UserId = u.UserId,
+                                        EmployeeId = e.EmployeeId,
                                         UserName = e.EmployeeName + " " + e.EmployeeLastName,
-                                        RolName = b.RolName
+                                        RolName = b.RolName,
+                                        Image = e.Image
                                     }
-                                   ).FirstOrDefault();
+                                   ).FirstOrDefaultAsync();
                     if (username != null)
                     {
-                        return $"{username.UserName} : {username.RolName}";
+                        return username;
                     }
-                    return " ";
+                    return null;
                 }
             }
-            catch { return " "; }
+            catch { return null; }
         }
     }
 }

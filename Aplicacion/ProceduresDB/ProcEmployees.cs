@@ -45,9 +45,9 @@ namespace Aplicacion.ProceduresDB
         {
             try
             {
-                    var listempl =await (from e in db.Employees
-                                          where e.IsActive == true && 
-                                          
+                var listempl = await (from e in db.Employees
+                                      where e.IsActive == true &&
+                                          e.EmployeeId.ToString().Contains(obj.EmployeeName)||
                                           e.EmployeeName.Contains(obj.EmployeeName)||
                                           e.EmployeeLastName.Contains(obj.EmployeeLastName)||
                                           e.EmployeeIdentification.Contains(obj.EmployeeIdentification) ||
@@ -108,9 +108,12 @@ namespace Aplicacion.ProceduresDB
                 return null;
             }
         }
+
         public async Task<string> EditEmployee(Employees obj)
         {
-                var employee =await db.Employees.FindAsync(obj.EmployeeId);
+            try
+            {
+                var employee = await db.Employees.FindAsync(obj.EmployeeId);
 
                 if (employee != null)
                 {
@@ -119,18 +122,52 @@ namespace Aplicacion.ProceduresDB
                     employee.EmployeeIdentification = obj.EmployeeIdentification;
                     employee.EmployeePhone = obj.EmployeePhone;
                     employee.EmployeeAddress = obj.EmployeeAddress;
-                    employee.Image=obj.Image;
+                    employee.Image = obj.Image;
                     employee.Email = obj.Email;
+                    employee.UpdatedBy = obj.UpdatedBy;
+                    employee.Date_Updated = obj.Date_Updated;
                     db.Entry(employee).State = EntityState.Modified;
-                    var query =await db.SaveChangesAsync();
-                    if(query > 0)
+                    var query = await db.SaveChangesAsync();
+                    if (query > 0)
                     {
                         return "Guardado Correctamente";
                     }
                 }
                 return "No se pudo Guardar";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
     
         }
+
+        public async Task<string> DeleteEmployee(Employees obj)
+        {
+            try
+            {
+                var employee = await db.Employees.FindAsync(obj.EmployeeId);
+                if (employee != null)
+                {
+                    employee.IsActive = false;
+                    employee.UpdatedBy = obj.UpdatedBy;
+                    employee.Date_Updated = obj.Date_Updated;
+                    db.Entry(employee).State = EntityState.Modified;
+                    var result = await db.SaveChangesAsync();
+                    if (result > 0)
+                    {
+                        return "Eliminado Correctamente";
+                    }
+                    return "No se pudo Eliminar";
+                }
+                return "Registro no existe";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
 
     }
 }

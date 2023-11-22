@@ -63,6 +63,13 @@
             ButtonCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonSave = new Guna.UI2.WinForms.Guna2GradientButton();
             pictureBoxLoadData = new System.Windows.Forms.PictureBox();
+            Label_Id = new System.Windows.Forms.Label();
+            label_Name = new System.Windows.Forms.Label();
+            label_Last_Name = new System.Windows.Forms.Label();
+            label_Id_Card = new System.Windows.Forms.Label();
+            label_phone = new System.Windows.Forms.Label();
+            label_Address = new System.Windows.Forms.Label();
+            label_Email = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)PictureBox_Employee).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoadData).BeginInit();
             SuspendLayout();
@@ -83,7 +90,7 @@
             TextBoxEmail.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBoxEmail.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBoxEmail.Location = new System.Drawing.Point(30, 229);
+            TextBoxEmail.Location = new System.Drawing.Point(254, 143);
             TextBoxEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBoxEmail.MaxLength = 100;
             TextBoxEmail.Name = "TextBoxEmail";
@@ -111,7 +118,7 @@
             TextBox_address.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_address.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_address.Location = new System.Drawing.Point(30, 194);
+            TextBox_address.Location = new System.Drawing.Point(254, 89);
             TextBox_address.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_address.MaxLength = 100;
             TextBox_address.Name = "TextBox_address";
@@ -139,7 +146,7 @@
             TextBox_phone.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_phone.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_phone.Location = new System.Drawing.Point(30, 159);
+            TextBox_phone.Location = new System.Drawing.Point(254, 35);
             TextBox_phone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_phone.MaxLength = 8;
             TextBox_phone.Name = "TextBox_phone";
@@ -167,7 +174,7 @@
             TextBox_last_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_last_name.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_last_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_last_name.Location = new System.Drawing.Point(30, 89);
+            TextBox_last_name.Location = new System.Drawing.Point(30, 143);
             TextBox_last_name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_last_name.MaxLength = 50;
             TextBox_last_name.Name = "TextBox_last_name";
@@ -195,7 +202,7 @@
             TextBox_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_name.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_name.Location = new System.Drawing.Point(30, 54);
+            TextBox_name.Location = new System.Drawing.Point(30, 89);
             TextBox_name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_name.MaxLength = 50;
             TextBox_name.Name = "TextBox_name";
@@ -223,7 +230,7 @@
             TextBox_id_card.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_id_card.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id_card.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_id_card.Location = new System.Drawing.Point(30, 124);
+            TextBox_id_card.Location = new System.Drawing.Point(30, 198);
             TextBox_id_card.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_id_card.MaxLength = 14;
             TextBox_id_card.Name = "TextBox_id_card";
@@ -251,7 +258,7 @@
             TextBox_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_id.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_id.Location = new System.Drawing.Point(30, 19);
+            TextBox_id.Location = new System.Drawing.Point(30, 34);
             TextBox_id.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_id.Name = "TextBox_id";
             TextBox_id.PasswordChar = '\0';
@@ -277,7 +284,7 @@
             ButtonSubirImagen.ForeColor = System.Drawing.Color.White;
             ButtonSubirImagen.Image = (System.Drawing.Image)resources.GetObject("ButtonSubirImagen.Image");
             ButtonSubirImagen.IndicateFocus = true;
-            ButtonSubirImagen.Location = new System.Drawing.Point(252, 183);
+            ButtonSubirImagen.Location = new System.Drawing.Point(524, 178);
             ButtonSubirImagen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSubirImagen.Name = "ButtonSubirImagen";
             ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -291,7 +298,7 @@
             PictureBox_Employee.BorderRadius = 11;
             PictureBox_Employee.CustomizableEdges = customizableEdges17;
             PictureBox_Employee.ImageRotate = 0F;
-            PictureBox_Employee.Location = new System.Drawing.Point(252, 24);
+            PictureBox_Employee.Location = new System.Drawing.Point(524, 19);
             PictureBox_Employee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             PictureBox_Employee.Name = "PictureBox_Employee";
             PictureBox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -315,7 +322,7 @@
             ButtonCancel.ForeColor = System.Drawing.Color.White;
             ButtonCancel.Image = (System.Drawing.Image)resources.GetObject("ButtonCancel.Image");
             ButtonCancel.IndicateFocus = true;
-            ButtonCancel.Location = new System.Drawing.Point(72, 277);
+            ButtonCancel.Location = new System.Drawing.Point(194, 259);
             ButtonCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonCancel.Name = "ButtonCancel";
             ButtonCancel.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -339,7 +346,7 @@
             ButtonSave.ForeColor = System.Drawing.Color.White;
             ButtonSave.Image = (System.Drawing.Image)resources.GetObject("ButtonSave.Image");
             ButtonSave.IndicateFocus = true;
-            ButtonSave.Location = new System.Drawing.Point(214, 277);
+            ButtonSave.Location = new System.Drawing.Point(336, 259);
             ButtonSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSave.Name = "ButtonSave";
             ButtonSave.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -351,21 +358,112 @@
             // pictureBoxLoadData
             // 
             pictureBoxLoadData.Image = (System.Drawing.Image)resources.GetObject("pictureBoxLoadData.Image");
-            pictureBoxLoadData.Location = new System.Drawing.Point(30, -1);
+            pictureBoxLoadData.Location = new System.Drawing.Point(-1, 0);
             pictureBoxLoadData.Name = "pictureBoxLoadData";
-            pictureBoxLoadData.Size = new System.Drawing.Size(356, 340);
-            pictureBoxLoadData.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBoxLoadData.Size = new System.Drawing.Size(674, 338);
+            pictureBoxLoadData.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             pictureBoxLoadData.TabIndex = 35;
             pictureBoxLoadData.TabStop = false;
             pictureBoxLoadData.Visible = false;
+            // 
+            // Label_Id
+            // 
+            Label_Id.AutoSize = true;
+            Label_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            Label_Id.ForeColor = System.Drawing.SystemColors.GrayText;
+            Label_Id.Location = new System.Drawing.Point(30, 13);
+            Label_Id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label_Id.Name = "Label_Id";
+            Label_Id.Size = new System.Drawing.Size(85, 18);
+            Label_Id.TabIndex = 36;
+            Label_Id.Text = "Id Usuario";
+            // 
+            // label_Name
+            // 
+            label_Name.AutoSize = true;
+            label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Name.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Name.Location = new System.Drawing.Point(30, 68);
+            label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Name.Name = "label_Name";
+            label_Name.Size = new System.Drawing.Size(77, 18);
+            label_Name.TabIndex = 37;
+            label_Name.Text = "Nombres";
+            // 
+            // label_Last_Name
+            // 
+            label_Last_Name.AutoSize = true;
+            label_Last_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Last_Name.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Last_Name.Location = new System.Drawing.Point(30, 122);
+            label_Last_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Last_Name.Name = "label_Last_Name";
+            label_Last_Name.Size = new System.Drawing.Size(76, 18);
+            label_Last_Name.TabIndex = 38;
+            label_Last_Name.Text = "Apellidos";
+            // 
+            // label_Id_Card
+            // 
+            label_Id_Card.AutoSize = true;
+            label_Id_Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Id_Card.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Id_Card.Location = new System.Drawing.Point(30, 177);
+            label_Id_Card.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Id_Card.Name = "label_Id_Card";
+            label_Id_Card.Size = new System.Drawing.Size(84, 18);
+            label_Id_Card.TabIndex = 39;
+            label_Id_Card.Text = "N° Cedula";
+            // 
+            // label_phone
+            // 
+            label_phone.AutoSize = true;
+            label_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_phone.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_phone.Location = new System.Drawing.Point(254, 14);
+            label_phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_phone.Name = "label_phone";
+            label_phone.Size = new System.Drawing.Size(74, 18);
+            label_phone.TabIndex = 40;
+            label_phone.Text = "Telefono";
+            // 
+            // label_Address
+            // 
+            label_Address.AutoSize = true;
+            label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Address.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Address.Location = new System.Drawing.Point(254, 68);
+            label_Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Address.Name = "label_Address";
+            label_Address.Size = new System.Drawing.Size(80, 18);
+            label_Address.TabIndex = 41;
+            label_Address.Text = "Direccion";
+            // 
+            // label_Email
+            // 
+            label_Email.AutoSize = true;
+            label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label_Email.ForeColor = System.Drawing.SystemColors.GrayText;
+            label_Email.Location = new System.Drawing.Point(254, 122);
+            label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Email.Name = "label_Email";
+            label_Email.Size = new System.Drawing.Size(152, 18);
+            label_Email.TabIndex = 42;
+            label_Email.Text = "Correo Electronico";
             // 
             // Form_employee_edit
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            ClientSize = new System.Drawing.Size(419, 338);
+            ClientSize = new System.Drawing.Size(671, 338);
             Controls.Add(pictureBoxLoadData);
+            Controls.Add(label_Email);
+            Controls.Add(label_Address);
+            Controls.Add(label_phone);
+            Controls.Add(label_Id_Card);
+            Controls.Add(label_Last_Name);
+            Controls.Add(label_Name);
+            Controls.Add(Label_Id);
             Controls.Add(ButtonSave);
             Controls.Add(ButtonCancel);
             Controls.Add(ButtonSubirImagen);
@@ -385,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)PictureBox_Employee).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLoadData).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -401,5 +500,12 @@
         private Guna.UI2.WinForms.Guna2GradientButton ButtonCancel;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSave;
         private System.Windows.Forms.PictureBox pictureBoxLoadData;
+        private System.Windows.Forms.Label Label_Id;
+        private System.Windows.Forms.Label label_Name;
+        private System.Windows.Forms.Label label_Last_Name;
+        private System.Windows.Forms.Label label_Id_Card;
+        private System.Windows.Forms.Label label_phone;
+        private System.Windows.Forms.Label label_Address;
+        private System.Windows.Forms.Label label_Email;
     }
 }
