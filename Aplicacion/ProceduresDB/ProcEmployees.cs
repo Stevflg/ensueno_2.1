@@ -108,11 +108,10 @@ namespace Aplicacion.ProceduresDB
                 return null;
             }
         }
-        public string EditEmployee(Employees obj)
+        public async Task<string> EditEmployee(Employees obj)
         {
-            using( var db = new EnsuenoContext())
-            {
-                var employee = db.Employees.Find(obj.EmployeeId);
+                var employee =await db.Employees.FindAsync(obj.EmployeeId);
+
                 if (employee != null)
                 {
                     employee.EmployeeName = obj.EmployeeName;
@@ -120,16 +119,17 @@ namespace Aplicacion.ProceduresDB
                     employee.EmployeeIdentification = obj.EmployeeIdentification;
                     employee.EmployeePhone = obj.EmployeePhone;
                     employee.EmployeeAddress = obj.EmployeeAddress;
+                    employee.Image=obj.Image;
                     employee.Email = obj.Email;
                     db.Entry(employee).State = EntityState.Modified;
-                    var query = db.SaveChanges();
+                    var query =await db.SaveChangesAsync();
                     if(query > 0)
                     {
                         return "Guardado Correctamente";
                     }
                 }
                 return "No se pudo Guardar";
-            }
+    
         }
 
     }

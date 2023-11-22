@@ -30,8 +30,9 @@ namespace ensueno.Presentation.Main
             {
                 pictureBoxLoadData.Visible = true;
             }));
-            Employees employee = new Employees { EmployeeId = employeeId };
+           
             ProcEmployees procEmployees = new ProcEmployees();
+            Employees employee = new Employees { EmployeeId = employeeId };
             var result = await procEmployees.GetEmployeebyFormEdit(employee);
             this.Invoke((Action)(() =>
             {
@@ -48,6 +49,29 @@ namespace ensueno.Presentation.Main
             }));
         }
         #endregion
+
+        //Metodo para guardar cambios
+        private async void saveChanges()
+        {
+
+            ProcEmployees procEmployees = new ProcEmployees();
+            Employees employee = new Employees { EmployeeId = EmployeeId ,
+                EmployeeName = TextBox_name.Text,
+                EmployeeLastName = TextBox_last_name.Text,
+                EmployeeIdentification = TextBox_id_card.Text,
+                EmployeePhone = TextBox_phone.Text,
+                EmployeeAddress = TextBox_address.Text,
+                Email = TextBoxEmail.Text,
+                Image = image
+            };
+            var result = await procEmployees.EditEmployee(employee);
+            this.Invoke(new Action(() =>
+            {
+                MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }));
+        }
+
         #region Eventos
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
@@ -59,9 +83,9 @@ namespace ensueno.Presentation.Main
             await Task.Run(() => { LoadDataEmployee(EmployeeId); });
         }
 
-        private void ButtonSave_Click(object sender, EventArgs e)
+        private async void ButtonSave_Click(object sender, EventArgs e)
         {
-
+            saveChanges();
         }
         #endregion
 
