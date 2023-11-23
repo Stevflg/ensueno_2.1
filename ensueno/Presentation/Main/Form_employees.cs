@@ -22,18 +22,21 @@ namespace ensueno.Presentation.Main
         private readonly ProcEmployees procEmpl = new ProcEmployees();
         private Employees employe;
         readonly Values val = new Values();
-        public Form_employees(Color color,Username user)
+        public Form_employees(Color color, Username user)
         {
             InitializeComponent();
             this.BackColor = color;
             this.userSesions = user;
+            this.color = color;
         }
-
+        private Color color;
         private async void Form_employees_Load(object sender, EventArgs e)
         {
             this.Invoke(new Action(() =>
             {
                 pictureBoxDark.Visible = true;
+                DateTimePickerInicial.Value = DateTime.Now;
+                DateTimePickerEnd.Value = DateTime.Now;
             }));
             await Task.Run(() => { Read(); });
         }
@@ -78,23 +81,19 @@ namespace ensueno.Presentation.Main
             {
                 employe = new Employees
                 {
-                    //EmployeeId = int.Parse(TextBox_SearchEmployee.Text),
-                    EmployeeName = TextBox_SearchEmployee.Text,
-                    EmployeeLastName = TextBox_SearchEmployee.Text,
-                    EmployeeIdentification = TextBox_SearchEmployee.Text,
-                    EmployeePhone = TextBox_SearchEmployee.Text,
-                    EmployeeAddress = TextBox_SearchEmployee.Text,
-                    Email = TextBox_SearchEmployee.Text
+                    EmployeeName = TextBox_SearchEmployee.Text
                 };
                 this.Invoke(new Action(() =>
                 {
                     pictureBoxDark.Visible = true;
+                    ButtonSearch.Enabled = false;
                 }));
-                var result = await procEmpl.SearchEmployee(employe);
+                var result = await procEmpl.SearchEmployee(employe, DateTimePickerInicial.Value, DateTimePickerEnd.Value);
                 this.Invoke(new Action(() =>
                 {
                     DataGridView_employees.DataSource = result;
                     pictureBoxDark.Visible = false;
+                    ButtonSearch.Enabled = true;
                 }));
             }
             catch { }
@@ -137,12 +136,14 @@ namespace ensueno.Presentation.Main
         private async void DeleteEmployee()
         {
             employe = new Employees
-            {EmployeeId = employeeId,
-             UpdatedBy = userSesions.EmployeeId,
-             Date_Updated = DateTime.Now
+            {
+                EmployeeId = employeeId,
+                UpdatedBy = userSesions.EmployeeId,
+                Date_Updated = DateTime.Now
             };
             var result = await procEmpl.DeleteEmployee(employe);
-            this.Invoke(new Action(() => {
+            this.Invoke(new Action(() =>
+            {
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBoxes();
                 Read();
@@ -153,11 +154,7 @@ namespace ensueno.Presentation.Main
         #region Events
         private async void Button_create_Click(object sender, EventArgs e)
         {
-               AddEmployee();
-        }
-        private void TextBox_SearchEmployee_TextChanged(object sender, EventArgs e)
-        {
-            SearchEmployee();
+            AddEmployee();
         }
         private Form_employee_edit epedit;
         private int employeeId;
@@ -165,14 +162,14 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                Form frm =Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Form_employee_edit);
+                Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Form_employee_edit);
                 if (frm != null)
                 {
                     frm.BringToFront();
                 }
                 else
                 {
-                    epedit = new Form_employee_edit(employeeId,userSesions);
+                    epedit = new Form_employee_edit(employeeId, userSesions, BackColor);
                     epedit.ShowDialog();
                     pictureBoxDark.Visible = true;
                     Read();
@@ -196,7 +193,7 @@ namespace ensueno.Presentation.Main
                 else
                 {
                     TextBox_id.Text = DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    employeeId= int.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    employeeId = int.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[0].Value.ToString());
                     TextBox_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[1].Value.ToString();
                     TextBox_last_name.Text = DataGridView_employees.Rows[e.RowIndex].Cells[2].Value.ToString();
                     TextBox_id_card.Text = DataGridView_employees.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -206,14 +203,27 @@ namespace ensueno.Presentation.Main
                 }
             }
             catch (Exception ex)
-            {   }
+            { }
+        }
+
+        private async void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() => { SearchEmployee(); });
+        }
+
+        private async void TextBox_SearchEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                await Task.Run(() => { SearchEmployee(); });
+            }
         }
 
         private void Button_clear_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
         }
-       
+
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
@@ -259,7 +269,7 @@ namespace ensueno.Presentation.Main
             val.empty_text(TextBox_address);
         }
 
-        private void Button_report_Click(object sender, EventArgs e)
+        private async void Button_report_Click(object sender, EventArgs e)
         {
 
         }
@@ -301,6 +311,7 @@ namespace ensueno.Presentation.Main
 
         #endregion
 
-        
+
+
     }
 }

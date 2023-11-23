@@ -41,7 +41,7 @@ namespace Aplicacion.ProceduresDB
             catch { return null; }
         }
 
-        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj)
+        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj,DateTime dateinitial,DateTime dateend)
         {
             try
             {
@@ -49,11 +49,12 @@ namespace Aplicacion.ProceduresDB
                                       where (
                                           e.EmployeeId.ToString().Contains(obj.EmployeeName)||
                                           e.EmployeeName.Contains(obj.EmployeeName)||
-                                          e.EmployeeLastName.Contains(obj.EmployeeLastName)||
-                                          e.EmployeeIdentification.Contains(obj.EmployeeIdentification) ||
-                                          e.EmployeePhone.Contains(obj.EmployeePhone) ||
-                                          e.EmployeeAddress.Contains(obj.EmployeeAddress) ||
-                                          e.Email.Contains(obj.Email)) & e.IsActive ==true
+                                          e.EmployeeLastName.Contains(obj.EmployeeName)||
+                                          e.EmployeeIdentification.Contains(obj.EmployeeName) ||
+                                          e.EmployeePhone.Contains(obj.EmployeeName) ||
+                                          e.EmployeeAddress.Contains(obj.EmployeeName) ||
+                                          e.Email.Contains(obj.Email)) && e.IsActive ==true
+                                          && (e.Date_Time>=dateinitial && e.Date_Time<=dateend)
                                           select new EmployeeDTO
                                           {
                                               Id = e.EmployeeId,

@@ -19,11 +19,12 @@ namespace ensueno.Presentation.Main
     public partial class Form_employee_edit : Form
     {
         private Username UserSesion;
-        public Form_employee_edit(int employeeid,Username userSesions)
+        public Form_employee_edit(int employeeid,Username userSesions, Color color)
         {
             InitializeComponent();
             this.EmployeeId = employeeid;
             this.UserSesion = userSesions;
+            this.BackColor = color;
         }
         
         #region Carga de los datos
