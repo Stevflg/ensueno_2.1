@@ -8,6 +8,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\Main\inventories.png" />
@@ -18,6 +19,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Presentation\Reportings\EmployeeList.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EmployeeList.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -30,6 +36,10 @@
     <EmbeddedResource Include="Report\Report_employees.rdlc" />
     <EmbeddedResource Include="Report\Report_invoice.rdlc" />
     <EmbeddedResource Include="Report\Report_products.rdlc" />
+    <None Update="Presentation\Reportings\EmployeeList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeList.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -71,6 +81,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.19" />
     <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
@@ -82,5 +93,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Aplicacion\Aplicacion.csproj" />
     <ProjectReference Include="..\Dominio\Dominio.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
   </ItemGroup>
 </Project>

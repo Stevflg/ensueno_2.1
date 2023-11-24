@@ -27,6 +27,7 @@ namespace ensueno.Presentation.Main
             Apply_dark_mode();
             Admin(username);
             this.Select();
+          //Open_form_panel(new Form_Report_Employee());
         }
         private Username userSesion;
         private Color color;
