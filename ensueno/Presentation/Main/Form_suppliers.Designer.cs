@@ -1,6 +1,6 @@
 ﻿namespace ensueno.Presentation.Main
 {
-    partial class Form_Inventories
+    partial class Form_suppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -45,21 +45,21 @@
             LabelTest.AutoSize = true;
             LabelTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             LabelTest.ForeColor = System.Drawing.SystemColors.GrayText;
-            LabelTest.Location = new System.Drawing.Point(308, 36);
+            LabelTest.Location = new System.Drawing.Point(187, 110);
             LabelTest.Name = "LabelTest";
-            LabelTest.Size = new System.Drawing.Size(279, 24);
-            LabelTest.TabIndex = 0;
-            LabelTest.Text = "Etiqueta de Prueba (Inventories)";
+            LabelTest.Size = new System.Drawing.Size(267, 24);
+            LabelTest.TabIndex = 1;
+            LabelTest.Text = "Etiqueta de Prueba (Suppliers)";
             // 
-            // Form_Inventories
+            // Form_suppliers
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
             Controls.Add(LabelTest);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Name = "Form_Inventories";
-            Text = "FormStock";
+            Name = "Form_suppliers";
+            Text = "Form_suppliers";
             ResumeLayout(false);
             PerformLayout();
         }

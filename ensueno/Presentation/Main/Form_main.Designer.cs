@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,17 +40,21 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             Slide_panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -74,6 +76,7 @@
             pictureBoxUser = new System.Windows.Forms.PictureBox();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             Transition_slide_panel_hide = new Guna.UI2.WinForms.Guna2Transition();
+            Button_suppliers = new Guna.UI2.WinForms.Guna2GradientButton();
             Slide_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
             SuspendLayout();
@@ -88,6 +91,7 @@
             // 
             // Slide_panel
             // 
+            Slide_panel.Controls.Add(Button_suppliers);
             Slide_panel.Controls.Add(Button_database);
             Slide_panel.Controls.Add(ButtonInventories);
             Slide_panel.Controls.Add(Button_bills);
@@ -95,14 +99,14 @@
             Slide_panel.Controls.Add(Button_clients);
             Slide_panel.Controls.Add(Separator_slide_panel);
             Slide_panel.Controls.Add(Button_employees);
-            Slide_panel.CustomizableEdges = customizableEdges12;
+            Slide_panel.CustomizableEdges = customizableEdges14;
             Transition_slide_panel_hide.SetDecoration(Slide_panel, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Slide_panel, Guna.UI2.AnimatorNS.DecorationType.None);
             Slide_panel.FillColor = System.Drawing.Color.FromArgb(51, 51, 51);
             Slide_panel.Location = new System.Drawing.Point(0, 0);
             Slide_panel.Margin = new System.Windows.Forms.Padding(4);
             Slide_panel.Name = "Slide_panel";
-            Slide_panel.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            Slide_panel.ShadowDecoration.CustomizableEdges = customizableEdges15;
             Slide_panel.Size = new System.Drawing.Size(50, 658);
             Slide_panel.TabIndex = 0;
             // 
@@ -125,7 +129,7 @@
             Button_database.Location = new System.Drawing.Point(5, 3);
             Button_database.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_database.Name = "Button_database";
-            Button_database.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            Button_database.ShadowDecoration.CustomizableEdges = customizableEdges3;
             Button_database.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_database.Size = new System.Drawing.Size(40, 40);
             Button_database.TabIndex = 14;
@@ -136,7 +140,7 @@
             ButtonInventories.CustomImages.Image = Properties.Resources.inventories;
             ButtonInventories.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             ButtonInventories.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            ButtonInventories.CustomizableEdges = customizableEdges2;
+            ButtonInventories.CustomizableEdges = customizableEdges4;
             Transition_slide_panel_hide.SetDecoration(ButtonInventories, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(ButtonInventories, Guna.UI2.AnimatorNS.DecorationType.None);
             ButtonInventories.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -152,7 +156,7 @@
             ButtonInventories.Location = new System.Drawing.Point(0, 409);
             ButtonInventories.Margin = new System.Windows.Forms.Padding(4);
             ButtonInventories.Name = "ButtonInventories";
-            ButtonInventories.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            ButtonInventories.ShadowDecoration.CustomizableEdges = customizableEdges5;
             ButtonInventories.Size = new System.Drawing.Size(200, 50);
             ButtonInventories.TabIndex = 13;
             ButtonInventories.Text = "INVENTARIOS";
@@ -165,7 +169,7 @@
             Button_bills.CustomImages.Image = Properties.Resources.bills;
             Button_bills.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_bills.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            Button_bills.CustomizableEdges = customizableEdges4;
+            Button_bills.CustomizableEdges = customizableEdges6;
             Transition_slide_panel_hide.SetDecoration(Button_bills, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Button_bills, Guna.UI2.AnimatorNS.DecorationType.None);
             Button_bills.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -181,7 +185,7 @@
             Button_bills.Location = new System.Drawing.Point(0, 351);
             Button_bills.Margin = new System.Windows.Forms.Padding(4);
             Button_bills.Name = "Button_bills";
-            Button_bills.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            Button_bills.ShadowDecoration.CustomizableEdges = customizableEdges7;
             Button_bills.Size = new System.Drawing.Size(200, 50);
             Button_bills.TabIndex = 12;
             Button_bills.Text = "FACTURAS";
@@ -194,7 +198,7 @@
             Button_products.CustomImages.Image = Properties.Resources.products;
             Button_products.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_products.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            Button_products.CustomizableEdges = customizableEdges6;
+            Button_products.CustomizableEdges = customizableEdges8;
             Transition_slide_panel_hide.SetDecoration(Button_products, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Button_products, Guna.UI2.AnimatorNS.DecorationType.None);
             Button_products.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -210,7 +214,7 @@
             Button_products.Location = new System.Drawing.Point(0, 293);
             Button_products.Margin = new System.Windows.Forms.Padding(4);
             Button_products.Name = "Button_products";
-            Button_products.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            Button_products.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Button_products.Size = new System.Drawing.Size(200, 50);
             Button_products.TabIndex = 11;
             Button_products.Text = "PRODUCTOS";
@@ -223,7 +227,7 @@
             Button_clients.CustomImages.Image = Properties.Resources.clients;
             Button_clients.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_clients.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            Button_clients.CustomizableEdges = customizableEdges8;
+            Button_clients.CustomizableEdges = customizableEdges10;
             Transition_slide_panel_hide.SetDecoration(Button_clients, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Button_clients, Guna.UI2.AnimatorNS.DecorationType.None);
             Button_clients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -239,7 +243,7 @@
             Button_clients.Location = new System.Drawing.Point(0, 237);
             Button_clients.Margin = new System.Windows.Forms.Padding(4);
             Button_clients.Name = "Button_clients";
-            Button_clients.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            Button_clients.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_clients.Size = new System.Drawing.Size(200, 50);
             Button_clients.TabIndex = 10;
             Button_clients.Text = "CLIENTES";
@@ -265,7 +269,7 @@
             Button_employees.CustomImages.Image = Properties.Resources.employees;
             Button_employees.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_employees.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            Button_employees.CustomizableEdges = customizableEdges10;
+            Button_employees.CustomizableEdges = customizableEdges12;
             Transition_slide_panel_hide.SetDecoration(Button_employees, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Button_employees, Guna.UI2.AnimatorNS.DecorationType.None);
             Button_employees.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -281,7 +285,7 @@
             Button_employees.Location = new System.Drawing.Point(0, 179);
             Button_employees.Margin = new System.Windows.Forms.Padding(4);
             Button_employees.Name = "Button_employees";
-            Button_employees.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            Button_employees.ShadowDecoration.CustomizableEdges = customizableEdges13;
             Button_employees.Size = new System.Drawing.Size(200, 50);
             Button_employees.TabIndex = 4;
             Button_employees.Text = "EMPLEADOS";
@@ -312,13 +316,13 @@
             // Container_panel
             // 
             Container_panel.BackColor = System.Drawing.Color.Transparent;
-            Container_panel.CustomizableEdges = customizableEdges20;
+            Container_panel.CustomizableEdges = customizableEdges22;
             Transition_slide_panel_hide.SetDecoration(Container_panel, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(Container_panel, Guna.UI2.AnimatorNS.DecorationType.None);
             Container_panel.Location = new System.Drawing.Point(66, 64);
             Container_panel.Margin = new System.Windows.Forms.Padding(4);
             Container_panel.Name = "Container_panel";
-            Container_panel.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            Container_panel.ShadowDecoration.CustomizableEdges = customizableEdges23;
             Container_panel.Size = new System.Drawing.Size(991, 577);
             Container_panel.TabIndex = 11;
             // 
@@ -327,7 +331,7 @@
             guna2ControlBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
             guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox2.CustomizableEdges = customizableEdges14;
+            guna2ControlBox2.CustomizableEdges = customizableEdges16;
             Transition_slide_panel_hide.SetDecoration(guna2ControlBox2, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(guna2ControlBox2, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
@@ -335,7 +339,7 @@
             guna2ControlBox2.Location = new System.Drawing.Point(944, 0);
             guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
             guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2ControlBox2.Size = new System.Drawing.Size(52, 34);
             guna2ControlBox2.TabIndex = 12;
             // 
@@ -343,7 +347,7 @@
             // 
             guna2ControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            guna2ControlBox1.CustomizableEdges = customizableEdges16;
+            guna2ControlBox1.CustomizableEdges = customizableEdges18;
             Transition_slide_panel_hide.SetDecoration(guna2ControlBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             Transition_slide_panel_show.SetDecoration(guna2ControlBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
@@ -351,7 +355,7 @@
             guna2ControlBox1.Location = new System.Drawing.Point(1004, 0);
             guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2ControlBox1.Size = new System.Drawing.Size(52, 34);
             guna2ControlBox1.TabIndex = 13;
             // 
@@ -386,7 +390,7 @@
             Button_hide.Location = new System.Drawing.Point(211, 68);
             Button_hide.Margin = new System.Windows.Forms.Padding(4);
             Button_hide.Name = "Button_hide";
-            Button_hide.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            Button_hide.ShadowDecoration.CustomizableEdges = customizableEdges20;
             Button_hide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_hide.Size = new System.Drawing.Size(59, 58);
             Button_hide.TabIndex = 9;
@@ -411,7 +415,7 @@
             Button_show.Location = new System.Drawing.Point(66, 68);
             Button_show.Margin = new System.Windows.Forms.Padding(4);
             Button_show.Name = "Button_show";
-            Button_show.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            Button_show.ShadowDecoration.CustomizableEdges = customizableEdges21;
             Button_show.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_show.Size = new System.Drawing.Size(59, 58);
             Button_show.TabIndex = 8;
@@ -469,6 +473,35 @@
             animation1.TransparencyCoeff = 1F;
             Transition_slide_panel_hide.DefaultAnimation = animation1;
             // 
+            // Button_suppliers
+            // 
+            Button_suppliers.Animated = true;
+            Button_suppliers.CustomImages.Image = Properties.Resources.suppliers;
+            Button_suppliers.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_suppliers.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            Button_suppliers.CustomizableEdges = customizableEdges1;
+            Transition_slide_panel_hide.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
+            Transition_slide_panel_show.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
+            Button_suppliers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            Button_suppliers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            Button_suppliers.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_suppliers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_suppliers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            Button_suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_suppliers.ForeColor = System.Drawing.Color.White;
+            Button_suppliers.HoverState.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            Button_suppliers.HoverState.FillColor2 = System.Drawing.Color.FromArgb(255, 77, 165);
+            Button_suppliers.IndicateFocus = true;
+            Button_suppliers.Location = new System.Drawing.Point(0, 467);
+            Button_suppliers.Margin = new System.Windows.Forms.Padding(4);
+            Button_suppliers.Name = "Button_suppliers";
+            Button_suppliers.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Button_suppliers.Size = new System.Drawing.Size(200, 50);
+            Button_suppliers.TabIndex = 15;
+            Button_suppliers.Text = "PROVEEDORES";
+            Button_suppliers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            Button_suppliers.Click += Button_suppliers_Click;
+            // 
             // Form_main
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -520,5 +553,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton ButtonInventories;
         private Guna.UI2.WinForms.Guna2CircleButton Button_database;
         private System.Windows.Forms.PictureBox pictureBoxUser;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_suppliers;
     }
 }

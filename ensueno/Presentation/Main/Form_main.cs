@@ -32,15 +32,15 @@ namespace ensueno.Presentation.Main
         private Color color;
         private void Apply_dark_mode()
         {
-            var color = Properties.Settings.Default.dark_mode==true? Color.FromArgb(31, 31, 31):Color.FromArgb(238, 238, 238);
+            var color = Properties.Settings.Default.dark_mode == true ? Color.FromArgb(31, 31, 31) : Color.FromArgb(238, 238, 238);
             this.BackColor = color;
-            this.color=color;
+            this.color = color;
         }
         private async void Admin(string username)
         {
-            Users users = new Users {UserName = username};
+            Users users = new Users { UserName = username };
             userSesion = await procUsers.UserName(users);
-            Label_user_role.Text = userSesion.UserName+ " : " +userSesion.RolName;
+            Label_user_role.Text = userSesion.UserName + " : " + userSesion.RolName;
             Read_image(userSesion.Image);
         }
         private MemoryStream memory_stream;
@@ -77,27 +77,27 @@ namespace ensueno.Presentation.Main
 
         private async void Open_form_panel(object form_panel)
         {
-                Form fp = form_panel as Form;
-                if (Container_panel.Controls.Count > 0)
-                {
-                        Container_panel.Controls.RemoveAt(0);
-                }
-                fp.TopLevel = false;
-                fp.Dock = DockStyle.Fill;
-                Container_panel.Controls.Add(fp);
-                Container_panel.Tag = fp;
-                fp.Show();
+            Form fp = form_panel as Form;
+            if (Container_panel.Controls.Count > 0)
+            {
+                Container_panel.Controls.RemoveAt(0);
+            }
+            fp.TopLevel = false;
+            fp.Dock = DockStyle.Fill;
+            Container_panel.Controls.Add(fp);
+            Container_panel.Tag = fp;
+            fp.Show();
         }
 
         private void Button_employees_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Empleados";
-            Open_form_panel(new Form_employees(color,userSesion));
+            Open_form_panel(new Form_employees(color, userSesion));
         }
         private void Button_clients_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Clientes";
-             Open_form_panel(new Form_clients(color)); 
+            Open_form_panel(new Form_clients(color));
         }
         private void Button_products_Click(object sender, EventArgs e)
         {
@@ -113,6 +113,12 @@ namespace ensueno.Presentation.Main
         {
             Label_form_selected.Text = "Inventarios";
             Open_form_panel(new Form_Inventories(color));
+        }
+
+        private void Button_suppliers_Click(object sender, EventArgs e)
+        {
+            Label_form_selected.Text = "Proveedores";
+            Open_form_panel(new Form_suppliers(color));
         }
     }
 }
