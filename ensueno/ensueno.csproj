@@ -19,11 +19,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Presentation\Reportings\EmployeeList.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EmployeeList.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -36,10 +31,6 @@
     <EmbeddedResource Include="Report\Report_employees.rdlc" />
     <EmbeddedResource Include="Report\Report_invoice.rdlc" />
     <EmbeddedResource Include="Report\Report_products.rdlc" />
-    <None Update="Presentation\Reportings\EmployeeList.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EmployeeList.Designer.cs</LastGenOutput>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

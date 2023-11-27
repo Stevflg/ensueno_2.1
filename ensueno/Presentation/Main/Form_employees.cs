@@ -113,7 +113,7 @@ namespace ensueno.Presentation.Main
                 Image = image
             };
 
-            if (string.IsNullOrWhiteSpace(TextBox_last_name.Text) || string.IsNullOrWhiteSpace(TextBox_last_name.Text) ||
+            if (string.IsNullOrWhiteSpace(TextBox_name.Text) || string.IsNullOrWhiteSpace(TextBox_last_name.Text) ||
                 string.IsNullOrWhiteSpace(TextBox_id_card.Text) || string.IsNullOrWhiteSpace(TextBox_phone.Text) || string.IsNullOrWhiteSpace(TextBox_address.Text)
                 || string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
@@ -154,7 +154,14 @@ namespace ensueno.Presentation.Main
         #region Events
         private async void Button_create_Click(object sender, EventArgs e)
         {
-            AddEmployee();
+            try
+            {
+                AddEmployee();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private Form_employee_edit epedit;
         private int employeeId;
@@ -234,6 +241,7 @@ namespace ensueno.Presentation.Main
             }
             else
             {
+                if (string.IsNullOrEmpty(TextBox_id.Text)) val.ClearError();
                 Button_create.Enabled = true;
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
@@ -267,6 +275,35 @@ namespace ensueno.Presentation.Main
         private void TextBox_address_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.empty_text(TextBox_address);
+        }
+        private void TextBox_name_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
+        }
+
+        private void TextBox_last_name_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
+        }
+
+        private void TextBox_id_card_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
+        }
+
+        private void TextBox_phone_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
+        }
+
+        private void TextBox_address_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
+        }
+
+        private void TextBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
         }
 
         private async void Button_report_Click(object sender, EventArgs e)
@@ -310,8 +347,5 @@ namespace ensueno.Presentation.Main
         }
 
         #endregion
-
-
-
     }
 }

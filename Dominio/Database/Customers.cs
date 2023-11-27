@@ -24,6 +24,6 @@ namespace Dominio.Database
         /// ////
         /// </summary>
         public int? UpdateBy { get; set; }
-        public DateTime Update_date_time { get; set; }
+        public DateTime? Update_date_time { get; set; }
     }
 }

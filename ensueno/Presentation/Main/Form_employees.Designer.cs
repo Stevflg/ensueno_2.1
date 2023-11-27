@@ -239,6 +239,7 @@
             TextBox_id_card.ShadowDecoration.CustomizableEdges = customizableEdges33;
             TextBox_id_card.Size = new System.Drawing.Size(216, 29);
             TextBox_id_card.TabIndex = 3;
+            TextBox_id_card.TextChanged += TextBox_id_card_TextChanged;
             TextBox_id_card.KeyPress += TextBox_id_card_KeyPress;
             // 
             // TextBox_name
@@ -268,6 +269,7 @@
             TextBox_name.ShadowDecoration.CustomizableEdges = customizableEdges31;
             TextBox_name.Size = new System.Drawing.Size(216, 29);
             TextBox_name.TabIndex = 1;
+            TextBox_name.TextChanged += TextBox_name_TextChanged;
             TextBox_name.KeyPress += TextBox_name_KeyPress;
             // 
             // TextBox_last_name
@@ -297,6 +299,7 @@
             TextBox_last_name.ShadowDecoration.CustomizableEdges = customizableEdges29;
             TextBox_last_name.Size = new System.Drawing.Size(216, 29);
             TextBox_last_name.TabIndex = 2;
+            TextBox_last_name.TextChanged += TextBox_last_name_TextChanged;
             TextBox_last_name.KeyPress += TextBox_last_name_KeyPress;
             // 
             // TextBox_phone
@@ -326,6 +329,7 @@
             TextBox_phone.ShadowDecoration.CustomizableEdges = customizableEdges27;
             TextBox_phone.Size = new System.Drawing.Size(216, 29);
             TextBox_phone.TabIndex = 4;
+            TextBox_phone.TextChanged += TextBox_phone_TextChanged;
             TextBox_phone.KeyPress += TextBox_phone_KeyPress;
             // 
             // TextBox_address
@@ -355,6 +359,7 @@
             TextBox_address.ShadowDecoration.CustomizableEdges = customizableEdges25;
             TextBox_address.Size = new System.Drawing.Size(216, 29);
             TextBox_address.TabIndex = 5;
+            TextBox_address.TextChanged += TextBox_address_TextChanged;
             TextBox_address.KeyPress += TextBox_address_KeyPress;
             // 
             // Button_create
@@ -536,6 +541,7 @@
             TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges12;
             TextBoxEmail.Size = new System.Drawing.Size(216, 29);
             TextBoxEmail.TabIndex = 6;
+            TextBoxEmail.TextChanged += TextBoxEmail_TextChanged;
             // 
             // PictureBox_product
             // 

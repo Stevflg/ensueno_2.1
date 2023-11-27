@@ -14,9 +14,9 @@ namespace Aplicacion.Reporting
     {
         private readonly EnsuenoContext db;
         public EmployeeReport() {
-        
+            this.db= new EnsuenoContext();
         }
-        public DataSet ListEmployee()
+        public DataTable ListEmployee()
         {
                 var query = (from c in db.Employees
                             where c.IsActive == true
@@ -50,9 +50,9 @@ namespace Aplicacion.Reporting
                 dataTable.Rows.Add(row);
                 }
 
-                var dataSet = new DataSet();
-                dataSet.Tables.Add(dataTable);
-            return dataSet;
+                //var dataSet = new DataSet();
+                //dataSet.Tables.Add(dataTable);
+            return dataTable;
         }
     }
 }

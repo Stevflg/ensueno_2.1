@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Aplicacion.Initial;
 using ensueno.Presentation.Login;
 using ensueno.Presentation.Main;
+using ensueno.Presentation.Reports;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Context;
 

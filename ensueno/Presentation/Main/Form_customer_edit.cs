@@ -2,58 +2,53 @@
 using Dominio.Database;
 using Dominio.DTO;
 using ensueno.Presentation.Validations;
-using ensueno.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ensueno.Presentation.Main
 {
-    public partial class Form_employee_edit : Form
+    public partial class Form_customer_edit : Form
     {
-        private Username UserSesion;
-        public Form_employee_edit(int employeeid,Username userSesions, Color color)
+        private readonly Username userSessions;
+        public Form_customer_edit(int employeeid, Username userSesions, Color color)
         {
             InitializeComponent();
-            this.EmployeeId = employeeid;
-            this.UserSesion = userSesions;
+            this.CustomerId = employeeid;
+            this.userSessions = userSesions;
             this.BackColor = color;
         }
-        
-        #region Carga de los datos
-        private int EmployeeId;
-        private async void LoadDataEmployee(int employeeId)
+        private int CustomerId;
+        #region Carga de datos
+        private async void LoadDataCustomer(int customerId)
         {
             this.Invoke(new Action(() =>
             {
                 pictureBoxLoadData.Visible = true;
             }));
-            ProcEmployees procEmployees = new ProcEmployees();
-            Employees employee = new Employees { EmployeeId = employeeId };
-            var result = await procEmployees.GetEmployeebyFormEdit(employee);
+            ProcCustomers procCustomers = new ProcCustomers();
+            Customers customer = new Customers { CustomerId = customerId };
+            var result = await procCustomers.GetCustomerByEdit(customer);
             this.Invoke((Action)(() =>
             {
-                TextBox_id.Text = result.EmployeeId.ToString() ;
-                TextBox_name.Text = result.EmployeeName;
-                TextBox_last_name.Text = result.EmployeeLastName;
-                TextBox_id_card.Text = result.EmployeeIdentification ;
-                TextBox_phone.Text = result.EmployeePhone;
-                TextBox_address.Text = result.EmployeeAddress;
+                TextBox_id.Text = result.CustomerId.ToString();
+                TextBox_name.Text = result.CustomerName;
+                TextBox_last_name.Text = result.CustomerLastName;
+                TextBox_id_card.Text = result.CustomerIdentification;
+                TextBox_phone.Text = result.CustomerPhone;
+                TextBox_address.Text = result.CustomerAddress;
                 TextBoxEmail.Text = result.Email;
-                image = result.Image;
-                Read_image();
-                pictureBoxLoadData.Visible=false;
+                pictureBoxLoadData.Visible = false;
             }));
         }
         #endregion
-
         readonly Values val = new Values();
         private void ValidacionesText()
         {
@@ -65,20 +60,20 @@ namespace ensueno.Presentation.Main
             val.empty_text(TextBox_address);
             val.empty_text(TextBoxEmail);
         }
-        //Metodo para guardar cambios
         private async void saveChanges()
-        { 
-            ProcEmployees procEmployees = new ProcEmployees();
-            Employees employee = new Employees { EmployeeId = EmployeeId ,
-                EmployeeName = TextBox_name.Text,
-                EmployeeLastName = TextBox_last_name.Text,
-                EmployeeIdentification = TextBox_id_card.Text,
-                EmployeePhone = TextBox_phone.Text,
-                EmployeeAddress = TextBox_address.Text,
+        {
+            ProcCustomers procCustomers = new ProcCustomers();
+            Customers customer = new Customers
+            {
+                CustomerId = CustomerId,
+                CustomerName = TextBox_name.Text,
+                CustomerLastName = TextBox_last_name.Text,
+                CustomerIdentification = TextBox_id_card.Text,
+                CustomerPhone = TextBox_phone.Text,
+                CustomerAddress = TextBox_address.Text,
                 Email = TextBoxEmail.Text,
-                Image = image,
-                UpdatedBy = UserSesion.EmployeeId,
-                Date_Updated = DateTime.Now,
+                UpdateBy = userSessions.EmployeeId,
+                Update_date_time = DateTime.Now
             };
             if (string.IsNullOrWhiteSpace(TextBox_last_name.Text) || string.IsNullOrWhiteSpace(TextBox_last_name.Text) ||
                string.IsNullOrWhiteSpace(TextBox_id_card.Text) || string.IsNullOrWhiteSpace(TextBox_phone.Text) || string.IsNullOrWhiteSpace(TextBox_address.Text)
@@ -90,7 +85,7 @@ namespace ensueno.Presentation.Main
             {
                 if (MessageBox.Show("¿Desea Guardar Cambios?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var result = await procEmployees.EditEmployee(employee);
+                    var result = await procCustomers.EditCustomer(customer);
                     this.Invoke(new Action(() =>
                     {
                         MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,7 +93,6 @@ namespace ensueno.Presentation.Main
                     }));
                 }
             }
-         
         }
 
         #region Eventos
@@ -106,64 +100,16 @@ namespace ensueno.Presentation.Main
         {
             this.Close();
         }
-
-        private async void Form_employee_edit_Load(object sender, EventArgs e)
-        {
-            await Task.Run(() => { LoadDataEmployee(EmployeeId); });
-        }
         private async void ButtonSave_Click(object sender, EventArgs e)
         {
             saveChanges();
         }
+        private async void Form_customer_edit_Load(object sender, EventArgs e)
+        {
+            await Task.Run(() => { LoadDataCustomer(CustomerId); });
+        }
         #endregion
 
-        #region Agregar Imagen
-        private string image_location;
-        private byte[] image;
-        private MemoryStream memory_stream;
-        private bool validate_image_location;
-        private void ButtonSubirImagen_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog file_dialog = new OpenFileDialog
-            {
-                Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*"
-            };
-            if (file_dialog.ShowDialog() == DialogResult.OK)
-            {
-                image_location = file_dialog.FileName.ToString();
-                PictureBox_Employee.ImageLocation = image_location;
-                Convert_image();
-            }
-        }
-        private void Read_image()
-        {
-            if (image != null)
-            {
-                memory_stream = new MemoryStream(image);
-                PictureBox_Employee.Image = Image.FromStream(memory_stream);
-            }
-            else
-            {
-                PictureBox_Employee.Image = Resources.error;
-            }
-        }
-
-        private void Convert_image()
-        {
-            if (PictureBox_Employee.ImageLocation == null)
-            {
-                validate_image_location = false;
-            }
-            else
-            {
-                FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
-                BinaryReader bynary_reader = new BinaryReader(file_stream);
-                image = bynary_reader.ReadBytes((int)file_stream.Length);
-                validate_image_location = true;
-            }
-        }
-
-        #endregion
 
         #region Validaciones
         private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,12 +124,10 @@ namespace ensueno.Presentation.Main
         {
             val.Char_only(TextBox_name, e);
         }
-
         private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.Char_only(TextBox_last_name, e);
         }
-
         private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.numbers_only(TextBox_phone, e);
@@ -192,32 +136,26 @@ namespace ensueno.Presentation.Main
         {
             if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
         }
-
         private void TextBox_last_name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
         }
-
         private void TextBox_id_card_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
         }
-
         private void TextBox_phone_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
         }
-
         private void TextBox_address_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
         }
-
         private void TextBoxEmail_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
         }
-
         #endregion
     }
 }

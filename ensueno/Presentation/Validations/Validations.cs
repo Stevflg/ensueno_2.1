@@ -126,6 +126,10 @@ namespace ensueno.Presentation.Validations
             else
                 error.Clear();
         }
+        public void ClearError()
+        {
+            error.Clear();
+        }
 
         public void Char_only(Guna2TextBox txt, KeyPressEventArgs e)  
         {

@@ -98,7 +98,7 @@ namespace ensueno.Presentation.Main
         private void Button_clients_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Clientes";
-            Open_form_panel(new Form_clients(color));
+            Open_form_panel(new Form_clients(color,userSesion));
         }
         private void Button_products_Click(object sender, EventArgs e)
         {
