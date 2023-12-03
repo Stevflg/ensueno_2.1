@@ -17,6 +17,7 @@ namespace Dominio.Database
         public int CreatedBy { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Sessions> SessionsCollection { get; set; } = new List<Sessions>();
+        public ICollection<UsersRol> UserRolCollections { get; set; } = new List<UsersRol>();
         public int  RolId { get; set; }
         public Rol? RolNavigation { get; set; }
         public int? UpdateBy { get; set; }

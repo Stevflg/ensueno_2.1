@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,11 +49,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -94,10 +90,6 @@
             label_phone = new System.Windows.Forms.Label();
             label_Last_Name = new System.Windows.Forms.Label();
             label_Address = new System.Windows.Forms.Label();
-            DateTimePickerInicial = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            DateTimePickerEnd = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            labelInitial_Date = new System.Windows.Forms.Label();
-            labelDate_end = new System.Windows.Forms.Label();
             ButtonSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
@@ -188,7 +180,7 @@
             TextBox_id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_id.BorderRadius = 11;
             TextBox_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_id.CustomizableEdges = customizableEdges34;
+            TextBox_id.CustomizableEdges = customizableEdges30;
             TextBox_id.DefaultText = "";
             TextBox_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -206,7 +198,7 @@
             TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id.PlaceholderText = "ID";
             TextBox_id.SelectedText = "";
-            TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges31;
             TextBox_id.Size = new System.Drawing.Size(216, 29);
             TextBox_id.TabIndex = 0;
             TextBox_id.TextChanged += TextBox_id_TextChanged;
@@ -218,7 +210,7 @@
             TextBox_id_card.BorderColor = System.Drawing.Color.Crimson;
             TextBox_id_card.BorderRadius = 11;
             TextBox_id_card.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_id_card.CustomizableEdges = customizableEdges32;
+            TextBox_id_card.CustomizableEdges = customizableEdges28;
             TextBox_id_card.DefaultText = "";
             TextBox_id_card.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_id_card.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -236,7 +228,7 @@
             TextBox_id_card.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id_card.PlaceholderText = "Cédula";
             TextBox_id_card.SelectedText = "";
-            TextBox_id_card.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            TextBox_id_card.ShadowDecoration.CustomizableEdges = customizableEdges29;
             TextBox_id_card.Size = new System.Drawing.Size(216, 29);
             TextBox_id_card.TabIndex = 3;
             TextBox_id_card.TextChanged += TextBox_id_card_TextChanged;
@@ -248,7 +240,7 @@
             TextBox_name.BorderColor = System.Drawing.Color.Crimson;
             TextBox_name.BorderRadius = 11;
             TextBox_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_name.CustomizableEdges = customizableEdges30;
+            TextBox_name.CustomizableEdges = customizableEdges26;
             TextBox_name.DefaultText = "";
             TextBox_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -266,7 +258,7 @@
             TextBox_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_name.PlaceholderText = "Nombre";
             TextBox_name.SelectedText = "";
-            TextBox_name.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            TextBox_name.ShadowDecoration.CustomizableEdges = customizableEdges27;
             TextBox_name.Size = new System.Drawing.Size(216, 29);
             TextBox_name.TabIndex = 1;
             TextBox_name.TextChanged += TextBox_name_TextChanged;
@@ -278,7 +270,7 @@
             TextBox_last_name.BorderColor = System.Drawing.Color.Crimson;
             TextBox_last_name.BorderRadius = 11;
             TextBox_last_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_last_name.CustomizableEdges = customizableEdges28;
+            TextBox_last_name.CustomizableEdges = customizableEdges24;
             TextBox_last_name.DefaultText = "";
             TextBox_last_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_last_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -296,7 +288,7 @@
             TextBox_last_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_last_name.PlaceholderText = "Apellido";
             TextBox_last_name.SelectedText = "";
-            TextBox_last_name.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            TextBox_last_name.ShadowDecoration.CustomizableEdges = customizableEdges25;
             TextBox_last_name.Size = new System.Drawing.Size(216, 29);
             TextBox_last_name.TabIndex = 2;
             TextBox_last_name.TextChanged += TextBox_last_name_TextChanged;
@@ -308,7 +300,7 @@
             TextBox_phone.BorderColor = System.Drawing.Color.Crimson;
             TextBox_phone.BorderRadius = 11;
             TextBox_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_phone.CustomizableEdges = customizableEdges26;
+            TextBox_phone.CustomizableEdges = customizableEdges22;
             TextBox_phone.DefaultText = "";
             TextBox_phone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -326,7 +318,7 @@
             TextBox_phone.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_phone.PlaceholderText = "Teléfono";
             TextBox_phone.SelectedText = "";
-            TextBox_phone.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            TextBox_phone.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBox_phone.Size = new System.Drawing.Size(216, 29);
             TextBox_phone.TabIndex = 4;
             TextBox_phone.TextChanged += TextBox_phone_TextChanged;
@@ -338,7 +330,7 @@
             TextBox_address.BorderColor = System.Drawing.Color.Crimson;
             TextBox_address.BorderRadius = 11;
             TextBox_address.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_address.CustomizableEdges = customizableEdges24;
+            TextBox_address.CustomizableEdges = customizableEdges20;
             TextBox_address.DefaultText = "";
             TextBox_address.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_address.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -356,7 +348,7 @@
             TextBox_address.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_address.PlaceholderText = "Dirección";
             TextBox_address.SelectedText = "";
-            TextBox_address.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            TextBox_address.ShadowDecoration.CustomizableEdges = customizableEdges21;
             TextBox_address.Size = new System.Drawing.Size(216, 29);
             TextBox_address.TabIndex = 5;
             TextBox_address.TextChanged += TextBox_address_TextChanged;
@@ -367,7 +359,7 @@
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 14;
-            Button_create.CustomizableEdges = customizableEdges22;
+            Button_create.CustomizableEdges = customizableEdges18;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -380,7 +372,7 @@
             Button_create.Location = new System.Drawing.Point(553, 122);
             Button_create.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges19;
             Button_create.Size = new System.Drawing.Size(89, 30);
             Button_create.TabIndex = 7;
             Button_create.Text = "Agregar";
@@ -391,7 +383,7 @@
             Button_update.Animated = true;
             Button_update.AutoRoundedCorners = true;
             Button_update.BorderRadius = 14;
-            Button_update.CustomizableEdges = customizableEdges20;
+            Button_update.CustomizableEdges = customizableEdges16;
             Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -405,7 +397,7 @@
             Button_update.Location = new System.Drawing.Point(553, 157);
             Button_update.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_update.Name = "Button_update";
-            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges17;
             Button_update.Size = new System.Drawing.Size(89, 30);
             Button_update.TabIndex = 8;
             Button_update.Text = "Editar";
@@ -416,7 +408,7 @@
             Button_delete.Animated = true;
             Button_delete.AutoRoundedCorners = true;
             Button_delete.BorderRadius = 14;
-            Button_delete.CustomizableEdges = customizableEdges18;
+            Button_delete.CustomizableEdges = customizableEdges14;
             Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -430,7 +422,7 @@
             Button_delete.Location = new System.Drawing.Point(650, 122);
             Button_delete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_delete.Name = "Button_delete";
-            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges15;
             Button_delete.Size = new System.Drawing.Size(89, 30);
             Button_delete.TabIndex = 9;
             Button_delete.Text = "Eliminar";
@@ -442,7 +434,7 @@
             TextBox_SearchEmployee.BorderColor = System.Drawing.Color.Navy;
             TextBox_SearchEmployee.BorderRadius = 11;
             TextBox_SearchEmployee.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_SearchEmployee.CustomizableEdges = customizableEdges16;
+            TextBox_SearchEmployee.CustomizableEdges = customizableEdges12;
             TextBox_SearchEmployee.DefaultText = "";
             TextBox_SearchEmployee.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_SearchEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -460,9 +452,10 @@
             TextBox_SearchEmployee.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_SearchEmployee.PlaceholderText = "Buscar Empleado";
             TextBox_SearchEmployee.SelectedText = "";
-            TextBox_SearchEmployee.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            TextBox_SearchEmployee.ShadowDecoration.CustomizableEdges = customizableEdges13;
             TextBox_SearchEmployee.Size = new System.Drawing.Size(252, 32);
             TextBox_SearchEmployee.TabIndex = 13;
+            TextBox_SearchEmployee.TextChanged += TextBox_SearchEmployee_TextChanged;
             TextBox_SearchEmployee.KeyDown += TextBox_SearchEmployee_KeyDown;
             // 
             // Button_clear
@@ -483,7 +476,7 @@
             Button_clear.Location = new System.Drawing.Point(742, 178);
             Button_clear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
-            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_clear.Size = new System.Drawing.Size(38, 38);
             Button_clear.TabIndex = 11;
@@ -495,7 +488,7 @@
             Button_report.Animated = true;
             Button_report.AutoRoundedCorners = true;
             Button_report.BorderRadius = 14;
-            Button_report.CustomizableEdges = customizableEdges13;
+            Button_report.CustomizableEdges = customizableEdges9;
             Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -508,7 +501,7 @@
             Button_report.Location = new System.Drawing.Point(650, 158);
             Button_report.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_report.Name = "Button_report";
-            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Button_report.Size = new System.Drawing.Size(89, 30);
             Button_report.TabIndex = 10;
             Button_report.Text = "Reporte";
@@ -520,7 +513,7 @@
             TextBoxEmail.BorderColor = System.Drawing.Color.Crimson;
             TextBoxEmail.BorderRadius = 11;
             TextBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxEmail.CustomizableEdges = customizableEdges11;
+            TextBoxEmail.CustomizableEdges = customizableEdges7;
             TextBoxEmail.DefaultText = "";
             TextBoxEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -538,7 +531,7 @@
             TextBoxEmail.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxEmail.PlaceholderText = "Correo Electronico";
             TextBoxEmail.SelectedText = "";
-            TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
             TextBoxEmail.Size = new System.Drawing.Size(216, 29);
             TextBoxEmail.TabIndex = 6;
             TextBoxEmail.TextChanged += TextBoxEmail_TextChanged;
@@ -546,12 +539,12 @@
             // PictureBox_product
             // 
             PictureBox_product.BorderRadius = 11;
-            PictureBox_product.CustomizableEdges = customizableEdges9;
+            PictureBox_product.CustomizableEdges = customizableEdges5;
             PictureBox_product.ImageRotate = 0F;
             PictureBox_product.Location = new System.Drawing.Point(792, 32);
             PictureBox_product.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             PictureBox_product.Name = "PictureBox_product";
-            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges6;
             PictureBox_product.Size = new System.Drawing.Size(136, 143);
             PictureBox_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             PictureBox_product.TabIndex = 29;
@@ -562,7 +555,7 @@
             ButtonSubirImagen.Animated = true;
             ButtonSubirImagen.AutoRoundedCorners = true;
             ButtonSubirImagen.BorderRadius = 14;
-            ButtonSubirImagen.CustomizableEdges = customizableEdges7;
+            ButtonSubirImagen.CustomizableEdges = customizableEdges3;
             ButtonSubirImagen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -575,7 +568,7 @@
             ButtonSubirImagen.Location = new System.Drawing.Point(797, 181);
             ButtonSubirImagen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSubirImagen.Name = "ButtonSubirImagen";
-            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ButtonSubirImagen.Size = new System.Drawing.Size(125, 30);
             ButtonSubirImagen.TabIndex = 12;
             ButtonSubirImagen.Text = "Subir Imagen";
@@ -601,9 +594,9 @@
             Label_Id.Location = new System.Drawing.Point(75, 11);
             Label_Id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Label_Id.Name = "Label_Id";
-            Label_Id.Size = new System.Drawing.Size(85, 18);
+            Label_Id.Size = new System.Drawing.Size(101, 18);
             Label_Id.TabIndex = 31;
-            Label_Id.Text = "Id Usuario";
+            Label_Id.Text = "Id Empleado";
             // 
             // label_Id_Card
             // 
@@ -677,68 +670,6 @@
             label_Address.TabIndex = 37;
             label_Address.Text = "Direccion";
             // 
-            // DateTimePickerInicial
-            // 
-            DateTimePickerInicial.Animated = true;
-            DateTimePickerInicial.AutoRoundedCorners = true;
-            DateTimePickerInicial.BorderRadius = 13;
-            DateTimePickerInicial.Checked = true;
-            DateTimePickerInicial.CustomizableEdges = customizableEdges5;
-            DateTimePickerInicial.FillColor = System.Drawing.Color.Gray;
-            DateTimePickerInicial.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            DateTimePickerInicial.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            DateTimePickerInicial.Location = new System.Drawing.Point(299, 139);
-            DateTimePickerInicial.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateTimePickerInicial.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateTimePickerInicial.Name = "DateTimePickerInicial";
-            DateTimePickerInicial.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            DateTimePickerInicial.Size = new System.Drawing.Size(228, 28);
-            DateTimePickerInicial.TabIndex = 38;
-            DateTimePickerInicial.Value = new System.DateTime(2023, 11, 23, 10, 47, 41, 233);
-            // 
-            // DateTimePickerEnd
-            // 
-            DateTimePickerEnd.Animated = true;
-            DateTimePickerEnd.AutoRoundedCorners = true;
-            DateTimePickerEnd.BorderRadius = 13;
-            DateTimePickerEnd.Checked = true;
-            DateTimePickerEnd.CustomizableEdges = customizableEdges3;
-            DateTimePickerEnd.FillColor = System.Drawing.Color.Gray;
-            DateTimePickerEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            DateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            DateTimePickerEnd.Location = new System.Drawing.Point(298, 188);
-            DateTimePickerEnd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateTimePickerEnd.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateTimePickerEnd.Name = "DateTimePickerEnd";
-            DateTimePickerEnd.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DateTimePickerEnd.Size = new System.Drawing.Size(228, 28);
-            DateTimePickerEnd.TabIndex = 39;
-            DateTimePickerEnd.Value = new System.DateTime(2023, 11, 23, 10, 47, 41, 233);
-            // 
-            // labelInitial_Date
-            // 
-            labelInitial_Date.AutoSize = true;
-            labelInitial_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            labelInitial_Date.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelInitial_Date.Location = new System.Drawing.Point(299, 118);
-            labelInitial_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            labelInitial_Date.Name = "labelInitial_Date";
-            labelInitial_Date.Size = new System.Drawing.Size(102, 18);
-            labelInitial_Date.TabIndex = 40;
-            labelInitial_Date.Text = "Fecha Inicial";
-            // 
-            // labelDate_end
-            // 
-            labelDate_end.AutoSize = true;
-            labelDate_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            labelDate_end.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelDate_end.Location = new System.Drawing.Point(299, 169);
-            labelDate_end.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            labelDate_end.Name = "labelDate_end";
-            labelDate_end.Size = new System.Drawing.Size(95, 18);
-            labelDate_end.TabIndex = 41;
-            labelDate_end.Text = "Fecha Final";
-            // 
             // ButtonSearch
             // 
             ButtonSearch.Animated = true;
@@ -773,10 +704,6 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
             Controls.Add(ButtonSearch);
-            Controls.Add(labelDate_end);
-            Controls.Add(labelInitial_Date);
-            Controls.Add(DateTimePickerEnd);
-            Controls.Add(DateTimePickerInicial);
             Controls.Add(label_Address);
             Controls.Add(label_Last_Name);
             Controls.Add(label_phone);
@@ -840,10 +767,6 @@
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.Label label_Id_Card;
         private System.Windows.Forms.Label Label_Id;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerInicial;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerEnd;
-        private System.Windows.Forms.Label labelDate_end;
-        private System.Windows.Forms.Label labelInitial_Date;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSearch;
     }
 }

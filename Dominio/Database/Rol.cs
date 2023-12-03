@@ -15,7 +15,7 @@ namespace Dominio.Database
         public DateTime Date_Time { get; set; }
         public Employees? EmployeeNavigation { get; set; }
         public ICollection<FormRol> FormRolCollections { get; set; } = new List<FormRol>();
-        public ICollection<Users> UserCollections { get; set; } = new List<Users>();
+        public ICollection<UsersRol> UserRolCollections { get; set; } = new List<UsersRol>();
         public ICollection<ProcedureRols> ProceduresRolsCollections { get; set; } = new List<ProcedureRols>();
         public int CreatedBy { get; set; }
         public int? UpdatedBy { get; set;}

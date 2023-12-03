@@ -27,7 +27,7 @@ namespace ensueno.Presentation.Main
             Apply_dark_mode();
             Admin(username);
             this.Select();
-          //Open_form_panel(new Form_Report_Employee());
+            //Open_form_panel(new Form_Report_Employee());
         }
         private Username userSesion;
         private Color color;
@@ -98,7 +98,7 @@ namespace ensueno.Presentation.Main
         private void Button_clients_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Clientes";
-            Open_form_panel(new Form_clients(color,userSesion));
+            Open_form_panel(new Form_clients(color, userSesion));
         }
         private void Button_products_Click(object sender, EventArgs e)
         {
@@ -119,7 +119,7 @@ namespace ensueno.Presentation.Main
         private void Button_suppliers_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Proveedores";
-            Open_form_panel(new Form_suppliers(color));
+            Open_form_panel(new Form_suppliers(color, userSesion));
         }
     }
 }

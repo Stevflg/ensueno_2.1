@@ -41,7 +41,7 @@ namespace Aplicacion.ProceduresDB
             catch { return null; }
         }
 
-        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj,DateTime dateinitial,DateTime dateend)
+        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj)
         {
             try
             {
@@ -54,7 +54,6 @@ namespace Aplicacion.ProceduresDB
                                           e.EmployeePhone.Contains(obj.EmployeeName) ||
                                           e.EmployeeAddress.Contains(obj.EmployeeName) ||
                                           e.Email.Contains(obj.Email)) && e.IsActive ==true
-                                          && (e.Date_Time>=dateinitial && e.Date_Time<=dateend)
                                           select new EmployeeDTO
                                           {
                                               Id = e.EmployeeId,
@@ -76,8 +75,7 @@ namespace Aplicacion.ProceduresDB
             try
             {
                     var empId = db.Users.Where(a => a.UserName==obj.UserName).Select(a => a).FirstOrDefault();
-                    if (empId != null) return db.Employees.Find(empId.EmployeeId);
-                    else return null;
+                    return db.Employees.Find(empId.EmployeeId);
             }
             catch { return null; }
 
@@ -94,7 +92,6 @@ namespace Aplicacion.ProceduresDB
                 return "No se pudo guardar";
         }
 
-        //Metodo para llenar el formulario de edicion de empleados
         public async Task<Employees> GetEmployeebyFormEdit(Employees obj)
         {
             try

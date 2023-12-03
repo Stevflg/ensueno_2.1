@@ -19,14 +19,14 @@ namespace ensueno.Presentation.Main
     public partial class Form_employee_edit : Form
     {
         private Username UserSesion;
-        public Form_employee_edit(int employeeid,Username userSesions, Color color)
+        public Form_employee_edit(int employeeid, Username userSesions, Color color)
         {
             InitializeComponent();
             this.EmployeeId = employeeid;
             this.UserSesion = userSesions;
             this.BackColor = color;
         }
-        
+
         #region Carga de los datos
         private int EmployeeId;
         private async void LoadDataEmployee(int employeeId)
@@ -40,16 +40,16 @@ namespace ensueno.Presentation.Main
             var result = await procEmployees.GetEmployeebyFormEdit(employee);
             this.Invoke((Action)(() =>
             {
-                TextBox_id.Text = result.EmployeeId.ToString() ;
+                TextBox_id.Text = result.EmployeeId.ToString();
                 TextBox_name.Text = result.EmployeeName;
                 TextBox_last_name.Text = result.EmployeeLastName;
-                TextBox_id_card.Text = result.EmployeeIdentification ;
+                TextBox_id_card.Text = result.EmployeeIdentification;
                 TextBox_phone.Text = result.EmployeePhone;
                 TextBox_address.Text = result.EmployeeAddress;
                 TextBoxEmail.Text = result.Email;
                 image = result.Image;
                 Read_image();
-                pictureBoxLoadData.Visible=false;
+                pictureBoxLoadData.Visible = false;
             }));
         }
         #endregion
@@ -67,9 +67,11 @@ namespace ensueno.Presentation.Main
         }
         //Metodo para guardar cambios
         private async void saveChanges()
-        { 
+        {
             ProcEmployees procEmployees = new ProcEmployees();
-            Employees employee = new Employees { EmployeeId = EmployeeId ,
+            Employees employee = new Employees
+            {
+                EmployeeId = EmployeeId,
                 EmployeeName = TextBox_name.Text,
                 EmployeeLastName = TextBox_last_name.Text,
                 EmployeeIdentification = TextBox_id_card.Text,
@@ -98,7 +100,7 @@ namespace ensueno.Presentation.Main
                     }));
                 }
             }
-         
+
         }
 
         #region Eventos

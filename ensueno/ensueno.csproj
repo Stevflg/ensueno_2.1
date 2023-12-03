@@ -88,4 +88,7 @@
   <ItemGroup>
     <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\SubForm\" />
+  </ItemGroup>
 </Project>

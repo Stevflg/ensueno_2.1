@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,11 +55,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             Slide_panel = new Guna.UI2.WinForms.Guna2Panel();
+            Button_suppliers = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_database = new Guna.UI2.WinForms.Guna2CircleButton();
             ButtonInventories = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_bills = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -76,7 +77,6 @@
             pictureBoxUser = new System.Windows.Forms.PictureBox();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             Transition_slide_panel_hide = new Guna.UI2.WinForms.Guna2Transition();
-            Button_suppliers = new Guna.UI2.WinForms.Guna2GradientButton();
             Slide_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
             SuspendLayout();
@@ -107,8 +107,37 @@
             Slide_panel.Margin = new System.Windows.Forms.Padding(4);
             Slide_panel.Name = "Slide_panel";
             Slide_panel.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            Slide_panel.Size = new System.Drawing.Size(50, 658);
+            Slide_panel.Size = new System.Drawing.Size(48, 658);
             Slide_panel.TabIndex = 0;
+            // 
+            // Button_suppliers
+            // 
+            Button_suppliers.Animated = true;
+            Button_suppliers.CustomImages.Image = Properties.Resources.suppliers;
+            Button_suppliers.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_suppliers.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            Button_suppliers.CustomizableEdges = customizableEdges1;
+            Transition_slide_panel_hide.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
+            Transition_slide_panel_show.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
+            Button_suppliers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            Button_suppliers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            Button_suppliers.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_suppliers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_suppliers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            Button_suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_suppliers.ForeColor = System.Drawing.Color.White;
+            Button_suppliers.HoverState.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            Button_suppliers.HoverState.FillColor2 = System.Drawing.Color.FromArgb(255, 77, 165);
+            Button_suppliers.IndicateFocus = true;
+            Button_suppliers.Location = new System.Drawing.Point(0, 467);
+            Button_suppliers.Margin = new System.Windows.Forms.Padding(4);
+            Button_suppliers.Name = "Button_suppliers";
+            Button_suppliers.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Button_suppliers.Size = new System.Drawing.Size(200, 50);
+            Button_suppliers.TabIndex = 15;
+            Button_suppliers.Text = "PROVEEDORES";
+            Button_suppliers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            Button_suppliers.Click += Button_suppliers_Click;
             // 
             // Button_database
             // 
@@ -126,7 +155,7 @@
             Button_database.Image = Properties.Resources.database;
             Button_database.ImageSize = new System.Drawing.Size(36, 36);
             Button_database.IndicateFocus = true;
-            Button_database.Location = new System.Drawing.Point(5, 3);
+            Button_database.Location = new System.Drawing.Point(4, 3);
             Button_database.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_database.Name = "Button_database";
             Button_database.ShadowDecoration.CustomizableEdges = customizableEdges3;
@@ -472,35 +501,6 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 1F;
             Transition_slide_panel_hide.DefaultAnimation = animation1;
-            // 
-            // Button_suppliers
-            // 
-            Button_suppliers.Animated = true;
-            Button_suppliers.CustomImages.Image = Properties.Resources.suppliers;
-            Button_suppliers.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            Button_suppliers.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            Button_suppliers.CustomizableEdges = customizableEdges1;
-            Transition_slide_panel_hide.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
-            Transition_slide_panel_show.SetDecoration(Button_suppliers, Guna.UI2.AnimatorNS.DecorationType.None);
-            Button_suppliers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            Button_suppliers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            Button_suppliers.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            Button_suppliers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            Button_suppliers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            Button_suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Button_suppliers.ForeColor = System.Drawing.Color.White;
-            Button_suppliers.HoverState.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            Button_suppliers.HoverState.FillColor2 = System.Drawing.Color.FromArgb(255, 77, 165);
-            Button_suppliers.IndicateFocus = true;
-            Button_suppliers.Location = new System.Drawing.Point(0, 467);
-            Button_suppliers.Margin = new System.Windows.Forms.Padding(4);
-            Button_suppliers.Name = "Button_suppliers";
-            Button_suppliers.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Button_suppliers.Size = new System.Drawing.Size(200, 50);
-            Button_suppliers.TabIndex = 15;
-            Button_suppliers.Text = "PROVEEDORES";
-            Button_suppliers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            Button_suppliers.Click += Button_suppliers_Click;
             // 
             // Form_main
             // 

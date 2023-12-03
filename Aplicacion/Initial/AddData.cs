@@ -69,7 +69,7 @@ namespace Aplicacion.Initial
             {
                List<Formularios> lp = new();
 
-                lp.Add(new Formularios {Name = "Form Main"});
+                lp.Add(new Formularios {Name = "Form_Main",AliasForm = "Form Main"});
                 db.AddRange(lp);
                 db.SaveChanges();
             }

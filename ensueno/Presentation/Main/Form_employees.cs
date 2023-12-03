@@ -32,13 +32,8 @@ namespace ensueno.Presentation.Main
         private Color color;
         private async void Form_employees_Load(object sender, EventArgs e)
         {
-            this.Invoke(new Action(() =>
-            {
-                pictureBoxDark.Visible = true;
-                DateTimePickerInicial.Value = DateTime.Now;
-                DateTimePickerEnd.Value = DateTime.Now;
-            }));
-            await Task.Run(() => { Read(); });
+
+            Read();
         }
         #region Validaciones
         private void ValidacionesText()
@@ -62,11 +57,78 @@ namespace ensueno.Presentation.Main
             TextBox_address.Clear();
             TextBoxEmail.Clear();
         }
+
+        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_id, e);
+        }
+
+        private void TextBox_id_card_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_id_card);
+        }
+        private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_name, e);
+        }
+
+        private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_last_name, e);
+        }
+
+        private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_phone, e);
+        }
+
+        private void TextBox_address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_address);
+        }
+        private void TextBox_name_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
+        }
+
+        private void TextBox_last_name_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
+        }
+
+        private void TextBox_id_card_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
+        }
+
+        private void TextBox_phone_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
+        }
+
+        private void TextBox_address_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
+        }
+
+        private void TextBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
+        }
+
+
+
+
+
         #endregion
 
         #region Procedimientos
         private async void Read()
         {
+            this.Invoke(new Action(() =>
+            {
+                pictureBoxDark.Visible = true;
+            }));
             var result = await procEmpl.GetEmployeeList();
             this.Invoke(new Action(() =>
             {
@@ -79,21 +141,24 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                employe = new Employees
-                {
-                    EmployeeName = TextBox_SearchEmployee.Text
-                };
                 this.Invoke(new Action(() =>
                 {
                     pictureBoxDark.Visible = true;
                     ButtonSearch.Enabled = false;
+                    TextBox_SearchEmployee.Enabled = false;
                 }));
-                var result = await procEmpl.SearchEmployee(employe, DateTimePickerInicial.Value, DateTimePickerEnd.Value);
+
+                employe = new Employees
+                {
+                    EmployeeName = TextBox_SearchEmployee.Text
+                };
+                var result = await procEmpl.SearchEmployee(employe);
                 this.Invoke(new Action(() =>
                 {
                     DataGridView_employees.DataSource = result;
                     pictureBoxDark.Visible = false;
                     ButtonSearch.Enabled = true;
+                    TextBox_SearchEmployee.Enabled = true;
                 }));
             }
             catch { }
@@ -160,7 +225,7 @@ namespace ensueno.Presentation.Main
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private Form_employee_edit epedit;
@@ -178,7 +243,6 @@ namespace ensueno.Presentation.Main
                 {
                     epedit = new Form_employee_edit(employeeId, userSesions, BackColor);
                     epedit.ShowDialog();
-                    pictureBoxDark.Visible = true;
                     Read();
                 }
             }
@@ -186,7 +250,11 @@ namespace ensueno.Presentation.Main
         }
         private async void Button_delete_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => { DeleteEmployee(); });
+            try
+            {
+                 DeleteEmployee();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void DataGridView_employees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -222,7 +290,7 @@ namespace ensueno.Presentation.Main
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await Task.Run(() => { SearchEmployee(); });
+                await Task.Run(() => { SearchEmployee();});
             }
         }
 
@@ -248,62 +316,9 @@ namespace ensueno.Presentation.Main
             }
         }
 
-        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        private async void TextBox_SearchEmployee_TextChanged(object sender, EventArgs e)
         {
-            val.numbers_only(TextBox_id, e);
-        }
-
-        private void TextBox_id_card_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.empty_text(TextBox_id_card);
-        }
-        private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.Char_only(TextBox_name, e);
-        }
-
-        private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.Char_only(TextBox_last_name, e);
-        }
-
-        private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.numbers_only(TextBox_phone, e);
-        }
-
-        private void TextBox_address_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.empty_text(TextBox_address);
-        }
-        private void TextBox_name_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
-        }
-
-        private void TextBox_last_name_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
-        }
-
-        private void TextBox_id_card_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
-        }
-
-        private void TextBox_phone_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
-        }
-
-        private void TextBox_address_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
-        }
-
-        private void TextBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
+            if (string.IsNullOrEmpty(TextBox_SearchEmployee.Text)) await Task.Run(() => Read());
         }
 
         private async void Button_report_Click(object sender, EventArgs e)
@@ -347,5 +362,7 @@ namespace ensueno.Presentation.Main
         }
 
         #endregion
+
+     
     }
 }
