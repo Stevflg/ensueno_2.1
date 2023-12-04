@@ -15,21 +15,19 @@ using Dominio.DTO;
 using Guna.UI2.WinForms.Suite;
 using static System.Net.Mime.MediaTypeNames;
 using Application = System.Windows.Forms.Application;
-
+using Aplicacion.Negocio;
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_clients : Form
     {
         private readonly Values val = new Values();
-        private readonly ProcCustomers pCustomers;
         private Customers customer;
         private readonly Username userSessions;
         public Form_clients(Color color, Username userSessions)
         {
             InitializeComponent();
             this.BackColor = color;
-            pCustomers = new ProcCustomers();
             this.userSessions = userSessions;
         }
 
@@ -47,7 +45,7 @@ namespace ensueno.Presentation.Main
                 pictureBoxDark.Visible = true;
                 ButtonSearch.Visible = false;
             }));
-            var result = await pCustomers.ListCustomers();
+            var result = await ProcCustomers.ListCustomers();
             this.Invoke(new Action(() =>
             {
                 DataGridView_Customers.DataSource = result;
@@ -78,7 +76,7 @@ namespace ensueno.Presentation.Main
             {
                 if (MessageBox.Show("¿Desea Agregar Este Registro?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var result = await pCustomers.AddCustomer(customer);
+                    var result = await ProcCustomers.AddCustomer(customer);
                     this.Invoke(new Action(() =>
                     {
                         MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -96,7 +94,7 @@ namespace ensueno.Presentation.Main
                 UpdateBy = userSessions.EmployeeId,
                 Update_date_time = DateTime.Now
             };
-            var result = await pCustomers.DeleteCustomer(customer);
+            var result = await ProcCustomers.DeleteCustomer(customer);
             this.Invoke(new Action(() =>
             {
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -117,7 +115,7 @@ namespace ensueno.Presentation.Main
                     pictureBoxDark.Visible = true;
                     ButtonSearch.Enabled = false;
                 }));
-                var result = await pCustomers.SearchCustomers(customer);
+                var result = await ProcCustomers.SearchCustomers(customer);
                 this.Invoke(new Action(() =>
                 {
                     DataGridView_Customers.DataSource = result;

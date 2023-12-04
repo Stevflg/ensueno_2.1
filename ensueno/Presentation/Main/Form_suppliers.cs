@@ -17,7 +17,6 @@ namespace ensueno.Presentation.Main
     public partial class Form_suppliers : Form
     {
         private Username UserSessions;
-        private readonly ProcSupplier pSupplier = new ProcSupplier();
         private Suppliers supplier;
         public Form_suppliers(Color color, Username user)
         {
@@ -40,7 +39,7 @@ namespace ensueno.Presentation.Main
                     pictureBoxDark.Visible = true;
                 }));
 
-                var result = await pSupplier.GetListSuppliers();
+                var result = await ProcSupplier.GetListSuppliers();
 
                 this.Invoke(new Action(() =>
                 {
@@ -64,7 +63,7 @@ namespace ensueno.Presentation.Main
                 {
                     SupplierName = TextBox_SearchSupplier.Text
                 };
-                var result = await pSupplier.SearchSuppliers(supplier);
+                var result = await ProcSupplier.SearchSuppliers(supplier);
 
                 this.Invoke(new Action(() =>
                 {
@@ -91,10 +90,11 @@ namespace ensueno.Presentation.Main
                     SupplierEmail = TextBoxEmail.Text,
                     CreatedBy = UserSessions.EmployeeId
                 };
-                var result = await pSupplier.AddSupplier(supplier);
+                var result = await ProcSupplier.AddSupplier(supplier);
                 this.Invoke(new Action(() =>
                 {
                     MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearTextBoxes();
                     ReadSuppliers();
                 }));
 
@@ -111,7 +111,7 @@ namespace ensueno.Presentation.Main
                     UpdateBy = UserSessions.EmployeeId,
                     Date_Updated = DateTime.Now
                 };
-                var result = await pSupplier.DeleteSupplier(supplier);
+                var result = await ProcSupplier.DeleteSupplier(supplier);
                 this.Invoke(new Action(() =>
                 {
                     MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -121,7 +121,19 @@ namespace ensueno.Presentation.Main
         }
 
         #endregion
+        #region Validaciones
 
+        private void ClearTextBoxes()
+        {
+            TextBox_id.Clear();
+            TextBoxSuplierName.Clear();
+            TextBoxRUC.Clear();
+            TextBoxAddress.Clear();
+            TextBoxPhone.Clear();
+            TextBoxEmail.Clear();
+        }
+
+        #endregion
         #region Eventos
         private void Button_create_Click(object sender, EventArgs e)
         {

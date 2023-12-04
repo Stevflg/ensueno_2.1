@@ -17,8 +17,7 @@ namespace ensueno.Presentation.Main
 {
     public partial class Agregar_Usuario : Form
     {
-        private readonly ProcUsers pUsers = new ProcUsers();
-        private readonly ProcEmployees pEmployees = new ProcEmployees();
+      
         private Users user;
         public Agregar_Usuario()
         {
@@ -108,9 +107,9 @@ namespace ensueno.Presentation.Main
                 {
                     EmployeeId = EmployeeId,
                     UserName = TextBox_user.Text,
-                    Password = pUsers.Encrypt(TextBox_password.Text)
+                    Password = ProcUsers.Encrypt(TextBox_password.Text)
                 };
-                MessageBox.Show(pUsers.AddUsers(user), "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ProcUsers.AddUsers(user), "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBoxes();
             }
             else{

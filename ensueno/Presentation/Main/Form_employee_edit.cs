@@ -35,10 +35,10 @@ namespace ensueno.Presentation.Main
             {
                 pictureBoxLoadData.Visible = true;
             }));
-            ProcEmployees procEmployees = new ProcEmployees();
+            
             Employees employee = new Employees { EmployeeId = employeeId };
-            var result = await procEmployees.GetEmployeebyFormEdit(employee);
-            this.Invoke((Action)(() =>
+            var result = await ProcEmployees.GetEmployeebyFormEdit(employee);
+            this.Invoke(new Action(() =>
             {
                 TextBox_id.Text = result.EmployeeId.ToString();
                 TextBox_name.Text = result.EmployeeName;
@@ -68,7 +68,6 @@ namespace ensueno.Presentation.Main
         //Metodo para guardar cambios
         private async void saveChanges()
         {
-            ProcEmployees procEmployees = new ProcEmployees();
             Employees employee = new Employees
             {
                 EmployeeId = EmployeeId,
@@ -92,7 +91,7 @@ namespace ensueno.Presentation.Main
             {
                 if (MessageBox.Show("¿Desea Guardar Cambios?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var result = await procEmployees.EditEmployee(employee);
+                    var result = await ProcEmployees.EditEmployee(employee);
                     this.Invoke(new Action(() =>
                     {
                         MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

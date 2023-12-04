@@ -19,7 +19,6 @@ namespace ensueno.Presentation.Main
     public partial class Form_employees : Form
     {
         private Username userSesions;
-        private readonly ProcEmployees procEmpl = new ProcEmployees();
         private Employees employe;
         readonly Values val = new Values();
         public Form_employees(Color color, Username user)
@@ -129,7 +128,7 @@ namespace ensueno.Presentation.Main
             {
                 pictureBoxDark.Visible = true;
             }));
-            var result = await procEmpl.GetEmployeeList();
+            var result = await ProcEmployees.GetEmployeeList();
             this.Invoke(new Action(() =>
             {
                 DataGridView_employees.DataSource = result;
@@ -152,7 +151,7 @@ namespace ensueno.Presentation.Main
                 {
                     EmployeeName = TextBox_SearchEmployee.Text
                 };
-                var result = await procEmpl.SearchEmployee(employe);
+                var result = await ProcEmployees.SearchEmployee(employe);
                 this.Invoke(new Action(() =>
                 {
                     DataGridView_employees.DataSource = result;
@@ -188,7 +187,7 @@ namespace ensueno.Presentation.Main
             {
                 if (MessageBox.Show("¿Desea Agregar Este Registro?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var result = await procEmpl.AddEmployee(employe);
+                    var result = await ProcEmployees.AddEmployee(employe);
                     this.Invoke(new Action(() =>
                     {
                         MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -206,7 +205,7 @@ namespace ensueno.Presentation.Main
                 UpdatedBy = userSesions.EmployeeId,
                 Date_Updated = DateTime.Now
             };
-            var result = await procEmpl.DeleteEmployee(employe);
+            var result = await ProcEmployees.DeleteEmployee(employe);
             this.Invoke(new Action(() =>
             {
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

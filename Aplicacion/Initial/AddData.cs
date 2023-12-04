@@ -134,11 +134,10 @@ namespace Aplicacion.Initial
         private void AddUser() {
             using(var db =new EnsuenoContext())
             {
-                ProcUsers pUser = new ProcUsers();
                 Users users = new Users {
                     EmployeeId = 1,
                     UserName = "Admin",
-                    Password = pUser.Encrypt("admin"),
+                    Password = ProcUsers.Encrypt("admin"),
                     RolId= 1                                        
                 };
                 db.Add(users);

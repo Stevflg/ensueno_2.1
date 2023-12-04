@@ -20,7 +20,6 @@ namespace ensueno.Presentation.Main
         private string image_location;
         private byte[] image;
         private MemoryStream memory_stream;
-        private Form_products_history fh;
         readonly Values val=new Values();
         private bool validate_image_location;
         public Form_products(Color color)
@@ -168,8 +167,6 @@ namespace ensueno.Presentation.Main
 
         private void Button_history_Click(object sender, EventArgs e)
         {
-            fh = new Form_products_history();
-            fh.ShowDialog();
             Read();
         }
 

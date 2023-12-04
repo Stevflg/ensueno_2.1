@@ -33,8 +33,7 @@ namespace ensueno.Presentation.Main
         private async void LoadData()
         {
             this.Invoke(new Action(() => { pictureBoxLoadData.Visible = true; }));
-            ProcSupplier psupplier = new ProcSupplier();
-            var result = await psupplier.GetSupplier(new Suppliers { SupplierId = SupplierId });
+            var result = await ProcSupplier.GetSupplier(new Suppliers { SupplierId = SupplierId });
             this.Invoke(new Action(() =>
             {
                 TextBox_id.Text = result.SupplierId.ToString();
@@ -63,8 +62,7 @@ namespace ensueno.Presentation.Main
                     UpdateBy = UserSessions.EmployeeId,
                     Date_Updated = DateTime.Now,
                 };
-                ProcSupplier pSupplier = new ProcSupplier();
-                var result = await pSupplier.UpdateSupplier(supplier);
+                var result = await ProcSupplier.UpdateSupplier(supplier);
                 this.Invoke(new Action(() =>
                 {
                     MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

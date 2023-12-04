@@ -1,4 +1,5 @@
-﻿using Aplicacion.ProceduresDB;
+﻿using Aplicacion.Negocio;
+using Aplicacion.ProceduresDB;
 using Dominio.Database;
 using Dominio.DTO;
 using ensueno.Presentation.Validations;
@@ -33,9 +34,9 @@ namespace ensueno.Presentation.Main
             {
                 pictureBoxLoadData.Visible = true;
             }));
-            ProcCustomers procCustomers = new ProcCustomers();
+           
             Customers customer = new Customers { CustomerId = customerId };
-            var result = await procCustomers.GetCustomerByEdit(customer);
+            var result = await ProcCustomers.GetCustomerByEdit(customer);
             this.Invoke((Action)(() =>
             {
                 TextBox_id.Text = result.CustomerId.ToString();
@@ -62,7 +63,6 @@ namespace ensueno.Presentation.Main
         }
         private async void saveChanges()
         {
-            ProcCustomers procCustomers = new ProcCustomers();
             Customers customer = new Customers
             {
                 CustomerId = CustomerId,
@@ -85,7 +85,7 @@ namespace ensueno.Presentation.Main
             {
                 if (MessageBox.Show("¿Desea Guardar Cambios?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var result = await procCustomers.EditCustomer(customer);
+                    var result = await ProcCustomers.EditCustomer(customer);
                     this.Invoke(new Action(() =>
                     {
                         MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

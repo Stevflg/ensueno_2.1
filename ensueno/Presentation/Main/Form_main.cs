@@ -19,7 +19,6 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_main : Form
     {
-        private readonly ProcUsers procUsers = new ProcUsers();
         private string username = "";
         public Form_main(string username)
         {
@@ -40,7 +39,7 @@ namespace ensueno.Presentation.Main
         private async void Admin(string username)
         {
             Users users = new Users { UserName = username };
-            userSesion = await procUsers.UserName(users);
+            userSesion = await ProcUsers.UserName(users);
             Label_user_role.Text = userSesion.UserName + " : " + userSesion.RolName;
             Read_image(userSesion.Image);
         }

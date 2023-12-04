@@ -12,7 +12,6 @@ namespace ensueno.Presentation.Login
         private Form_database fd;
         private Form_welcome fw;
         private Form_login_error fle;
-        private ProcUsers pUser;
         private Users user;
         private Form_main fm;
         public Form_login()
@@ -101,13 +100,12 @@ namespace ensueno.Presentation.Login
         {
             try
             {
-                pUser = new ProcUsers();
                 user = new Users
                 {
                     UserName = TextBox_user.Text,
-                    Password = pUser.Encrypt(TextBox_password.Text)
+                    Password = ProcUsers.Encrypt(TextBox_password.Text)
                 };
-                if (pUser.UserLogin(user))
+                if (ProcUsers.UserLogin(user))
                 {
                     Clear_textboxes();
                     this.Hide();

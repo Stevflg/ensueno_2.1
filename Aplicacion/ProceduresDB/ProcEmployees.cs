@@ -1,171 +1,49 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
-using Microsoft.EntityFrameworkCore;
-using Persistencia.Context;
+using Persistencia.Proc;
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion.ProceduresDB
 {
-    public class ProcEmployees
+    public static class ProcEmployees
     {
-        private readonly EnsuenoContext db;
-        public ProcEmployees()
+        public static async Task<List<EmployeeDTO>> GetEmployeeList()
         {
-            db= new EnsuenoContext();
+            return await DEmployees.GetEmployeeList();
         }
 
-
-        public async Task<List<EmployeeDTO>> GetEmployeeList()
+        public static async Task<List<EmployeeDTO>> SearchEmployee(Employees obj)
         {
-            try
-            {
-                    var listempl = await(from e in db.Employees
-                                    where e.IsActive == true
-                                    select new EmployeeDTO {
-                                    Id=e.EmployeeId,
-                                    Nombres=e.EmployeeName,
-                                    Apellidos=e.EmployeeLastName,
-                                    Cedula=e.EmployeeIdentification,
-                                    Telefono=e.EmployeePhone,
-                                    Direccion=e.EmployeeAddress,
-                                    Correo=e.Email,
-                                    Creado = e.Date_Time
-                                    }).ToListAsync();
-                    return listempl;
-            }
-            catch { return null; }
+            return await DEmployees.SearchEmployee(obj);
         }
 
-        public async Task<List<EmployeeDTO>> SearchEmployee(Employees obj)
+        public static async Task<Employees> GetEmployee(Users obj)
         {
-            try
-            {
-                var listempl = await (from e in db.Employees
-                                      where (
-                                          e.EmployeeId.ToString().Contains(obj.EmployeeName)||
-                                          e.EmployeeName.Contains(obj.EmployeeName)||
-                                          e.EmployeeLastName.Contains(obj.EmployeeName)||
-                                          e.EmployeeIdentification.Contains(obj.EmployeeName) ||
-                                          e.EmployeePhone.Contains(obj.EmployeeName) ||
-                                          e.EmployeeAddress.Contains(obj.EmployeeName) ||
-                                          e.Email.Contains(obj.Email)) && e.IsActive ==true
-                                          select new EmployeeDTO
-                                          {
-                                              Id = e.EmployeeId,
-                                              Nombres = e.EmployeeName,
-                                              Apellidos = e.EmployeeLastName,
-                                              Cedula = e.EmployeeIdentification,
-                                              Telefono = e.EmployeePhone,
-                                              Direccion = e.EmployeeAddress,
-                                              Correo = e.Email,
-                                              Creado = e.Date_Time
-                                          }).ToListAsync();
-                    return listempl;
-          
-            }
-            catch { return null; }
+            return await DEmployees.GetEmployee(obj);
         }
 
-        public Employees GetEmployee(Users obj) {
-            try
-            {
-                    var empId = db.Users.Where(a => a.UserName==obj.UserName).Select(a => a).FirstOrDefault();
-                    return db.Employees.Find(empId.EmployeeId);
-            }
-            catch { return null; }
-
-        }
-
-        public async Task<string> AddEmployee(Employees obj) { 
- 
-                db.Employees.Add(obj);
-                var query =await db.SaveChangesAsync();
-                if (query > 0)
-                {
-                    return "Guardado Correctamente";
-                }
-                return "No se pudo guardar";
-        }
-
-        public async Task<Employees> GetEmployeebyFormEdit(Employees obj)
+        public static async Task<string> AddEmployee(Employees obj)
         {
-            try
-            {
-                var employe = await (from e in db.Employees
-                                     where e.IsActive == true && e.EmployeeId == obj.EmployeeId
-                                     select e).FirstOrDefaultAsync();
-                return employe;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return await DEmployees.AddEmployee(obj);
         }
 
-        public async Task<string> EditEmployee(Employees obj)
+        public static async Task<Employees> GetEmployeebyFormEdit(Employees obj)
         {
-            try
-            {
-                var employee = await db.Employees.FindAsync(obj.EmployeeId);
-
-                if (employee != null)
-                {
-                    employee.EmployeeName = obj.EmployeeName;
-                    employee.EmployeeLastName = obj.EmployeeLastName;
-                    employee.EmployeeIdentification = obj.EmployeeIdentification;
-                    employee.EmployeePhone = obj.EmployeePhone;
-                    employee.EmployeeAddress = obj.EmployeeAddress;
-                    employee.Image = obj.Image;
-                    employee.Email = obj.Email;
-                    employee.UpdatedBy = obj.UpdatedBy;
-                    employee.Date_Updated = obj.Date_Updated;
-                    db.Entry(employee).State = EntityState.Modified;
-                    var query = await db.SaveChangesAsync();
-                    if (query > 0)
-                    {
-                        return "Guardado Correctamente";
-                    }
-                }
-                return "No se pudo Guardar";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-    
+            return await DEmployees.GetEmployeebyFormEdit(obj);
         }
 
-        public async Task<string> DeleteEmployee(Employees obj)
+        public static async Task<string> EditEmployee(Employees obj)
         {
-            try
-            {
-                var employee = await db.Employees.FindAsync(obj.EmployeeId);
-                if (employee != null)
-                {
-                    employee.IsActive = false;
-                    employee.UpdatedBy = obj.UpdatedBy;
-                    employee.Date_Updated = obj.Date_Updated;
-                    db.Entry(employee).State = EntityState.Modified;
-                    var result = await db.SaveChangesAsync();
-                    if (result > 0)
-                    {
-                        return "Eliminado Correctamente";
-                    }
-                    return "No se pudo Eliminar";
-                }
-                return "Registro no existe";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            return await DEmployees.EditEmployee(obj);
         }
 
-
+        public static async Task<string> DeleteEmployee(Employees obj)
+        {
+            return await DEmployees.DeleteEmployee(obj);
+        }
     }
 }

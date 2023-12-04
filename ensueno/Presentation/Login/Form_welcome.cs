@@ -15,7 +15,6 @@ namespace ensueno.Presentation.Login
     public partial class Form_welcome : Form
     {
         private Users user;
-        private readonly ProcEmployees proc = new ProcEmployees();
         public Form_welcome(string user)
         {
             InitializeComponent();
@@ -25,10 +24,10 @@ namespace ensueno.Presentation.Login
             this.usernm = user;
             NameEmployee();
         }
-        private void NameEmployee()
+        private async void NameEmployee()
         {
             user = new Users { UserName = usernm };
-            var employee = proc.GetEmployee(user);
+            var employee =await ProcEmployees.GetEmployee(user);
 
             this.Label_employee_name.Text = $"{employee.EmployeeName} {employee.EmployeeLastName}";
         }
