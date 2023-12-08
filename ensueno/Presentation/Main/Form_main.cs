@@ -102,7 +102,7 @@ namespace ensueno.Presentation.Main
         private void Button_products_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Productos";
-            Open_form_panel(new Form_products(color));
+            Open_form_panel(new Form_products(color,userSesion));
         }
         private void Button_bills_Click(object sender, EventArgs e)
         {

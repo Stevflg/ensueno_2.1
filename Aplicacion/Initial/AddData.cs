@@ -39,11 +39,11 @@ namespace Aplicacion.Initial
                         AddDataRolProcedures();
                         AddPermissionsRol();
                         AddUser();
+                        AddMovimientos();
                         return "Base de Datos Creada Correctamente";
                 }
             }
-            catch(Exception ex) { return ex.InnerException.Message; }
-               
+            catch(Exception ex) { return ex.InnerException.Message; } 
         }
 
 
@@ -57,7 +57,6 @@ namespace Aplicacion.Initial
                 lp.Add(new Procedures { ProcedureName = "Read" });
                 lp.Add(new Procedures { ProcedureName = "Delete" });
                 lp.Add(new Procedures { ProcedureName = "Update" });
-                lp.Add(new Procedures { ProcedureName = "Restore" });
 
                 db.AddRange(lp);
                 db.SaveChanges();
@@ -144,6 +143,18 @@ namespace Aplicacion.Initial
                 db.SaveChanges();
             }
         }
-
+        private void AddMovimientos()
+        {
+            using (var db =new EnsuenoContext())
+            {
+                List<StockMovementType> types = new List<StockMovementType>();
+                types.Add(new StockMovementType {Type = "Ingreso Inventarios" });
+                types.Add(new StockMovementType {Type = "Recusado Inventarios" });
+                types.Add(new StockMovementType {Type = "Egreso en Factura" });
+                types.Add(new StockMovementType {Type = "Anulación en Factura" });
+                db.AddRange(types);
+                db.SaveChanges();
+            }
+        }
     }
 }

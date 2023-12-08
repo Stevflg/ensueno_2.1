@@ -147,6 +147,8 @@ namespace Persistencia.Context
                 .HasForeignKey(sm => sm.TypeStockMovement).HasConstraintName("Fk_MovementId_StockMovement").OnDelete(DeleteBehavior.ClientCascade);
                 entity.Property(sm => sm.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+                entity.HasOne(sm => sm.InvoicesNavigation).WithMany(i => i.StockMovementsColletions)
+                .HasForeignKey(sm => sm.InvoiceId).HasConstraintName("Fk_InvoiceId_StockMovements");
             });
             modelBuilder.Entity<Users>(entity => {
                 entity.HasKey(u => u.UserId).HasName("Pk_UserId_User");

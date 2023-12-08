@@ -132,6 +132,7 @@ namespace ensueno.Presentation.Main
             TextBoxPhone.Clear();
             TextBoxEmail.Clear();
         }
+        
 
         #endregion
         #region Eventos
@@ -210,6 +211,7 @@ namespace ensueno.Presentation.Main
                     MessageBox.Show("Elija una fila válida.");
                     Button_delete.Enabled = false;
                     Button_update.Enabled = false;
+                    Button_create.Enabled = true;
                 }
                 else
                 {
@@ -222,12 +224,14 @@ namespace ensueno.Presentation.Main
                     TextBoxEmail.Text = DataGridView_Suppliers.Rows[e.RowIndex].Cells[5].Value.ToString();
                     Button_delete.Enabled = true;
                     Button_update.Enabled = true;
+                    Button_create.Enabled = false;
                 }
             }
             catch
             {
                 Button_delete.Enabled = false;
                 Button_update.Enabled = false;
+                Button_create.Enabled = true;
             }
         }
         #endregion
