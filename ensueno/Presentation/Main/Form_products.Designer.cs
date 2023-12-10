@@ -75,7 +75,7 @@ namespace ensueno.Presentation.Main
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBoxDark = new PictureBox();
-            DataGridView_employees = new Guna.UI2.WinForms.Guna2DataGridView();
+            DataGridView_Products = new Guna.UI2.WinForms.Guna2DataGridView();
             label_Name = new Label();
             TextBox_Id = new Guna.UI2.WinForms.Guna2TextBox();
             labelName = new Label();
@@ -85,7 +85,7 @@ namespace ensueno.Presentation.Main
             labelStock = new Label();
             TextBoxStock = new Guna.UI2.WinForms.Guna2TextBox();
             labelPrecio = new Label();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            TextBoxPrice = new Guna.UI2.WinForms.Guna2TextBox();
             ButtonSubirImagen = new Guna.UI2.WinForms.Guna2GradientButton();
             PictureBox_product = new Guna.UI2.WinForms.Guna2PictureBox();
             ButtonSearch = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -99,11 +99,11 @@ namespace ensueno.Presentation.Main
             Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonCategory = new Guna.UI2.WinForms.Guna2GradientButton();
             labelPurchase_Price = new Label();
-            TextBoxPrecioCompra = new Guna.UI2.WinForms.Guna2TextBox();
+            TextBoxPurchase_Price = new Guna.UI2.WinForms.Guna2TextBox();
             ButtonAddStock = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonSupplier = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView_employees).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView_Products).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
             SuspendLayout();
             // 
@@ -128,16 +128,16 @@ namespace ensueno.Presentation.Main
             pictureBoxDark.TabStop = false;
             pictureBoxDark.Visible = false;
             // 
-            // DataGridView_employees
+            // DataGridView_Products
             // 
-            DataGridView_employees.AllowUserToResizeRows = false;
+            DataGridView_Products.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            DataGridView_employees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DataGridView_employees.BorderStyle = BorderStyle.Fixed3D;
+            DataGridView_Products.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridView_Products.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(243, 67, 54);
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -145,9 +145,9 @@ namespace ensueno.Presentation.Main
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(243, 67, 54);
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DataGridView_employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DataGridView_employees.ColumnHeadersHeight = 30;
-            DataGridView_employees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DataGridView_Products.ColumnHeadersHeight = 30;
+            DataGridView_Products.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(252, 217, 215);
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -155,13 +155,13 @@ namespace ensueno.Presentation.Main
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DataGridView_employees.DefaultCellStyle = dataGridViewCellStyle3;
-            DataGridView_employees.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
-            DataGridView_employees.Location = new System.Drawing.Point(44, 220);
-            DataGridView_employees.Margin = new Padding(4, 3, 4, 3);
-            DataGridView_employees.Name = "DataGridView_employees";
-            DataGridView_employees.ReadOnly = true;
-            DataGridView_employees.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridView_Products.DefaultCellStyle = dataGridViewCellStyle3;
+            DataGridView_Products.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
+            DataGridView_Products.Location = new System.Drawing.Point(44, 220);
+            DataGridView_Products.Margin = new Padding(4, 3, 4, 3);
+            DataGridView_Products.Name = "DataGridView_Products";
+            DataGridView_Products.ReadOnly = true;
+            DataGridView_Products.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(252, 217, 215);
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -169,33 +169,33 @@ namespace ensueno.Presentation.Main
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(252, 217, 215);
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DataGridView_employees.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            DataGridView_employees.RowHeadersVisible = false;
-            DataGridView_employees.Size = new System.Drawing.Size(912, 325);
-            DataGridView_employees.TabIndex = 31;
-            DataGridView_employees.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
-            DataGridView_employees.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
-            DataGridView_employees.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            DataGridView_employees.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            DataGridView_employees.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
-            DataGridView_employees.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            DataGridView_employees.ThemeStyle.BackColor = System.Drawing.Color.White;
-            DataGridView_employees.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
-            DataGridView_employees.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(243, 67, 54);
-            DataGridView_employees.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataGridView_employees.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            DataGridView_employees.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            DataGridView_employees.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DataGridView_employees.ThemeStyle.HeaderStyle.Height = 30;
-            DataGridView_employees.ThemeStyle.ReadOnly = true;
-            DataGridView_employees.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(252, 217, 215);
-            DataGridView_employees.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DataGridView_employees.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            DataGridView_employees.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            DataGridView_employees.ThemeStyle.RowsStyle.Height = 22;
-            DataGridView_employees.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
-            DataGridView_employees.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            DataGridView_employees.CellClick += DataGridView_employees_CellClick;
+            DataGridView_Products.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DataGridView_Products.RowHeadersVisible = false;
+            DataGridView_Products.Size = new System.Drawing.Size(912, 325);
+            DataGridView_Products.TabIndex = 31;
+            DataGridView_Products.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
+            DataGridView_Products.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
+            DataGridView_Products.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            DataGridView_Products.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            DataGridView_Products.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
+            DataGridView_Products.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridView_Products.ThemeStyle.BackColor = System.Drawing.Color.White;
+            DataGridView_Products.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
+            DataGridView_Products.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(243, 67, 54);
+            DataGridView_Products.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridView_Products.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            DataGridView_Products.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            DataGridView_Products.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DataGridView_Products.ThemeStyle.HeaderStyle.Height = 30;
+            DataGridView_Products.ThemeStyle.ReadOnly = true;
+            DataGridView_Products.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(252, 217, 215);
+            DataGridView_Products.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DataGridView_Products.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            DataGridView_Products.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            DataGridView_Products.ThemeStyle.RowsStyle.Height = 22;
+            DataGridView_Products.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
+            DataGridView_Products.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridView_Products.CellClick += DataGridView_Products_CellClick;
             // 
             // label_Name
             // 
@@ -221,6 +221,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
             TextBox_Id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_Id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_Id.Enabled = false;
             TextBox_Id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_Id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Id.ForeColor = System.Drawing.SystemColors.GrayText;
@@ -276,6 +277,8 @@ namespace ensueno.Presentation.Main
             TextBox_Product.ShadowDecoration.CustomizableEdges = customizableEdges35;
             TextBox_Product.Size = new System.Drawing.Size(195, 29);
             TextBox_Product.TabIndex = 1;
+            TextBox_Product.TextChanged += TextBox_Product_TextChanged;
+            TextBox_Product.KeyPress += TextBox_Product_KeyPress;
             // 
             // ComboBoxCategory
             // 
@@ -350,6 +353,8 @@ namespace ensueno.Presentation.Main
             TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges31;
             TextBoxStock.Size = new System.Drawing.Size(195, 29);
             TextBoxStock.TabIndex = 2;
+            TextBoxStock.TextChanged += TextBoxStock_TextChanged;
+            TextBoxStock.KeyPress += TextBoxStock_KeyPress;
             // 
             // labelPrecio
             // 
@@ -363,33 +368,35 @@ namespace ensueno.Presentation.Main
             labelPrecio.TabIndex = 44;
             labelPrecio.Text = "Precio Venta";
             // 
-            // guna2TextBox1
+            // TextBoxPrice
             // 
-            guna2TextBox1.Animated = true;
-            guna2TextBox1.BorderColor = System.Drawing.Color.Crimson;
-            guna2TextBox1.BorderRadius = 11;
-            guna2TextBox1.Cursor = Cursors.IBeam;
-            guna2TextBox1.CustomizableEdges = customizableEdges28;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            guna2TextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new System.Drawing.Point(371, 85);
-            guna2TextBox1.Margin = new Padding(4, 3, 4, 3);
-            guna2TextBox1.MaxLength = 50;
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            guna2TextBox1.PlaceholderText = "Precio Unitario";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges29;
-            guna2TextBox1.Size = new System.Drawing.Size(195, 29);
-            guna2TextBox1.TabIndex = 4;
+            TextBoxPrice.Animated = true;
+            TextBoxPrice.BorderColor = System.Drawing.Color.Crimson;
+            TextBoxPrice.BorderRadius = 11;
+            TextBoxPrice.Cursor = Cursors.IBeam;
+            TextBoxPrice.CustomizableEdges = customizableEdges28;
+            TextBoxPrice.DefaultText = "";
+            TextBoxPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            TextBoxPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            TextBoxPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPrice.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBoxPrice.ForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPrice.Location = new System.Drawing.Point(371, 85);
+            TextBoxPrice.Margin = new Padding(4, 3, 4, 3);
+            TextBoxPrice.MaxLength = 50;
+            TextBoxPrice.Name = "TextBoxPrice";
+            TextBoxPrice.PasswordChar = '\0';
+            TextBoxPrice.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPrice.PlaceholderText = "Precio Unitario";
+            TextBoxPrice.SelectedText = "";
+            TextBoxPrice.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            TextBoxPrice.Size = new System.Drawing.Size(195, 29);
+            TextBoxPrice.TabIndex = 4;
+            TextBoxPrice.TextChanged += TextBoxPrice_TextChanged;
+            TextBoxPrice.KeyPress += TextBoxPrice_KeyPress;
             // 
             // ButtonSubirImagen
             // 
@@ -413,6 +420,7 @@ namespace ensueno.Presentation.Main
             ButtonSubirImagen.Size = new System.Drawing.Size(125, 30);
             ButtonSubirImagen.TabIndex = 12;
             ButtonSubirImagen.Text = "Subir Imagen";
+            ButtonSubirImagen.Click += ButtonSubirImagen_Click;
             // 
             // PictureBox_product
             // 
@@ -565,6 +573,7 @@ namespace ensueno.Presentation.Main
             Button_clear.Size = new System.Drawing.Size(38, 38);
             Button_clear.TabIndex = 11;
             Button_clear.UseTransparentBackground = true;
+            Button_clear.Click += Button_clear_Click;
             // 
             // Button_delete
             // 
@@ -682,33 +691,35 @@ namespace ensueno.Presentation.Main
             labelPurchase_Price.TabIndex = 59;
             labelPurchase_Price.Text = "Precio Compra";
             // 
-            // TextBoxPrecioCompra
+            // TextBoxPurchase_Price
             // 
-            TextBoxPrecioCompra.Animated = true;
-            TextBoxPrecioCompra.BorderColor = System.Drawing.Color.Crimson;
-            TextBoxPrecioCompra.BorderRadius = 11;
-            TextBoxPrecioCompra.Cursor = Cursors.IBeam;
-            TextBoxPrecioCompra.CustomizableEdges = customizableEdges3;
-            TextBoxPrecioCompra.DefaultText = "";
-            TextBoxPrecioCompra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            TextBoxPrecioCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            TextBoxPrecioCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBoxPrecioCompra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBoxPrecioCompra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBoxPrecioCompra.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            TextBoxPrecioCompra.ForeColor = System.Drawing.SystemColors.GrayText;
-            TextBoxPrecioCompra.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBoxPrecioCompra.Location = new System.Drawing.Point(371, 30);
-            TextBoxPrecioCompra.Margin = new Padding(4, 3, 4, 3);
-            TextBoxPrecioCompra.MaxLength = 50;
-            TextBoxPrecioCompra.Name = "TextBoxPrecioCompra";
-            TextBoxPrecioCompra.PasswordChar = '\0';
-            TextBoxPrecioCompra.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            TextBoxPrecioCompra.PlaceholderText = "Precio Unitario";
-            TextBoxPrecioCompra.SelectedText = "";
-            TextBoxPrecioCompra.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TextBoxPrecioCompra.Size = new System.Drawing.Size(195, 29);
-            TextBoxPrecioCompra.TabIndex = 3;
+            TextBoxPurchase_Price.Animated = true;
+            TextBoxPurchase_Price.BorderColor = System.Drawing.Color.Crimson;
+            TextBoxPurchase_Price.BorderRadius = 11;
+            TextBoxPurchase_Price.Cursor = Cursors.IBeam;
+            TextBoxPurchase_Price.CustomizableEdges = customizableEdges3;
+            TextBoxPurchase_Price.DefaultText = "";
+            TextBoxPurchase_Price.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            TextBoxPurchase_Price.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            TextBoxPurchase_Price.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPurchase_Price.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPurchase_Price.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPurchase_Price.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBoxPurchase_Price.ForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPurchase_Price.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPurchase_Price.Location = new System.Drawing.Point(371, 30);
+            TextBoxPurchase_Price.Margin = new Padding(4, 3, 4, 3);
+            TextBoxPurchase_Price.MaxLength = 50;
+            TextBoxPurchase_Price.Name = "TextBoxPurchase_Price";
+            TextBoxPurchase_Price.PasswordChar = '\0';
+            TextBoxPurchase_Price.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPurchase_Price.PlaceholderText = "Precio Unitario";
+            TextBoxPurchase_Price.SelectedText = "";
+            TextBoxPurchase_Price.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TextBoxPurchase_Price.Size = new System.Drawing.Size(195, 29);
+            TextBoxPurchase_Price.TabIndex = 3;
+            TextBoxPurchase_Price.TextChanged += TextBoxPurchase_Price_TextChanged;
+            TextBoxPurchase_Price.KeyPress += TextBoxPurchase_Price_KeyPress;
             // 
             // ButtonAddStock
             // 
@@ -770,7 +781,7 @@ namespace ensueno.Presentation.Main
             ClientSize = new System.Drawing.Size(992, 577);
             Controls.Add(ButtonAddStock);
             Controls.Add(labelPurchase_Price);
-            Controls.Add(TextBoxPrecioCompra);
+            Controls.Add(TextBoxPurchase_Price);
             Controls.Add(ButtonCategory);
             Controls.Add(ButtonSupplier);
             Controls.Add(Button_report);
@@ -785,7 +796,7 @@ namespace ensueno.Presentation.Main
             Controls.Add(ButtonSubirImagen);
             Controls.Add(PictureBox_product);
             Controls.Add(labelPrecio);
-            Controls.Add(guna2TextBox1);
+            Controls.Add(TextBoxPrice);
             Controls.Add(labelStock);
             Controls.Add(TextBoxStock);
             Controls.Add(labelCatedory);
@@ -795,14 +806,14 @@ namespace ensueno.Presentation.Main
             Controls.Add(label_Name);
             Controls.Add(TextBox_Id);
             Controls.Add(pictureBoxDark);
-            Controls.Add(DataGridView_employees);
+            Controls.Add(DataGridView_Products);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_products";
             Text = "Form_products";
             Load += Form_products_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView_employees).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView_Products).EndInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -812,7 +823,7 @@ namespace ensueno.Presentation.Main
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private PictureBox pictureBoxDark;
-        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_employees;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_Products;
         private Label label_Name;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Id;
         private Label labelName;
@@ -820,7 +831,7 @@ namespace ensueno.Presentation.Main
         private Label labelCatedory;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxCategory;
         private Label labelPrecio;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxPrice;
         private Label labelStock;
         private Guna.UI2.WinForms.Guna2TextBox TextBoxStock;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSubirImagen;
@@ -837,7 +848,7 @@ namespace ensueno.Presentation.Main
         private Guna.UI2.WinForms.Guna2GradientButton ButtonCategory;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSupplier;
         private Label labelPurchase_Price;
-        private Guna.UI2.WinForms.Guna2TextBox TextBoxPrecioCompra;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxPurchase_Price;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonAddStock;
     }
 }
