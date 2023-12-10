@@ -16,6 +16,7 @@ namespace Dominio.Database
         public int TypeStockMovement { get; set; }
         public StockMovementType? StockMovementTypeNavigation { get; set; }
         public int Units { get; set; }
+        public decimal Price { get; set; }
         public DateTime Date_Time { get; set; }
         public int? InvoiceId { get; set; }
         public int? EmployeeId { get; set; }

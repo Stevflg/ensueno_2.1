@@ -13,6 +13,7 @@ namespace Dominio.Database
         public string ProductName { get; set; }
         public int ProductCategoryId { get; set; }
         public int Stock { get; set; }
+        public decimal Purchase_Price { get; set; }
         public decimal Unit_Price { get; set; }
         public byte[]? Image { get; set; }
         public bool IsActive { get; set; }

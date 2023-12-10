@@ -243,6 +243,8 @@ namespace Persistencia.Context
         public virtual DbSet<FormRol> FormRols { get; set; }
         public virtual DbSet<Procedures> Procedures { get; set; }
         public virtual DbSet<ProcedureRols> ProcedureRols { get; set; }
+        public virtual DbSet<Product_Category> Product_Category { get; set; }
+        public virtual DbSet<UsersRol> UsersRols { get; set; }
 
     }
 }

@@ -68,6 +68,7 @@ namespace ensueno.Presentation.Main
         //Metodo para guardar cambios
         private async void saveChanges()
         {
+            Convert_image();
             Employees employee = new Employees
             {
                 EmployeeId = EmployeeId,

@@ -35,40 +35,44 @@ namespace ensueno.Presentation.Main
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_products));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBoxDark = new PictureBox();
             DataGridView_employees = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -93,8 +97,11 @@ namespace ensueno.Presentation.Main
             Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
-            ButtonSupplier = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonCategory = new Guna.UI2.WinForms.Guna2GradientButton();
+            labelPurchase_Price = new Label();
+            TextBoxPrecioCompra = new Guna.UI2.WinForms.Guna2TextBox();
+            ButtonAddStock = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonSupplier = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
@@ -188,13 +195,14 @@ namespace ensueno.Presentation.Main
             DataGridView_employees.ThemeStyle.RowsStyle.Height = 22;
             DataGridView_employees.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             DataGridView_employees.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridView_employees.CellClick += DataGridView_employees_CellClick;
             // 
             // label_Name
             // 
             label_Name.AutoSize = true;
             label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label_Name.ForeColor = System.Drawing.SystemColors.GrayText;
-            label_Name.Location = new System.Drawing.Point(320, 3);
+            label_Name.Location = new System.Drawing.Point(155, 11);
             label_Name.Margin = new Padding(4, 0, 4, 0);
             label_Name.Name = "label_Name";
             label_Name.Size = new System.Drawing.Size(21, 18);
@@ -207,7 +215,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Id.BorderRadius = 11;
             TextBox_Id.Cursor = Cursors.IBeam;
-            TextBox_Id.CustomizableEdges = customizableEdges32;
+            TextBox_Id.CustomizableEdges = customizableEdges36;
             TextBox_Id.DefaultText = "";
             TextBox_Id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -217,7 +225,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Id.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Id.Location = new System.Drawing.Point(320, 24);
+            TextBox_Id.Location = new System.Drawing.Point(155, 32);
             TextBox_Id.Margin = new Padding(4, 3, 4, 3);
             TextBox_Id.MaxLength = 50;
             TextBox_Id.Name = "TextBox_Id";
@@ -225,16 +233,16 @@ namespace ensueno.Presentation.Main
             TextBox_Id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.PlaceholderText = "Id";
             TextBox_Id.SelectedText = "";
-            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges33;
-            TextBox_Id.Size = new System.Drawing.Size(216, 29);
-            TextBox_Id.TabIndex = 35;
+            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            TextBox_Id.Size = new System.Drawing.Size(195, 29);
+            TextBox_Id.TabIndex = 0;
             // 
             // labelName
             // 
             labelName.AutoSize = true;
             labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelName.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelName.Location = new System.Drawing.Point(320, 57);
+            labelName.Location = new System.Drawing.Point(155, 65);
             labelName.Margin = new Padding(4, 0, 4, 0);
             labelName.Name = "labelName";
             labelName.Size = new System.Drawing.Size(63, 18);
@@ -247,7 +255,7 @@ namespace ensueno.Presentation.Main
             TextBox_Product.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Product.BorderRadius = 11;
             TextBox_Product.Cursor = Cursors.IBeam;
-            TextBox_Product.CustomizableEdges = customizableEdges30;
+            TextBox_Product.CustomizableEdges = customizableEdges34;
             TextBox_Product.DefaultText = "";
             TextBox_Product.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Product.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -257,7 +265,7 @@ namespace ensueno.Presentation.Main
             TextBox_Product.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Product.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Product.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Product.Location = new System.Drawing.Point(320, 78);
+            TextBox_Product.Location = new System.Drawing.Point(155, 86);
             TextBox_Product.Margin = new Padding(4, 3, 4, 3);
             TextBox_Product.MaxLength = 50;
             TextBox_Product.Name = "TextBox_Product";
@@ -265,9 +273,9 @@ namespace ensueno.Presentation.Main
             TextBox_Product.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Product.PlaceholderText = "Nombre";
             TextBox_Product.SelectedText = "";
-            TextBox_Product.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            TextBox_Product.Size = new System.Drawing.Size(216, 29);
-            TextBox_Product.TabIndex = 37;
+            TextBox_Product.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            TextBox_Product.Size = new System.Drawing.Size(195, 29);
+            TextBox_Product.TabIndex = 1;
             // 
             // ComboBoxCategory
             // 
@@ -276,7 +284,7 @@ namespace ensueno.Presentation.Main
             ComboBoxCategory.BackColor = System.Drawing.Color.Transparent;
             ComboBoxCategory.BorderColor = System.Drawing.Color.Crimson;
             ComboBoxCategory.BorderRadius = 17;
-            ComboBoxCategory.CustomizableEdges = customizableEdges28;
+            ComboBoxCategory.CustomizableEdges = customizableEdges32;
             ComboBoxCategory.DrawMode = DrawMode.OwnerDrawFixed;
             ComboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxCategory.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -284,18 +292,19 @@ namespace ensueno.Presentation.Main
             ComboBoxCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ComboBoxCategory.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
             ComboBoxCategory.ItemHeight = 30;
-            ComboBoxCategory.Location = new System.Drawing.Point(550, 35);
+            ComboBoxCategory.Location = new System.Drawing.Point(581, 35);
             ComboBoxCategory.Name = "ComboBoxCategory";
-            ComboBoxCategory.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            ComboBoxCategory.ShadowDecoration.CustomizableEdges = customizableEdges33;
             ComboBoxCategory.Size = new System.Drawing.Size(217, 36);
-            ComboBoxCategory.TabIndex = 39;
+            ComboBoxCategory.TabIndex = 5;
+            ComboBoxCategory.SelectedIndexChanged += ComboBoxCategory_SelectedIndexChanged;
             // 
             // labelCatedory
             // 
             labelCatedory.AutoSize = true;
             labelCatedory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelCatedory.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelCatedory.Location = new System.Drawing.Point(551, 14);
+            labelCatedory.Location = new System.Drawing.Point(582, 14);
             labelCatedory.Margin = new Padding(4, 0, 4, 0);
             labelCatedory.Name = "labelCatedory";
             labelCatedory.Size = new System.Drawing.Size(81, 18);
@@ -307,7 +316,7 @@ namespace ensueno.Presentation.Main
             labelStock.AutoSize = true;
             labelStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelStock.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelStock.Location = new System.Drawing.Point(320, 110);
+            labelStock.Location = new System.Drawing.Point(155, 118);
             labelStock.Margin = new Padding(4, 0, 4, 0);
             labelStock.Name = "labelStock";
             labelStock.Size = new System.Drawing.Size(52, 18);
@@ -320,7 +329,7 @@ namespace ensueno.Presentation.Main
             TextBoxStock.BorderColor = System.Drawing.Color.Crimson;
             TextBoxStock.BorderRadius = 11;
             TextBoxStock.Cursor = Cursors.IBeam;
-            TextBoxStock.CustomizableEdges = customizableEdges26;
+            TextBoxStock.CustomizableEdges = customizableEdges30;
             TextBoxStock.DefaultText = "";
             TextBoxStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -330,7 +339,7 @@ namespace ensueno.Presentation.Main
             TextBoxStock.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBoxStock.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBoxStock.Location = new System.Drawing.Point(320, 131);
+            TextBoxStock.Location = new System.Drawing.Point(155, 139);
             TextBoxStock.Margin = new Padding(4, 3, 4, 3);
             TextBoxStock.MaxLength = 50;
             TextBoxStock.Name = "TextBoxStock";
@@ -338,21 +347,21 @@ namespace ensueno.Presentation.Main
             TextBoxStock.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxStock.PlaceholderText = "Stock";
             TextBoxStock.SelectedText = "";
-            TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges27;
-            TextBoxStock.Size = new System.Drawing.Size(216, 29);
-            TextBoxStock.TabIndex = 41;
+            TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            TextBoxStock.Size = new System.Drawing.Size(195, 29);
+            TextBoxStock.TabIndex = 2;
             // 
             // labelPrecio
             // 
             labelPrecio.AutoSize = true;
             labelPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelPrecio.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelPrecio.Location = new System.Drawing.Point(320, 164);
+            labelPrecio.Location = new System.Drawing.Point(371, 64);
             labelPrecio.Margin = new Padding(4, 0, 4, 0);
             labelPrecio.Name = "labelPrecio";
-            labelPrecio.Size = new System.Drawing.Size(57, 18);
+            labelPrecio.Size = new System.Drawing.Size(104, 18);
             labelPrecio.TabIndex = 44;
-            labelPrecio.Text = "Precio";
+            labelPrecio.Text = "Precio Venta";
             // 
             // guna2TextBox1
             // 
@@ -360,7 +369,7 @@ namespace ensueno.Presentation.Main
             guna2TextBox1.BorderColor = System.Drawing.Color.Crimson;
             guna2TextBox1.BorderRadius = 11;
             guna2TextBox1.Cursor = Cursors.IBeam;
-            guna2TextBox1.CustomizableEdges = customizableEdges24;
+            guna2TextBox1.CustomizableEdges = customizableEdges28;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -370,7 +379,7 @@ namespace ensueno.Presentation.Main
             guna2TextBox1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             guna2TextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new System.Drawing.Point(320, 185);
+            guna2TextBox1.Location = new System.Drawing.Point(371, 85);
             guna2TextBox1.Margin = new Padding(4, 3, 4, 3);
             guna2TextBox1.MaxLength = 50;
             guna2TextBox1.Name = "guna2TextBox1";
@@ -378,16 +387,16 @@ namespace ensueno.Presentation.Main
             guna2TextBox1.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             guna2TextBox1.PlaceholderText = "Precio Unitario";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges25;
-            guna2TextBox1.Size = new System.Drawing.Size(216, 29);
-            guna2TextBox1.TabIndex = 43;
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            guna2TextBox1.Size = new System.Drawing.Size(195, 29);
+            guna2TextBox1.TabIndex = 4;
             // 
             // ButtonSubirImagen
             // 
             ButtonSubirImagen.Animated = true;
             ButtonSubirImagen.AutoRoundedCorners = true;
             ButtonSubirImagen.BorderRadius = 14;
-            ButtonSubirImagen.CustomizableEdges = customizableEdges20;
+            ButtonSubirImagen.CustomizableEdges = customizableEdges24;
             ButtonSubirImagen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -400,20 +409,20 @@ namespace ensueno.Presentation.Main
             ButtonSubirImagen.Location = new System.Drawing.Point(825, 173);
             ButtonSubirImagen.Margin = new Padding(4, 3, 4, 3);
             ButtonSubirImagen.Name = "ButtonSubirImagen";
-            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges25;
             ButtonSubirImagen.Size = new System.Drawing.Size(125, 30);
-            ButtonSubirImagen.TabIndex = 45;
+            ButtonSubirImagen.TabIndex = 12;
             ButtonSubirImagen.Text = "Subir Imagen";
             // 
             // PictureBox_product
             // 
             PictureBox_product.BorderRadius = 11;
-            PictureBox_product.CustomizableEdges = customizableEdges22;
+            PictureBox_product.CustomizableEdges = customizableEdges26;
             PictureBox_product.ImageRotate = 0F;
             PictureBox_product.Location = new System.Drawing.Point(820, 24);
             PictureBox_product.Margin = new Padding(4, 3, 4, 3);
             PictureBox_product.Name = "PictureBox_product";
-            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges27;
             PictureBox_product.Size = new System.Drawing.Size(136, 143);
             PictureBox_product.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBox_product.TabIndex = 46;
@@ -426,7 +435,7 @@ namespace ensueno.Presentation.Main
             ButtonSearch.BackColor = System.Drawing.Color.White;
             ButtonSearch.BorderColor = System.Drawing.Color.Transparent;
             ButtonSearch.BorderRadius = 9;
-            ButtonSearch.CustomizableEdges = customizableEdges16;
+            ButtonSearch.CustomizableEdges = customizableEdges20;
             ButtonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -442,7 +451,7 @@ namespace ensueno.Presentation.Main
             ButtonSearch.Margin = new Padding(4, 3, 4, 3);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.PressedColor = System.Drawing.Color.Transparent;
-            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges21;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
             ButtonSearch.TabIndex = 48;
             // 
@@ -452,7 +461,7 @@ namespace ensueno.Presentation.Main
             TextBox_SearchProduct.BorderColor = System.Drawing.Color.Navy;
             TextBox_SearchProduct.BorderRadius = 11;
             TextBox_SearchProduct.Cursor = Cursors.IBeam;
-            TextBox_SearchProduct.CustomizableEdges = customizableEdges18;
+            TextBox_SearchProduct.CustomizableEdges = customizableEdges22;
             TextBox_SearchProduct.DefaultText = "";
             TextBox_SearchProduct.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_SearchProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -470,16 +479,16 @@ namespace ensueno.Presentation.Main
             TextBox_SearchProduct.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_SearchProduct.PlaceholderText = "Buscar Insumo";
             TextBox_SearchProduct.SelectedText = "";
-            TextBox_SearchProduct.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            TextBox_SearchProduct.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBox_SearchProduct.Size = new System.Drawing.Size(252, 32);
-            TextBox_SearchProduct.TabIndex = 47;
+            TextBox_SearchProduct.TabIndex = 13;
             // 
             // labelSupplier
             // 
             labelSupplier.AutoSize = true;
             labelSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelSupplier.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelSupplier.Location = new System.Drawing.Point(550, 74);
+            labelSupplier.Location = new System.Drawing.Point(581, 74);
             labelSupplier.Margin = new Padding(4, 0, 4, 0);
             labelSupplier.Name = "labelSupplier";
             labelSupplier.Size = new System.Drawing.Size(86, 18);
@@ -493,7 +502,7 @@ namespace ensueno.Presentation.Main
             ComboBoxSuppliers.BackColor = System.Drawing.Color.Transparent;
             ComboBoxSuppliers.BorderColor = System.Drawing.Color.Crimson;
             ComboBoxSuppliers.BorderRadius = 17;
-            ComboBoxSuppliers.CustomizableEdges = customizableEdges14;
+            ComboBoxSuppliers.CustomizableEdges = customizableEdges18;
             ComboBoxSuppliers.DrawMode = DrawMode.OwnerDrawFixed;
             ComboBoxSuppliers.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxSuppliers.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -501,18 +510,19 @@ namespace ensueno.Presentation.Main
             ComboBoxSuppliers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ComboBoxSuppliers.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
             ComboBoxSuppliers.ItemHeight = 30;
-            ComboBoxSuppliers.Location = new System.Drawing.Point(549, 95);
+            ComboBoxSuppliers.Location = new System.Drawing.Point(580, 95);
             ComboBoxSuppliers.Name = "ComboBoxSuppliers";
-            ComboBoxSuppliers.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            ComboBoxSuppliers.ShadowDecoration.CustomizableEdges = customizableEdges19;
             ComboBoxSuppliers.Size = new System.Drawing.Size(217, 36);
-            ComboBoxSuppliers.TabIndex = 49;
+            ComboBoxSuppliers.TabIndex = 6;
+            ComboBoxSuppliers.SelectedIndexChanged += ComboBoxSuppliers_SelectedIndexChanged;
             // 
             // Button_report
             // 
             Button_report.Animated = true;
             Button_report.AutoRoundedCorners = true;
             Button_report.BorderRadius = 14;
-            Button_report.CustomizableEdges = customizableEdges5;
+            Button_report.CustomizableEdges = customizableEdges9;
             Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -521,14 +531,16 @@ namespace ensueno.Presentation.Main
             Button_report.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_report.ForeColor = System.Drawing.Color.White;
             Button_report.Image = (System.Drawing.Image)resources.GetObject("Button_report.Image");
+            Button_report.ImageAlign = HorizontalAlignment.Left;
             Button_report.IndicateFocus = true;
-            Button_report.Location = new System.Drawing.Point(677, 173);
+            Button_report.Location = new System.Drawing.Point(631, 137);
             Button_report.Margin = new Padding(4, 3, 4, 3);
             Button_report.Name = "Button_report";
-            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Button_report.Size = new System.Drawing.Size(89, 30);
-            Button_report.TabIndex = 54;
+            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            Button_report.Size = new System.Drawing.Size(135, 30);
+            Button_report.TabIndex = 10;
             Button_report.Text = "Reporte";
+            Button_report.TextAlign = HorizontalAlignment.Left;
             // 
             // Button_clear
             // 
@@ -548,10 +560,10 @@ namespace ensueno.Presentation.Main
             Button_clear.Location = new System.Drawing.Point(774, 165);
             Button_clear.Margin = new Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
-            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_clear.Size = new System.Drawing.Size(38, 38);
-            Button_clear.TabIndex = 55;
+            Button_clear.TabIndex = 11;
             Button_clear.UseTransparentBackground = true;
             // 
             // Button_delete
@@ -559,7 +571,7 @@ namespace ensueno.Presentation.Main
             Button_delete.Animated = true;
             Button_delete.AutoRoundedCorners = true;
             Button_delete.BorderRadius = 14;
-            Button_delete.CustomizableEdges = customizableEdges8;
+            Button_delete.CustomizableEdges = customizableEdges12;
             Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -569,21 +581,23 @@ namespace ensueno.Presentation.Main
             Button_delete.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_delete.ForeColor = System.Drawing.Color.White;
             Button_delete.Image = (System.Drawing.Image)resources.GetObject("Button_delete.Image");
+            Button_delete.ImageAlign = HorizontalAlignment.Left;
             Button_delete.IndicateFocus = true;
-            Button_delete.Location = new System.Drawing.Point(677, 137);
+            Button_delete.Location = new System.Drawing.Point(494, 173);
             Button_delete.Margin = new Padding(4, 3, 4, 3);
             Button_delete.Name = "Button_delete";
-            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            Button_delete.Size = new System.Drawing.Size(89, 30);
-            Button_delete.TabIndex = 53;
+            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            Button_delete.Size = new System.Drawing.Size(135, 30);
+            Button_delete.TabIndex = 8;
             Button_delete.Text = "Eliminar";
+            Button_delete.TextAlign = HorizontalAlignment.Left;
             // 
             // Button_update
             // 
             Button_update.Animated = true;
             Button_update.AutoRoundedCorners = true;
             Button_update.BorderRadius = 14;
-            Button_update.CustomizableEdges = customizableEdges10;
+            Button_update.CustomizableEdges = customizableEdges14;
             Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -593,21 +607,23 @@ namespace ensueno.Presentation.Main
             Button_update.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_update.ForeColor = System.Drawing.Color.White;
             Button_update.Image = (System.Drawing.Image)resources.GetObject("Button_update.Image");
+            Button_update.ImageAlign = HorizontalAlignment.Left;
             Button_update.IndicateFocus = true;
-            Button_update.Location = new System.Drawing.Point(580, 172);
+            Button_update.Location = new System.Drawing.Point(358, 173);
             Button_update.Margin = new Padding(4, 3, 4, 3);
             Button_update.Name = "Button_update";
-            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            Button_update.Size = new System.Drawing.Size(89, 30);
-            Button_update.TabIndex = 52;
+            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            Button_update.Size = new System.Drawing.Size(135, 30);
+            Button_update.TabIndex = 8;
             Button_update.Text = "Editar";
+            Button_update.TextAlign = HorizontalAlignment.Left;
             // 
             // Button_create
             // 
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 14;
-            Button_create.CustomizableEdges = customizableEdges12;
+            Button_create.CustomizableEdges = customizableEdges16;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -616,48 +632,23 @@ namespace ensueno.Presentation.Main
             Button_create.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Button_create.ForeColor = System.Drawing.Color.White;
             Button_create.Image = (System.Drawing.Image)resources.GetObject("Button_create.Image");
+            Button_create.ImageAlign = HorizontalAlignment.Left;
             Button_create.IndicateFocus = true;
-            Button_create.Location = new System.Drawing.Point(580, 137);
+            Button_create.Location = new System.Drawing.Point(358, 138);
             Button_create.Margin = new Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            Button_create.Size = new System.Drawing.Size(89, 30);
-            Button_create.TabIndex = 51;
-            Button_create.Text = "Agregar";
-            // 
-            // ButtonSupplier
-            // 
-            ButtonSupplier.Animated = true;
-            ButtonSupplier.AutoRoundedCorners = true;
-            ButtonSupplier.BorderRadius = 15;
-            ButtonSupplier.CustomizableEdges = customizableEdges3;
-            ButtonSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            ButtonSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            ButtonSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonSupplier.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            ButtonSupplier.FillColor = System.Drawing.Color.Silver;
-            ButtonSupplier.FillColor2 = System.Drawing.Color.Gray;
-            ButtonSupplier.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ButtonSupplier.ForeColor = System.Drawing.Color.White;
-            ButtonSupplier.Image = (System.Drawing.Image)resources.GetObject("ButtonSupplier.Image");
-            ButtonSupplier.ImageAlign = HorizontalAlignment.Left;
-            ButtonSupplier.IndicateFocus = true;
-            ButtonSupplier.Location = new System.Drawing.Point(79, 95);
-            ButtonSupplier.Margin = new Padding(4, 3, 4, 3);
-            ButtonSupplier.Name = "ButtonSupplier";
-            ButtonSupplier.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            ButtonSupplier.Size = new System.Drawing.Size(149, 33);
-            ButtonSupplier.TabIndex = 56;
-            ButtonSupplier.Text = "Proveedor";
-            ButtonSupplier.TextAlign = HorizontalAlignment.Left;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            Button_create.Size = new System.Drawing.Size(135, 30);
+            Button_create.TabIndex = 7;
+            Button_create.Text = "Crear";
+            Button_create.TextAlign = HorizontalAlignment.Left;
             // 
             // ButtonCategory
             // 
             ButtonCategory.Animated = true;
             ButtonCategory.AutoRoundedCorners = true;
             ButtonCategory.BorderRadius = 15;
-            ButtonCategory.CustomizableEdges = customizableEdges1;
+            ButtonCategory.CustomizableEdges = customizableEdges5;
             ButtonCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -670,20 +661,116 @@ namespace ensueno.Presentation.Main
             ButtonCategory.Image = (System.Drawing.Image)resources.GetObject("ButtonCategory.Image");
             ButtonCategory.ImageAlign = HorizontalAlignment.Left;
             ButtonCategory.IndicateFocus = true;
-            ButtonCategory.Location = new System.Drawing.Point(79, 42);
+            ButtonCategory.Location = new System.Drawing.Point(22, 134);
             ButtonCategory.Margin = new Padding(4, 3, 4, 3);
             ButtonCategory.Name = "ButtonCategory";
-            ButtonCategory.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ButtonCategory.Size = new System.Drawing.Size(149, 33);
-            ButtonCategory.TabIndex = 57;
+            ButtonCategory.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            ButtonCategory.Size = new System.Drawing.Size(116, 33);
+            ButtonCategory.TabIndex = 15;
             ButtonCategory.Text = "Categoria";
             ButtonCategory.TextAlign = HorizontalAlignment.Left;
+            // 
+            // labelPurchase_Price
+            // 
+            labelPurchase_Price.AutoSize = true;
+            labelPurchase_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            labelPurchase_Price.ForeColor = System.Drawing.SystemColors.GrayText;
+            labelPurchase_Price.Location = new System.Drawing.Point(371, 9);
+            labelPurchase_Price.Margin = new Padding(4, 0, 4, 0);
+            labelPurchase_Price.Name = "labelPurchase_Price";
+            labelPurchase_Price.Size = new System.Drawing.Size(122, 18);
+            labelPurchase_Price.TabIndex = 59;
+            labelPurchase_Price.Text = "Precio Compra";
+            // 
+            // TextBoxPrecioCompra
+            // 
+            TextBoxPrecioCompra.Animated = true;
+            TextBoxPrecioCompra.BorderColor = System.Drawing.Color.Crimson;
+            TextBoxPrecioCompra.BorderRadius = 11;
+            TextBoxPrecioCompra.Cursor = Cursors.IBeam;
+            TextBoxPrecioCompra.CustomizableEdges = customizableEdges3;
+            TextBoxPrecioCompra.DefaultText = "";
+            TextBoxPrecioCompra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            TextBoxPrecioCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            TextBoxPrecioCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPrecioCompra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxPrecioCompra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPrecioCompra.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBoxPrecioCompra.ForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPrecioCompra.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxPrecioCompra.Location = new System.Drawing.Point(371, 30);
+            TextBoxPrecioCompra.Margin = new Padding(4, 3, 4, 3);
+            TextBoxPrecioCompra.MaxLength = 50;
+            TextBoxPrecioCompra.Name = "TextBoxPrecioCompra";
+            TextBoxPrecioCompra.PasswordChar = '\0';
+            TextBoxPrecioCompra.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxPrecioCompra.PlaceholderText = "Precio Unitario";
+            TextBoxPrecioCompra.SelectedText = "";
+            TextBoxPrecioCompra.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TextBoxPrecioCompra.Size = new System.Drawing.Size(195, 29);
+            TextBoxPrecioCompra.TabIndex = 3;
+            // 
+            // ButtonAddStock
+            // 
+            ButtonAddStock.Animated = true;
+            ButtonAddStock.AutoRoundedCorners = true;
+            ButtonAddStock.BorderRadius = 14;
+            ButtonAddStock.CustomizableEdges = customizableEdges1;
+            ButtonAddStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonAddStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonAddStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonAddStock.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonAddStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonAddStock.Enabled = false;
+            ButtonAddStock.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonAddStock.ForeColor = System.Drawing.Color.White;
+            ButtonAddStock.Image = (System.Drawing.Image)resources.GetObject("ButtonAddStock.Image");
+            ButtonAddStock.ImageAlign = HorizontalAlignment.Left;
+            ButtonAddStock.IndicateFocus = true;
+            ButtonAddStock.Location = new System.Drawing.Point(494, 137);
+            ButtonAddStock.Margin = new Padding(4, 3, 4, 3);
+            ButtonAddStock.Name = "ButtonAddStock";
+            ButtonAddStock.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ButtonAddStock.Size = new System.Drawing.Size(135, 30);
+            ButtonAddStock.TabIndex = 60;
+            ButtonAddStock.Text = "Agregar Stock";
+            ButtonAddStock.TextAlign = HorizontalAlignment.Left;
+            // 
+            // ButtonSupplier
+            // 
+            ButtonSupplier.Animated = true;
+            ButtonSupplier.AutoRoundedCorners = true;
+            ButtonSupplier.BorderRadius = 15;
+            ButtonSupplier.CustomizableEdges = customizableEdges7;
+            ButtonSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonSupplier.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonSupplier.FillColor = System.Drawing.Color.Silver;
+            ButtonSupplier.FillColor2 = System.Drawing.Color.Gray;
+            ButtonSupplier.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonSupplier.ForeColor = System.Drawing.Color.White;
+            ButtonSupplier.Image = (System.Drawing.Image)resources.GetObject("ButtonSupplier.Image");
+            ButtonSupplier.ImageAlign = HorizontalAlignment.Left;
+            ButtonSupplier.IndicateFocus = true;
+            ButtonSupplier.Location = new System.Drawing.Point(23, 95);
+            ButtonSupplier.Margin = new Padding(4, 3, 4, 3);
+            ButtonSupplier.Name = "ButtonSupplier";
+            ButtonSupplier.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            ButtonSupplier.Size = new System.Drawing.Size(116, 33);
+            ButtonSupplier.TabIndex = 14;
+            ButtonSupplier.Text = "Proveedor";
+            ButtonSupplier.TextAlign = HorizontalAlignment.Left;
             // 
             // Form_products
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(ButtonAddStock);
+            Controls.Add(labelPurchase_Price);
+            Controls.Add(TextBoxPrecioCompra);
             Controls.Add(ButtonCategory);
             Controls.Add(ButtonSupplier);
             Controls.Add(Button_report);
@@ -749,5 +836,8 @@ namespace ensueno.Presentation.Main
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonCategory;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSupplier;
+        private Label labelPurchase_Price;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxPrecioCompra;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonAddStock;
     }
 }
