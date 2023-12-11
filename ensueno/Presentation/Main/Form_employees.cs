@@ -31,13 +31,12 @@ namespace ensueno.Presentation.Main
         private Color color;
         private async void Form_employees_Load(object sender, EventArgs e)
         {
-
             Read();
         }
         #region Validaciones
         private void ValidacionesText()
         {
-            val.empty_text(TextBox_id);
+            //val.empty_text(TextBox_id);
             val.empty_text(TextBox_last_name);
             val.empty_text(TextBox_last_name);
             val.empty_text(TextBox_id_card);
@@ -88,31 +87,37 @@ namespace ensueno.Presentation.Main
         private void TextBox_name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
+            val.ClearError();
         }
 
         private void TextBox_last_name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
+            val.ClearError();
         }
 
         private void TextBox_id_card_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
+            val.ClearError();
         }
 
         private void TextBox_phone_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
+            val.ClearError();
         }
 
         private void TextBox_address_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
+            val.ClearError();
         }
 
         private void TextBoxEmail_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
+            val.ClearError();
         }
 
 

@@ -123,7 +123,7 @@
             ButtonSearch.PressedColor = System.Drawing.Color.Transparent;
             ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
-            ButtonSearch.TabIndex = 71;
+            ButtonSearch.TabIndex = 12;
             ButtonSearch.Click += ButtonSearch_Click;
             // 
             // label_Address
@@ -248,7 +248,7 @@
             TextBoxEmail.SelectedText = "";
             TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBoxEmail.Size = new System.Drawing.Size(216, 29);
-            TextBoxEmail.TabIndex = 49;
+            TextBoxEmail.TabIndex = 6;
             TextBoxEmail.TextChanged += TextBoxEmail_TextChanged;
             // 
             // Button_report
@@ -271,7 +271,7 @@
             Button_report.Name = "Button_report";
             Button_report.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Button_report.Size = new System.Drawing.Size(89, 30);
-            Button_report.TabIndex = 53;
+            Button_report.TabIndex = 10;
             Button_report.Text = "Reporte";
             // 
             // Button_clear
@@ -325,7 +325,7 @@
             TextBox_Search_Customer.SelectedText = "";
             TextBox_Search_Customer.ShadowDecoration.CustomizableEdges = customizableEdges9;
             TextBox_Search_Customer.Size = new System.Drawing.Size(252, 32);
-            TextBox_Search_Customer.TabIndex = 56;
+            TextBox_Search_Customer.TabIndex = 11;
             TextBox_Search_Customer.KeyDown += TextBox_Search_Customer_KeyDown;
             // 
             // Button_delete
@@ -349,7 +349,7 @@
             Button_delete.Name = "Button_delete";
             Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_delete.Size = new System.Drawing.Size(89, 30);
-            Button_delete.TabIndex = 52;
+            Button_delete.TabIndex = 9;
             Button_delete.Text = "Eliminar";
             Button_delete.Click += Button_delete_Click;
             // 
@@ -374,7 +374,7 @@
             Button_update.Name = "Button_update";
             Button_update.ShadowDecoration.CustomizableEdges = customizableEdges13;
             Button_update.Size = new System.Drawing.Size(89, 30);
-            Button_update.TabIndex = 51;
+            Button_update.TabIndex = 8;
             Button_update.Text = "Editar";
             Button_update.Click += Button_update_Click;
             // 
@@ -398,7 +398,7 @@
             Button_create.Name = "Button_create";
             Button_create.ShadowDecoration.CustomizableEdges = customizableEdges15;
             Button_create.Size = new System.Drawing.Size(89, 30);
-            Button_create.TabIndex = 50;
+            Button_create.TabIndex = 7;
             Button_create.Text = "Agregar";
             Button_create.Click += Button_create_Click;
             // 
@@ -428,7 +428,7 @@
             TextBox_address.SelectedText = "";
             TextBox_address.ShadowDecoration.CustomizableEdges = customizableEdges17;
             TextBox_address.Size = new System.Drawing.Size(216, 29);
-            TextBox_address.TabIndex = 48;
+            TextBox_address.TabIndex = 5;
             TextBox_address.TextChanged += TextBox_address_TextChanged;
             // 
             // TextBox_phone
@@ -457,7 +457,7 @@
             TextBox_phone.SelectedText = "";
             TextBox_phone.ShadowDecoration.CustomizableEdges = customizableEdges19;
             TextBox_phone.Size = new System.Drawing.Size(216, 29);
-            TextBox_phone.TabIndex = 47;
+            TextBox_phone.TabIndex = 4;
             TextBox_phone.TextChanged += TextBox_phone_TextChanged;
             TextBox_phone.KeyPress += TextBox_phone_KeyPress;
             // 
@@ -487,7 +487,7 @@
             TextBox_last_name.SelectedText = "";
             TextBox_last_name.ShadowDecoration.CustomizableEdges = customizableEdges21;
             TextBox_last_name.Size = new System.Drawing.Size(216, 29);
-            TextBox_last_name.TabIndex = 45;
+            TextBox_last_name.TabIndex = 2;
             TextBox_last_name.TextChanged += TextBox_last_name_TextChanged;
             TextBox_last_name.KeyPress += TextBox_last_name_KeyPress;
             // 
@@ -517,7 +517,7 @@
             TextBox_name.SelectedText = "";
             TextBox_name.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBox_name.Size = new System.Drawing.Size(216, 29);
-            TextBox_name.TabIndex = 44;
+            TextBox_name.TabIndex = 1;
             TextBox_name.TextChanged += TextBox_name_TextChanged;
             TextBox_name.KeyPress += TextBox_name_KeyPress;
             // 
@@ -547,7 +547,7 @@
             TextBox_id_card.SelectedText = "";
             TextBox_id_card.ShadowDecoration.CustomizableEdges = customizableEdges25;
             TextBox_id_card.Size = new System.Drawing.Size(216, 29);
-            TextBox_id_card.TabIndex = 46;
+            TextBox_id_card.TabIndex = 3;
             TextBox_id_card.TextChanged += TextBox_id_card_TextChanged;
             TextBox_id_card.KeyPress += TextBox_id_card_KeyPress;
             // 
@@ -577,7 +577,7 @@
             TextBox_id.SelectedText = "";
             TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges27;
             TextBox_id.Size = new System.Drawing.Size(216, 29);
-            TextBox_id.TabIndex = 43;
+            TextBox_id.TabIndex = 0;
             TextBox_id.TextChanged += TextBox_id_TextChanged;
             TextBox_id.KeyPress += TextBox_id_KeyPress;
             // 

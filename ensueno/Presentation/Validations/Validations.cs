@@ -30,7 +30,7 @@ namespace ensueno.Presentation.Validations
         }
         public static bool empty_text(Guna2TextBox ptxt)
         {
-            if (ptxt.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(ptxt.Text)||string.IsNullOrEmpty(ptxt.Text))
             {
                 ptxt.Focus();
                 return true;

@@ -387,6 +387,7 @@
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2ControlBox1.Size = new System.Drawing.Size(52, 34);
             guna2ControlBox1.TabIndex = 13;
+            guna2ControlBox1.Click += guna2ControlBox1_Click;
             // 
             // Label_user_role
             // 

@@ -93,6 +93,7 @@
             TextBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxEmail.Location = new System.Drawing.Point(264, 158);
             TextBoxEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxEmail.MaxLength = 50;
             TextBoxEmail.Name = "TextBoxEmail";
             TextBoxEmail.PasswordChar = '\0';
             TextBoxEmail.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -101,6 +102,8 @@
             TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TextBoxEmail.Size = new System.Drawing.Size(216, 29);
             TextBoxEmail.TabIndex = 5;
+            TextBoxEmail.TextChanged += TextBoxEmail_TextChanged;
+            TextBoxEmail.KeyPress += TextBoxEmail_KeyPress;
             // 
             // labelPhone
             // 
@@ -132,6 +135,7 @@
             TextBoxPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxPhone.Location = new System.Drawing.Point(264, 105);
             TextBoxPhone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxPhone.MaxLength = 8;
             TextBoxPhone.Name = "TextBoxPhone";
             TextBoxPhone.PasswordChar = '\0';
             TextBoxPhone.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -140,6 +144,8 @@
             TextBoxPhone.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBoxPhone.Size = new System.Drawing.Size(216, 29);
             TextBoxPhone.TabIndex = 4;
+            TextBoxPhone.TextChanged += TextBoxPhone_TextChanged;
+            TextBoxPhone.KeyPress += TextBoxPhone_KeyPress;
             // 
             // labelRUC
             // 
@@ -171,6 +177,7 @@
             TextBoxRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxRUC.Location = new System.Drawing.Point(264, 47);
             TextBoxRUC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxRUC.MaxLength = 20;
             TextBoxRUC.Name = "TextBoxRUC";
             TextBoxRUC.PasswordChar = '\0';
             TextBoxRUC.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -179,6 +186,8 @@
             TextBoxRUC.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBoxRUC.Size = new System.Drawing.Size(216, 29);
             TextBoxRUC.TabIndex = 3;
+            TextBoxRUC.TextChanged += TextBoxRUC_TextChanged;
+            TextBoxRUC.KeyPress += TextBoxRUC_KeyPress;
             // 
             // labelAddress
             // 
@@ -210,6 +219,7 @@
             TextBoxAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxAddress.Location = new System.Drawing.Point(40, 158);
             TextBoxAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxAddress.MaxLength = 100;
             TextBoxAddress.Name = "TextBoxAddress";
             TextBoxAddress.PasswordChar = '\0';
             TextBoxAddress.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -218,6 +228,8 @@
             TextBoxAddress.ShadowDecoration.CustomizableEdges = customizableEdges8;
             TextBoxAddress.Size = new System.Drawing.Size(216, 29);
             TextBoxAddress.TabIndex = 2;
+            TextBoxAddress.TextChanged += TextBoxAddress_TextChanged;
+            TextBoxAddress.KeyPress += TextBoxAddress_KeyPress;
             // 
             // labelName
             // 
@@ -249,6 +261,7 @@
             TextBoxSuplierName.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxSuplierName.Location = new System.Drawing.Point(40, 100);
             TextBoxSuplierName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxSuplierName.MaxLength = 50;
             TextBoxSuplierName.Name = "TextBoxSuplierName";
             TextBoxSuplierName.PasswordChar = '\0';
             TextBoxSuplierName.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -257,6 +270,8 @@
             TextBoxSuplierName.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TextBoxSuplierName.Size = new System.Drawing.Size(216, 29);
             TextBoxSuplierName.TabIndex = 1;
+            TextBoxSuplierName.TextChanged += TextBoxSuplierName_TextChanged;
+            TextBoxSuplierName.KeyPress += TextBoxSuplierName_KeyPress;
             // 
             // Label_Id
             // 
@@ -288,6 +303,7 @@
             TextBox_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_id.Location = new System.Drawing.Point(40, 47);
             TextBox_id.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBox_id.MaxLength = 10;
             TextBox_id.Name = "TextBox_id";
             TextBox_id.PasswordChar = '\0';
             TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -296,6 +312,8 @@
             TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges12;
             TextBox_id.Size = new System.Drawing.Size(216, 29);
             TextBox_id.TabIndex = 0;
+            TextBox_id.TextChanged += TextBox_id_TextChanged;
+            TextBox_id.KeyPress += TextBox_id_KeyPress;
             // 
             // ButtonSave
             // 
@@ -317,7 +335,7 @@
             ButtonSave.Name = "ButtonSave";
             ButtonSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
             ButtonSave.Size = new System.Drawing.Size(134, 30);
-            ButtonSave.TabIndex = 57;
+            ButtonSave.TabIndex = 7;
             ButtonSave.Text = "Guardar";
             ButtonSave.Click += ButtonSave_Click;
             // 
@@ -341,7 +359,7 @@
             ButtonCancel.Name = "ButtonCancel";
             ButtonCancel.ShadowDecoration.CustomizableEdges = customizableEdges16;
             ButtonCancel.Size = new System.Drawing.Size(134, 30);
-            ButtonCancel.TabIndex = 56;
+            ButtonCancel.TabIndex = 8;
             ButtonCancel.Text = "Cancelar";
             ButtonCancel.Click += ButtonCancel_Click;
             // 

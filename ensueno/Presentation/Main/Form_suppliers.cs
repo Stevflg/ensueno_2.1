@@ -1,6 +1,7 @@
 ﻿using Aplicacion.ProceduresDB;
 using Dominio.Database;
 using Dominio.DTO;
+using ensueno.Presentation.Validations;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -99,6 +100,13 @@ namespace ensueno.Presentation.Main
                 }));
 
             }
+            else
+            {
+                this.Invoke(new Action(() =>
+                {
+                    Validations();
+                }));
+            }
         }
         private int supplierId = 0;
         private async void DeleteSupplier()
@@ -118,6 +126,13 @@ namespace ensueno.Presentation.Main
                     ReadSuppliers();
                 }));
             }
+            else
+            {
+                this.Invoke(new Action(() =>
+                {
+                    Validations();
+                }));
+            }
         }
 
         #endregion
@@ -132,9 +147,83 @@ namespace ensueno.Presentation.Main
             TextBoxPhone.Clear();
             TextBoxEmail.Clear();
         }
-        
+        private readonly Values val = new Values();
+        private void Validations()
+        {
+            val.empty_text(TextBox_id);
+            val.empty_text(TextBoxSuplierName);
+            val.empty_text(TextBoxRUC);
+            val.empty_text(TextBoxAddress);
+            val.empty_text(TextBoxPhone);
+            val.empty_text(TextBoxEmail);
+        }
+        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_id, e);
+        }
 
+        private void TextBoxSuplierName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBoxSuplierName);
+        }
+
+        private void TextBoxAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBoxAddress);
+        }
+
+        private void TextBoxRUC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBoxRUC);
+        }
+
+        private void TextBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBoxPhone, e);
+        }
+
+        private void TextBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBoxEmail);
+        }
+
+        private void TextBox_id_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_id.Text)) val.ClearError();
+            val.ClearError();
+        }
+
+        private void TextBoxSuplierName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxSuplierName.Text)) val.ClearError();
+            val.ClearError();
+        }
+
+        private void TextBoxAddress_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxAddress.Text)) val.ClearError();
+            val.ClearError();
+        }
+
+        private void TextBoxRUC_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxRUC.Text)) val.ClearError();
+            val.ClearError();
+        }
+
+        private void TextBoxPhone_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxPhone.Text)) val.ClearError();
+            val.ClearError();
+        }
+
+        private void TextBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
+            val.ClearError();
+        }
         #endregion
+
         #region Eventos
         private void Button_create_Click(object sender, EventArgs e)
         {
@@ -159,7 +248,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    frmsupplieredit = new Form_supplier_edit(UserSessions, supplierId,BackColor);
+                    frmsupplieredit = new Form_supplier_edit(UserSessions, supplierId, BackColor);
                     frmsupplieredit.ShowDialog();
                     ReadSuppliers();
                 }
@@ -194,7 +283,7 @@ namespace ensueno.Presentation.Main
 
         private async void TextBox_SearchSupplier_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBox_SearchSupplier.Text)) ReadSuppliers(); 
+            if (string.IsNullOrEmpty(TextBox_SearchSupplier.Text)) ReadSuppliers();
         }
 
         private async void ButtonSearch_Click(object sender, EventArgs e)
@@ -235,5 +324,7 @@ namespace ensueno.Presentation.Main
             }
         }
         #endregion
+
+        
     }
 }

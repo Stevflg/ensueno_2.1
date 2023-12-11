@@ -135,26 +135,32 @@ namespace ensueno.Presentation.Main
         private void TextBox_name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_name.Text)) val.ClearError();
+            val.ClearError();
         }
         private void TextBox_last_name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_last_name.Text)) val.ClearError();
+            val.ClearError();
         }
         private void TextBox_id_card_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_id_card.Text)) val.ClearError();
+            val.ClearError();
         }
         private void TextBox_phone_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_phone.Text)) val.ClearError();
+            val.ClearError();
         }
         private void TextBox_address_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox_address.Text)) val.ClearError();
+            val.ClearError();
         }
         private void TextBoxEmail_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
+            val.ClearError();
         }
         #endregion
     }

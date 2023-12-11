@@ -525,7 +525,7 @@
             TextBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBoxEmail.Location = new System.Drawing.Point(523, 85);
             TextBoxEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TextBoxEmail.MaxLength = 100;
+            TextBoxEmail.MaxLength = 50;
             TextBoxEmail.Name = "TextBoxEmail";
             TextBoxEmail.PasswordChar = '\0';
             TextBoxEmail.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;

@@ -670,11 +670,11 @@ namespace ensueno.Presentation.Main
             ButtonCategory.Image = (System.Drawing.Image)resources.GetObject("ButtonCategory.Image");
             ButtonCategory.ImageAlign = HorizontalAlignment.Left;
             ButtonCategory.IndicateFocus = true;
-            ButtonCategory.Location = new System.Drawing.Point(22, 134);
+            ButtonCategory.Location = new System.Drawing.Point(38, 135);
             ButtonCategory.Margin = new Padding(4, 3, 4, 3);
             ButtonCategory.Name = "ButtonCategory";
             ButtonCategory.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            ButtonCategory.Size = new System.Drawing.Size(116, 33);
+            ButtonCategory.Size = new System.Drawing.Size(109, 33);
             ButtonCategory.TabIndex = 15;
             ButtonCategory.Text = "Categoria";
             ButtonCategory.TextAlign = HorizontalAlignment.Left;
@@ -765,11 +765,11 @@ namespace ensueno.Presentation.Main
             ButtonSupplier.Image = (System.Drawing.Image)resources.GetObject("ButtonSupplier.Image");
             ButtonSupplier.ImageAlign = HorizontalAlignment.Left;
             ButtonSupplier.IndicateFocus = true;
-            ButtonSupplier.Location = new System.Drawing.Point(23, 95);
+            ButtonSupplier.Location = new System.Drawing.Point(38, 96);
             ButtonSupplier.Margin = new Padding(4, 3, 4, 3);
             ButtonSupplier.Name = "ButtonSupplier";
             ButtonSupplier.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            ButtonSupplier.Size = new System.Drawing.Size(116, 33);
+            ButtonSupplier.Size = new System.Drawing.Size(109, 33);
             ButtonSupplier.TabIndex = 14;
             ButtonSupplier.Text = "Proveedor";
             ButtonSupplier.TextAlign = HorizontalAlignment.Left;

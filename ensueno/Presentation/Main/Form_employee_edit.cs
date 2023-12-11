@@ -41,12 +41,12 @@ namespace ensueno.Presentation.Main
             this.Invoke(new Action(() =>
             {
                 TextBox_id.Text = result.EmployeeId.ToString();
-                TextBox_name.Text = result.EmployeeName;
-                TextBox_last_name.Text = result.EmployeeLastName;
-                TextBox_id_card.Text = result.EmployeeIdentification;
-                TextBox_phone.Text = result.EmployeePhone;
-                TextBox_address.Text = result.EmployeeAddress;
-                TextBoxEmail.Text = result.Email;
+                TextBox_name.Text = (!result.EmployeeName.Equals(" "))? result.EmployeeName:string.Empty;
+                TextBox_last_name.Text = (!result.EmployeeLastName.Equals(" "))? result.EmployeeName:string.Empty;
+                TextBox_id_card.Text = (!result.EmployeeIdentification.Equals(" ")) ? result.EmployeeIdentification : string.Empty;
+                TextBox_phone.Text = (!result.EmployeePhone.Equals(" ")) ? result.EmployeePhone : string.Empty;
+                TextBox_address.Text = (!result.EmployeeAddress.Equals(" ")) ? result.EmployeeAddress : string.Empty;
+                TextBoxEmail.Text = (!result.Email.Equals(" ")) ? result.Email : string.Empty;
                 image = result.Image;
                 Read_image();
                 pictureBoxLoadData.Visible = false;
@@ -86,6 +86,7 @@ namespace ensueno.Presentation.Main
                string.IsNullOrWhiteSpace(TextBox_id_card.Text) || string.IsNullOrWhiteSpace(TextBox_phone.Text) || string.IsNullOrWhiteSpace(TextBox_address.Text)
                || string.IsNullOrWhiteSpace(TextBoxEmail.Text))
             {
+
                 ValidacionesText();
             }
             else

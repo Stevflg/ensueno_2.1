@@ -102,7 +102,7 @@ namespace ensueno.Presentation.Main
         private void Button_products_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Productos";
-            Open_form_panel(new Form_products(color,userSesion));
+            Open_form_panel(new Form_products(color, userSesion));
         }
         private void Button_bills_Click(object sender, EventArgs e)
         {
@@ -119,6 +119,14 @@ namespace ensueno.Presentation.Main
         {
             Label_form_selected.Text = "Proveedores";
             Open_form_panel(new Form_suppliers(color, userSesion));
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Desea Cerrar Sesión?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+            {
+                this.Close();
+            }
         }
     }
 }
