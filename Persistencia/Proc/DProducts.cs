@@ -170,7 +170,6 @@ namespace Persistencia.Proc
                         product.ProductName = obj.ProductName;
                         product.ProductCategoryId = obj.ProductCategoryId;
                         product.Unit_Price = obj.Unit_Price;
-                        product.Purchase_Price = obj.Purchase_Price;
                         product.Image = obj.Image ?? product.Image;
                         product.UpdateBy = obj.UpdateBy;
                         product.Update_date_time = obj.Update_date_time;

@@ -131,11 +131,14 @@ namespace ensueno.Presentation.Main
 
         private void TextBox_Product_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(TextBox_Product.Text)) val.ClearError();
             val.ClearError();
         }
 
         private void TextBoxStock_TextChanged(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(TextBoxStock.Text)) val.ClearError();
             val.ClearError();
         }
 
@@ -151,11 +154,15 @@ namespace ensueno.Presentation.Main
 
         private void TextBoxPurchase_Price_TextChanged(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(TextBoxPurchase_Price.Text)) val.ClearError();
             val.ClearError();
         }
 
         private void TextBoxPrice_TextChanged(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(TextBoxPrice.Text)) val.ClearError();
             val.ClearError();
         }
 
@@ -208,6 +215,60 @@ namespace ensueno.Presentation.Main
                 }));
             }
         }
+        private async void UpdateProducts()
+        {
+            if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
+                && !string.IsNullOrEmpty(TextBoxPrice.Text))
+            {
+                this.Invoke(new Action(() => {
+                    pictureBoxDark.Visible = true;
+                }));
+                var result = await ProcProducts.UpdateProducts(new Products
+                {
+                    ProdutId = int.Parse(TextBox_Id.Text),
+                    ProductName = TextBox_Product.Text,
+                    ProductCategoryId = ProductCategory,
+                    Stock = int.Parse(TextBoxStock.Text),
+                    Unit_Price = decimal.Parse(TextBoxPrice.Text),
+                    UpdateBy = userSessions.EmployeeId,
+                    Update_date_time = DateTime.Now,
+                    Image = image
+                }, new Suppliers { SupplierId = SupplierId }) ;
+
+                this.Invoke(new Action(() => {
+                    pictureBoxDark.Visible = false;
+                    LoadDataGrid();
+                }));
+            }
+        }
+
+        private async void UpdateStockProducts()
+        {
+            if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
+                && !string.IsNullOrEmpty(TextBoxPrice.Text))
+            {
+                this.Invoke(new Action(() => {
+                    pictureBoxDark.Visible = true;
+                }));
+                var result = await ProcProducts.UpdateStockProducts(new Products
+                {
+                    ProdutId = int.Parse(TextBox_Id.Text),
+                    ProductName = TextBox_Product.Text,
+                    ProductCategoryId = ProductCategory,
+                    Stock = int.Parse(TextBoxStock.Text),
+                    Purchase_Price =decimal.Parse(TextBoxPurchase_Price.Text),
+                    Unit_Price = decimal.Parse(TextBoxPrice.Text),
+                    UpdateBy = userSessions.EmployeeId,
+                    Update_date_time = DateTime.Now,
+                    Image = image
+                }, new Suppliers { SupplierId = SupplierId });
+
+                this.Invoke(new Action(() => {
+                    pictureBoxDark.Visible = false;
+                    LoadDataGrid();
+                }));
+            }
+        }
 
 
         #endregion
@@ -245,7 +306,7 @@ namespace ensueno.Presentation.Main
 
         private void Button_clear_Click(object sender, EventArgs e)
         {
-
+            ClearTextBoxes();
         }
 
     }
