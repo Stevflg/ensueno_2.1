@@ -46,5 +46,11 @@ namespace Aplicacion.ProceduresDB
         {
             return await DProducts.UpdateProducts(obj, supplier);
         }
+
+        public static async Task<string> Delete(Products obj, Suppliers supplier)
+        {
+            return await DProducts.Delete(obj, supplier);
+        }
+
     }
 }

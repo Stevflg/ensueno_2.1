@@ -120,10 +120,6 @@ namespace ensueno.Presentation.Main
             val.ClearError();
         }
 
-
-
-
-
         #endregion
 
         #region Procedimientos

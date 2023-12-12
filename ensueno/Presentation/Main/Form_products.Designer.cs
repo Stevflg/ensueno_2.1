@@ -462,6 +462,7 @@ namespace ensueno.Presentation.Main
             ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges21;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
             ButtonSearch.TabIndex = 48;
+            ButtonSearch.Click += ButtonSearch_Click;
             // 
             // TextBox_SearchProduct
             // 
@@ -490,6 +491,8 @@ namespace ensueno.Presentation.Main
             TextBox_SearchProduct.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBox_SearchProduct.Size = new System.Drawing.Size(252, 32);
             TextBox_SearchProduct.TabIndex = 13;
+            TextBox_SearchProduct.TextChanged += TextBox_SearchProduct_TextChanged;
+            TextBox_SearchProduct.KeyDown += TextBox_SearchProduct_KeyDown;
             // 
             // labelSupplier
             // 

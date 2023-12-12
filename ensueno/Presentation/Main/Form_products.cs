@@ -34,15 +34,37 @@ namespace ensueno.Presentation.Main
 
         private async void Form_products_Load(object sender, EventArgs e)
         {
-            LoadDataGrid();
+            Read();
             LoadCategory();
             LoadSupplier();
         }
 
         #region Datagrids y AutoCompletado
+        private string SupplierName = "";
         private void DataGridView_Products_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                if (string.IsNullOrEmpty(DataGridView_Products.Rows[e.RowIndex].Cells[0].Value.ToString()))
+                {
+                    ClearTextBoxes();
+                }
+                else
+                {
+                    TextBox_Id.Text = DataGridView_Products.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    TextBox_Product.Text = DataGridView_Products.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    ComboBoxCategory.Text = DataGridView_Products.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    ComboBoxSuppliers.Text = DataGridView_Products.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    SupplierName = DataGridView_Products.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    TextBoxStock.Text = DataGridView_Products.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    TextBoxPurchase_Price.Text = DataGridView_Products.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    TextBoxPrice.Text = DataGridView_Products.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    productId = 0;
+                    SupplierId = 0;
+                }
+            }
+            catch (Exception ex)
+            { }
         }
         private async void LoadCategory()
         {
@@ -154,16 +176,21 @@ namespace ensueno.Presentation.Main
 
         private void TextBoxPurchase_Price_TextChanged(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(TextBoxPurchase_Price.Text)) val.ClearError();
             val.ClearError();
         }
 
         private void TextBoxPrice_TextChanged(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(TextBoxPrice.Text)) val.ClearError();
             val.ClearError();
+        }
+        private void validateTextBox()
+        {
+            val.empty_text(TextBox_Product);
+            val.empty_text(TextBoxStock);
+            val.empty_text(TextBoxPurchase_Price);
+            val.empty_text(TextBoxPrice);
         }
 
         private void ClearTextBoxes()
@@ -172,13 +199,17 @@ namespace ensueno.Presentation.Main
             TextBox_Product.Clear();
             TextBoxStock.Clear();
             TextBoxPurchase_Price.Clear();
+            TextBoxPrice.Clear();
+            SupplierId = 0;
+            ProductCategory = 0;
+            SupplierName = string.Empty;
         }
-
         #endregion
+
 
         #region Metodos
         private int productId = 0;
-        private async void LoadDataGrid()
+        private async void Read()
         {
             this.Invoke(new Action(() => { pictureBoxDark.Visible = true; }));
             var list = await ProcProducts.ListProducts();
@@ -186,90 +217,180 @@ namespace ensueno.Presentation.Main
             this.Invoke(new Action(() =>
             {
                 DataGridView_Products.DataSource = list;
+                DataGridView_Products.Columns[0].HeaderText = "Id";
+                DataGridView_Products.Columns[1].HeaderText = "Insumo";
+                DataGridView_Products.Columns[5].HeaderText = "Precio de Compra";
+                DataGridView_Products.Columns[6].HeaderText = "Precio de Venta";
                 pictureBoxDark.Visible = false;
             }));
         }
 
         private async void AddProducts()
         {
-            if (!string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
-                && !string.IsNullOrEmpty(TextBoxPrice.Text))
+            try
             {
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = true;
-                }));
-                var result = await ProcProducts.AddProducts(new Products
+                if (!string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
+               && !string.IsNullOrEmpty(TextBoxPrice.Text))
                 {
-                    ProductName = TextBox_Product.Text,
-                    ProductCategoryId = ProductCategory,
-                    Stock = int.Parse(TextBoxStock.Text),
-                    Purchase_Price = decimal.Parse(TextBoxPurchase_Price.Text),
-                    Unit_Price = decimal.Parse(TextBoxPrice.Text),
-                    EmployeeId = userSessions.EmployeeId,
-                    Image = image
-                }, new Suppliers { SupplierId = SupplierId });
+                    this.Invoke(new Action(() =>
+                    {
+                        pictureBoxDark.Visible = true;
+                    }));
+                    var result = await ProcProducts.AddProducts(new Products
+                    {
+                        ProductName = TextBox_Product.Text,
+                        ProductCategoryId = ProductCategory,
+                        Stock = int.Parse(TextBoxStock.Text),
+                        Purchase_Price = decimal.Parse(TextBoxPurchase_Price.Text),
+                        Unit_Price = decimal.Parse(TextBoxPrice.Text),
+                        EmployeeId = userSessions.EmployeeId,
+                        Image = image
+                    }, new Suppliers { SupplierId = SupplierId });
 
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = false;
-                    LoadDataGrid();
-                }));
+                    this.Invoke(new Action(() =>
+                    {
+                        ClearTextBoxes();
+                        pictureBoxDark.Visible = false;
+                        Read();
+                    }));
+                }
+                else
+                {
+                    validateTextBox();
+                }
             }
+            catch (Exception e) { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+
+
         private async void UpdateProducts()
         {
-            if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
-                && !string.IsNullOrEmpty(TextBoxPrice.Text))
+            try
             {
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = true;
-                }));
-                var result = await ProcProducts.UpdateProducts(new Products
+                if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
+               && !string.IsNullOrEmpty(TextBoxPrice.Text))
                 {
-                    ProdutId = int.Parse(TextBox_Id.Text),
-                    ProductName = TextBox_Product.Text,
-                    ProductCategoryId = ProductCategory,
-                    Stock = int.Parse(TextBoxStock.Text),
-                    Unit_Price = decimal.Parse(TextBoxPrice.Text),
-                    UpdateBy = userSessions.EmployeeId,
-                    Update_date_time = DateTime.Now,
-                    Image = image
-                }, new Suppliers { SupplierId = SupplierId }) ;
+                    this.Invoke(new Action(() =>
+                    {
+                        pictureBoxDark.Visible = true;
+                    }));
+                    var result = await ProcProducts.UpdateProducts(new Products
+                    {
+                        ProdutId = int.Parse(TextBox_Id.Text),
+                        ProductName = TextBox_Product.Text,
+                        ProductCategoryId = ProductCategory,
+                        Stock = int.Parse(TextBoxStock.Text),
+                        Unit_Price = decimal.Parse(TextBoxPrice.Text),
+                        UpdateBy = userSessions.EmployeeId,
+                        Update_date_time = DateTime.Now,
+                        Image = image
+                    }, new Suppliers { SupplierId = SupplierId, SupplierName = SupplierName });
 
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = false;
-                    LoadDataGrid();
-                }));
+                    this.Invoke(new Action(() =>
+                    {
+                        ClearTextBoxes();
+                        pictureBoxDark.Visible = false;
+                        Read();
+                    }));
+                }
+                else
+                {
+                    validateTextBox();
+                }
             }
+            catch (Exception e) { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private async void UpdateStockProducts()
         {
-            if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
-                && !string.IsNullOrEmpty(TextBoxPrice.Text))
+            try
             {
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = true;
-                }));
-                var result = await ProcProducts.UpdateStockProducts(new Products
-                {
-                    ProdutId = int.Parse(TextBox_Id.Text),
-                    ProductName = TextBox_Product.Text,
-                    ProductCategoryId = ProductCategory,
-                    Stock = int.Parse(TextBoxStock.Text),
-                    Purchase_Price =decimal.Parse(TextBoxPurchase_Price.Text),
-                    Unit_Price = decimal.Parse(TextBoxPrice.Text),
-                    UpdateBy = userSessions.EmployeeId,
-                    Update_date_time = DateTime.Now,
-                    Image = image
-                }, new Suppliers { SupplierId = SupplierId });
 
-                this.Invoke(new Action(() => {
-                    pictureBoxDark.Visible = false;
-                    LoadDataGrid();
-                }));
+                if (!string.IsNullOrEmpty(TextBox_Id.Text) && !string.IsNullOrEmpty(TextBox_Product.Text) && !string.IsNullOrEmpty(TextBoxStock.Text) && !string.IsNullOrEmpty(TextBoxPurchase_Price.Text)
+                    && !string.IsNullOrEmpty(TextBoxPrice.Text))
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        pictureBoxDark.Visible = true;
+                    }));
+                    var result = await ProcProducts.UpdateStockProducts(new Products
+                    {
+                        ProdutId = int.Parse(TextBox_Id.Text),
+                        ProductName = TextBox_Product.Text,
+                        ProductCategoryId = productId,
+                        Stock = int.Parse(TextBoxStock.Text),
+                        Purchase_Price = decimal.Parse(TextBoxPurchase_Price.Text),
+                        Unit_Price = decimal.Parse(TextBoxPrice.Text),
+                        UpdateBy = userSessions.EmployeeId,
+                        Update_date_time = DateTime.Now,
+                        Image = image
+                    }, new Suppliers { SupplierId = SupplierId, SupplierName = SupplierName });
+
+                    this.Invoke(new Action(() =>
+                    {
+                        ClearTextBoxes();
+                        pictureBoxDark.Visible = false;
+                        Read();
+                    }));
+                }
+                else
+                {
+                    validateTextBox();
+                }
             }
+            catch (Exception e) { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private async void DeleteProducts()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(TextBox_Id.Text))
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        pictureBoxDark.Visible = true;
+                    }));
+                    var result = await ProcProducts.Delete(new Products
+                    {
+                        ProdutId = int.Parse(TextBox_Id.Text),
+                    }, new Suppliers { SupplierName = SupplierName });
+
+                    this.Invoke(new Action(() =>
+                    {
+                        ClearTextBoxes();
+                        pictureBoxDark.Visible = false;
+                        Read();
+                    }));
+                }
+                else
+                {
+                    validateTextBox();
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
+        private async void SearchProduct()
+        {
+            try
+            {
+                this.Invoke(new Action(() =>
+                {
+                    pictureBoxDark.Visible = true;
+                    ButtonSearch.Enabled = false;
+                    TextBox_SearchProduct.Enabled = false;
+                }));
+                var result = await ProcProducts.SearchProducts(new ProductsDTO { ProductName = TextBox_SearchProduct.Text });
+                this.Invoke(new Action(() =>
+                {
+                    DataGridView_Products.DataSource = result;
+                    pictureBoxDark.Visible = false;
+                    ButtonSearch.Enabled = true;
+                    TextBox_SearchProduct.Enabled = true;
+                }));
+            }
+            catch { }
+        }
 
         #endregion
 
@@ -309,5 +430,22 @@ namespace ensueno.Presentation.Main
             ClearTextBoxes();
         }
 
+        private async void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() => { SearchProduct(); });
+        }
+
+        private async void TextBox_SearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_SearchProduct.Text)) await Task.Run(() => Read());
+        }
+
+        private async void TextBox_SearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                await Task.Run(() => { SearchProduct(); });
+            }
+        }
     }
 }

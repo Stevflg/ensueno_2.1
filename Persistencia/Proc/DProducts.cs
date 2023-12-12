@@ -128,7 +128,8 @@ namespace Persistencia.Proc
                 {
                     var product = await db.Products.FindAsync(obj.ProdutId);
                     if(product != null)
-                    {
+                    { 
+                        product.ProductCategoryId = (obj.ProdutId.Equals(0)) ? product.ProductCategoryId : obj.ProdutId;
                         product.Stock += obj.Stock;
                         product.Unit_Price = obj.Unit_Price;
                         product.Purchase_Price = obj.Purchase_Price;
@@ -136,15 +137,16 @@ namespace Persistencia.Proc
                         product.Update_date_time = obj.Update_date_time;
                         db.Entry(product).State = EntityState.Modified;
                         var query = await db.SaveChangesAsync();
-                        db.Add(new StockMovement
+
+                        var supp =await db.Suppliers.FindAsync(supplier.SupplierName);
+                        await AddStockMovement(new StockMovement
                         {
-                            SupplierId = supplier.SupplierId,
+                            SupplierId = (supplier.SupplierId.Equals(0)) ? supp.SupplierId : supplier.SupplierId,
                             ProductId = obj.ProdutId,
                             Units = obj.Stock,
                             EmployeeId = obj.UpdateBy,
                             TypeStockMovement = 1
                         });
-                        await db.SaveChangesAsync();
 
                         var result = (query>0) ? "Guardado Correctamente" : "No se pudo Guardar";
                         return result;
@@ -165,10 +167,11 @@ namespace Persistencia.Proc
                 using (var db = new EnsuenoContext())
                 {
                     var product = await db.Products.FindAsync(obj.ProdutId);
+
                     if (product != null)
                     {
                         product.ProductName = obj.ProductName;
-                        product.ProductCategoryId = obj.ProductCategoryId;
+                        product.ProductCategoryId = (obj.ProductCategoryId.Equals(0)) ? product.ProductCategoryId:obj.ProductCategoryId ;
                         product.Unit_Price = obj.Unit_Price;
                         product.Image = obj.Image ?? product.Image;
                         product.UpdateBy = obj.UpdateBy;
@@ -197,15 +200,15 @@ namespace Persistencia.Proc
                     var product = await db.Products.FindAsync(obj.ProdutId);
                     if (product != null)
                     {
-                        db.Add(new StockMovement
+                        var supp = await db.Suppliers.FindAsync(supplier.SupplierName);
+                        await AddStockMovement(new StockMovement
                         {
-                            SupplierId = supplier.SupplierId,
+                            SupplierId = (supplier.SupplierId.Equals(0)) ? supp.SupplierId : supplier.SupplierId,
                             ProductId = product.ProdutId,
                             Units = product.Stock,
                             EmployeeId = obj.EmployeeId,
                             TypeStockMovement = 2
-                        });
-                        await db.SaveChangesAsync();
+                        }) ;
 
                         product.Stock = 0;
                         product.IsActive = false;
@@ -214,11 +217,10 @@ namespace Persistencia.Proc
                         db.Entry(product).State = EntityState.Modified;
                         var query = await db.SaveChangesAsync();
                        
-
-                        var result = (query > 0) ? "Guardado Correctamente" : "No se pudo Guardar";
+                        var result = (query > 0) ? "Eliminado Correctamente" : "No se pudo Eliminar";
                         return result;
                     }
-                    return "No se pudo guardar";
+                    return "Parametro Id no Recibido por el usuario";
                 }
             }
             catch(Exception ex)
@@ -246,5 +248,6 @@ namespace Persistencia.Proc
                 return list;
             }
         }
+
     }
 }
