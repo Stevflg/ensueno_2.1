@@ -22,23 +22,23 @@ namespace Persistencia.Proc
         {
          using(var db = new EnsuenoContext())
             {
-                var list = await (from sm in db.StockMovement
-                                  join p in db.Products on sm.ProductId equals p.ProdutId
-                                  join s in db.Suppliers on sm.SupplierId equals s.SupplierId
+                var list = await (from p in db.Products
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
-                                  where sm.Date_Time.Equals(db.StockMovement.Max(x => x.Date_Time))
-                                  orderby p.IsActive ascending
+                                  join sm in db.StockMovement on p.ProdutId equals sm.ProductId
+                                  join s in db.Suppliers on sm.SupplierId equals s.SupplierId
+                                 group new {p,s,sm,pc } by p.ProdutId into g
+                                 
                                   select new ProductsDTO
                                   {
-                                      ProdutId = p.ProdutId,
-                                      ProductName = p.ProductName,
-                                      Categoria = pc.CategoryName,
-                                      Proveedor = s.SupplierName,
-                                      Stock = p.Stock,
-                                      Purchace_Price = p.Purchase_Price,
-                                      Unit_Price = p.Unit_Price,
-                                      Estado = (p.IsActive) ? "Disponible":"No Disponible",
-                                      Creado = p.Date_Time
+                                      ProdutId = g.First().p.ProdutId,
+                                      ProductName = g.First().p.ProductName,
+                                      Categoria = g.First().pc.CategoryName,
+                                      Proveedor = g.First().s.SupplierName,
+                                      Stock = g.First().p.Stock,
+                                      Purchace_Price = g.First().p.Purchase_Price,
+                                      Unit_Price = g.First().p.Unit_Price,
+                                      Estado = (g.First().p.IsActive) ? "Disponible":"No Disponible",
+                                      Creado = g.First().p.Date_Time
                                   }).ToListAsync();
                 return list;
             }
