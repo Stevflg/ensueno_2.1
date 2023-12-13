@@ -39,7 +39,6 @@ namespace ensueno.Presentation.Main
     
         private async void Read()
         {
-            //estoy cansado jefe cansado
             this.Invoke(new Action(() =>
             {
                 pictureBoxDark.Visible = true;

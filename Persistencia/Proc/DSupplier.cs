@@ -126,10 +126,10 @@ namespace Persistencia.Proc
                                                   Id = s.SupplierId,
                                                   Proveedor = s.SupplierName,
                                                   Direccion = s.SupplierAddress,
-                                                  RUC = supplier.SupplierRUC,
-                                                  Telefono = supplier.SupplierPhone,
-                                                  Email = supplier.SupplierEmail,
-                                                  Creado = supplier.Date_Time
+                                                  RUC = s.SupplierRUC,
+                                                  Telefono = s.SupplierPhone,
+                                                  Email = s.SupplierEmail,
+                                                  Creado = s.Date_Time
                                               }
                                           ).ToListAsync();
                     return supplierList;

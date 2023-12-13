@@ -11,6 +11,11 @@
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Presentation\SubForm\**" />
+    <EmbeddedResource Remove="Presentation\SubForm\**" />
+    <None Remove="Presentation\SubForm\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Resources\Main\inventories.png" />
   </ItemGroup>
   <ItemGroup>
@@ -87,8 +92,5 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation\SubForm\" />
   </ItemGroup>
 </Project>

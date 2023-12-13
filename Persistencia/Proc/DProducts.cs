@@ -22,8 +22,8 @@ namespace Persistencia.Proc
         {
          using(var db = new EnsuenoContext())
             {
-                var list = await (from p in db.Products
-                                  join sm in db.StockMovement on p.ProdutId equals sm.ProductId
+                var list = await (from sm in db.StockMovement
+                                  join p in db.Products on sm.ProductId equals p.ProdutId
                                   join s in db.Suppliers on sm.SupplierId equals s.SupplierId
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
                                   where sm.Date_Time.Equals(db.StockMovement.Max(x => x.Date_Time))
@@ -39,7 +39,7 @@ namespace Persistencia.Proc
                                       Unit_Price = p.Unit_Price,
                                       Estado = (p.IsActive) ? "Disponible":"No Disponible",
                                       Creado = p.Date_Time
-                                  }).Distinct().ToListAsync();
+                                  }).ToListAsync();
                 return list;
             }
         }
@@ -117,7 +117,7 @@ namespace Persistencia.Proc
                     await db.SaveChangesAsync();
                 }
             }
-            catch { }
+            catch(Exception e) { string s= e.InnerException.Message; }
         }
 
         public static async Task <string> UpdateStockProducts(Products obj, Suppliers supplier)

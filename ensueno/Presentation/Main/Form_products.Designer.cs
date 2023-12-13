@@ -237,6 +237,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges37;
             TextBox_Id.Size = new System.Drawing.Size(195, 29);
             TextBox_Id.TabIndex = 0;
+            TextBox_Id.TextChanged += TextBox_Id_TextChanged;
             // 
             // labelName
             // 
@@ -552,6 +553,7 @@ namespace ensueno.Presentation.Main
             Button_report.TabIndex = 10;
             Button_report.Text = "Reporte";
             Button_report.TextAlign = HorizontalAlignment.Left;
+            Button_report.Click += Button_report_Click;
             // 
             // Button_clear
             // 
@@ -603,6 +605,7 @@ namespace ensueno.Presentation.Main
             Button_delete.TabIndex = 8;
             Button_delete.Text = "Eliminar";
             Button_delete.TextAlign = HorizontalAlignment.Left;
+            Button_delete.Click += Button_delete_Click;
             // 
             // Button_update
             // 
@@ -629,6 +632,7 @@ namespace ensueno.Presentation.Main
             Button_update.TabIndex = 8;
             Button_update.Text = "Editar";
             Button_update.TextAlign = HorizontalAlignment.Left;
+            Button_update.Click += Button_update_Click;
             // 
             // Button_create
             // 
@@ -654,6 +658,7 @@ namespace ensueno.Presentation.Main
             Button_create.TabIndex = 7;
             Button_create.Text = "Crear";
             Button_create.TextAlign = HorizontalAlignment.Left;
+            Button_create.Click += Button_create_Click;
             // 
             // ButtonCategory
             // 
@@ -749,6 +754,7 @@ namespace ensueno.Presentation.Main
             ButtonAddStock.TabIndex = 60;
             ButtonAddStock.Text = "Agregar Stock";
             ButtonAddStock.TextAlign = HorizontalAlignment.Left;
+            ButtonAddStock.Click += ButtonAddStock_Click;
             // 
             // ButtonSupplier
             // 

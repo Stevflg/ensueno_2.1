@@ -14,6 +14,7 @@ using ensueno.Presentation.Validations;
 using Dominio.DTO;
 using Aplicacion.ProceduresDB;
 using Dominio.Database;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace ensueno.Presentation.Main
 {
@@ -425,6 +426,7 @@ namespace ensueno.Presentation.Main
         }
         #endregion
 
+        #region Events
         private void Button_clear_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
@@ -447,5 +449,80 @@ namespace ensueno.Presentation.Main
                 await Task.Run(() => { SearchProduct(); });
             }
         }
+
+        private void TextBox_Id_TextChanged(object sender, EventArgs e)
+        {
+
+            if (TextBox_Id.Text != string.Empty)
+            {
+                ButtonStates(true);
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(TextBox_Id.Text)) val.ClearError();
+                ButtonStates(false);
+            }
+        }
+        private void ButtonStates(bool state)
+        {
+            Button_create.Enabled = !state;
+            Button_update.Enabled = state;
+            Button_delete.Enabled = state;
+            ButtonAddStock.Enabled = state;
+        }
+
+        private async void Button_create_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void Button_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void ButtonAddStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateStockProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void Button_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void Button_report_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
