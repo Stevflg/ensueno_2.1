@@ -66,7 +66,6 @@ namespace ensueno.Presentation.Main
             //TextBox_invoice_id.Enabled = false;
             //TextBox_client_id.Enabled = false;
             TextBox_client_id.Text = "";
-            Button_update.Enabled = false;
             Button_delete.Enabled = false;
             Button_report.Enabled = false;
             Button_detail.Enabled = false;
@@ -197,7 +196,6 @@ namespace ensueno.Presentation.Main
             if (TextBox_invoice_id.Text != string.Empty)
             {
                 Button_Create.Enabled = false;
-                Button_update.Enabled = true;
                 Button_delete.Enabled = true;
                 Button_report.Enabled = true;
                 Button_detail.Enabled = true;
@@ -205,7 +203,6 @@ namespace ensueno.Presentation.Main
             else
             {
                 Button_Create.Enabled = true;
-                Button_update.Enabled = false;
                 Button_delete.Enabled = false;
                 Button_report.Enabled = false;
                 Button_detail.Enabled = false;

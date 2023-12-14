@@ -297,6 +297,7 @@ namespace ensueno.Presentation.Main
                     Button_delete.Enabled = false;
                     Button_update.Enabled = false;
                     Button_create.Enabled = true;
+                    ClearTextBoxes();
                 }
                 else
                 {
@@ -317,10 +318,15 @@ namespace ensueno.Presentation.Main
                 Button_delete.Enabled = false;
                 Button_update.Enabled = false;
                 Button_create.Enabled = true;
+                ClearTextBoxes();
             }
         }
         #endregion
 
-        
+
+        private void Button_clear_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes();
+        }
     }
 }

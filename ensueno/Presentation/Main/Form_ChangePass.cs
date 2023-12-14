@@ -8,7 +8,7 @@ namespace ensueno.Presentation.Main
 {
     public partial class Agregar_Usuario : Form
     {
-      
+
         private Users user;
         public Agregar_Usuario()
         {
@@ -50,25 +50,25 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-            //    var ListEmployees = pEmployees.GetEmployeeList();
-            //    ComboBoxEmployees.DataSource = ListEmployees;
-            //    ComboBoxEmployees.ValueMember = "EmployeeId";
-            //    ComboBoxEmployees.DisplayMember = "EmployeeName";
+                //    var ListEmployees = pEmployees.GetEmployeeList();
+                //    ComboBoxEmployees.DataSource = ListEmployees;
+                //    ComboBoxEmployees.ValueMember = "EmployeeId";
+                //    ComboBoxEmployees.DisplayMember = "EmployeeName";
 
-            //    AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
-            //    for (int i = 0; i < ListEmployees.Count; i++)
-            //    {
-            //        lst.Add(ListEmployees[i].EmployeeName);
-            //    }
-            //    ComboBoxEmployees.AutoCompleteCustomSource = lst;
-            //    ComboBoxEmployees.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //    ComboBoxEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //    AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
+                //    for (int i = 0; i < ListEmployees.Count; i++)
+                //    {
+                //        lst.Add(ListEmployees[i].EmployeeName);
+                //    }
+                //    ComboBoxEmployees.AutoCompleteCustomSource = lst;
+                //    ComboBoxEmployees.AutoCompleteMode = AutoCompleteMode.Suggest;
+                //    ComboBoxEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
             catch { }
         }
 
 
-        private int EmployeeId=0;
+        private int EmployeeId = 0;
         private void ComboBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -91,8 +91,8 @@ namespace ensueno.Presentation.Main
 
         private void Button_login_Click(object sender, EventArgs e)
         {
-            if (TextBox_user.Text != string.Empty && TextBox_password.Text != string.Empty && ComboBoxEmployees.Text != string.Empty 
-                && EmployeeId!=0)
+            if (TextBox_user.Text != string.Empty && TextBox_password.Text != string.Empty && ComboBoxEmployees.Text != string.Empty
+                && EmployeeId != 0)
             {
                 user = new Users
                 {
@@ -103,7 +103,8 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ProcUsers.AddUsers(user), "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBoxes();
             }
-            else{
+            else
+            {
                 val.empty_text(TextBox_user);
                 val.empty_text(TextBox_password);
             }

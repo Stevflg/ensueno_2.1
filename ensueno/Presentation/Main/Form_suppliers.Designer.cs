@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -57,7 +56,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_suppliers));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             Label_Id = new System.Windows.Forms.Label();
             TextBox_id = new Guna.UI2.WinForms.Guna2TextBox();
@@ -79,6 +80,7 @@
             Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
             pictureBoxDark = new System.Windows.Forms.PictureBox();
+            Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)DataGridView_Suppliers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             SuspendLayout();
@@ -110,7 +112,7 @@
             TextBox_id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_id.BorderRadius = 11;
             TextBox_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_id.CustomizableEdges = customizableEdges23;
+            TextBox_id.CustomizableEdges = customizableEdges24;
             TextBox_id.DefaultText = "";
             TextBox_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -129,7 +131,7 @@
             TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_id.PlaceholderText = "ID";
             TextBox_id.SelectedText = "";
-            TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            TextBox_id.ShadowDecoration.CustomizableEdges = customizableEdges25;
             TextBox_id.Size = new System.Drawing.Size(216, 29);
             TextBox_id.TabIndex = 0;
             TextBox_id.TextChanged += TextBox_id_TextChanged;
@@ -155,7 +157,7 @@
             TextBoxSuplierName.BorderColor = System.Drawing.Color.Crimson;
             TextBoxSuplierName.BorderRadius = 11;
             TextBoxSuplierName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxSuplierName.CustomizableEdges = customizableEdges21;
+            TextBoxSuplierName.CustomizableEdges = customizableEdges22;
             TextBoxSuplierName.DefaultText = "";
             TextBoxSuplierName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxSuplierName.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -173,7 +175,7 @@
             TextBoxSuplierName.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxSuplierName.PlaceholderText = "Proveedor";
             TextBoxSuplierName.SelectedText = "";
-            TextBoxSuplierName.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            TextBoxSuplierName.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBoxSuplierName.Size = new System.Drawing.Size(216, 29);
             TextBoxSuplierName.TabIndex = 1;
             TextBoxSuplierName.TextChanged += TextBoxSuplierName_TextChanged;
@@ -199,7 +201,7 @@
             TextBoxAddress.BorderColor = System.Drawing.Color.Crimson;
             TextBoxAddress.BorderRadius = 11;
             TextBoxAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxAddress.CustomizableEdges = customizableEdges19;
+            TextBoxAddress.CustomizableEdges = customizableEdges20;
             TextBoxAddress.DefaultText = "";
             TextBoxAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -217,7 +219,7 @@
             TextBoxAddress.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxAddress.PlaceholderText = "Direccion";
             TextBoxAddress.SelectedText = "";
-            TextBoxAddress.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            TextBoxAddress.ShadowDecoration.CustomizableEdges = customizableEdges21;
             TextBoxAddress.Size = new System.Drawing.Size(216, 29);
             TextBoxAddress.TabIndex = 2;
             TextBoxAddress.TextChanged += TextBoxAddress_TextChanged;
@@ -243,7 +245,7 @@
             TextBoxRUC.BorderColor = System.Drawing.Color.Crimson;
             TextBoxRUC.BorderRadius = 11;
             TextBoxRUC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxRUC.CustomizableEdges = customizableEdges17;
+            TextBoxRUC.CustomizableEdges = customizableEdges18;
             TextBoxRUC.DefaultText = "";
             TextBoxRUC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxRUC.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -261,7 +263,7 @@
             TextBoxRUC.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxRUC.PlaceholderText = "RUC";
             TextBoxRUC.SelectedText = "";
-            TextBoxRUC.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            TextBoxRUC.ShadowDecoration.CustomizableEdges = customizableEdges19;
             TextBoxRUC.Size = new System.Drawing.Size(216, 29);
             TextBoxRUC.TabIndex = 3;
             TextBoxRUC.TextChanged += TextBoxRUC_TextChanged;
@@ -287,7 +289,7 @@
             TextBoxPhone.BorderColor = System.Drawing.Color.Crimson;
             TextBoxPhone.BorderRadius = 11;
             TextBoxPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxPhone.CustomizableEdges = customizableEdges15;
+            TextBoxPhone.CustomizableEdges = customizableEdges16;
             TextBoxPhone.DefaultText = "";
             TextBoxPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -305,7 +307,7 @@
             TextBoxPhone.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxPhone.PlaceholderText = "Telefono";
             TextBoxPhone.SelectedText = "";
-            TextBoxPhone.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            TextBoxPhone.ShadowDecoration.CustomizableEdges = customizableEdges17;
             TextBoxPhone.Size = new System.Drawing.Size(216, 29);
             TextBoxPhone.TabIndex = 4;
             TextBoxPhone.TextChanged += TextBoxPhone_TextChanged;
@@ -331,7 +333,7 @@
             TextBoxEmail.BorderColor = System.Drawing.Color.Crimson;
             TextBoxEmail.BorderRadius = 11;
             TextBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBoxEmail.CustomizableEdges = customizableEdges13;
+            TextBoxEmail.CustomizableEdges = customizableEdges14;
             TextBoxEmail.DefaultText = "";
             TextBoxEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -349,7 +351,7 @@
             TextBoxEmail.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxEmail.PlaceholderText = "Correo";
             TextBoxEmail.SelectedText = "";
-            TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            TextBoxEmail.ShadowDecoration.CustomizableEdges = customizableEdges15;
             TextBoxEmail.Size = new System.Drawing.Size(216, 29);
             TextBoxEmail.TabIndex = 5;
             TextBoxEmail.TextChanged += TextBoxEmail_TextChanged;
@@ -433,7 +435,7 @@
             ButtonSearch.BackColor = System.Drawing.Color.White;
             ButtonSearch.BorderColor = System.Drawing.Color.Transparent;
             ButtonSearch.BorderRadius = 9;
-            ButtonSearch.CustomizableEdges = customizableEdges9;
+            ButtonSearch.CustomizableEdges = customizableEdges10;
             ButtonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -449,7 +451,7 @@
             ButtonSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.PressedColor = System.Drawing.Color.Transparent;
-            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges11;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
             ButtonSearch.TabIndex = 46;
             ButtonSearch.Click += ButtonSearch_Click;
@@ -461,7 +463,7 @@
             TextBox_SearchSupplier.BorderColor = System.Drawing.Color.Navy;
             TextBox_SearchSupplier.BorderRadius = 11;
             TextBox_SearchSupplier.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_SearchSupplier.CustomizableEdges = customizableEdges11;
+            TextBox_SearchSupplier.CustomizableEdges = customizableEdges12;
             TextBox_SearchSupplier.DefaultText = "";
             TextBox_SearchSupplier.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_SearchSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -479,7 +481,7 @@
             TextBox_SearchSupplier.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_SearchSupplier.PlaceholderText = "Buscar Proveedor";
             TextBox_SearchSupplier.SelectedText = "";
-            TextBox_SearchSupplier.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            TextBox_SearchSupplier.ShadowDecoration.CustomizableEdges = customizableEdges13;
             TextBox_SearchSupplier.Size = new System.Drawing.Size(252, 32);
             TextBox_SearchSupplier.TabIndex = 10;
             TextBox_SearchSupplier.TextChanged += TextBox_SearchSupplier_TextChanged;
@@ -491,7 +493,7 @@
             Button_report.Animated = true;
             Button_report.AutoRoundedCorners = true;
             Button_report.BorderRadius = 14;
-            Button_report.CustomizableEdges = customizableEdges1;
+            Button_report.CustomizableEdges = customizableEdges2;
             Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -504,7 +506,7 @@
             Button_report.Location = new System.Drawing.Point(756, 178);
             Button_report.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_report.Name = "Button_report";
-            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges3;
             Button_report.Size = new System.Drawing.Size(89, 30);
             Button_report.TabIndex = 9;
             Button_report.Text = "Reporte";
@@ -516,7 +518,7 @@
             Button_delete.Animated = true;
             Button_delete.AutoRoundedCorners = true;
             Button_delete.BorderRadius = 14;
-            Button_delete.CustomizableEdges = customizableEdges3;
+            Button_delete.CustomizableEdges = customizableEdges4;
             Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -530,7 +532,7 @@
             Button_delete.Location = new System.Drawing.Point(756, 142);
             Button_delete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_delete.Name = "Button_delete";
-            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges5;
             Button_delete.Size = new System.Drawing.Size(89, 30);
             Button_delete.TabIndex = 8;
             Button_delete.Text = "Eliminar";
@@ -542,7 +544,7 @@
             Button_update.Animated = true;
             Button_update.AutoRoundedCorners = true;
             Button_update.BorderRadius = 14;
-            Button_update.CustomizableEdges = customizableEdges5;
+            Button_update.CustomizableEdges = customizableEdges6;
             Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -556,7 +558,7 @@
             Button_update.Location = new System.Drawing.Point(659, 177);
             Button_update.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_update.Name = "Button_update";
-            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges7;
             Button_update.Size = new System.Drawing.Size(89, 30);
             Button_update.TabIndex = 7;
             Button_update.Text = "Editar";
@@ -568,7 +570,7 @@
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 14;
-            Button_create.CustomizableEdges = customizableEdges7;
+            Button_create.CustomizableEdges = customizableEdges8;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -581,7 +583,7 @@
             Button_create.Location = new System.Drawing.Point(659, 142);
             Button_create.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Button_create.Size = new System.Drawing.Size(89, 30);
             Button_create.TabIndex = 6;
             Button_create.Text = "Agregar";
@@ -600,11 +602,37 @@
             pictureBoxDark.TabStop = false;
             pictureBoxDark.Visible = false;
             // 
+            // Button_clear
+            // 
+            Button_clear.Animated = true;
+            Button_clear.BackColor = System.Drawing.Color.Transparent;
+            Button_clear.BorderColor = System.Drawing.Color.Crimson;
+            Button_clear.BorderThickness = 2;
+            Button_clear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            Button_clear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            Button_clear.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_clear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            Button_clear.FillColor = System.Drawing.Color.FromArgb(51, 51, 51);
+            Button_clear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_clear.ForeColor = System.Drawing.Color.White;
+            Button_clear.Image = Properties.Resources.clean;
+            Button_clear.ImageSize = new System.Drawing.Size(32, 32);
+            Button_clear.Location = new System.Drawing.Point(916, 170);
+            Button_clear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Button_clear.Name = "Button_clear";
+            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            Button_clear.Size = new System.Drawing.Size(38, 38);
+            Button_clear.TabIndex = 59;
+            Button_clear.UseTransparentBackground = true;
+            Button_clear.Click += Button_clear_Click;
+            // 
             // Form_suppliers
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(Button_clear);
             Controls.Add(pictureBoxDark);
             Controls.Add(Button_report);
             Controls.Add(Button_delete);
@@ -658,5 +686,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
         private System.Windows.Forms.PictureBox pictureBoxDark;
+        private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
     }
 }

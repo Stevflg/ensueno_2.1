@@ -78,7 +78,7 @@ namespace Persistencia.Context
             modelBuilder.Entity<Products>(entity => {
                 entity.HasKey(p => p.ProdutId).HasName("Pk_ProductId_Products");
                 entity.Property(p => p.ProductName).HasMaxLength(50);
-                entity.Property(p => p.Image).HasColumnType("varbinary");
+                entity.Property(p => p.Image).HasColumnType("varbinary(max)");
                 entity.Property(p => p.Unit_Price).HasColumnType("decimal");
                 entity.Property(p => p.IsActive).HasDefaultValue(true);
                 entity.Property(p => p.Date_Time).HasDefaultValueSql("(getdate())")

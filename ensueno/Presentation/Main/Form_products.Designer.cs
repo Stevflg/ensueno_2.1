@@ -683,6 +683,7 @@ namespace ensueno.Presentation.Main
             ButtonCategory.TabIndex = 15;
             ButtonCategory.Text = "Categoria";
             ButtonCategory.TextAlign = HorizontalAlignment.Left;
+            ButtonCategory.Click += ButtonCategory_Click;
             // 
             // labelPurchase_Price
             // 

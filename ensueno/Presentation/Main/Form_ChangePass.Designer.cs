@@ -187,7 +187,7 @@
             Button_login.ForeColor = System.Drawing.Color.White;
             Button_login.Image = (System.Drawing.Image)resources.GetObject("Button_login.Image");
             Button_login.IndicateFocus = true;
-            Button_login.Location = new System.Drawing.Point(222, 205);
+            Button_login.Location = new System.Drawing.Point(222, 220);
             Button_login.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_login.Name = "Button_login";
             Button_login.ShadowDecoration.CustomizableEdges = customizableEdges10;

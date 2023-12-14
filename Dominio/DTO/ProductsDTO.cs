@@ -5,9 +5,8 @@
         public int ProdutId { get; set; }
 
         public string ProductName { get; set; }
-
+        public int CategoryId {  get; set; }
         public string Categoria { get; set; }
-        public string Proveedor { get; set; }
         public int Stock { get; set; }
 
         public decimal Purchace_Price { get; set; }

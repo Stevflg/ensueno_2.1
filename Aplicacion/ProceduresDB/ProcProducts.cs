@@ -46,5 +46,20 @@ namespace Aplicacion.ProceduresDB
             return await DProducts.Delete(obj, supplier);
         }
 
+
+        public static string AddCategory(Product_Category obj)
+        {
+            return DProducts.AddCategory(obj);
+        }
+
+        public static string UpdateCategory(Product_Category obj)
+        {
+            return DProducts.UpdateCategory(obj);
+        }
+
+        public static List<CategoryDTO> ListCategories()
+        { 
+            return DProducts.ListCategory();
+        }
     }
 }

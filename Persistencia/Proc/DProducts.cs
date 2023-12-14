@@ -1,6 +1,8 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
+using Microsoft.IdentityModel.Tokens;
 using Persistencia.Context;
 
 namespace Persistencia.Proc
@@ -14,21 +16,18 @@ namespace Persistencia.Proc
             {
                 var list = await (from p in db.Products
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
-                                  join sm in db.StockMovement on p.ProdutId equals sm.ProductId
-                                  join s in db.Suppliers on sm.SupplierId equals s.SupplierId
-                                 group new {p,s,sm,pc } by p.ProdutId into g
                                  
                                   select new ProductsDTO
                                   {
-                                      ProdutId = g.First().p.ProdutId,
-                                      ProductName = g.First().p.ProductName,
-                                      Categoria = g.First().pc.CategoryName,
-                                      Proveedor = g.First().s.SupplierName,
-                                      Stock = g.First().p.Stock,
-                                      Purchace_Price = g.First().p.Purchase_Price,
-                                      Unit_Price = g.First().p.Unit_Price,
-                                      Estado = (g.First().p.IsActive) ? "Disponible":"No Disponible",
-                                      Creado = g.First().p.Date_Time
+                                      ProdutId = p.ProdutId,
+                                      ProductName = p.ProductName,
+                                      CategoryId = p.ProductCategoryId,
+                                      Categoria = pc.CategoryName,
+                                      Stock = p.Stock,
+                                      Purchace_Price = p.Purchase_Price,
+                                      Unit_Price = p.Unit_Price,
+                                      Estado = (p.IsActive) ? "Disponible":"No Disponible",
+                                      Creado = p.Date_Time
                                   }).ToListAsync();
                 return list;
             }
@@ -38,15 +37,12 @@ namespace Persistencia.Proc
         {
             using (var db = new EnsuenoContext())
             {
-                var state = (obj.ProductName.Equals("Disponible")) ? true : false; 
+                var state = (obj.ProductName.Contains("no disponible")) ? false : true; 
                 var list = await (from p in db.Products
-                                  join sm in db.StockMovement on p.ProdutId equals sm.ProductId
-                                  join s in db.Suppliers on sm.SupplierId equals s.SupplierId
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
-                                  where sm.Date_Time.Equals(db.StockMovement.Max(x => x.Date_Time))
-
-                                  &&(p.ProdutId.ToString().Contains(obj.ProductName) || p.ProductName.Contains(obj.ProductName)
-                                  || pc.CategoryName.Contains(obj.ProductName) || s.SupplierName.Contains(obj.ProductName)
+                             
+                                  where (p.ProdutId.ToString().Contains(obj.ProductName) || p.ProductName.Contains(obj.ProductName)
+                                  || pc.CategoryName.Contains(obj.ProductName) 
                                   || p.IsActive.Equals(state) || p.Date_Time.ToString().Contains(obj.ProductName))
 
                                   orderby p.IsActive ascending
@@ -54,14 +50,14 @@ namespace Persistencia.Proc
                                   {
                                       ProdutId = p.ProdutId,
                                       ProductName = p.ProductName,
+                                      CategoryId = p.ProductCategoryId,
                                       Categoria = pc.CategoryName,
-                                      Proveedor = s.SupplierName,
                                       Stock = p.Stock,
                                       Purchace_Price = p.Purchase_Price,
                                       Unit_Price = p.Unit_Price,
                                       Estado = (p.IsActive) ? "Disponible" : "No Disponible",
                                       Creado = p.Date_Time
-                                  }).Distinct().ToListAsync();
+                                  }).ToListAsync();
                 return list;
             }
         }
@@ -116,24 +112,27 @@ namespace Persistencia.Proc
             {
                 using (var db = new EnsuenoContext())
                 {
+
                     var product = await db.Products.FindAsync(obj.ProdutId);
                     if(product != null)
                     { 
-                        product.ProductCategoryId = (obj.ProdutId.Equals(0)) ? product.ProductCategoryId : obj.ProdutId;
+                        product.ProductCategoryId = obj.ProductCategoryId;
                         product.Stock += obj.Stock;
                         product.Unit_Price = obj.Unit_Price;
                         product.Purchase_Price = obj.Purchase_Price;
                         product.UpdateBy = obj.UpdateBy;
                         product.Update_date_time = obj.Update_date_time;
+                        product.IsActive = true;
                         db.Entry(product).State = EntityState.Modified;
                         var query = await db.SaveChangesAsync();
 
-                        var supp =await db.Suppliers.FindAsync(supplier.SupplierName);
+                        var suppl = await db.Suppliers.Where(a => a.SupplierName.Equals(supplier.SupplierName)).FirstOrDefaultAsync();
                         await AddStockMovement(new StockMovement
                         {
-                            SupplierId = (supplier.SupplierId.Equals(0)) ? supp.SupplierId : supplier.SupplierId,
-                            ProductId = obj.ProdutId,
+                            SupplierId = (supplier.SupplierId.Equals(0) ? suppl.SupplierId : supplier.SupplierId),
+                            ProductId = product.ProdutId,
                             Units = obj.Stock,
+                            Price = obj.Purchase_Price,
                             EmployeeId = obj.UpdateBy,
                             TypeStockMovement = 1
                         });
@@ -141,6 +140,10 @@ namespace Persistencia.Proc
                         var result = (query>0) ? "Guardado Correctamente" : "No se pudo Guardar";
                         return result;
                     }
+                 
+
+
+
                     return "No se pudo guardar";
                 }
             }
@@ -190,10 +193,9 @@ namespace Persistencia.Proc
                     var product = await db.Products.FindAsync(obj.ProdutId);
                     if (product != null)
                     {
-                        var supp = await db.Suppliers.FindAsync(supplier.SupplierName);
                         await AddStockMovement(new StockMovement
                         {
-                            SupplierId = (supplier.SupplierId.Equals(0)) ? supp.SupplierId : supplier.SupplierId,
+                            SupplierId = supplier.SupplierId,
                             ProductId = product.ProdutId,
                             Units = product.Stock,
                             EmployeeId = obj.EmployeeId,
@@ -235,6 +237,62 @@ namespace Persistencia.Proc
             using(var db = new EnsuenoContext())
             {
                 var list = await db.Suppliers.Where(a => a.IsActive.Equals(true)).ToListAsync();
+                return list;
+            }
+        }
+
+
+        //Prcedimientos Category'
+        public static string AddCategory(Product_Category obj)
+        {
+            try
+            {
+                using (var db = new EnsuenoContext())
+                {
+                   
+                        db.Add(obj);
+                        var query = db.SaveChanges();
+                        var result = (query > 0) ? "Guardado Correctamente" : "No se pudo Guardar";
+                        return result;
+                }
+            }
+            catch(Exception ex) {return ex.Message;  }
+        }
+
+        public static string UpdateCategory(Product_Category obj)
+        {
+            try
+            {
+                using (var db = new EnsuenoContext())
+                {
+                    var category = db.Product_Category.Find(obj.CategoryId);
+
+                    if (category != null)
+                    {
+                        category.CategoryName = obj.CategoryName;
+                        category.UpdatedBy = obj.CreatedBy;
+                        category.Date_Updated = DateTime.Now;
+                        db.Entry(category).State = EntityState.Modified;
+                        var query = db.SaveChanges();
+                        var result = (query > 0) ? "Guardado Correctamente" : "No se pudo Guardar";
+                        return result;
+                    }
+                    return "No se pudo Guardar";
+                }
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
+
+        public static List<CategoryDTO> ListCategory()
+        {
+            using(var db = new EnsuenoContext())
+            {
+                var list = (from c in db.Product_Category
+                           select new CategoryDTO
+                           {
+                               Id = c.CategoryId,
+                               Nombre = c.CategoryName
+                           }).ToList();
                 return list;
             }
         }

@@ -33,7 +33,6 @@ namespace ensueno.Presentation.Main
         }
 
         #region Datagrids y AutoCompletado
-        private string SupplierName = "";
         private void DataGridView_Products_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -46,18 +45,17 @@ namespace ensueno.Presentation.Main
                 {
                     TextBox_Id.Text = DataGridView_Products.Rows[e.RowIndex].Cells[0].Value.ToString();
                     TextBox_Product.Text = DataGridView_Products.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    ComboBoxCategory.Text = DataGridView_Products.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    ComboBoxSuppliers.Text = DataGridView_Products.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    SupplierName = DataGridView_Products.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    ComboBoxCategory.Text = DataGridView_Products.Rows[e.RowIndex].Cells[3].Value.ToString();
                     TextBoxStock.Text = DataGridView_Products.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBoxPurchase_Price.Text = DataGridView_Products.Rows[e.RowIndex].Cells[5].Value.ToString();
                     TextBoxPrice.Text = DataGridView_Products.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    productId = 0;
-                    SupplierId = 0;
+                    ProductCategory = int.Parse(DataGridView_Products.Rows[e.RowIndex].Cells[2].Value.ToString());
                 }
             }
             catch (Exception ex)
-            { }
+            {
+                ClearTextBoxes();
+            }
         }
         private async void LoadCategory()
         {
@@ -195,13 +193,11 @@ namespace ensueno.Presentation.Main
             TextBoxPrice.Clear();
             SupplierId = 0;
             ProductCategory = 0;
-            SupplierName = string.Empty;
         }
         #endregion
 
 
         #region Metodos
-        private int productId = 0;
         private async void Read()
         {
             this.Invoke(new Action(() => { pictureBoxDark.Visible = true; }));
@@ -212,6 +208,7 @@ namespace ensueno.Presentation.Main
                 DataGridView_Products.DataSource = list;
                 DataGridView_Products.Columns[0].HeaderText = "Id";
                 DataGridView_Products.Columns[1].HeaderText = "Insumo";
+                DataGridView_Products.Columns[2].HeaderText = "Id Categoria";
                 DataGridView_Products.Columns[5].HeaderText = "Precio de Compra";
                 DataGridView_Products.Columns[6].HeaderText = "Precio de Venta";
                 pictureBoxDark.Visible = false;
@@ -277,7 +274,7 @@ namespace ensueno.Presentation.Main
                         UpdateBy = userSessions.EmployeeId,
                         Update_date_time = DateTime.Now,
                         Image = image
-                    }, new Suppliers { SupplierId = SupplierId, SupplierName = SupplierName });
+                    }, new Suppliers { SupplierId = SupplierId });
 
                     this.Invoke(new Action(() =>
                     {
@@ -310,14 +307,14 @@ namespace ensueno.Presentation.Main
                     {
                         ProdutId = int.Parse(TextBox_Id.Text),
                         ProductName = TextBox_Product.Text,
-                        ProductCategoryId = productId,
+                        ProductCategoryId = ProductCategory,
                         Stock = int.Parse(TextBoxStock.Text),
                         Purchase_Price = decimal.Parse(TextBoxPurchase_Price.Text),
                         Unit_Price = decimal.Parse(TextBoxPrice.Text),
                         UpdateBy = userSessions.EmployeeId,
                         Update_date_time = DateTime.Now,
                         Image = image
-                    }, new Suppliers { SupplierId = SupplierId, SupplierName = SupplierName });
+                    }, new Suppliers { SupplierId = SupplierId, SupplierName = ComboBoxSuppliers.Text });
 
                     this.Invoke(new Action(() =>
                     {
@@ -346,7 +343,7 @@ namespace ensueno.Presentation.Main
                     var result = await ProcProducts.Delete(new Products
                     {
                         ProdutId = int.Parse(TextBox_Id.Text),
-                    }, new Suppliers { SupplierName = SupplierName });
+                    }, new Suppliers { SupplierId = SupplierId });
 
                     this.Invoke(new Action(() =>
                     {
@@ -516,5 +513,12 @@ namespace ensueno.Presentation.Main
 
         }
         #endregion
+
+        private void ButtonCategory_Click(object sender, EventArgs e)
+        {
+            Form_Category frmc = new Form_Category(userSessions,BackColor);
+            frmc.ShowDialog();
+            LoadCategory();
+        }
     }
 }
