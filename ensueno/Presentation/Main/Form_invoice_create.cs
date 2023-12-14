@@ -35,14 +35,19 @@ namespace ensueno.Presentation.Main
         {
             this.Close();
         }
-        
+
         private void Button_yes_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Close();
             }
-            catch(Exception) { }
+            catch (Exception) { }
+        }
+
+        private void Form_invoice_create_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

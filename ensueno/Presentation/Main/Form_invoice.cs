@@ -20,7 +20,7 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_invoice : Form
     {
-        private Form_invoice_history fh;
+        private Form_Users__ fh;
         private DataTable dt = new DataTable();
         readonly Values val = new Values();   
 
@@ -49,8 +49,8 @@ namespace ensueno.Presentation.Main
             try
             {
                     //Program.Values.invoice_id =0;
-                    fh = new Form_invoice_history();
-                    fh.ShowDialog();
+                    //fh = new Form_Users();
+                    //fh.ShowDialog();
                     Read();
             }
             catch (Exception ex)

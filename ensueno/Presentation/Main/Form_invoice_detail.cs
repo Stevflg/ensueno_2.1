@@ -247,10 +247,10 @@ namespace ensueno.Presentation.Main
 
         private void Button_return_Click(object sender, EventArgs e)
         {
-          //  Read_invoice_detail(Program.Values.invoice_id);
+            //  Read_invoice_detail(Program.Values.invoice_id);
             Button_agregar_producto.Visible = true;
             Button_report.Visible = true;
-            Button_update.Visible = true;
+            Button_print.Visible = true;
             Button_delete.Visible = true;
             Button_history.Visible = true;
             Button_Restore.Visible = false;
@@ -273,7 +273,7 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
         }
-       
+
         private void TextBox_search_product_Invoice_d_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.Search_by_letters(TextBox_search_product_Invoice_d, e);
@@ -325,6 +325,11 @@ namespace ensueno.Presentation.Main
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Button_disable_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

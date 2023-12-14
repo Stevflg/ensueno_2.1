@@ -111,8 +111,8 @@ namespace ensueno.Presentation.Main
         }
         private void ButtonInventories_Click(object sender, EventArgs e)
         {
-            Label_form_selected.Text = "Inventarios";
-            Open_form_panel(new Form_Inventories(color));
+            Label_form_selected.Text = "Roles";
+            Open_form_panel(new Form_Rol(color));
         }
 
         private void Button_suppliers_Click(object sender, EventArgs e)
@@ -120,13 +120,20 @@ namespace ensueno.Presentation.Main
             Label_form_selected.Text = "Proveedores";
             Open_form_panel(new Form_suppliers(color, userSesion));
         }
+        private void ButtonUsers_Click(object sender, EventArgs e)
+        {
+            Label_form_selected.Text = "Usuarios";
+            Open_form_panel(new Form_Users__(color));
+        }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea Cerrar Sesión?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+            if (MessageBox.Show("¿Desea Cerrar Sesión?", "Consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
             {
                 this.Close();
             }
         }
+
+   
     }
 }

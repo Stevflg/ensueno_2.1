@@ -731,7 +731,6 @@
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "Form_employees";
-            Text = "Form_employees";
             Load += Form_employees_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView_employees).EndInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).EndInit();

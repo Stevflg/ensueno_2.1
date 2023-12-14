@@ -35,8 +35,6 @@ namespace ensueno.Presentation.Main
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -45,16 +43,20 @@ namespace ensueno.Presentation.Main
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,8 +64,6 @@ namespace ensueno.Presentation.Main
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -71,8 +71,6 @@ namespace ensueno.Presentation.Main
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_products));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             pictureBoxDark = new PictureBox();
             DataGridView_Products = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -101,7 +99,6 @@ namespace ensueno.Presentation.Main
             labelPurchase_Price = new Label();
             TextBoxPurchase_Price = new Guna.UI2.WinForms.Guna2TextBox();
             ButtonAddStock = new Guna.UI2.WinForms.Guna2GradientButton();
-            ButtonSupplier = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridView_Products).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PictureBox_product).BeginInit();
@@ -215,7 +212,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Id.BorderRadius = 11;
             TextBox_Id.Cursor = Cursors.IBeam;
-            TextBox_Id.CustomizableEdges = customizableEdges36;
+            TextBox_Id.CustomizableEdges = customizableEdges34;
             TextBox_Id.DefaultText = "";
             TextBox_Id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -226,7 +223,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Id.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Id.Location = new System.Drawing.Point(155, 32);
+            TextBox_Id.Location = new System.Drawing.Point(155, 33);
             TextBox_Id.Margin = new Padding(4, 3, 4, 3);
             TextBox_Id.MaxLength = 50;
             TextBox_Id.Name = "TextBox_Id";
@@ -234,7 +231,7 @@ namespace ensueno.Presentation.Main
             TextBox_Id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.PlaceholderText = "Id";
             TextBox_Id.SelectedText = "";
-            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges35;
             TextBox_Id.Size = new System.Drawing.Size(195, 29);
             TextBox_Id.TabIndex = 0;
             TextBox_Id.TextChanged += TextBox_Id_TextChanged;
@@ -257,7 +254,7 @@ namespace ensueno.Presentation.Main
             TextBox_Product.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Product.BorderRadius = 11;
             TextBox_Product.Cursor = Cursors.IBeam;
-            TextBox_Product.CustomizableEdges = customizableEdges34;
+            TextBox_Product.CustomizableEdges = customizableEdges32;
             TextBox_Product.DefaultText = "";
             TextBox_Product.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Product.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -275,7 +272,7 @@ namespace ensueno.Presentation.Main
             TextBox_Product.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Product.PlaceholderText = "Nombre";
             TextBox_Product.SelectedText = "";
-            TextBox_Product.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            TextBox_Product.ShadowDecoration.CustomizableEdges = customizableEdges33;
             TextBox_Product.Size = new System.Drawing.Size(195, 29);
             TextBox_Product.TabIndex = 1;
             TextBox_Product.TextChanged += TextBox_Product_TextChanged;
@@ -288,7 +285,7 @@ namespace ensueno.Presentation.Main
             ComboBoxCategory.BackColor = System.Drawing.Color.Transparent;
             ComboBoxCategory.BorderColor = System.Drawing.Color.Crimson;
             ComboBoxCategory.BorderRadius = 17;
-            ComboBoxCategory.CustomizableEdges = customizableEdges32;
+            ComboBoxCategory.CustomizableEdges = customizableEdges30;
             ComboBoxCategory.DrawMode = DrawMode.OwnerDrawFixed;
             ComboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxCategory.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -298,7 +295,7 @@ namespace ensueno.Presentation.Main
             ComboBoxCategory.ItemHeight = 30;
             ComboBoxCategory.Location = new System.Drawing.Point(581, 35);
             ComboBoxCategory.Name = "ComboBoxCategory";
-            ComboBoxCategory.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            ComboBoxCategory.ShadowDecoration.CustomizableEdges = customizableEdges31;
             ComboBoxCategory.Size = new System.Drawing.Size(217, 36);
             ComboBoxCategory.TabIndex = 5;
             ComboBoxCategory.SelectedIndexChanged += ComboBoxCategory_SelectedIndexChanged;
@@ -333,7 +330,7 @@ namespace ensueno.Presentation.Main
             TextBoxStock.BorderColor = System.Drawing.Color.Crimson;
             TextBoxStock.BorderRadius = 11;
             TextBoxStock.Cursor = Cursors.IBeam;
-            TextBoxStock.CustomizableEdges = customizableEdges30;
+            TextBoxStock.CustomizableEdges = customizableEdges28;
             TextBoxStock.DefaultText = "";
             TextBoxStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -351,7 +348,7 @@ namespace ensueno.Presentation.Main
             TextBoxStock.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxStock.PlaceholderText = "Stock";
             TextBoxStock.SelectedText = "";
-            TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges29;
             TextBoxStock.Size = new System.Drawing.Size(195, 29);
             TextBoxStock.TabIndex = 2;
             TextBoxStock.TextChanged += TextBoxStock_TextChanged;
@@ -375,7 +372,7 @@ namespace ensueno.Presentation.Main
             TextBoxPrice.BorderColor = System.Drawing.Color.Crimson;
             TextBoxPrice.BorderRadius = 11;
             TextBoxPrice.Cursor = Cursors.IBeam;
-            TextBoxPrice.CustomizableEdges = customizableEdges28;
+            TextBoxPrice.CustomizableEdges = customizableEdges26;
             TextBoxPrice.DefaultText = "";
             TextBoxPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBoxPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -393,7 +390,7 @@ namespace ensueno.Presentation.Main
             TextBoxPrice.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBoxPrice.PlaceholderText = "Precio Unitario";
             TextBoxPrice.SelectedText = "";
-            TextBoxPrice.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            TextBoxPrice.ShadowDecoration.CustomizableEdges = customizableEdges27;
             TextBoxPrice.Size = new System.Drawing.Size(195, 29);
             TextBoxPrice.TabIndex = 4;
             TextBoxPrice.TextChanged += TextBoxPrice_TextChanged;
@@ -404,7 +401,7 @@ namespace ensueno.Presentation.Main
             ButtonSubirImagen.Animated = true;
             ButtonSubirImagen.AutoRoundedCorners = true;
             ButtonSubirImagen.BorderRadius = 14;
-            ButtonSubirImagen.CustomizableEdges = customizableEdges24;
+            ButtonSubirImagen.CustomizableEdges = customizableEdges22;
             ButtonSubirImagen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSubirImagen.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -417,7 +414,7 @@ namespace ensueno.Presentation.Main
             ButtonSubirImagen.Location = new System.Drawing.Point(825, 173);
             ButtonSubirImagen.Margin = new Padding(4, 3, 4, 3);
             ButtonSubirImagen.Name = "ButtonSubirImagen";
-            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            ButtonSubirImagen.ShadowDecoration.CustomizableEdges = customizableEdges23;
             ButtonSubirImagen.Size = new System.Drawing.Size(125, 30);
             ButtonSubirImagen.TabIndex = 12;
             ButtonSubirImagen.Text = "Subir Imagen";
@@ -426,12 +423,12 @@ namespace ensueno.Presentation.Main
             // PictureBox_product
             // 
             PictureBox_product.BorderRadius = 11;
-            PictureBox_product.CustomizableEdges = customizableEdges26;
+            PictureBox_product.CustomizableEdges = customizableEdges24;
             PictureBox_product.ImageRotate = 0F;
             PictureBox_product.Location = new System.Drawing.Point(820, 24);
             PictureBox_product.Margin = new Padding(4, 3, 4, 3);
             PictureBox_product.Name = "PictureBox_product";
-            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            PictureBox_product.ShadowDecoration.CustomizableEdges = customizableEdges25;
             PictureBox_product.Size = new System.Drawing.Size(136, 143);
             PictureBox_product.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBox_product.TabIndex = 46;
@@ -444,7 +441,7 @@ namespace ensueno.Presentation.Main
             ButtonSearch.BackColor = System.Drawing.Color.White;
             ButtonSearch.BorderColor = System.Drawing.Color.Transparent;
             ButtonSearch.BorderRadius = 9;
-            ButtonSearch.CustomizableEdges = customizableEdges20;
+            ButtonSearch.CustomizableEdges = customizableEdges18;
             ButtonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -460,7 +457,7 @@ namespace ensueno.Presentation.Main
             ButtonSearch.Margin = new Padding(4, 3, 4, 3);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.PressedColor = System.Drawing.Color.Transparent;
-            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges19;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
             ButtonSearch.TabIndex = 48;
             ButtonSearch.Click += ButtonSearch_Click;
@@ -471,7 +468,7 @@ namespace ensueno.Presentation.Main
             TextBox_SearchProduct.BorderColor = System.Drawing.Color.Navy;
             TextBox_SearchProduct.BorderRadius = 11;
             TextBox_SearchProduct.Cursor = Cursors.IBeam;
-            TextBox_SearchProduct.CustomizableEdges = customizableEdges22;
+            TextBox_SearchProduct.CustomizableEdges = customizableEdges20;
             TextBox_SearchProduct.DefaultText = "";
             TextBox_SearchProduct.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_SearchProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -489,7 +486,7 @@ namespace ensueno.Presentation.Main
             TextBox_SearchProduct.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_SearchProduct.PlaceholderText = "Buscar Insumo";
             TextBox_SearchProduct.SelectedText = "";
-            TextBox_SearchProduct.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            TextBox_SearchProduct.ShadowDecoration.CustomizableEdges = customizableEdges21;
             TextBox_SearchProduct.Size = new System.Drawing.Size(252, 32);
             TextBox_SearchProduct.TabIndex = 13;
             TextBox_SearchProduct.TextChanged += TextBox_SearchProduct_TextChanged;
@@ -514,7 +511,7 @@ namespace ensueno.Presentation.Main
             ComboBoxSuppliers.BackColor = System.Drawing.Color.Transparent;
             ComboBoxSuppliers.BorderColor = System.Drawing.Color.Crimson;
             ComboBoxSuppliers.BorderRadius = 17;
-            ComboBoxSuppliers.CustomizableEdges = customizableEdges18;
+            ComboBoxSuppliers.CustomizableEdges = customizableEdges16;
             ComboBoxSuppliers.DrawMode = DrawMode.OwnerDrawFixed;
             ComboBoxSuppliers.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxSuppliers.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
@@ -524,7 +521,7 @@ namespace ensueno.Presentation.Main
             ComboBoxSuppliers.ItemHeight = 30;
             ComboBoxSuppliers.Location = new System.Drawing.Point(580, 95);
             ComboBoxSuppliers.Name = "ComboBoxSuppliers";
-            ComboBoxSuppliers.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            ComboBoxSuppliers.ShadowDecoration.CustomizableEdges = customizableEdges17;
             ComboBoxSuppliers.Size = new System.Drawing.Size(217, 36);
             ComboBoxSuppliers.TabIndex = 6;
             ComboBoxSuppliers.SelectedIndexChanged += ComboBoxSuppliers_SelectedIndexChanged;
@@ -534,7 +531,7 @@ namespace ensueno.Presentation.Main
             Button_report.Animated = true;
             Button_report.AutoRoundedCorners = true;
             Button_report.BorderRadius = 14;
-            Button_report.CustomizableEdges = customizableEdges9;
+            Button_report.CustomizableEdges = customizableEdges7;
             Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -548,7 +545,7 @@ namespace ensueno.Presentation.Main
             Button_report.Location = new System.Drawing.Point(631, 137);
             Button_report.Margin = new Padding(4, 3, 4, 3);
             Button_report.Name = "Button_report";
-            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            Button_report.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Button_report.Size = new System.Drawing.Size(135, 30);
             Button_report.TabIndex = 10;
             Button_report.Text = "Reporte";
@@ -573,7 +570,7 @@ namespace ensueno.Presentation.Main
             Button_clear.Location = new System.Drawing.Point(774, 165);
             Button_clear.Margin = new Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
-            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_clear.Size = new System.Drawing.Size(38, 38);
             Button_clear.TabIndex = 11;
@@ -585,7 +582,7 @@ namespace ensueno.Presentation.Main
             Button_delete.Animated = true;
             Button_delete.AutoRoundedCorners = true;
             Button_delete.BorderRadius = 14;
-            Button_delete.CustomizableEdges = customizableEdges12;
+            Button_delete.CustomizableEdges = customizableEdges10;
             Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -600,7 +597,7 @@ namespace ensueno.Presentation.Main
             Button_delete.Location = new System.Drawing.Point(494, 173);
             Button_delete.Margin = new Padding(4, 3, 4, 3);
             Button_delete.Name = "Button_delete";
-            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_delete.Size = new System.Drawing.Size(135, 30);
             Button_delete.TabIndex = 8;
             Button_delete.Text = "Eliminar";
@@ -612,7 +609,7 @@ namespace ensueno.Presentation.Main
             Button_update.Animated = true;
             Button_update.AutoRoundedCorners = true;
             Button_update.BorderRadius = 14;
-            Button_update.CustomizableEdges = customizableEdges14;
+            Button_update.CustomizableEdges = customizableEdges12;
             Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -627,7 +624,7 @@ namespace ensueno.Presentation.Main
             Button_update.Location = new System.Drawing.Point(358, 173);
             Button_update.Margin = new Padding(4, 3, 4, 3);
             Button_update.Name = "Button_update";
-            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges13;
             Button_update.Size = new System.Drawing.Size(135, 30);
             Button_update.TabIndex = 8;
             Button_update.Text = "Editar";
@@ -639,7 +636,7 @@ namespace ensueno.Presentation.Main
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 14;
-            Button_create.CustomizableEdges = customizableEdges16;
+            Button_create.CustomizableEdges = customizableEdges14;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -653,7 +650,7 @@ namespace ensueno.Presentation.Main
             Button_create.Location = new System.Drawing.Point(358, 138);
             Button_create.Margin = new Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges15;
             Button_create.Size = new System.Drawing.Size(135, 30);
             Button_create.TabIndex = 7;
             Button_create.Text = "Crear";
@@ -678,7 +675,7 @@ namespace ensueno.Presentation.Main
             ButtonCategory.Image = (System.Drawing.Image)resources.GetObject("ButtonCategory.Image");
             ButtonCategory.ImageAlign = HorizontalAlignment.Left;
             ButtonCategory.IndicateFocus = true;
-            ButtonCategory.Location = new System.Drawing.Point(38, 135);
+            ButtonCategory.Location = new System.Drawing.Point(38, 134);
             ButtonCategory.Margin = new Padding(4, 3, 4, 3);
             ButtonCategory.Name = "ButtonCategory";
             ButtonCategory.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -756,33 +753,6 @@ namespace ensueno.Presentation.Main
             ButtonAddStock.TextAlign = HorizontalAlignment.Left;
             ButtonAddStock.Click += ButtonAddStock_Click;
             // 
-            // ButtonSupplier
-            // 
-            ButtonSupplier.Animated = true;
-            ButtonSupplier.AutoRoundedCorners = true;
-            ButtonSupplier.BorderRadius = 15;
-            ButtonSupplier.CustomizableEdges = customizableEdges7;
-            ButtonSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            ButtonSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            ButtonSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonSupplier.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            ButtonSupplier.FillColor = System.Drawing.Color.Silver;
-            ButtonSupplier.FillColor2 = System.Drawing.Color.Gray;
-            ButtonSupplier.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ButtonSupplier.ForeColor = System.Drawing.Color.White;
-            ButtonSupplier.Image = (System.Drawing.Image)resources.GetObject("ButtonSupplier.Image");
-            ButtonSupplier.ImageAlign = HorizontalAlignment.Left;
-            ButtonSupplier.IndicateFocus = true;
-            ButtonSupplier.Location = new System.Drawing.Point(38, 96);
-            ButtonSupplier.Margin = new Padding(4, 3, 4, 3);
-            ButtonSupplier.Name = "ButtonSupplier";
-            ButtonSupplier.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            ButtonSupplier.Size = new System.Drawing.Size(109, 33);
-            ButtonSupplier.TabIndex = 14;
-            ButtonSupplier.Text = "Proveedor";
-            ButtonSupplier.TextAlign = HorizontalAlignment.Left;
-            // 
             // Form_products
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -792,7 +762,6 @@ namespace ensueno.Presentation.Main
             Controls.Add(labelPurchase_Price);
             Controls.Add(TextBoxPurchase_Price);
             Controls.Add(ButtonCategory);
-            Controls.Add(ButtonSupplier);
             Controls.Add(Button_report);
             Controls.Add(Button_clear);
             Controls.Add(Button_delete);
@@ -855,7 +824,6 @@ namespace ensueno.Presentation.Main
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonCategory;
-        private Guna.UI2.WinForms.Guna2GradientButton ButtonSupplier;
         private Label labelPurchase_Price;
         private Guna.UI2.WinForms.Guna2TextBox TextBoxPurchase_Price;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonAddStock;

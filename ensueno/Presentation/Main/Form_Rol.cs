@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ensueno.Presentation.Main
 {
-    public partial class Form_Inventories : Form
+    public partial class Form_Rol : Form
     {
-        public Form_Inventories(Color color)
+        public Form_Rol(Color color)
         {
             InitializeComponent();
             this.BackColor = color;

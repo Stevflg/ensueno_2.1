@@ -252,7 +252,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                 DeleteEmployee();
+                DeleteEmployee();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
@@ -290,7 +290,7 @@ namespace ensueno.Presentation.Main
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await Task.Run(() => { SearchEmployee();});
+                await Task.Run(() => { SearchEmployee(); });
             }
         }
 
@@ -363,6 +363,6 @@ namespace ensueno.Presentation.Main
 
         #endregion
 
-     
+
     }
 }
