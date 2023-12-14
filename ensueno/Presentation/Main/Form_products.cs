@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Data.SqlClient;
-using Guna.UI2.WinForms;
 using ensueno.Presentation.Validations;
 using Dominio.DTO;
 using Aplicacion.ProceduresDB;
 using Dominio.Database;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace ensueno.Presentation.Main
 {

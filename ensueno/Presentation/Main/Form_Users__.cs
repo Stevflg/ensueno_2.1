@@ -1,6 +1,4 @@
 ﻿using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ensueno.Presentation.Main
@@ -12,6 +10,11 @@ namespace ensueno.Presentation.Main
             InitializeComponent();
             this.Select();
             BackColor = color;
+        }
+
+        private void Form_Users___Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

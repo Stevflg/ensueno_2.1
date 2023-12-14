@@ -1,14 +1,6 @@
 ﻿using Dominio.Database;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.IdentityModel.Protocols;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia.Context
 {

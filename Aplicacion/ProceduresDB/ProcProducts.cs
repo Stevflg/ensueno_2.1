@@ -1,12 +1,6 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
-using Persistencia.Context;
 using Persistencia.Proc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aplicacion.ProceduresDB
 {

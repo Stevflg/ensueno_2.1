@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion.Initial;
 using ensueno.Presentation.Login;
-using ensueno.Presentation.Main;
-using ensueno.Presentation.Reports;
-using Microsoft.EntityFrameworkCore;
 using Persistencia.Context;
 
 namespace ensueno

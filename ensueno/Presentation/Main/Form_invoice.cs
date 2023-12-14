@@ -1,20 +1,8 @@
-﻿using ensueno.Presentation.Login;
-using ensueno.Presentation.Validations;
+﻿using ensueno.Presentation.Validations;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace ensueno.Presentation.Main
 {
@@ -22,16 +10,16 @@ namespace ensueno.Presentation.Main
     {
         private Form_Users__ fh;
         private DataTable dt = new DataTable();
-        readonly Values val = new Values();   
+        readonly Values val = new Values();
 
         public Form_invoice(Color color)
         {
             InitializeComponent();
             this.BackColor = color;
             this.Select();
-           // Client_autocomplete();
-         }
-        
+            // Client_autocomplete();
+        }
+
         private void Apply_dark_mode()
         {
             if (Properties.Settings.Default.dark_mode)
@@ -43,15 +31,15 @@ namespace ensueno.Presentation.Main
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
         }
-        
+
         private void Button_history_Click(object sender, EventArgs e)
         {
             try
             {
-                    //Program.Values.invoice_id =0;
-                    //fh = new Form_Users();
-                    //fh.ShowDialog();
-                    Read();
+                //Program.Values.invoice_id =0;
+                //fh = new Form_Users();
+                //fh.ShowDialog();
+                Read();
             }
             catch (Exception ex)
             {
@@ -65,7 +53,7 @@ namespace ensueno.Presentation.Main
             {
                 //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -83,7 +71,7 @@ namespace ensueno.Presentation.Main
             Button_report.Enabled = false;
             Button_detail.Enabled = false;
         }
-        public void Last_id(int client_id,string client_name)
+        public void Last_id(int client_id, string client_name)
         {
 
         }
@@ -92,19 +80,19 @@ namespace ensueno.Presentation.Main
         {
             try
             {
- 
+
                 ComboBox1.DataSource = dt;
                 ComboBox1.ValueMember = "ID";
                 ComboBox1.DisplayMember = "Nombre Completo";
 
                 AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
-                for(int i =0;i< dt.Rows.Count;i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     lst.Add(dt.Rows[i]["Nombre Completo"].ToString());
                 }
                 ComboBox1.AutoCompleteCustomSource = lst;
-                ComboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
-                ComboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
+                ComboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+                ComboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -117,14 +105,15 @@ namespace ensueno.Presentation.Main
             {
                 TextBox_client_id.Text = ComboBox1.SelectedValue.ToString();
             }
-            catch  { }
+            catch { }
         }
 
         private void Button_update_Click(object sender, EventArgs e)
         {
             try
             {
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -135,7 +124,8 @@ namespace ensueno.Presentation.Main
             try
             {
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -143,7 +133,7 @@ namespace ensueno.Presentation.Main
 
         private void TextBox_invoice_id_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.numbers_only(TextBox_invoice_id, e);   
+            val.numbers_only(TextBox_invoice_id, e);
         }
 
         private void TextBox_client_id_KeyPress(object sender, KeyPressEventArgs e)
@@ -152,8 +142,8 @@ namespace ensueno.Presentation.Main
         }
         private void Clear_textboxes()
         {
-            TextBox_invoice_id.Text="";
-            TextBox_client_id.Text="";           
+            TextBox_invoice_id.Text = "";
+            TextBox_client_id.Text = "";
         }
         private void DataGridView_invoices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -189,7 +179,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    Last_id(int.Parse(TextBox_client_id.Text),ComboBox1.Text);
+                    Last_id(int.Parse(TextBox_client_id.Text), ComboBox1.Text);
                     Form_invoice_create form_Invoice_Create = new Form_invoice_create();
                     form_Invoice_Create.ShowDialog();
                     Read();
@@ -234,7 +224,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_client_id.Text == string.Empty || TextBox_invoice_id.Text==string.Empty)
+                if (TextBox_client_id.Text == string.Empty || TextBox_invoice_id.Text == string.Empty)
                 {
                     val.empty_text(TextBox_client_id);
                     val.empty_text(TextBox_invoice_id);
@@ -259,14 +249,15 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_search_by_id.Text==string.Empty)
+                if (TextBox_search_by_id.Text == string.Empty)
                 {
                     Read();
                 }
                 else
                 {
                 }
-            }catch(Exception)
+            }
+            catch (Exception)
             { }
         }
 

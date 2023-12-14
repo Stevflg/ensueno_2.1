@@ -1,16 +1,7 @@
-﻿using ensueno.Presentation.Login;
-using ensueno.Presentation.Validations;
+﻿using ensueno.Presentation.Validations;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ensueno.Presentation.Main
 {
@@ -54,18 +45,11 @@ namespace ensueno.Presentation.Main
 
         private void ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            try
-            {
-                TextBox_product_id.Text = ComboBox1.SelectedValue.ToString();
-            }
-            catch (Exception)
-            {
-
-            }
+            
         }
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox_product_id.Text = Convert.ToString(ComboBox1.SelectedValue.ToString());
+           
         }
         private double price, amount, subtotal, iva, total;
 
@@ -128,7 +112,7 @@ namespace ensueno.Presentation.Main
         private Values val = new Values();
         private void TextBox_id_producto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.numbers_only(TextBox_product_id, e);
+           // val.numbers_only(TextBox_product_id, e);
         }
 
         private void TextBox_Precio_KeyPress(object sender, KeyPressEventArgs e)
@@ -158,7 +142,6 @@ namespace ensueno.Presentation.Main
         private void Clear_textboxes()
         {
             TextBox_invoice_id.Clear();
-            TextBox_product_id.Clear();
             TextBox_Precio.Clear();
             TextBox_amount.Clear();
             TextBox_Sub_Total.Clear();
@@ -177,7 +160,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    TextBox_product_id.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    //TextBox_product_id.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[1].Value.ToString();
                     TextBox_Precio.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[3].Value.ToString();
                     TextBox_amount.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBox_Sub_Total.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[5].Value.ToString();
@@ -248,14 +231,6 @@ namespace ensueno.Presentation.Main
         private void Button_return_Click(object sender, EventArgs e)
         {
             //  Read_invoice_detail(Program.Values.invoice_id);
-            Button_agregar_producto.Visible = true;
-            Button_report.Visible = true;
-            Button_print.Visible = true;
-            Button_delete.Visible = true;
-            Button_history.Visible = true;
-            Button_Restore.Visible = false;
-            Button_return.Visible = false;
-            ComboBox1.Visible = true;
             Clear_textboxes();
             TextBox_search_product_Invoice_d.Visible = true;
             Invoice_Detail_total();
@@ -297,20 +272,7 @@ namespace ensueno.Presentation.Main
 
         private void Autocomplete_Product()
         {
-            try
-            {
-                if (TextBox_product_id.Text != string.Empty)
-                {
-                }
-                else
-                {
-                    TextBox_Precio.Text = string.Empty;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
         private void Invoice_Detail_total()
         {

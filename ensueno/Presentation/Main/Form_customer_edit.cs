@@ -1,18 +1,11 @@
 ﻿using Aplicacion.Negocio;
-using Aplicacion.ProceduresDB;
 using Dominio.Database;
 using Dominio.DTO;
 using ensueno.Presentation.Validations;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ensueno.Presentation.Main
 {

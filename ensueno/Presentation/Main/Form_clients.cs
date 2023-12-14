@@ -1,19 +1,12 @@
-﻿using Guna.UI2.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ensueno.Presentation.Validations;
-using Aplicacion.ProceduresDB;
 using Dominio.Database;
 using Dominio.DTO;
-using Guna.UI2.WinForms.Suite;
-using static System.Net.Mime.MediaTypeNames;
 using Application = System.Windows.Forms.Application;
 using Aplicacion.Negocio;
 

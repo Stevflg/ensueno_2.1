@@ -1,14 +1,7 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 using Persistencia.Context;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia.Proc
 {

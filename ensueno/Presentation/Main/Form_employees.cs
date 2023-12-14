@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion.ProceduresDB;
 using Dominio.Database;
 using Dominio.DTO;
 using ensueno.Presentation.Validations;
-using Guna.UI2.WinForms;
 
 namespace ensueno.Presentation.Main
 {

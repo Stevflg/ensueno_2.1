@@ -1,12 +1,6 @@
 ﻿using Dominio.Database;
 using Dominio.DTO;
-using Microsoft.VisualBasic;
 using Persistencia.Proc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aplicacion.Negocio
 {
