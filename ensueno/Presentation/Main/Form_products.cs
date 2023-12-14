@@ -7,6 +7,7 @@ using ensueno.Presentation.Validations;
 using Dominio.DTO;
 using Aplicacion.ProceduresDB;
 using Dominio.Database;
+using System.Runtime.InteropServices;
 
 namespace ensueno.Presentation.Main
 {
@@ -21,9 +22,22 @@ namespace ensueno.Presentation.Main
         public Form_products(Color color, Username userSessions)
         {
             InitializeComponent();
+            SetComboBoxHeight();
             this.BackColor = color;
             this.userSessions = userSessions;
         }
+        [DllImport("user32.dll")]
+        static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, Int32 wParam, Int32 lParam);
+        private const Int32 CB_SETITEMHEIGHT = 0x153;
+
+        private void SetComboBoxHeight()
+        {
+            SendMessage(ComboBoxCategory.Handle, CB_SETITEMHEIGHT, -1, 21);
+            ComboBoxCategory.Refresh();
+            SendMessage(ComboBoxSuppliers.Handle, CB_SETITEMHEIGHT, -1, 21);
+            ComboBoxSuppliers.Refresh();
+        }
+
 
         private async void Form_products_Load(object sender, EventArgs e)
         {
@@ -75,7 +89,8 @@ namespace ensueno.Presentation.Main
                     }
                     ComboBoxCategory.AutoCompleteCustomSource = lst;
                     ComboBoxCategory.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    ComboBoxCategory.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    ComboBoxCategory.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    SetComboBoxHeight();
                 }));
             }
             catch (Exception e)
@@ -102,7 +117,8 @@ namespace ensueno.Presentation.Main
                     }
                     ComboBoxSuppliers.AutoCompleteCustomSource = lst;
                     ComboBoxSuppliers.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    ComboBoxSuppliers.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    ComboBoxSuppliers.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    SetComboBoxHeight();
                 }));
             }
             catch (Exception e)
@@ -116,6 +132,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
+                SetComboBoxHeight();
                 ProductCategory = int.Parse(ComboBoxCategory.SelectedValue.ToString());
             }
             catch { }
@@ -125,10 +142,22 @@ namespace ensueno.Presentation.Main
         {
             try
             {
+                SetComboBoxHeight();
                 SupplierId = int.Parse(ComboBoxSuppliers.SelectedValue.ToString());
             }
             catch { }
         }
+        private void ComboBoxCategory_TextChanged(object sender, EventArgs e)
+        {
+            SetComboBoxHeight();
+        }
+
+        private void ComboBoxSuppliers_TextChanged(object sender, EventArgs e)
+        {
+            SetComboBoxHeight();
+        }
+
+
         #endregion
 
         #region Validations
@@ -516,9 +545,11 @@ namespace ensueno.Presentation.Main
 
         private void ButtonCategory_Click(object sender, EventArgs e)
         {
-            Form_Category frmc = new Form_Category(userSessions,BackColor);
+            Form_Category frmc = new Form_Category(userSessions, BackColor);
             frmc.ShowDialog();
             LoadCategory();
         }
+
+
     }
 }

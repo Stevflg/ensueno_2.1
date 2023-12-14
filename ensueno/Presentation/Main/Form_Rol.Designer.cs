@@ -33,12 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,6 +41,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -81,9 +77,7 @@
             Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
             labelPermissions = new System.Windows.Forms.Label();
-            ComboBoxSuppliers = new Guna.UI2.WinForms.Guna2ComboBox();
             labelForm = new System.Windows.Forms.Label();
-            ComboBoxForms = new Guna.UI2.WinForms.Guna2ComboBox();
             DataGridViewForms = new Guna.UI2.WinForms.Guna2DataGridView();
             DataGridViewPermissions = new Guna.UI2.WinForms.Guna2DataGridView();
             ButtonCrear = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -94,6 +88,8 @@
             guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             ButtonEnabled = new Guna.UI2.WinForms.Guna2GradientButton();
+            comboBoxForms = new System.Windows.Forms.ComboBox();
+            ComboBoxPermissions = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView_Rols).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewForms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewPermissions).BeginInit();
@@ -135,7 +131,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             DataGridView_Rols.DefaultCellStyle = dataGridViewCellStyle11;
             DataGridView_Rols.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
-            DataGridView_Rols.Location = new System.Drawing.Point(25, 175);
+            DataGridView_Rols.Location = new System.Drawing.Point(25, 208);
             DataGridView_Rols.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             DataGridView_Rols.Name = "DataGridView_Rols";
             DataGridView_Rols.ReadOnly = true;
@@ -149,7 +145,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             DataGridView_Rols.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             DataGridView_Rols.RowHeadersVisible = false;
-            DataGridView_Rols.Size = new System.Drawing.Size(450, 364);
+            DataGridView_Rols.Size = new System.Drawing.Size(450, 331);
             DataGridView_Rols.TabIndex = 32;
             DataGridView_Rols.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             DataGridView_Rols.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
@@ -179,7 +175,7 @@
             labelName.AutoSize = true;
             labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelName.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelName.Location = new System.Drawing.Point(250, 30);
+            labelName.Location = new System.Drawing.Point(249, 62);
             labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelName.Name = "labelName";
             labelName.Size = new System.Drawing.Size(34, 18);
@@ -192,7 +188,7 @@
             TextBox_Name.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Name.BorderRadius = 11;
             TextBox_Name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_Name.CustomizableEdges = customizableEdges26;
+            TextBox_Name.CustomizableEdges = customizableEdges22;
             TextBox_Name.DefaultText = "";
             TextBox_Name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Name.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -202,7 +198,7 @@
             TextBox_Name.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Name.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Name.Location = new System.Drawing.Point(250, 51);
+            TextBox_Name.Location = new System.Drawing.Point(249, 83);
             TextBox_Name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_Name.MaxLength = 50;
             TextBox_Name.Name = "TextBox_Name";
@@ -210,7 +206,7 @@
             TextBox_Name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Name.PlaceholderText = "Nombre Rol";
             TextBox_Name.SelectedText = "";
-            TextBox_Name.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            TextBox_Name.ShadowDecoration.CustomizableEdges = customizableEdges23;
             TextBox_Name.Size = new System.Drawing.Size(195, 29);
             TextBox_Name.TabIndex = 40;
             // 
@@ -219,7 +215,7 @@
             label_Name.AutoSize = true;
             label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label_Name.ForeColor = System.Drawing.SystemColors.GrayText;
-            label_Name.Location = new System.Drawing.Point(47, 29);
+            label_Name.Location = new System.Drawing.Point(46, 61);
             label_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Name.Name = "label_Name";
             label_Name.Size = new System.Drawing.Size(21, 18);
@@ -232,7 +228,7 @@
             TextBox_Id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_Id.BorderRadius = 11;
             TextBox_Id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_Id.CustomizableEdges = customizableEdges28;
+            TextBox_Id.CustomizableEdges = customizableEdges24;
             TextBox_Id.DefaultText = "";
             TextBox_Id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_Id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
@@ -243,7 +239,7 @@
             TextBox_Id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Id.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Id.Location = new System.Drawing.Point(47, 51);
+            TextBox_Id.Location = new System.Drawing.Point(46, 83);
             TextBox_Id.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_Id.MaxLength = 50;
             TextBox_Id.Name = "TextBox_Id";
@@ -251,7 +247,7 @@
             TextBox_Id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Id.PlaceholderText = "Id Rol";
             TextBox_Id.SelectedText = "";
-            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            TextBox_Id.ShadowDecoration.CustomizableEdges = customizableEdges25;
             TextBox_Id.Size = new System.Drawing.Size(195, 29);
             TextBox_Id.TabIndex = 39;
             // 
@@ -260,7 +256,7 @@
             Button_disable.Animated = true;
             Button_disable.AutoRoundedCorners = true;
             Button_disable.BorderRadius = 14;
-            Button_disable.CustomizableEdges = customizableEdges20;
+            Button_disable.CustomizableEdges = customizableEdges16;
             Button_disable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_disable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_disable.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -274,10 +270,10 @@
             Button_disable.Image = (System.Drawing.Image)resources.GetObject("Button_disable.Image");
             Button_disable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_disable.IndicateFocus = true;
-            Button_disable.Location = new System.Drawing.Point(183, 131);
+            Button_disable.Location = new System.Drawing.Point(182, 163);
             Button_disable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_disable.Name = "Button_disable";
-            Button_disable.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            Button_disable.ShadowDecoration.CustomizableEdges = customizableEdges17;
             Button_disable.Size = new System.Drawing.Size(135, 30);
             Button_disable.TabIndex = 45;
             Button_disable.Text = "DesHabilitar";
@@ -288,7 +284,7 @@
             Button_update.Animated = true;
             Button_update.AutoRoundedCorners = true;
             Button_update.BorderRadius = 14;
-            Button_update.CustomizableEdges = customizableEdges22;
+            Button_update.CustomizableEdges = customizableEdges18;
             Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -302,10 +298,10 @@
             Button_update.Image = (System.Drawing.Image)resources.GetObject("Button_update.Image");
             Button_update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_update.IndicateFocus = true;
-            Button_update.Location = new System.Drawing.Point(47, 131);
+            Button_update.Location = new System.Drawing.Point(46, 163);
             Button_update.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_update.Name = "Button_update";
-            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            Button_update.ShadowDecoration.CustomizableEdges = customizableEdges19;
             Button_update.Size = new System.Drawing.Size(135, 30);
             Button_update.TabIndex = 44;
             Button_update.Text = "Editar";
@@ -316,7 +312,7 @@
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 14;
-            Button_create.CustomizableEdges = customizableEdges24;
+            Button_create.CustomizableEdges = customizableEdges20;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -329,10 +325,10 @@
             Button_create.Image = (System.Drawing.Image)resources.GetObject("Button_create.Image");
             Button_create.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_create.IndicateFocus = true;
-            Button_create.Location = new System.Drawing.Point(47, 95);
+            Button_create.Location = new System.Drawing.Point(46, 127);
             Button_create.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges21;
             Button_create.Size = new System.Drawing.Size(135, 30);
             Button_create.TabIndex = 43;
             Button_create.Text = "Crear";
@@ -343,33 +339,12 @@
             labelPermissions.AutoSize = true;
             labelPermissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             labelPermissions.ForeColor = System.Drawing.SystemColors.GrayText;
-            labelPermissions.Location = new System.Drawing.Point(495, 298);
+            labelPermissions.Location = new System.Drawing.Point(495, 302);
             labelPermissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelPermissions.Name = "labelPermissions";
             labelPermissions.Size = new System.Drawing.Size(80, 18);
             labelPermissions.TabIndex = 54;
             labelPermissions.Text = "Permisos";
-            // 
-            // ComboBoxSuppliers
-            // 
-            ComboBoxSuppliers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            ComboBoxSuppliers.AutoRoundedCorners = true;
-            ComboBoxSuppliers.BackColor = System.Drawing.Color.Transparent;
-            ComboBoxSuppliers.BorderColor = System.Drawing.Color.Crimson;
-            ComboBoxSuppliers.BorderRadius = 17;
-            ComboBoxSuppliers.CustomizableEdges = customizableEdges16;
-            ComboBoxSuppliers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            ComboBoxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            ComboBoxSuppliers.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxSuppliers.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxSuppliers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ComboBoxSuppliers.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
-            ComboBoxSuppliers.ItemHeight = 30;
-            ComboBoxSuppliers.Location = new System.Drawing.Point(494, 319);
-            ComboBoxSuppliers.Name = "ComboBoxSuppliers";
-            ComboBoxSuppliers.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            ComboBoxSuppliers.Size = new System.Drawing.Size(179, 36);
-            ComboBoxSuppliers.TabIndex = 52;
             // 
             // labelForm
             // 
@@ -382,27 +357,6 @@
             labelForm.Size = new System.Drawing.Size(99, 18);
             labelForm.TabIndex = 53;
             labelForm.Text = "Formularios";
-            // 
-            // ComboBoxForms
-            // 
-            ComboBoxForms.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            ComboBoxForms.AutoRoundedCorners = true;
-            ComboBoxForms.BackColor = System.Drawing.Color.Transparent;
-            ComboBoxForms.BorderColor = System.Drawing.Color.Crimson;
-            ComboBoxForms.BorderRadius = 17;
-            ComboBoxForms.CustomizableEdges = customizableEdges18;
-            ComboBoxForms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            ComboBoxForms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            ComboBoxForms.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxForms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxForms.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ComboBoxForms.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
-            ComboBoxForms.ItemHeight = 30;
-            ComboBoxForms.Location = new System.Drawing.Point(492, 51);
-            ComboBoxForms.Name = "ComboBoxForms";
-            ComboBoxForms.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            ComboBoxForms.Size = new System.Drawing.Size(179, 36);
-            ComboBoxForms.TabIndex = 51;
             // 
             // DataGridViewForms
             // 
@@ -705,7 +659,7 @@
             Button_clear.ForeColor = System.Drawing.Color.White;
             Button_clear.Image = Properties.Resources.clean;
             Button_clear.ImageSize = new System.Drawing.Size(32, 32);
-            Button_clear.Location = new System.Drawing.Point(407, 123);
+            Button_clear.Location = new System.Drawing.Point(406, 155);
             Button_clear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
             Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges3;
@@ -733,7 +687,7 @@
             ButtonEnabled.Image = (System.Drawing.Image)resources.GetObject("ButtonEnabled.Image");
             ButtonEnabled.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             ButtonEnabled.IndicateFocus = true;
-            ButtonEnabled.Location = new System.Drawing.Point(183, 95);
+            ButtonEnabled.Location = new System.Drawing.Point(182, 127);
             ButtonEnabled.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonEnabled.Name = "ButtonEnabled";
             ButtonEnabled.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -742,11 +696,35 @@
             ButtonEnabled.Text = "Habilitar";
             ButtonEnabled.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // Form_Inventories
+            // comboBoxForms
+            // 
+            comboBoxForms.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            comboBoxForms.FormattingEnabled = true;
+            comboBoxForms.Location = new System.Drawing.Point(493, 53);
+            comboBoxForms.Name = "comboBoxForms";
+            comboBoxForms.Size = new System.Drawing.Size(178, 24);
+            comboBoxForms.TabIndex = 65;
+            comboBoxForms.SelectedIndexChanged += comboBoxForms_SelectedIndexChanged;
+            comboBoxForms.TextChanged += comboBoxForms_TextChanged;
+            // 
+            // ComboBoxPermissions
+            // 
+            ComboBoxPermissions.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ComboBoxPermissions.FormattingEnabled = true;
+            ComboBoxPermissions.Location = new System.Drawing.Point(495, 323);
+            ComboBoxPermissions.Name = "ComboBoxPermissions";
+            ComboBoxPermissions.Size = new System.Drawing.Size(176, 24);
+            ComboBoxPermissions.TabIndex = 66;
+            ComboBoxPermissions.SelectedIndexChanged += ComboBoxPermissions_SelectedIndexChanged;
+            ComboBoxPermissions.TextChanged += ComboBoxPermissions_TextChanged;
+            // 
+            // Form_Rol
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(ComboBoxPermissions);
+            Controls.Add(comboBoxForms);
             Controls.Add(ButtonEnabled);
             Controls.Add(Button_clear);
             Controls.Add(guna2GradientButton1);
@@ -758,9 +736,7 @@
             Controls.Add(DataGridViewPermissions);
             Controls.Add(DataGridViewForms);
             Controls.Add(labelPermissions);
-            Controls.Add(ComboBoxSuppliers);
             Controls.Add(labelForm);
-            Controls.Add(ComboBoxForms);
             Controls.Add(Button_disable);
             Controls.Add(Button_update);
             Controls.Add(Button_create);
@@ -770,8 +746,9 @@
             Controls.Add(TextBox_Id);
             Controls.Add(DataGridView_Rols);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Name = "Form_Inventories";
+            Name = "Form_Rol";
             Text = "FormStock";
+            Load += Form_Rol_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView_Rols).EndInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewForms).EndInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewPermissions).EndInit();
@@ -793,9 +770,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView DataGridViewPermissions;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridViewForms;
         private System.Windows.Forms.Label labelPermissions;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxSuppliers;
         private System.Windows.Forms.Label labelForm;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxForms;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonEnable;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonDisable;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonCrear;
@@ -804,5 +779,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonEnabled;
+        private System.Windows.Forms.ComboBox ComboBoxPermissions;
+        private System.Windows.Forms.ComboBox comboBoxForms;
     }
 }

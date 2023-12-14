@@ -45,7 +45,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,11 +55,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             Slide_panel = new Guna.UI2.WinForms.Guna2Panel();
+            pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ButtonUsers = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_suppliers = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonRolPermiss = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -79,6 +80,7 @@
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             Transition_slide_panel_hide = new Guna.UI2.WinForms.Guna2Transition();
             Slide_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
             SuspendLayout();
             // 
@@ -92,6 +94,7 @@
             // 
             // Slide_panel
             // 
+            Slide_panel.Controls.Add(pictureBoxLogo);
             Slide_panel.Controls.Add(ButtonUsers);
             Slide_panel.Controls.Add(Button_suppliers);
             Slide_panel.Controls.Add(ButtonRolPermiss);
@@ -110,6 +113,20 @@
             Slide_panel.ShadowDecoration.CustomizableEdges = customizableEdges16;
             Slide_panel.Size = new System.Drawing.Size(58, 658);
             Slide_panel.TabIndex = 0;
+            // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            Transition_slide_panel_show.SetDecoration(pictureBoxLogo, Guna.UI2.AnimatorNS.DecorationType.None);
+            Transition_slide_panel_hide.SetDecoration(pictureBoxLogo, Guna.UI2.AnimatorNS.DecorationType.None);
+            pictureBoxLogo.Image = Properties.Resources.logo_with_letters;
+            pictureBoxLogo.InitialImage = Properties.Resources.logo_with_letters;
+            pictureBoxLogo.Location = new System.Drawing.Point(65, 11);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new System.Drawing.Size(74, 76);
+            pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBoxLogo.TabIndex = 17;
+            pictureBoxLogo.TabStop = false;
             // 
             // ButtonUsers
             // 
@@ -338,22 +355,22 @@
             // 
             Transition_slide_panel_show.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizBlind;
             Transition_slide_panel_show.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = (System.Drawing.PointF)resources.GetObject("animation2.BlindCoeff");
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = (System.Drawing.PointF)resources.GetObject("animation2.MosaicCoeff");
-            animation2.MosaicShift = (System.Drawing.PointF)resources.GetObject("animation2.MosaicShift");
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = (System.Drawing.PointF)resources.GetObject("animation2.ScaleCoeff");
-            animation2.SlideCoeff = (System.Drawing.PointF)resources.GetObject("animation2.SlideCoeff");
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            Transition_slide_panel_show.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = (System.Drawing.PointF)resources.GetObject("animation1.BlindCoeff");
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = (System.Drawing.PointF)resources.GetObject("animation1.MosaicCoeff");
+            animation1.MosaicShift = (System.Drawing.PointF)resources.GetObject("animation1.MosaicShift");
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = (System.Drawing.PointF)resources.GetObject("animation1.ScaleCoeff");
+            animation1.SlideCoeff = (System.Drawing.PointF)resources.GetObject("animation1.SlideCoeff");
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            Transition_slide_panel_show.DefaultAnimation = animation1;
             // 
             // Container_panel
             // 
@@ -499,22 +516,22 @@
             // 
             Transition_slide_panel_hide.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             Transition_slide_panel_hide.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = (System.Drawing.PointF)resources.GetObject("animation1.BlindCoeff");
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = (System.Drawing.PointF)resources.GetObject("animation1.MosaicCoeff");
-            animation1.MosaicShift = (System.Drawing.PointF)resources.GetObject("animation1.MosaicShift");
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = (System.Drawing.PointF)resources.GetObject("animation1.ScaleCoeff");
-            animation1.SlideCoeff = (System.Drawing.PointF)resources.GetObject("animation1.SlideCoeff");
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            Transition_slide_panel_hide.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = (System.Drawing.PointF)resources.GetObject("animation2.BlindCoeff");
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = (System.Drawing.PointF)resources.GetObject("animation2.MosaicCoeff");
+            animation2.MosaicShift = (System.Drawing.PointF)resources.GetObject("animation2.MosaicShift");
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = (System.Drawing.PointF)resources.GetObject("animation2.ScaleCoeff");
+            animation2.SlideCoeff = (System.Drawing.PointF)resources.GetObject("animation2.SlideCoeff");
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            Transition_slide_panel_hide.DefaultAnimation = animation2;
             // 
             // Form_main
             // 
@@ -539,6 +556,7 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Main";
             Slide_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -568,5 +586,6 @@
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private Guna.UI2.WinForms.Guna2GradientButton Button_suppliers;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonUsers;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }
