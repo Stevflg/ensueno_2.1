@@ -12,11 +12,11 @@ namespace Persistencia.Proc
 
         public static async Task<List<ProductsDTO>> ListProducts()
         {
-         using(var db = new EnsuenoContext())
+            using(var db = new EnsuenoContext())
             {
                 var list = await (from p in db.Products
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
-                                 
+                                  orderby p.IsActive descending
                                   select new ProductsDTO
                                   {
                                       ProdutId = p.ProdutId,
@@ -37,15 +37,14 @@ namespace Persistencia.Proc
         {
             using (var db = new EnsuenoContext())
             {
-                var state = (obj.ProductName.Contains("no disponible")) ? false : true; 
                 var list = await (from p in db.Products
                                   join pc in db.Product_Category on p.ProductCategoryId equals pc.CategoryId
                              
                                   where (p.ProdutId.ToString().Contains(obj.ProductName) || p.ProductName.Contains(obj.ProductName)
                                   || pc.CategoryName.Contains(obj.ProductName) 
-                                  || p.IsActive.Equals(state) || p.Date_Time.ToString().Contains(obj.ProductName))
+                                  || p.Date_Time.ToString().Contains(obj.ProductName))
 
-                                  orderby p.IsActive ascending
+                                  orderby p.IsActive descending
                                   select new ProductsDTO
                                   {
                                       ProdutId = p.ProdutId,

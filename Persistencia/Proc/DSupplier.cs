@@ -113,7 +113,7 @@ namespace Persistencia.Proc
                                                 s.SupplierAddress.Contains(supplier.SupplierAddress) ||
                                                 s.SupplierRUC.Contains(supplier.SupplierRUC) ||
                                                 s.SupplierPhone.Contains(supplier.SupplierPhone) ||
-                                                s.SupplierEmail.Contains(supplier.SupplierEmail)
+                                                s.SupplierEmail.Contains(supplier.SupplierName)
                                               ) && s.IsActive.Equals(true)
                                               select new SupplierDTO
                                               {

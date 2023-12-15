@@ -80,6 +80,7 @@ namespace Persistencia.Context
                 entity.Property(p => p.ProductName).HasMaxLength(50);
                 entity.Property(p => p.Image).HasColumnType("varbinary(max)");
                 entity.Property(p => p.Unit_Price).HasColumnType("decimal");
+                entity.Property(P => P.Purchase_Price).HasColumnType("decimal");
                 entity.Property(p => p.IsActive).HasDefaultValue(true);
                 entity.Property(p => p.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -117,8 +118,9 @@ namespace Persistencia.Context
             });
             modelBuilder.Entity<Invoice_Detail>(entity =>
             {
-                entity.HasKey(id =>new { id.InvoiceId,id.ProductId }).IsClustered(true).HasName("Pk_InvoiceId_ProductId_InvoiceDetail");
+                entity.HasKey(id => id.InvoiceDetailId).IsClustered(true).HasName("Pk_InvoiceId_ProductId_InvoiceDetail");
                 entity.Property(id => id.Price).HasColumnType("decimal");
+                entity.Property(id => id.IsActive).HasDefaultValue(true);
                 entity.HasOne(id => id.ProductsNavigation).WithMany(p => p.InvoiceDetailCollections)
                 .HasForeignKey(id => id.ProductId).HasConstraintName("Fk_ProductId_InvoiceDetail");
                 entity.HasOne(id => id.InvoicesNavigation).WithMany(i => i.InvoicesDetailsCollections)

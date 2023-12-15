@@ -29,7 +29,7 @@ namespace ensueno.Presentation.Main
             await Task.Run(new Action(() => { Read(); }));
         }
         #region Procedimientos
-    
+
         private async void Read()
         {
             this.Invoke(new Action(() =>
@@ -45,6 +45,7 @@ namespace ensueno.Presentation.Main
                 ButtonSearch.Visible = true;
             }));
         }
+
         private async void AddCustomer()
         {
             customer = new Customers
@@ -100,7 +101,7 @@ namespace ensueno.Presentation.Main
             {
                 customer = new Customers
                 {
-                    CustomerName = TextBox_name.Text,
+                    CustomerName = TextBox_Search_Customer.Text,
                 };
                 this.Invoke(new Action(() =>
                 {
@@ -129,6 +130,12 @@ namespace ensueno.Presentation.Main
         {
             await Task.Run(() => { SearchCustomer(); });
         }
+
+        private void TextBox_Search_Customer_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBox_Search_Customer.Text)) Read();
+        }
+
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
@@ -300,6 +307,7 @@ namespace ensueno.Presentation.Main
             if (string.IsNullOrEmpty(TextBoxEmail.Text)) val.ClearError();
             val.ClearError();
         }
-        #endregion     
+        #endregion
+
     }
 }

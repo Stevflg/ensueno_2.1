@@ -44,8 +44,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,7 +51,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice_detail));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -61,6 +58,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice_detail));
             Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             TextBox_Precio = new Guna.UI2.WinForms.Guna2TextBox();
             TextBox_amount = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,14 +76,16 @@
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             TextBox_invoice_id = new Guna.UI2.WinForms.Guna2TextBox();
-            TextBox_search_product_Invoice_d = new Guna.UI2.WinForms.Guna2TextBox();
             Button_disable = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_print = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_Add = new Guna.UI2.WinForms.Guna2GradientButton();
-            ComboBoxproduct = new Guna.UI2.WinForms.Guna2ComboBox();
             labelproduct = new System.Windows.Forms.Label();
+            comboBoxProducts = new System.Windows.Forms.ComboBox();
+            TextBoxStock = new Guna.UI2.WinForms.Guna2TextBox();
+            pictureBoxDark = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView_invoice_detail).BeginInit();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             SuspendLayout();
             // 
             // Button_clear
@@ -103,7 +103,7 @@
             Button_clear.ForeColor = System.Drawing.Color.White;
             Button_clear.Image = Properties.Resources.clean;
             Button_clear.ImageSize = new System.Drawing.Size(32, 32);
-            Button_clear.Location = new System.Drawing.Point(691, 32);
+            Button_clear.Location = new System.Drawing.Point(677, 43);
             Button_clear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
             Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -125,11 +125,12 @@
             TextBox_Precio.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
             TextBox_Precio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_Precio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_Precio.Enabled = false;
             TextBox_Precio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_Precio.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Precio.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Precio.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Precio.Location = new System.Drawing.Point(763, 148);
+            TextBox_Precio.Location = new System.Drawing.Point(763, 179);
             TextBox_Precio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_Precio.MaxLength = 50;
             TextBox_Precio.Name = "TextBox_Precio";
@@ -158,7 +159,7 @@
             TextBox_amount.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_amount.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_amount.Location = new System.Drawing.Point(763, 184);
+            TextBox_amount.Location = new System.Drawing.Point(763, 215);
             TextBox_amount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_amount.MaxLength = 17;
             TextBox_amount.Name = "TextBox_amount";
@@ -257,7 +258,7 @@
             TextBox_total.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_total.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_total.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_total.Location = new System.Drawing.Point(763, 295);
+            TextBox_total.Location = new System.Drawing.Point(763, 326);
             TextBox_total.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_total.MaxLength = 17;
             TextBox_total.Name = "TextBox_total";
@@ -286,7 +287,7 @@
             TextBox_IVA.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_IVA.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_IVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_IVA.Location = new System.Drawing.Point(763, 258);
+            TextBox_IVA.Location = new System.Drawing.Point(763, 289);
             TextBox_IVA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_IVA.MaxLength = 17;
             TextBox_IVA.Name = "TextBox_IVA";
@@ -339,7 +340,7 @@
             TextBox_Sub_Total.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_Sub_Total.ForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_Sub_Total.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Sub_Total.Location = new System.Drawing.Point(763, 221);
+            TextBox_Sub_Total.Location = new System.Drawing.Point(763, 252);
             TextBox_Sub_Total.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TextBox_Sub_Total.MaxLength = 17;
             TextBox_Sub_Total.Name = "TextBox_Sub_Total";
@@ -387,12 +388,12 @@
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(guna2ControlBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges26;
+            guna2Panel1.CustomizableEdges = customizableEdges24;
             guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             guna2Panel1.Location = new System.Drawing.Point(0, 0);
             guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges25;
             guna2Panel1.Size = new System.Drawing.Size(992, 29);
             guna2Panel1.TabIndex = 56;
             // 
@@ -400,13 +401,13 @@
             // 
             guna2ControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            guna2ControlBox1.CustomizableEdges = customizableEdges24;
+            guna2ControlBox1.CustomizableEdges = customizableEdges22;
             guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
             guna2ControlBox1.Location = new System.Drawing.Point(925, 0);
             guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges23;
             guna2ControlBox1.Size = new System.Drawing.Size(52, 25);
             guna2ControlBox1.TabIndex = 7;
             // 
@@ -422,12 +423,13 @@
             TextBox_invoice_id.BorderColor = System.Drawing.Color.Crimson;
             TextBox_invoice_id.BorderRadius = 11;
             TextBox_invoice_id.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_invoice_id.CustomizableEdges = customizableEdges22;
+            TextBox_invoice_id.CustomizableEdges = customizableEdges20;
             TextBox_invoice_id.DefaultText = "";
             TextBox_invoice_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
             TextBox_invoice_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
             TextBox_invoice_id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
             TextBox_invoice_id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_invoice_id.Enabled = false;
             TextBox_invoice_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
             TextBox_invoice_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             TextBox_invoice_id.ForeColor = System.Drawing.SystemColors.GrayText;
@@ -440,39 +442,9 @@
             TextBox_invoice_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             TextBox_invoice_id.PlaceholderText = "Id Factura";
             TextBox_invoice_id.SelectedText = "";
-            TextBox_invoice_id.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            TextBox_invoice_id.ShadowDecoration.CustomizableEdges = customizableEdges21;
             TextBox_invoice_id.Size = new System.Drawing.Size(216, 29);
             TextBox_invoice_id.TabIndex = 58;
-            // 
-            // TextBox_search_product_Invoice_d
-            // 
-            TextBox_search_product_Invoice_d.Animated = true;
-            TextBox_search_product_Invoice_d.BorderColor = System.Drawing.Color.Crimson;
-            TextBox_search_product_Invoice_d.BorderRadius = 11;
-            TextBox_search_product_Invoice_d.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_search_product_Invoice_d.CustomizableEdges = customizableEdges20;
-            TextBox_search_product_Invoice_d.DefaultText = "";
-            TextBox_search_product_Invoice_d.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            TextBox_search_product_Invoice_d.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            TextBox_search_product_Invoice_d.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBox_search_product_Invoice_d.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBox_search_product_Invoice_d.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_search_product_Invoice_d.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            TextBox_search_product_Invoice_d.ForeColor = System.Drawing.SystemColors.GrayText;
-            TextBox_search_product_Invoice_d.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_search_product_Invoice_d.Location = new System.Drawing.Point(388, 65);
-            TextBox_search_product_Invoice_d.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TextBox_search_product_Invoice_d.MaxLength = 50;
-            TextBox_search_product_Invoice_d.Name = "TextBox_search_product_Invoice_d";
-            TextBox_search_product_Invoice_d.PasswordChar = '\0';
-            TextBox_search_product_Invoice_d.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            TextBox_search_product_Invoice_d.PlaceholderText = "Buscar producto";
-            TextBox_search_product_Invoice_d.SelectedText = "";
-            TextBox_search_product_Invoice_d.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            TextBox_search_product_Invoice_d.Size = new System.Drawing.Size(216, 29);
-            TextBox_search_product_Invoice_d.TabIndex = 61;
-            TextBox_search_product_Invoice_d.TextChanged += TextBox_search_product_Invoice_d_TextChanged;
-            TextBox_search_product_Invoice_d.KeyPress += TextBox_search_product_Invoice_d_KeyPress;
             // 
             // Button_disable
             // 
@@ -493,7 +465,7 @@
             Button_disable.Image = (System.Drawing.Image)resources.GetObject("Button_disable.Image");
             Button_disable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_disable.IndicateFocus = true;
-            Button_disable.Location = new System.Drawing.Point(764, 386);
+            Button_disable.Location = new System.Drawing.Point(764, 417);
             Button_disable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_disable.Name = "Button_disable";
             Button_disable.ShadowDecoration.CustomizableEdges = customizableEdges15;
@@ -522,7 +494,7 @@
             Button_print.Image = (System.Drawing.Image)resources.GetObject("Button_print.Image");
             Button_print.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_print.IndicateFocus = true;
-            Button_print.Location = new System.Drawing.Point(764, 433);
+            Button_print.Location = new System.Drawing.Point(764, 464);
             Button_print.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_print.Name = "Button_print";
             Button_print.ShadowDecoration.CustomizableEdges = customizableEdges17;
@@ -530,6 +502,7 @@
             Button_print.TabIndex = 74;
             Button_print.Text = "Imprimir Factura";
             Button_print.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_print.Click += Button_print_Click;
             // 
             // Button_Add
             // 
@@ -549,7 +522,7 @@
             Button_Add.Image = (System.Drawing.Image)resources.GetObject("Button_Add.Image");
             Button_Add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_Add.IndicateFocus = true;
-            Button_Add.Location = new System.Drawing.Point(764, 340);
+            Button_Add.Location = new System.Drawing.Point(764, 371);
             Button_Add.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_Add.Name = "Button_Add";
             Button_Add.ShadowDecoration.CustomizableEdges = customizableEdges19;
@@ -557,27 +530,7 @@
             Button_Add.TabIndex = 73;
             Button_Add.Text = "Agregar";
             Button_Add.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // ComboBoxproduct
-            // 
-            ComboBoxproduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            ComboBoxproduct.AutoRoundedCorners = true;
-            ComboBoxproduct.BackColor = System.Drawing.Color.Transparent;
-            ComboBoxproduct.BorderColor = System.Drawing.Color.Crimson;
-            ComboBoxproduct.BorderRadius = 17;
-            ComboBoxproduct.CustomizableEdges = customizableEdges12;
-            ComboBoxproduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            ComboBoxproduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            ComboBoxproduct.FocusedColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxproduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            ComboBoxproduct.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ComboBoxproduct.ForeColor = System.Drawing.Color.FromArgb(68, 88, 112);
-            ComboBoxproduct.ItemHeight = 30;
-            ComboBoxproduct.Location = new System.Drawing.Point(762, 106);
-            ComboBoxproduct.Name = "ComboBoxproduct";
-            ComboBoxproduct.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            ComboBoxproduct.Size = new System.Drawing.Size(215, 36);
-            ComboBoxproduct.TabIndex = 82;
+            Button_Add.Click += Button_Add_Click;
             // 
             // labelproduct
             // 
@@ -591,17 +544,70 @@
             labelproduct.TabIndex = 83;
             labelproduct.Text = "Producto";
             // 
+            // comboBoxProducts
+            // 
+            comboBoxProducts.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            comboBoxProducts.FormattingEnabled = true;
+            comboBoxProducts.Location = new System.Drawing.Point(763, 107);
+            comboBoxProducts.Name = "comboBoxProducts";
+            comboBoxProducts.Size = new System.Drawing.Size(214, 24);
+            comboBoxProducts.TabIndex = 84;
+            comboBoxProducts.SelectedIndexChanged += comboBoxClientes_SelectedIndexChanged;
+            comboBoxProducts.TextChanged += comboBoxInvoice_TextChanged;
+            // 
+            // TextBoxStock
+            // 
+            TextBoxStock.Animated = true;
+            TextBoxStock.BorderColor = System.Drawing.Color.Crimson;
+            TextBoxStock.BorderRadius = 11;
+            TextBoxStock.Cursor = System.Windows.Forms.Cursors.IBeam;
+            TextBoxStock.CustomizableEdges = customizableEdges12;
+            TextBoxStock.DefaultText = "";
+            TextBoxStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            TextBoxStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            TextBoxStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBoxStock.Enabled = false;
+            TextBoxStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxStock.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBoxStock.ForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBoxStock.Location = new System.Drawing.Point(763, 145);
+            TextBoxStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBoxStock.MaxLength = 50;
+            TextBoxStock.Name = "TextBoxStock";
+            TextBoxStock.PasswordChar = '\0';
+            TextBoxStock.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            TextBoxStock.PlaceholderText = "Stock";
+            TextBoxStock.SelectedText = "";
+            TextBoxStock.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            TextBoxStock.Size = new System.Drawing.Size(216, 29);
+            TextBoxStock.TabIndex = 85;
+            // 
+            // pictureBoxDark
+            // 
+            pictureBoxDark.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxDark.Image = (System.Drawing.Image)resources.GetObject("pictureBoxDark.Image");
+            pictureBoxDark.Location = new System.Drawing.Point(14, 139);
+            pictureBoxDark.Name = "pictureBoxDark";
+            pictureBoxDark.Size = new System.Drawing.Size(735, 375);
+            pictureBoxDark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxDark.TabIndex = 86;
+            pictureBoxDark.TabStop = false;
+            pictureBoxDark.Visible = false;
+            // 
             // Form_invoice_detail
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 635);
+            Controls.Add(pictureBoxDark);
+            Controls.Add(TextBoxStock);
+            Controls.Add(comboBoxProducts);
             Controls.Add(labelproduct);
-            Controls.Add(ComboBoxproduct);
             Controls.Add(Button_disable);
             Controls.Add(Button_print);
             Controls.Add(Button_Add);
-            Controls.Add(TextBox_search_product_Invoice_d);
             Controls.Add(TextBox_invoice_id);
             Controls.Add(guna2Panel1);
             Controls.Add(Label_Total_Venta);
@@ -624,6 +630,7 @@
             Load += Form_invoice_detail_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView_invoice_detail).EndInit();
             guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -646,11 +653,12 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_invoice_id;
-        private Guna.UI2.WinForms.Guna2TextBox TextBox_search_product_Invoice_d;
         private Guna.UI2.WinForms.Guna2GradientButton Button_disable;
         private Guna.UI2.WinForms.Guna2GradientButton Button_print;
         private Guna.UI2.WinForms.Guna2GradientButton Button_Add;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxproduct;
         private System.Windows.Forms.Label labelproduct;
+        private System.Windows.Forms.ComboBox comboBoxProducts;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxStock;
+        private System.Windows.Forms.PictureBox pictureBoxDark;
     }
 }

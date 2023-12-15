@@ -326,6 +326,7 @@
             TextBox_Search_Customer.ShadowDecoration.CustomizableEdges = customizableEdges9;
             TextBox_Search_Customer.Size = new System.Drawing.Size(252, 32);
             TextBox_Search_Customer.TabIndex = 11;
+            TextBox_Search_Customer.TextChanged += TextBox_Search_Customer_TextChanged;
             TextBox_Search_Customer.KeyDown += TextBox_Search_Customer_KeyDown;
             // 
             // Button_delete

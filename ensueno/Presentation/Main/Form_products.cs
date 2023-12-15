@@ -222,6 +222,9 @@ namespace ensueno.Presentation.Main
             TextBoxPrice.Clear();
             SupplierId = 0;
             ProductCategory = 0;
+            PictureBox_product.Image = null;
+            ComboBoxCategory.Text = string.Empty;
+            ComboBoxSuppliers.Text = string.Empty;
         }
         #endregion
 

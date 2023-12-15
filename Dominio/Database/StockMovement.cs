@@ -3,7 +3,7 @@
     public class StockMovement
     {
         public int MovementId { get; set; }
-        public int SupplierId { get; set; }
+        public int? SupplierId { get; set; }
         public Suppliers? SuppliersNavigation { get; set; }
         public int ProductId { get; set; }
         public Products? ProductsNavigation { get; set; }

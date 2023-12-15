@@ -33,25 +33,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice));
             DataGridView_invoices = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
             ButtonSearch = new Guna.UI2.WinForms.Guna2GradientButton();
-            TextBox_Search_Customer = new Guna.UI2.WinForms.Guna2TextBox();
+            TextBox_Search_Invoice = new Guna.UI2.WinForms.Guna2TextBox();
             comboBoxClientes = new System.Windows.Forms.ComboBox();
+            labelCustomers = new System.Windows.Forms.Label();
+            Button_Detail = new Guna.UI2.WinForms.Guna2GradientButton();
+            pictureBoxDark = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView_invoices).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).BeginInit();
             SuspendLayout();
             // 
             // DataGridView_invoices
@@ -150,18 +156,19 @@
             Button_clear.Location = new System.Drawing.Point(735, 117);
             Button_clear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_clear.Name = "Button_clear";
-            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            Button_clear.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             Button_clear.Size = new System.Drawing.Size(58, 58);
             Button_clear.TabIndex = 63;
             Button_clear.UseTransparentBackground = true;
+            Button_clear.Click += Button_clear_Click;
             // 
             // Button_delete
             // 
             Button_delete.Animated = true;
             Button_delete.AutoRoundedCorners = true;
             Button_delete.BorderRadius = 20;
-            Button_delete.CustomizableEdges = customizableEdges5;
+            Button_delete.CustomizableEdges = customizableEdges7;
             Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -173,21 +180,22 @@
             Button_delete.Image = (System.Drawing.Image)resources.GetObject("Button_delete.Image");
             Button_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             Button_delete.IndicateFocus = true;
-            Button_delete.Location = new System.Drawing.Point(820, 249);
+            Button_delete.Location = new System.Drawing.Point(820, 235);
             Button_delete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_delete.Name = "Button_delete";
-            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Button_delete.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Button_delete.Size = new System.Drawing.Size(139, 43);
             Button_delete.TabIndex = 68;
             Button_delete.Text = "Anular";
             Button_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_delete.Click += Button_delete_Click;
             // 
             // Button_create
             // 
             Button_create.Animated = true;
             Button_create.AutoRoundedCorners = true;
             Button_create.BorderRadius = 20;
-            Button_create.CustomizableEdges = customizableEdges7;
+            Button_create.CustomizableEdges = customizableEdges9;
             Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -201,11 +209,12 @@
             Button_create.Location = new System.Drawing.Point(820, 186);
             Button_create.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Button_create.Name = "Button_create";
-            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Button_create.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Button_create.Size = new System.Drawing.Size(139, 43);
             Button_create.TabIndex = 66;
             Button_create.Text = "Crear Factura";
             Button_create.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_create.Click += Button_create_Click;
             // 
             // ButtonSearch
             // 
@@ -214,7 +223,7 @@
             ButtonSearch.BackColor = System.Drawing.Color.White;
             ButtonSearch.BorderColor = System.Drawing.Color.Transparent;
             ButtonSearch.BorderRadius = 9;
-            ButtonSearch.CustomizableEdges = customizableEdges1;
+            ButtonSearch.CustomizableEdges = customizableEdges3;
             ButtonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             ButtonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -230,37 +239,40 @@
             ButtonSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.PressedColor = System.Drawing.Color.Transparent;
-            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ButtonSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ButtonSearch.Size = new System.Drawing.Size(23, 21);
             ButtonSearch.TabIndex = 71;
+            ButtonSearch.Click += ButtonSearch_Click;
             // 
-            // TextBox_Search_Customer
+            // TextBox_Search_Invoice
             // 
-            TextBox_Search_Customer.Animated = true;
-            TextBox_Search_Customer.BorderColor = System.Drawing.Color.Navy;
-            TextBox_Search_Customer.BorderRadius = 11;
-            TextBox_Search_Customer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            TextBox_Search_Customer.CustomizableEdges = customizableEdges3;
-            TextBox_Search_Customer.DefaultText = "";
-            TextBox_Search_Customer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
-            TextBox_Search_Customer.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
-            TextBox_Search_Customer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBox_Search_Customer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
-            TextBox_Search_Customer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Search_Customer.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            TextBox_Search_Customer.ForeColor = System.Drawing.SystemColors.GrayText;
-            TextBox_Search_Customer.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
-            TextBox_Search_Customer.Location = new System.Drawing.Point(58, 148);
-            TextBox_Search_Customer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TextBox_Search_Customer.MaxLength = 50;
-            TextBox_Search_Customer.Name = "TextBox_Search_Customer";
-            TextBox_Search_Customer.PasswordChar = '\0';
-            TextBox_Search_Customer.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            TextBox_Search_Customer.PlaceholderText = "Buscar Cliente";
-            TextBox_Search_Customer.SelectedText = "";
-            TextBox_Search_Customer.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TextBox_Search_Customer.Size = new System.Drawing.Size(252, 32);
-            TextBox_Search_Customer.TabIndex = 1;
+            TextBox_Search_Invoice.Animated = true;
+            TextBox_Search_Invoice.BorderColor = System.Drawing.Color.Navy;
+            TextBox_Search_Invoice.BorderRadius = 11;
+            TextBox_Search_Invoice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            TextBox_Search_Invoice.CustomizableEdges = customizableEdges5;
+            TextBox_Search_Invoice.DefaultText = "";
+            TextBox_Search_Invoice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(208, 208, 208);
+            TextBox_Search_Invoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(226, 226, 226);
+            TextBox_Search_Invoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_Search_Invoice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(138, 138, 138);
+            TextBox_Search_Invoice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBox_Search_Invoice.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            TextBox_Search_Invoice.ForeColor = System.Drawing.SystemColors.GrayText;
+            TextBox_Search_Invoice.HoverState.BorderColor = System.Drawing.Color.FromArgb(94, 148, 255);
+            TextBox_Search_Invoice.Location = new System.Drawing.Point(58, 148);
+            TextBox_Search_Invoice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TextBox_Search_Invoice.MaxLength = 50;
+            TextBox_Search_Invoice.Name = "TextBox_Search_Invoice";
+            TextBox_Search_Invoice.PasswordChar = '\0';
+            TextBox_Search_Invoice.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            TextBox_Search_Invoice.PlaceholderText = "Buscar Factura";
+            TextBox_Search_Invoice.SelectedText = "";
+            TextBox_Search_Invoice.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            TextBox_Search_Invoice.Size = new System.Drawing.Size(252, 32);
+            TextBox_Search_Invoice.TabIndex = 1;
+            TextBox_Search_Invoice.TextChanged += TextBox_Search_Invoice_TextChanged;
+            TextBox_Search_Invoice.KeyDown += TextBox_Search_Invoice_KeyDown;
             // 
             // comboBoxClientes
             // 
@@ -268,19 +280,73 @@
             comboBoxClientes.FormattingEnabled = true;
             comboBoxClientes.Location = new System.Drawing.Point(67, 87);
             comboBoxClientes.Name = "comboBoxClientes";
-            comboBoxClientes.Size = new System.Drawing.Size(263, 24);
+            comboBoxClientes.Size = new System.Drawing.Size(243, 24);
             comboBoxClientes.TabIndex = 0;
             comboBoxClientes.SelectedIndexChanged += comboBoxClientes_SelectedIndexChanged;
             comboBoxClientes.TextChanged += comboBoxClientes_TextChanged;
+            // 
+            // labelCustomers
+            // 
+            labelCustomers.AutoSize = true;
+            labelCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            labelCustomers.ForeColor = System.Drawing.SystemColors.GrayText;
+            labelCustomers.Location = new System.Drawing.Point(67, 66);
+            labelCustomers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCustomers.Name = "labelCustomers";
+            labelCustomers.Size = new System.Drawing.Size(60, 18);
+            labelCustomers.TabIndex = 72;
+            labelCustomers.Text = "Cliente";
+            // 
+            // Button_Detail
+            // 
+            Button_Detail.Animated = true;
+            Button_Detail.AutoRoundedCorners = true;
+            Button_Detail.BorderRadius = 20;
+            Button_Detail.CustomizableEdges = customizableEdges1;
+            Button_Detail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            Button_Detail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            Button_Detail.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_Detail.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            Button_Detail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            Button_Detail.Enabled = false;
+            Button_Detail.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Button_Detail.ForeColor = System.Drawing.Color.White;
+            Button_Detail.Image = (System.Drawing.Image)resources.GetObject("Button_Detail.Image");
+            Button_Detail.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_Detail.IndicateFocus = true;
+            Button_Detail.Location = new System.Drawing.Point(820, 284);
+            Button_Detail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Button_Detail.Name = "Button_Detail";
+            Button_Detail.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Button_Detail.Size = new System.Drawing.Size(139, 43);
+            Button_Detail.TabIndex = 73;
+            Button_Detail.Text = "Ver Detalle";
+            Button_Detail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_Detail.Click += Button_Detail_Click;
+            // 
+            // pictureBoxDark
+            // 
+            pictureBoxDark.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxDark.Image = (System.Drawing.Image)resources.GetObject("pictureBoxDark.Image");
+            pictureBoxDark.Location = new System.Drawing.Point(58, 224);
+            pictureBoxDark.Name = "pictureBoxDark";
+            pictureBoxDark.Size = new System.Drawing.Size(735, 326);
+            pictureBoxDark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxDark.TabIndex = 74;
+            pictureBoxDark.TabStop = false;
+            pictureBoxDark.Visible = false;
             // 
             // Form_invoice
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(pictureBoxDark);
+            Controls.Add(Button_Detail);
+            Controls.Add(labelCustomers);
             Controls.Add(comboBoxClientes);
             Controls.Add(ButtonSearch);
-            Controls.Add(TextBox_Search_Customer);
+            Controls.Add(TextBox_Search_Invoice);
             Controls.Add(Button_delete);
             Controls.Add(Button_create);
             Controls.Add(Button_clear);
@@ -293,7 +359,9 @@
             Text = "Invoice";
             Load += Form_invoice_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView_invoices).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDark).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -303,7 +371,10 @@
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonSearch;
-        private Guna.UI2.WinForms.Guna2TextBox TextBox_Search_Customer;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_Search_Invoice;
         private System.Windows.Forms.ComboBox comboBoxClientes;
+        private System.Windows.Forms.Label labelCustomers;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_Detail;
+        private System.Windows.Forms.PictureBox pictureBoxDark;
     }
 }

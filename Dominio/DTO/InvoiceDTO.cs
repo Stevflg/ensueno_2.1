@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio.DTO
 {
-    public class InvoiceCTO
+    public class InvoiceDTO
     {
         public int Id { get; set; }
         public string Empleado { get; set; }
