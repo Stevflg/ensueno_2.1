@@ -105,7 +105,7 @@ namespace ensueno.Presentation.Main
         private void ButtonInventories_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Roles";
-            Open_form_panel(new Form_Rol(color));
+            Open_form_panel(new Form_Rol(color,userSesion));
         }
 
         private void Button_suppliers_Click(object sender, EventArgs e)

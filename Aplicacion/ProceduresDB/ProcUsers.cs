@@ -14,9 +14,9 @@ namespace Aplicacion.ProceduresDB
         {
             return DUsers.EncryptUser(pass);
         }
-        public static bool UserLogin(Users obj)
+        public static async Task<bool> UserLogin(Users obj)
         {
-            return DUsers.UserLogin(obj);
+            return await DUsers.UserLogin(obj);
         }
 
         public static string AddUsers(Users obj)

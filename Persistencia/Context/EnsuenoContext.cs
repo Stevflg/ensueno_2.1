@@ -155,6 +155,9 @@ namespace Persistencia.Context
                 .HasColumnType("datetime");
                 entity.HasOne(u => u.EmployeesNavigation).WithMany(e => e.UserCollections)
                 .HasForeignKey(u => u.UpdateBy).HasConstraintName("Fk_UpdatedBy_Users");
+                entity.Property(u => u.Counter).HasDefaultValue(0);
+                entity.Property(u => u.Locked).HasDefaultValue(false);
+
             });
             modelBuilder.Entity<Sessions>(entity => {
                 entity.HasKey(se => se.SesionId).HasName("Pk_SessionId_Sessions");
@@ -173,6 +176,7 @@ namespace Persistencia.Context
                 entity.Property(r => r.IsActive).HasDefaultValue(true);
                 entity.Property(r => r.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+                entity.HasIndex(e => e.RolName).IsUnique();
             });
             modelBuilder.Entity<Formularios>(entity => {
                 entity.HasKey(p => p.FormId).HasName("Pk_PermissionsId_Permissions");

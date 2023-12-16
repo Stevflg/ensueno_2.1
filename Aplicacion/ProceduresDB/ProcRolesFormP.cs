@@ -5,12 +5,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Aplicacion.ProceduresDB
 {
     public class ProcRolesFormP
     {
+
+        public static async Task<string> AddFormRol(FormRol FrmRol)
+        {
+            return await DRolesFormP.AddFormRol(FrmRol);
+        }
+
+        public static async Task<string> AddProcedureRol(ProcedureRols ProcRols)
+        {
+            return await DRolesFormP.AddProcedureRol(ProcRols);
+        }
+
+
+        public static async Task<string> UpdateRol(Rol rol)
+        {
+            return await DRolesFormP.UpdateRol(rol);
+        }
 
         public static async Task<List<Formularios>> ListComboBoxForms()
         {

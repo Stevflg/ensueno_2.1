@@ -6,6 +6,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ensueno.Presentation.Main
@@ -21,11 +22,19 @@ namespace ensueno.Presentation.Main
             this.BackColor = color;
         }
 
-        private void Form_Rol_Load(object sender, EventArgs e)
+        private async void Form_Rol_Load(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
+        private async void loadData()
+        {
+            await Task.Run(() => { ReadRol(); });
+            ReadProcedures();
+            ReadForm();
+            AutocompleteForms();
+            AutocompleteProcedures();
+        }
 
         #region Datagrids y Combobox
 
@@ -52,7 +61,7 @@ namespace ensueno.Presentation.Main
                 {
                     comboBoxForms.DataSource = ListForms;
                     comboBoxForms.ValueMember = "FormId";
-                    comboBoxForms.DisplayMember = "Name";
+                    comboBoxForms.DisplayMember = "AliasForm";
 
                     AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
                     for (int i = 0; i < ListForms.Count; i++)
@@ -99,6 +108,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
+                ClearForm();
                 SetComboBoxHeight();
                 formId = int.Parse(comboBoxForms.SelectedValue.ToString());
             }
@@ -118,8 +128,9 @@ namespace ensueno.Presentation.Main
         {
             try
             {
+                ClearProcedure();
                 SetComboBoxHeight();
-                procedureId = int.Parse(comboBoxForms.SelectedValue.ToString());
+                procedureId = int.Parse(ComboBoxPermissions.SelectedValue.ToString());
             }
             catch { }
         }
@@ -148,9 +159,12 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
+
                     TextBox_Id.Text = DataGridView_Rols.Rows[e.RowIndex].Cells[0].Value.ToString();
                     rolId = int.Parse(DataGridView_Rols.Rows[e.RowIndex].Cells[0].Value.ToString());
                     TextBox_Name.Text = DataGridView_Rols.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    ReadForm();
+                    ReadProcedures();
                     EnabledButtonsRols(true);
                 }
             }
@@ -205,6 +219,8 @@ namespace ensueno.Presentation.Main
             TextBox_Name.Clear();
             EnabledButtonsRols(false);
             rolId = 0;
+            ReadForm();
+            ReadProcedures();
         }
 
         private void ClearForm()
@@ -223,7 +239,7 @@ namespace ensueno.Presentation.Main
         {
             Button_create.Enabled = !state;
             Button_update.Enabled = state;
-            Button_update.Enabled = state;
+            ButtonEnabled.Enabled = state;
             Button_disable.Enabled = state;
         }
 
@@ -260,6 +276,7 @@ namespace ensueno.Presentation.Main
                 rolId = result.First().Id;
                 this.Invoke(new Action(() =>
                 {
+                    rolId = result.First().Id;
                     DataGridView_Rols.DataSource = result;
                     pictureBoxRol.Visible = false;
                 }));
@@ -277,10 +294,11 @@ namespace ensueno.Presentation.Main
                     CreatedBy = UserSessions.EmployeeId,
                 });
 
-                this.Invoke(new Action(() => {
-                    MessageBox.Show(result,"Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Invoke(new Action(() =>
+                {
+                    MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearTextBoxesRol();
-                    ReadRol();                
+                    ReadRol();
                 }));
             }
             else
@@ -292,19 +310,40 @@ namespace ensueno.Presentation.Main
 
         private async void UpdateRol()
         {
+            if (!string.IsNullOrEmpty(TextBox_Name.Text))
+            {
+                var result = await ProcRolesFormP.UpdateRol(new Rol
+                {
+                    RolId = rolId,
+                    RolName = TextBox_Name.Text,
+                    UpdatedBy = UserSessions.EmployeeId,
+                });
 
+                this.Invoke(new Action(() =>
+                {
+                    MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearTextBoxesRol();
+                    ReadRol();
+                }));
+            }
+            else
+            {
+                Values val = new Values();
+                val.empty_text(TextBox_Name);
+            }
         }
 
         private async void DisableRol()
         {
-            if(rolId!=0)
+            if (rolId != 0)
             {
                 var result = await ProcRolesFormP.DisableRol(new Rol
                 {
                     RolId = rolId,
                     UpdatedBy = UserSessions.EmployeeId
                 });
-                this.Invoke(new Action(() => {
+                this.Invoke(new Action(() =>
+                {
                     MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearTextBoxesRol();
                     ReadRol();
@@ -321,7 +360,8 @@ namespace ensueno.Presentation.Main
                     RolId = rolId,
                     UpdatedBy = UserSessions.EmployeeId
                 });
-                this.Invoke(new Action(() => {
+                this.Invoke(new Action(() =>
+                {
                     MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearTextBoxesRol();
                     ReadRol();
@@ -338,7 +378,7 @@ namespace ensueno.Presentation.Main
                 {
                     pictureBoxForms.Visible = true;
                 }));
-                var result = await ProcRolesFormP.ListFormRol(new Rol {RolId=rolId });
+                var result = await ProcRolesFormP.ListFormRol(new Rol { RolId = rolId });
                 this.Invoke(new Action(() =>
                 {
                     DataGridViewForms.DataSource = result;
@@ -352,9 +392,20 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if(formId != 0)
+                if (formId != 0 && rolId != 0)
                 {
-                   // var result = await ProcRolesFormP
+                    var result = await ProcRolesFormP.AddFormRol(new FormRol
+                    {
+                        FormId = formId,
+                        RolId = rolId,
+                        CreatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearForm();
+                        ReadForm();
+                    }));
                 }
             }
             catch { }
@@ -362,12 +413,48 @@ namespace ensueno.Presentation.Main
 
         private async void DisableForm()
         {
-
+            try
+            {
+                if (formId != 0 && rolId != 0)
+                {
+                    var result = await ProcRolesFormP.DisableFormRol(new FormRol
+                    {
+                        FormId = formId,
+                        RolId = rolId,
+                        UpdatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearForm();
+                        ReadForm();
+                    }));
+                }
+            }
+            catch { }
         }
 
         private async void EnableForm()
         {
-
+            try
+            {
+                if (formId != 0 && rolId != 0)
+                {
+                    var result = await ProcRolesFormP.EnableFormRol(new FormRol
+                    {
+                        FormId = formId,
+                        RolId = rolId,
+                        UpdatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearForm();
+                        ReadForm();
+                    }));
+                }
+            }
+            catch { }
         }
 
         //  Permisos
@@ -379,7 +466,8 @@ namespace ensueno.Presentation.Main
                 {
                     pictureBoxProcedure.Visible = true;
                 }));
-                var result = await ProcRolesFormP.ListFormRol(new Rol { RolId = rolId });
+                var result = await ProcRolesFormP.ListProcRol
+                    (new Rol { RolId = rolId });
                 this.Invoke(new Action(() =>
                 {
                     DataGridViewPermissions.DataSource = result;
@@ -391,22 +479,129 @@ namespace ensueno.Presentation.Main
 
         private async void AddProcedures()
         {
-
+            try
+            {
+                if (procedureId != 0 && rolId != 0)
+                {
+                    var result = await ProcRolesFormP.AddProcedureRol(new ProcedureRols
+                    {
+                        ProcedureId = procedureId,
+                        RolId = rolId,
+                        CreatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearProcedure();
+                        ReadProcedures();
+                    }));
+                }
+            }
+            catch { }
         }
 
         private async void DisableProcedures()
         {
-
+            try
+            {
+                if (procedureId != 0 && rolId != 0)
+                {
+                    var result = await ProcRolesFormP.DisableProcedureRol(new ProcedureRols
+                    {
+                        ProcedureId = formId,
+                        RolId = rolId,
+                        UpdatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearProcedure();
+                        ReadProcedures();
+                    }));
+                }
+            }
+            catch { }
         }
 
         private async void EnableProcedures()
         {
-
+            try
+            {
+                if (procedureId != 0 && rolId != 0)
+                {
+                    var result = await ProcRolesFormP.EnableProcedureRol(new ProcedureRols
+                    {
+                        ProcedureId = formId,
+                        RolId = rolId,
+                        UpdatedBy = UserSessions.EmployeeId
+                    });
+                    this.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearProcedure();
+                        ReadProcedures();
+                    }));
+                }
+            }
+            catch { }
         }
-
-
         #endregion
 
+        #region Events
+        private void Button_clear_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxesRol();
+        }
 
+        private void Button_create_Click(object sender, EventArgs e)
+        {
+            AddRol();
+        }
+
+        private void Button_update_Click(object sender, EventArgs e)
+        {
+            UpdateRol();
+        }
+
+        private void ButtonEnabled_Click(object sender, EventArgs e)
+        {
+            EnableRol();
+        }
+
+        private void Button_disable_Click(object sender, EventArgs e)
+        {
+            DisableRol();
+        }
+
+        private void ButtonCreatef_Click(object sender, EventArgs e)
+        {
+            AddForm();
+        }
+
+        private void ButtonDisablef_Click(object sender, EventArgs e)
+        {
+            DisableForm();
+        }
+
+        private void ButtonEnablef_Click(object sender, EventArgs e)
+        {
+            EnableForm();
+        }
+
+        private void ButtonCreatep_Click(object sender, EventArgs e)
+        {
+            AddProcedures();
+        }
+
+        private void Buttondisablep_Click(object sender, EventArgs e)
+        {
+            DisableProcedures();
+        }
+
+        private void ButtonEnablep_Click(object sender, EventArgs e)
+        {
+            EnableProcedures();
+        }
+        #endregion
     }
 }

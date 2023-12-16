@@ -96,7 +96,7 @@ namespace ensueno.Presentation.Login
         public static string employee_id, employee_name, employee_last_name;
 
 
-        private void Login()
+        private async void Login()
         {
             try
             {
@@ -105,18 +105,25 @@ namespace ensueno.Presentation.Login
                     UserName = TextBox_user.Text,
                     Password = ProcUsers.Encrypt(TextBox_password.Text)
                 };
-                if (ProcUsers.UserLogin(user))
+                var result =await ProcUsers.UserLogin(user);
+                if (result)
                 {
-                    Clear_textboxes();
-                    this.Hide();
-                    Show_form_welcome(user.UserName);
-                    Show_form_main(user.UserName);
-                    this.Close();
+                    this.Invoke(new Action(() =>
+                    {
+                        Clear_textboxes();
+                        this.Hide();
+                        Show_form_welcome(user.UserName);
+                        Show_form_main(user.UserName);
+                        this.Close();
+                    }));
                 }
                 else
                 {
-                    fle = new Form_login_error();
-                    fle.ShowDialog();
+                    this.Invoke((Action)(() =>
+                    {
+                        fle = new Form_login_error();
+                        fle.ShowDialog();
+                    }));
                 }
             }
             catch (Exception ex)

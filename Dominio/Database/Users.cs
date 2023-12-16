@@ -9,6 +9,8 @@
         public byte[]? Password { get; set; }
         public bool IsActive { get; set; }
         public int CreatedBy { get; set; }
+        public int Counter { get; set; }
+        public bool Locked { get; set; }
         public DateTime Date_Time { get; set; }
         public ICollection<Sessions> SessionsCollection { get; set; } = new List<Sessions>();
         public ICollection<UsersRol> UserRolCollections { get; set; } = new List<UsersRol>();

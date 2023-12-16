@@ -28,20 +28,46 @@ namespace Persistencia.Proc
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
         }
-        public static bool UserLogin(Users obj)
+        public static async Task<bool> UserLogin(Users obj)
         {
-            using (var _context = new EnsuenoContext())
+            using (var context = new EnsuenoContext())
             {
-                var user = (from u in _context.Users
-                            where u.UserName == obj.UserName && u.Password == obj.Password
-                            && u.IsActive == true
-                            select u).FirstOrDefault();
-                if (user != null)
+                try
                 {
-                    if (EncryptUser(user.UserName)==EncryptUser(obj.UserName)) return true;
-                    else return false;
+                    var usuario = await (from u in context.Users
+                                         where u.UserName.Equals(u.UserName)
+                                         && u.IsActive.Equals(true) && u.Locked.Equals(false)
+                                         select u).FirstAsync();
+                    if (usuario != null)
+                    {
+                        if (EncryptUser(usuario.UserName).SequenceEqual(EncryptUser(obj.UserName)))
+                        {
+                            var result = (usuario.Password.SequenceEqual(obj.Password)) ? true : false;
+                            if (!result)
+                            {
+                                usuario.Counter += 1;
+                                usuario.Locked = (usuario.Counter > 2) ? true : false;
+                                context.Entry(usuario).State = EntityState.Modified;
+                                await context.SaveChangesAsync();
+                                return result;
+                            }
+                            return result;
+                        }
+                        else
+                        {
+                            usuario.Counter += 1;
+                            usuario.Locked = (usuario.Counter > 2) ? true : false;
+                            context.Entry(usuario).State = EntityState.Modified;
+                            await context.SaveChangesAsync();
+                            return false;
+                        }
+                    }
+                    return false;
                 }
-                else return false;
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
         }
 

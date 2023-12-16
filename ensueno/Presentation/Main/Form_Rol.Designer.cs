@@ -285,6 +285,7 @@
             Button_disable.TabIndex = 45;
             Button_disable.Text = "DesHabilitar";
             Button_disable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_disable.Click += Button_disable_Click;
             // 
             // Button_update
             // 
@@ -313,6 +314,7 @@
             Button_update.TabIndex = 44;
             Button_update.Text = "Editar";
             Button_update.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_update.Click += Button_update_Click;
             // 
             // Button_create
             // 
@@ -340,6 +342,7 @@
             Button_create.TabIndex = 43;
             Button_create.Text = "Crear";
             Button_create.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Button_create.Click += Button_create_Click;
             // 
             // labelPermissions
             // 
@@ -527,6 +530,7 @@
             ButtonCreatef.Size = new System.Drawing.Size(86, 30);
             ButtonCreatef.TabIndex = 57;
             ButtonCreatef.Text = "Crear";
+            ButtonCreatef.Click += ButtonCreatef_Click;
             // 
             // ButtonDisablef
             // 
@@ -552,6 +556,7 @@
             ButtonDisablef.Size = new System.Drawing.Size(86, 30);
             ButtonDisablef.TabIndex = 58;
             ButtonDisablef.Text = "Revocar";
+            ButtonDisablef.Click += ButtonDisablef_Click;
             // 
             // ButtonEnablef
             // 
@@ -577,6 +582,7 @@
             ButtonEnablef.Size = new System.Drawing.Size(86, 30);
             ButtonEnablef.TabIndex = 59;
             ButtonEnablef.Text = "Habilitar";
+            ButtonEnablef.Click += ButtonEnablef_Click;
             // 
             // ButtonEnablep
             // 
@@ -602,6 +608,7 @@
             ButtonEnablep.Size = new System.Drawing.Size(86, 30);
             ButtonEnablep.TabIndex = 62;
             ButtonEnablep.Text = "Habilitar";
+            ButtonEnablep.Click += ButtonEnablep_Click;
             // 
             // Buttondisablep
             // 
@@ -627,6 +634,7 @@
             Buttondisablep.Size = new System.Drawing.Size(86, 30);
             Buttondisablep.TabIndex = 61;
             Buttondisablep.Text = "Revocar";
+            Buttondisablep.Click += Buttondisablep_Click;
             // 
             // ButtonCreatep
             // 
@@ -652,6 +660,7 @@
             ButtonCreatep.Size = new System.Drawing.Size(86, 30);
             ButtonCreatep.TabIndex = 60;
             ButtonCreatep.Text = "Crear";
+            ButtonCreatep.Click += ButtonCreatep_Click;
             // 
             // Button_clear
             // 
@@ -676,6 +685,7 @@
             Button_clear.Size = new System.Drawing.Size(38, 38);
             Button_clear.TabIndex = 63;
             Button_clear.UseTransparentBackground = true;
+            Button_clear.Click += Button_clear_Click;
             // 
             // ButtonEnabled
             // 
@@ -704,6 +714,7 @@
             ButtonEnabled.TabIndex = 64;
             ButtonEnabled.Text = "Habilitar";
             ButtonEnabled.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonEnabled.Click += ButtonEnabled_Click;
             // 
             // comboBoxForms
             // 

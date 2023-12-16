@@ -46,10 +46,9 @@ namespace Aplicacion.Initial
             using(var db =new EnsuenoContext())
             {
               List<Procedures> lp = new();
-                lp.Add(new Procedures { ProcedureName= "Create"});
-                lp.Add(new Procedures { ProcedureName = "Read" });
-                lp.Add(new Procedures { ProcedureName = "Delete" });
-                lp.Add(new Procedures { ProcedureName = "Update" });
+                lp.Add(new Procedures { ProcedureName= "Leer"});
+                lp.Add(new Procedures { ProcedureName = "Escribir" });
+                lp.Add(new Procedures { ProcedureName = "Editar" });
 
                 db.AddRange(lp);
                 db.SaveChanges();
@@ -60,8 +59,16 @@ namespace Aplicacion.Initial
             using(var db =new EnsuenoContext())
             {
                List<Formularios> lp = new();
-
-                lp.Add(new Formularios {Name = "Form_Main",AliasForm = "Form Main"});
+                lp.Add(new Formularios { Name = "Form_main", AliasForm ="Menu Principal" });
+                lp.Add(new Formularios { Name = "Form_Users__", AliasForm = "Usuarios" });
+                lp.Add(new Formularios { Name = "Form_Rol", AliasForm = "Roles" });
+                lp.Add(new Formularios { Name = "Form_employee", AliasForm = "Empleados" });
+                lp.Add(new Formularios { Name = "Form_clients", AliasForm = "Clientes" });
+                lp.Add(new Formularios { Name = "Form_suppliers", AliasForm = "Proveedores" });
+                lp.Add(new Formularios { Name = "Form_suppliers", AliasForm = "Proveedores" });
+                lp.Add(new Formularios { Name = "Form_products", AliasForm = "Productos" });
+                lp.Add(new Formularios { Name = "Form_invoice", AliasForm = "Facturas" });
+                lp.Add(new Formularios { Name = "Form_invoice_detail", AliasForm = "Detalle Facturas" });
                 db.AddRange(lp);
                 db.SaveChanges();
             }
@@ -86,8 +93,7 @@ namespace Aplicacion.Initial
         private void AddDataRol() {
             using( var db =new EnsuenoContext()) { 
                 Rol rol = new Rol { 
-                RolName="Administrador",
-                EmployeeId = 1,
+                RolName="Administrador"
                 };
                 db.Add(rol);
                 db.SaveChanges();
@@ -116,7 +122,7 @@ namespace Aplicacion.Initial
                 List<FormRol> PR= new List<FormRol>();
                 foreach(var p in per)
                 {
-                    PR.Add(new FormRol {RolId=1,PermissionsId=p.FormId});
+                    PR.Add(new FormRol {RolId=1,FormId=p.FormId});
                 }
                 db.AddRange(PR);
                 db.SaveChanges();
