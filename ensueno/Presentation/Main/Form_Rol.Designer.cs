@@ -65,8 +65,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Rol));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Rol));
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             DataGridView_Rols = new Guna.UI2.WinForms.Guna2DataGridView();
             labelName = new System.Windows.Forms.Label();
@@ -80,19 +80,25 @@
             labelForm = new System.Windows.Forms.Label();
             DataGridViewForms = new Guna.UI2.WinForms.Guna2DataGridView();
             DataGridViewPermissions = new Guna.UI2.WinForms.Guna2DataGridView();
-            ButtonCrear = new Guna.UI2.WinForms.Guna2GradientButton();
-            ButtonDisable = new Guna.UI2.WinForms.Guna2GradientButton();
-            ButtonEnable = new Guna.UI2.WinForms.Guna2GradientButton();
-            guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonCreatef = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonDisablef = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonEnablef = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonEnablep = new Guna.UI2.WinForms.Guna2GradientButton();
+            Buttondisablep = new Guna.UI2.WinForms.Guna2GradientButton();
+            ButtonCreatep = new Guna.UI2.WinForms.Guna2GradientButton();
             Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             ButtonEnabled = new Guna.UI2.WinForms.Guna2GradientButton();
             comboBoxForms = new System.Windows.Forms.ComboBox();
             ComboBoxPermissions = new System.Windows.Forms.ComboBox();
+            pictureBoxRol = new System.Windows.Forms.PictureBox();
+            pictureBoxForms = new System.Windows.Forms.PictureBox();
+            pictureBoxProcedure = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView_Rols).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewForms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewPermissions).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRol).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxForms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProcedure).BeginInit();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -169,6 +175,7 @@
             DataGridView_Rols.ThemeStyle.RowsStyle.Height = 22;
             DataGridView_Rols.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             DataGridView_Rols.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridView_Rols.CellClick += DataGridView_Rols_CellClick;
             // 
             // labelName
             // 
@@ -387,7 +394,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             DataGridViewForms.DefaultCellStyle = dataGridViewCellStyle7;
             DataGridViewForms.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
-            DataGridViewForms.Location = new System.Drawing.Point(494, 93);
+            DataGridViewForms.Location = new System.Drawing.Point(495, 93);
             DataGridViewForms.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             DataGridViewForms.Name = "DataGridViewForms";
             DataGridViewForms.ReadOnly = true;
@@ -401,7 +408,7 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             DataGridViewForms.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             DataGridViewForms.RowHeadersVisible = false;
-            DataGridViewForms.Size = new System.Drawing.Size(449, 178);
+            DataGridViewForms.Size = new System.Drawing.Size(448, 178);
             DataGridViewForms.TabIndex = 55;
             DataGridViewForms.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             DataGridViewForms.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
@@ -425,6 +432,7 @@
             DataGridViewForms.ThemeStyle.RowsStyle.Height = 22;
             DataGridViewForms.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             DataGridViewForms.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridViewForms.CellClick += DataGridViewForms_CellClick;
             // 
             // DataGridViewPermissions
             // 
@@ -455,7 +463,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             DataGridViewPermissions.DefaultCellStyle = dataGridViewCellStyle3;
             DataGridViewPermissions.GridColor = System.Drawing.Color.FromArgb(250, 189, 184);
-            DataGridViewPermissions.Location = new System.Drawing.Point(494, 361);
+            DataGridViewPermissions.Location = new System.Drawing.Point(495, 361);
             DataGridViewPermissions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             DataGridViewPermissions.Name = "DataGridViewPermissions";
             DataGridViewPermissions.ReadOnly = true;
@@ -469,7 +477,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             DataGridViewPermissions.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DataGridViewPermissions.RowHeadersVisible = false;
-            DataGridViewPermissions.Size = new System.Drawing.Size(449, 178);
+            DataGridViewPermissions.Size = new System.Drawing.Size(448, 178);
             DataGridViewPermissions.TabIndex = 56;
             DataGridViewPermissions.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             DataGridViewPermissions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(251, 199, 195);
@@ -493,156 +501,157 @@
             DataGridViewPermissions.ThemeStyle.RowsStyle.Height = 22;
             DataGridViewPermissions.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(247, 129, 121);
             DataGridViewPermissions.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            DataGridViewPermissions.CellClick += DataGridViewPermissions_CellClick;
             // 
-            // ButtonCrear
+            // ButtonCreatef
             // 
-            ButtonCrear.Animated = true;
-            ButtonCrear.AutoRoundedCorners = true;
-            ButtonCrear.BorderRadius = 14;
-            ButtonCrear.CustomizableEdges = customizableEdges14;
-            ButtonCrear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            ButtonCrear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            ButtonCrear.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonCrear.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonCrear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            ButtonCrear.FillColor = System.Drawing.Color.Silver;
-            ButtonCrear.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            ButtonCrear.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ButtonCrear.ForeColor = System.Drawing.Color.White;
-            ButtonCrear.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            ButtonCrear.IndicateFocus = true;
-            ButtonCrear.Location = new System.Drawing.Point(678, 54);
-            ButtonCrear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            ButtonCrear.Name = "ButtonCrear";
-            ButtonCrear.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            ButtonCrear.Size = new System.Drawing.Size(86, 30);
-            ButtonCrear.TabIndex = 57;
-            ButtonCrear.Text = "Crear";
+            ButtonCreatef.Animated = true;
+            ButtonCreatef.AutoRoundedCorners = true;
+            ButtonCreatef.BorderRadius = 14;
+            ButtonCreatef.CustomizableEdges = customizableEdges14;
+            ButtonCreatef.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonCreatef.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonCreatef.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonCreatef.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonCreatef.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonCreatef.FillColor = System.Drawing.Color.Silver;
+            ButtonCreatef.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            ButtonCreatef.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonCreatef.ForeColor = System.Drawing.Color.White;
+            ButtonCreatef.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonCreatef.IndicateFocus = true;
+            ButtonCreatef.Location = new System.Drawing.Point(678, 54);
+            ButtonCreatef.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ButtonCreatef.Name = "ButtonCreatef";
+            ButtonCreatef.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            ButtonCreatef.Size = new System.Drawing.Size(86, 30);
+            ButtonCreatef.TabIndex = 57;
+            ButtonCreatef.Text = "Crear";
             // 
-            // ButtonDisable
+            // ButtonDisablef
             // 
-            ButtonDisable.Animated = true;
-            ButtonDisable.AutoRoundedCorners = true;
-            ButtonDisable.BorderRadius = 14;
-            ButtonDisable.CustomizableEdges = customizableEdges12;
-            ButtonDisable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            ButtonDisable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            ButtonDisable.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonDisable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            ButtonDisable.FillColor = System.Drawing.Color.Silver;
-            ButtonDisable.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            ButtonDisable.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ButtonDisable.ForeColor = System.Drawing.Color.White;
-            ButtonDisable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            ButtonDisable.IndicateFocus = true;
-            ButtonDisable.Location = new System.Drawing.Point(772, 54);
-            ButtonDisable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            ButtonDisable.Name = "ButtonDisable";
-            ButtonDisable.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            ButtonDisable.Size = new System.Drawing.Size(86, 30);
-            ButtonDisable.TabIndex = 58;
-            ButtonDisable.Text = "Revocar";
+            ButtonDisablef.Animated = true;
+            ButtonDisablef.AutoRoundedCorners = true;
+            ButtonDisablef.BorderRadius = 14;
+            ButtonDisablef.CustomizableEdges = customizableEdges12;
+            ButtonDisablef.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonDisablef.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonDisablef.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonDisablef.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonDisablef.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonDisablef.FillColor = System.Drawing.Color.Silver;
+            ButtonDisablef.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            ButtonDisablef.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonDisablef.ForeColor = System.Drawing.Color.White;
+            ButtonDisablef.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonDisablef.IndicateFocus = true;
+            ButtonDisablef.Location = new System.Drawing.Point(772, 54);
+            ButtonDisablef.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ButtonDisablef.Name = "ButtonDisablef";
+            ButtonDisablef.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            ButtonDisablef.Size = new System.Drawing.Size(86, 30);
+            ButtonDisablef.TabIndex = 58;
+            ButtonDisablef.Text = "Revocar";
             // 
-            // ButtonEnable
+            // ButtonEnablef
             // 
-            ButtonEnable.Animated = true;
-            ButtonEnable.AutoRoundedCorners = true;
-            ButtonEnable.BorderRadius = 14;
-            ButtonEnable.CustomizableEdges = customizableEdges10;
-            ButtonEnable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            ButtonEnable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            ButtonEnable.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonEnable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            ButtonEnable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            ButtonEnable.FillColor = System.Drawing.Color.Silver;
-            ButtonEnable.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            ButtonEnable.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            ButtonEnable.ForeColor = System.Drawing.Color.White;
-            ButtonEnable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            ButtonEnable.IndicateFocus = true;
-            ButtonEnable.Location = new System.Drawing.Point(866, 54);
-            ButtonEnable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            ButtonEnable.Name = "ButtonEnable";
-            ButtonEnable.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            ButtonEnable.Size = new System.Drawing.Size(86, 30);
-            ButtonEnable.TabIndex = 59;
-            ButtonEnable.Text = "Habilitar";
+            ButtonEnablef.Animated = true;
+            ButtonEnablef.AutoRoundedCorners = true;
+            ButtonEnablef.BorderRadius = 14;
+            ButtonEnablef.CustomizableEdges = customizableEdges10;
+            ButtonEnablef.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonEnablef.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonEnablef.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonEnablef.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonEnablef.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonEnablef.FillColor = System.Drawing.Color.Silver;
+            ButtonEnablef.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            ButtonEnablef.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonEnablef.ForeColor = System.Drawing.Color.White;
+            ButtonEnablef.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonEnablef.IndicateFocus = true;
+            ButtonEnablef.Location = new System.Drawing.Point(866, 54);
+            ButtonEnablef.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ButtonEnablef.Name = "ButtonEnablef";
+            ButtonEnablef.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            ButtonEnablef.Size = new System.Drawing.Size(86, 30);
+            ButtonEnablef.TabIndex = 59;
+            ButtonEnablef.Text = "Habilitar";
             // 
-            // guna2GradientButton1
+            // ButtonEnablep
             // 
-            guna2GradientButton1.Animated = true;
-            guna2GradientButton1.AutoRoundedCorners = true;
-            guna2GradientButton1.BorderRadius = 14;
-            guna2GradientButton1.CustomizableEdges = customizableEdges4;
-            guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            guna2GradientButton1.FillColor = System.Drawing.Color.Gray;
-            guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            guna2GradientButton1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            guna2GradientButton1.IndicateFocus = true;
-            guna2GradientButton1.Location = new System.Drawing.Point(866, 323);
-            guna2GradientButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            guna2GradientButton1.Name = "guna2GradientButton1";
-            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2GradientButton1.Size = new System.Drawing.Size(86, 30);
-            guna2GradientButton1.TabIndex = 62;
-            guna2GradientButton1.Text = "Habilitar";
+            ButtonEnablep.Animated = true;
+            ButtonEnablep.AutoRoundedCorners = true;
+            ButtonEnablep.BorderRadius = 14;
+            ButtonEnablep.CustomizableEdges = customizableEdges4;
+            ButtonEnablep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonEnablep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonEnablep.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonEnablep.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonEnablep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonEnablep.FillColor = System.Drawing.Color.Gray;
+            ButtonEnablep.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            ButtonEnablep.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonEnablep.ForeColor = System.Drawing.Color.White;
+            ButtonEnablep.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonEnablep.IndicateFocus = true;
+            ButtonEnablep.Location = new System.Drawing.Point(866, 323);
+            ButtonEnablep.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ButtonEnablep.Name = "ButtonEnablep";
+            ButtonEnablep.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            ButtonEnablep.Size = new System.Drawing.Size(86, 30);
+            ButtonEnablep.TabIndex = 62;
+            ButtonEnablep.Text = "Habilitar";
             // 
-            // guna2GradientButton2
+            // Buttondisablep
             // 
-            guna2GradientButton2.Animated = true;
-            guna2GradientButton2.AutoRoundedCorners = true;
-            guna2GradientButton2.BorderRadius = 14;
-            guna2GradientButton2.CustomizableEdges = customizableEdges6;
-            guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            guna2GradientButton2.FillColor = System.Drawing.Color.Gray;
-            guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            guna2GradientButton2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            guna2GradientButton2.IndicateFocus = true;
-            guna2GradientButton2.Location = new System.Drawing.Point(772, 323);
-            guna2GradientButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            guna2GradientButton2.Name = "guna2GradientButton2";
-            guna2GradientButton2.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2GradientButton2.Size = new System.Drawing.Size(86, 30);
-            guna2GradientButton2.TabIndex = 61;
-            guna2GradientButton2.Text = "Revocar";
+            Buttondisablep.Animated = true;
+            Buttondisablep.AutoRoundedCorners = true;
+            Buttondisablep.BorderRadius = 14;
+            Buttondisablep.CustomizableEdges = customizableEdges6;
+            Buttondisablep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            Buttondisablep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            Buttondisablep.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            Buttondisablep.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            Buttondisablep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            Buttondisablep.FillColor = System.Drawing.Color.Gray;
+            Buttondisablep.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            Buttondisablep.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Buttondisablep.ForeColor = System.Drawing.Color.White;
+            Buttondisablep.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            Buttondisablep.IndicateFocus = true;
+            Buttondisablep.Location = new System.Drawing.Point(772, 323);
+            Buttondisablep.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Buttondisablep.Name = "Buttondisablep";
+            Buttondisablep.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            Buttondisablep.Size = new System.Drawing.Size(86, 30);
+            Buttondisablep.TabIndex = 61;
+            Buttondisablep.Text = "Revocar";
             // 
-            // guna2GradientButton3
+            // ButtonCreatep
             // 
-            guna2GradientButton3.Animated = true;
-            guna2GradientButton3.AutoRoundedCorners = true;
-            guna2GradientButton3.BorderRadius = 14;
-            guna2GradientButton3.CustomizableEdges = customizableEdges8;
-            guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
-            guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
-            guna2GradientButton3.FillColor = System.Drawing.Color.Gray;
-            guna2GradientButton3.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
-            guna2GradientButton3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            guna2GradientButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            guna2GradientButton3.IndicateFocus = true;
-            guna2GradientButton3.Location = new System.Drawing.Point(678, 323);
-            guna2GradientButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            guna2GradientButton3.Name = "guna2GradientButton3";
-            guna2GradientButton3.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            guna2GradientButton3.Size = new System.Drawing.Size(86, 30);
-            guna2GradientButton3.TabIndex = 60;
-            guna2GradientButton3.Text = "Crear";
+            ButtonCreatep.Animated = true;
+            ButtonCreatep.AutoRoundedCorners = true;
+            ButtonCreatep.BorderRadius = 14;
+            ButtonCreatep.CustomizableEdges = customizableEdges8;
+            ButtonCreatep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            ButtonCreatep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            ButtonCreatep.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonCreatep.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(169, 169, 169);
+            ButtonCreatep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
+            ButtonCreatep.FillColor = System.Drawing.Color.Gray;
+            ButtonCreatep.FillColor2 = System.Drawing.Color.FromArgb(64, 64, 64);
+            ButtonCreatep.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ButtonCreatep.ForeColor = System.Drawing.Color.White;
+            ButtonCreatep.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            ButtonCreatep.IndicateFocus = true;
+            ButtonCreatep.Location = new System.Drawing.Point(678, 323);
+            ButtonCreatep.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ButtonCreatep.Name = "ButtonCreatep";
+            ButtonCreatep.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            ButtonCreatep.Size = new System.Drawing.Size(86, 30);
+            ButtonCreatep.TabIndex = 60;
+            ButtonCreatep.Text = "Crear";
             // 
             // Button_clear
             // 
@@ -718,21 +727,60 @@
             ComboBoxPermissions.SelectedIndexChanged += ComboBoxPermissions_SelectedIndexChanged;
             ComboBoxPermissions.TextChanged += ComboBoxPermissions_TextChanged;
             // 
+            // pictureBoxRol
+            // 
+            pictureBoxRol.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxRol.Image = (System.Drawing.Image)resources.GetObject("pictureBoxRol.Image");
+            pictureBoxRol.Location = new System.Drawing.Point(25, 242);
+            pictureBoxRol.Name = "pictureBoxRol";
+            pictureBoxRol.Size = new System.Drawing.Size(450, 297);
+            pictureBoxRol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxRol.TabIndex = 67;
+            pictureBoxRol.TabStop = false;
+            pictureBoxRol.Visible = false;
+            // 
+            // pictureBoxForms
+            // 
+            pictureBoxForms.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxForms.Image = (System.Drawing.Image)resources.GetObject("pictureBoxForms.Image");
+            pictureBoxForms.Location = new System.Drawing.Point(495, 127);
+            pictureBoxForms.Name = "pictureBoxForms";
+            pictureBoxForms.Size = new System.Drawing.Size(448, 144);
+            pictureBoxForms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxForms.TabIndex = 68;
+            pictureBoxForms.TabStop = false;
+            pictureBoxForms.Visible = false;
+            // 
+            // pictureBoxProcedure
+            // 
+            pictureBoxProcedure.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            pictureBoxProcedure.Image = (System.Drawing.Image)resources.GetObject("pictureBoxProcedure.Image");
+            pictureBoxProcedure.Location = new System.Drawing.Point(495, 392);
+            pictureBoxProcedure.Name = "pictureBoxProcedure";
+            pictureBoxProcedure.Size = new System.Drawing.Size(448, 147);
+            pictureBoxProcedure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBoxProcedure.TabIndex = 69;
+            pictureBoxProcedure.TabStop = false;
+            pictureBoxProcedure.Visible = false;
+            // 
             // Form_Rol
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(992, 577);
+            Controls.Add(pictureBoxProcedure);
+            Controls.Add(pictureBoxForms);
+            Controls.Add(pictureBoxRol);
             Controls.Add(ComboBoxPermissions);
             Controls.Add(comboBoxForms);
             Controls.Add(ButtonEnabled);
             Controls.Add(Button_clear);
-            Controls.Add(guna2GradientButton1);
-            Controls.Add(guna2GradientButton2);
-            Controls.Add(guna2GradientButton3);
-            Controls.Add(ButtonEnable);
-            Controls.Add(ButtonDisable);
-            Controls.Add(ButtonCrear);
+            Controls.Add(ButtonEnablep);
+            Controls.Add(Buttondisablep);
+            Controls.Add(ButtonCreatep);
+            Controls.Add(ButtonEnablef);
+            Controls.Add(ButtonDisablef);
+            Controls.Add(ButtonCreatef);
             Controls.Add(DataGridViewPermissions);
             Controls.Add(DataGridViewForms);
             Controls.Add(labelPermissions);
@@ -752,6 +800,9 @@
             ((System.ComponentModel.ISupportInitialize)DataGridView_Rols).EndInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewForms).EndInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewPermissions).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRol).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxForms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProcedure).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -771,15 +822,18 @@
         private Guna.UI2.WinForms.Guna2DataGridView DataGridViewForms;
         private System.Windows.Forms.Label labelPermissions;
         private System.Windows.Forms.Label labelForm;
-        private Guna.UI2.WinForms.Guna2GradientButton ButtonEnable;
-        private Guna.UI2.WinForms.Guna2GradientButton ButtonDisable;
-        private Guna.UI2.WinForms.Guna2GradientButton ButtonCrear;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonEnablef;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonDisablef;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonCreatef;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonEnablep;
+        private Guna.UI2.WinForms.Guna2GradientButton Buttondisablep;
+        private Guna.UI2.WinForms.Guna2GradientButton ButtonCreatep;
         private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
         private Guna.UI2.WinForms.Guna2GradientButton ButtonEnabled;
         private System.Windows.Forms.ComboBox ComboBoxPermissions;
         private System.Windows.Forms.ComboBox comboBoxForms;
+        private System.Windows.Forms.PictureBox pictureBoxProcedure;
+        private System.Windows.Forms.PictureBox pictureBoxForms;
+        private System.Windows.Forms.PictureBox pictureBoxRol;
     }
 }

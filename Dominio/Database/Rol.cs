@@ -4,7 +4,6 @@
     {
         public int RolId { get; set; }
         public string? RolName { get; set; }
-        public int? EmployeeId { get; set; }
         public bool IsActive { get; set; }
         public DateTime Date_Time { get; set; }
         public Employees? EmployeeNavigation { get; set; }

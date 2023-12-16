@@ -167,8 +167,6 @@ namespace Persistencia.Context
                 entity.HasKey(r => r.RolId).HasName("Pk_RolId_Rol");
                 entity.Property(r => r.RolName).HasMaxLength(20);
                 entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
-                .HasForeignKey(r => r.EmployeeId).HasConstraintName("Fk_EmployeeId_Rol");
-                entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
                 .HasForeignKey(r =>  r.CreatedBy).HasConstraintName("Fk_CreatedBy_Rol");
                 entity.HasOne(r => r.EmployeeNavigation).WithMany(e => e.RolCollections)
                 .HasForeignKey(r => r.UpdatedBy).HasConstraintName("Fk_UpdateBy_Rol");
@@ -197,11 +195,11 @@ namespace Persistencia.Context
                 .HasColumnType("datetime");
             });
             modelBuilder.Entity<FormRol>(entity => {
-                entity.HasKey(pr => pr.RolId).HasName("PK_PermissionsRol_PermissionsRol");
+                entity.HasKey(pr => pr.FormRolId).HasName("PK_PermissionsRol_PermissionsRol");
                 entity.HasOne(pr => pr.RolNavigation).WithMany(r => r.FormRolCollections)
                 .HasForeignKey(pr => pr.RolId).HasConstraintName("Fk_RolId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(pr => pr.FormsNavigation).WithMany(p => p.FormRolCollections)
-                .HasForeignKey(pr => pr.PermissionsId).HasConstraintName("Fk_PermissionsId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
+                .HasForeignKey(pr => pr.FormId).HasConstraintName("Fk_PermissionsId_PermissionsRolId").OnDelete(DeleteBehavior.NoAction);
                 entity.Property(pr => pr.IsActive).HasDefaultValue(true);
                 entity.Property(pr => pr.Date_Time).HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");

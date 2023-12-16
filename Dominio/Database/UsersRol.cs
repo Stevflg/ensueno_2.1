@@ -10,8 +10,7 @@
         public DateTime CreatedDate { get; set; }
         public int? UpdatedBy { get; set;}
         public DateTime? UpdatedDate { get; set; }
-        public Rol? RolNavigation { get; set; }
         public Users? UsersNavigation { get; set; }
-
+        public Rol? RolNavigation { get; set; }
     }
 }
